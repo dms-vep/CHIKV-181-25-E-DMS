@@ -79,3 +79,9 @@ gene_sequence_protein: results/gene_sequence/protein.fasta
 
 # created file with barcode-variant lookup table
 codon_variants: results/variants/codon_variants.csv
+
+# ----------------------------------------------------------------------------
+# Parameters related to counting the variants from barcode sequencing
+# ----------------------------------------------------------------------------
+
+barcode_runs: null
