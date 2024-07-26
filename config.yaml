@@ -29,13 +29,43 @@ authors: Xiaohui Ju and Will Hannon
 # Site numbering, mutation classification, and neut standards
 # ----------------------------------------------------------------------------
 
+# ----------------------------------------------------------------------------
+# Site numbering, mutation classification, and neut standards
+# ----------------------------------------------------------------------------
+
 # Map sequential 1, 2, numbering of the protein to the desired
 # final reference numbering scheme. Required to have columns named
 # "sequential_site" and "reference_site". If you just want to number in
 # sequential numbering for everything, just make both entries sequential.
 # Should also have a column called "region" that assigns each site to a
-# region of the protein (eg, domain like RBD or NTD).
+# region of the protein (eg, domain like RBD or NTD). Any additional
+# columns ending in "site" are retained as tooltips.
 site_numbering_map: data/site_numbering_map.csv
+
+# Optional file (you can also omit) that specified per-mutation annotations,
+# such as "nt changes to codon" for how many nucleotide changes are needed
+# to the codon to access a mutation. Should have columns named "site" (the
+# reference site number) and "mutant" (the amino-acid in question). All
+# other columns represent the annotations. If you provide this, annotations in
+# this file can be shown in the summary and average escape / functional effects
+# plots by specifying the relevant column as an additional slider stat in the
+# configuration for those plots.
+mutation_annotations: data/mutation_annotations.csv
+
+# Classify mutations into different categories, such as which ones are
+# designed to be in the library. If you don't have different categories of
+# designed mutations, just include all of the intended mutations with
+# mutation type as "designed". The CSV specified below must have columns
+# named "mutation_type", "amino_acid" or "mutant_aa", and either
+# "reference_site" or "sequential_site" as specified by `site_col` key.
+mutation_design_classification:
+  csv: data/mutation_design_classification.csv # CSV with data
+  site_col: sequential_site # site column, should be reference_site or sequential_site
+
+# Neutralization standard barcodes. Should have columns "barcode" and "name"
+# (giving name of this neutralization standard set). Can be empty CSV with
+# those columns if no neutralization standards.
+neut_standard_barcodes: data/neutralization_standard_barcodes.csv
 
 # ----------------------------------------------------------------------------
 # Parameters related to building barcode-variant lookup table
