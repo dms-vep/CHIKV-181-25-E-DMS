@@ -1,19 +1,12 @@
-LOCUS       Copy_of_CHIKV_E_PacBio  3153 bp ds-DNA     linear       26-JUL-2024
-DEFINITION  CHIKV E Protein PacBio Amplicon
-COMMENT     Imported using the Genbank importer. File name: CHIKV E PacBio.gb
+LOCUS       PacBio_amplicon  3153 bp ds-DNA     linear       26-JUL-2024
+DEFINITION  PacBio Amplicon of CHIKV E Protein.
 FEATURES             Location/Qualifiers
      termini5        1..47
-                     /label="termini5"
      variant_tag5    28..28
-                     /label="variant_tag5"
      gene            48..3014
-                     /label="gene"
      barcode         3066..3081
-                     /label="barcode"
      termini3        3082..3153
-                     /label="termini3"
      variant_tag3    3108..3108
-                     /label="variant_tag3"
 ORIGIN
         1 ctagccattc agaggcagcc gagccacstc gctcaacgcg tgccaccatg agcctggcca
        61 ttcctgtgat gtgcctgctg gccaacacca cctttccatg cagccagcct ccatgcacac
