@@ -3,12 +3,12 @@ PacBio_amplicon:
   query_clip3: 12
   termini5:
     filter:
-      clip5: 12
-      mutation_nt_count: 2
+      clip5: null
+      mutation_nt_count: null
       mutation_op_count: null
   gene:
     filter:
-      mutation_nt_count: 45 
+      mutation_nt_count: null 
       mutation_op_count: null
     return: [mutations, accuracy]
   barcode:
@@ -18,8 +18,8 @@ PacBio_amplicon:
     return: [sequence, accuracy]
   termini3:
     filter:
-      clip3: 12
-      mutation_nt_count: 1
+      clip3: null
+      mutation_nt_count: null
       mutation_op_count: null
   variant_tag5:
     return: sequence

@@ -1,12 +1,12 @@
 LOCUS       PacBio_amplicon  3153 bp ds-DNA     linear       26-JUL-2024
-DEFINITION  PacBio Amplicon of CHIKV E Protein.
+DEFINITION  PacBio Amplicon of CHIKV E Protein. 
 FEATURES             Location/Qualifiers
      termini5        1..47
-     variant_tag5    28..28
+     variant_tag5    28
      gene            48..3014
      barcode         3066..3081
      termini3        3082..3153
-     variant_tag3    3108..3108
+     variant_tag3    3108
 ORIGIN
         1 ctagccattc agaggcagcc gagccacstc gctcaacgcg tgccaccatg agcctggcca
        61 ttcctgtgat gtgcctgctg gccaacacca cctttccatg cagccagcct ccatgcacac

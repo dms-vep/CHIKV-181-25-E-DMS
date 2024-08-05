@@ -86,15 +86,15 @@ prebuilt_geneseq: null
 pacbio_runs: data/PacBio_runs.csv  # PacBio sequencing data
 pacbio_amplicon: data/PacBio_amplicon.gb  # Genbank file with PacBio amplicon
 pacbio_amplicon_specs: data/PacBio_feature_parse_specs.yaml  # alignparse feature parsing
-variant_tags:  # variant tags in PacBio amplicon, or "null" if no tags
-  variant_tag5:
-    variant_1: G
-    variant_2: C
-    wildtype: A
-  variant_tag3:
-    variant_1: G
-    variant_2: C
-    wildtype: A
+variant_tags:  null # variant tags in PacBio amplicon, or "null" if no tags
+  # variant_tag5:
+  #   variant_1: G
+  #   variant_2: C
+  #   wildtype: A
+  # variant_tag3:
+  #   variant_1: G
+  #   variant_2: C
+  #   wildtype: A
 max_ccs_error_rate: 1.0e-4  # only keep CCS if gene/barcode error rate <= this
 consensus_params:  # parameters for building PacBio consensus sequences
   max_sub_diffs: null
