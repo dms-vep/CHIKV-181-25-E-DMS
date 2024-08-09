@@ -15,7 +15,7 @@ pacbio_df = pd.read_csv(config['runs'])
 
 rule all:
     input:
-        expand("results/process_ccs/{run}", run=pacbio_df["run"])
+        "results/CCSs_aligned_to_amplicon.csv"
 
 #### ------------------------ Rules ------------------------ ####
 
@@ -82,27 +82,20 @@ rule align_parse_PacBio_ccs:
         "scripts/align_parse_PacBio_ccs.py"
 
 
-# rule analyze_pacbio_ccs:
-#     """Analyze PacBio CCSs and get ones that align to amplicons of interest."""
-#     input:
-#         expand(
-#             rules.align_parse_PacBio_ccs.output.outdir,
-#             pacbioRun=pacbio_runs["run"],
-#         ),
-#         config["pacbio_amplicon"],
-#         config["pacbio_amplicon_specs"],
-#         nb=os.path.join(
-#             config["pipeline_path"], "notebooks/analyze_pacbio_ccs.ipynb"
-#         ),
-#     output:
-#         csv="results/process_ccs/CCSs_aligned_to_amplicon.csv",
-#         nb="results/notebooks/analyze_pacbio_ccs.ipynb",
-#     conda:
-#         "environment.yml"
-#     log:
-#         "results/logs/analyze_pacbio_ccs.txt",
-#     shell:
-#         "papermill {input.nb} {output.nb} &> {log}"
+rule analyze_pacbio_ccs:
+    """Analyze PacBio CCSs and get ones that align to amplicons of interest."""
+    input:
+        expand("results/process_ccs/{run}", run=pacbio_df["run"]),
+        nb="notebooks/analyze_pacbio_ccs.ipynb",
+    output:
+        csv="results/CCSs_aligned_to_amplicon.csv",
+        nb="results/notebooks/analyze_pacbio_ccs.ipynb",
+    conda:
+        "../dms-vep-pipeline-3/environment.yml"
+    log:
+        "results/logs/analyze_pacbio_ccs.txt",
+    shell:
+        "papermill {input.nb} {output.nb} &> {log}"
 
 
 # rule build_pacbio_consensus:
