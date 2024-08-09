@@ -11,3 +11,13 @@ runs: data/library_runs.csv
 
 data_dir: data
 gene_dir: results/gene_sequence
+
+#### ------------------------ Parameters ----------------------- ####
+
+max_ccs_error_rate: 1.0e-4  # only keep CCS if gene/barcode error rate <= this
+consensus_params:  # parameters for building PacBio consensus sequences
+  max_sub_diffs: null
+  max_indel_diffs: null
+  max_minor_sub_frac: 1
+  max_minor_indel_frac: 1
+  min_support: 1

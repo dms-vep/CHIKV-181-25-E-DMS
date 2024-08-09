@@ -15,7 +15,8 @@ pacbio_df = pd.read_csv(config['runs'])
 
 rule all:
     input:
-        "results/CCSs_aligned_to_amplicon.csv"
+        "results/variants/nt_variants.csv",
+        expand(join(config['gene_dir'], "{design}_protein.fasta"), design=pacbio_df["design"].unique()),
 
 #### ------------------------ Rules ------------------------ ####
 
@@ -98,26 +99,24 @@ rule analyze_pacbio_ccs:
         "papermill {input.nb} {output.nb} &> {log}"
 
 
-# rule build_pacbio_consensus:
-#     """Build PacBio consensus sequences for barcodes."""
-#     input:
-#         rules.analyze_pacbio_ccs.output.csv,
-#         config["gene_sequence_codon"],
-#         nb=os.path.join(
-#             config["pipeline_path"], "notebooks/build_pacbio_consensus.ipynb"
-#         ),
-#     output:
-#         nt_variants="results/variants/nt_variants.csv",
-#         nb="results/notebooks/build_pacbio_consensus.ipynb",
-#     params:
-#         config["max_ccs_error_rate"],
-#         config["consensus_params"],
-#     conda:
-#         "environment.yml"
-#     log:
-#         "results/logs/build_pacbio_consensus.txt",
-#     shell:
-#         "papermill {input.nb} {output.nb} &> {log}"
+rule build_pacbio_consensus:
+    """Build PacBio consensus sequences for barcodes."""
+    input:
+        rules.analyze_pacbio_ccs.output.csv,
+        expand(join(config['gene_dir'], "{design}_codon.fasta"), design=pacbio_df["design"].unique()),
+        nb="notebooks/build_pacbio_consensus.ipynb"
+    output:
+        nt_variants="results/variants/nt_variants.csv",
+        nb="results/notebooks/build_pacbio_consensus.ipynb",
+    params:
+        config["max_ccs_error_rate"],
+        config["consensus_params"],
+    conda:
+        "../dms-vep-pipeline-3/environment.yml"
+    log:
+        "results/logs/build_pacbio_consensus.txt",
+    shell:
+        "papermill {input.nb} {output.nb} &> {log}"
 
 
 # rule build_codon_variants:
