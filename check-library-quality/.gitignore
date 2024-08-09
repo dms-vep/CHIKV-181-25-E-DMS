@@ -68,3 +68,4 @@ results/summaries/*
 !results/summaries/*.csv
 
 !results/*.html
+!results/notebooks
