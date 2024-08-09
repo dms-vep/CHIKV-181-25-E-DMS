@@ -1,0 +1,58 @@
+LOCUS       PacBio_amplicon  3153 bp ds-DNA     linear       26-JUL-2024
+DEFINITION  PacBio Amplicon of CHIKV E Protein digested from plasmid pool. 
+FEATURES             Location/Qualifiers
+     termini5        1..11
+     gene            12..2978
+     termini3         3030..3046
+ORIGIN
+        1 cgcgtgccac catgagcctg gccattcctg tgatgtgcct gctggccaac accacctttc
+       61 catgcagcca gcctccatgc acaccctgct gctacgagaa agagcccgag aaaaccctgc
+      121 ggatgctgga agataacgtg atgagccccg gctactacca gctgctgcag gcctctctga
+      181 catgcagccc tagacggcag cggagatcca tcaaggacaa cttcaacgtg tacaaggcca
+      241 tcagacccta cctggctcac tgccctgatt gtggcgaggg ccactcttgt cactctcccg
+      301 tggctctgga acggatcaga aacgaggcca ccgatggcac cctgaagatc caggtgtccc
+      361 tgcagatcgg catcaagacc gacgacagcc acgactggac aaagctgcgg tacatggaca
+      421 accacatgcc tgccgatgcc gagagggcca gactgtttgt cagaacaagc gccccttgca
+      481 ccatcaccgg caccatgggc cacttcatcc tggccagatg tcccaagggc gagacactga
+      541 ccgtgggctt cacagacggc agaaagatca gccacagctg cacacacccc ttccaccacg
+      601 atcctccagt gatcggcaga gagaagttcc acagcagacc ccagcacgga agagagctgc
+      661 cttgtagcac atacgcccag agcacagccg ccacagccga agagattgag gtgcacatgc
+      721 ctccagacac acccgacaga accctgatgt ctcagcagag cggcaacgtg aagatcaccg
+      781 tgaacagcca gaccgtgcgg tacaagtgca actgcggcga tagcaatgag ggcctgacca
+      841 ccaccgacaa agtgatcaac aactgcaagg tggaccagtg ccacgccgcc gtgaccaatc
+      901 acaagaagtg gcagtacaac agccctctgg tgcccagaaa tgccgagctg ggcgacagaa
+      961 agggcaaagt gcacatcccc tttccactgg ccaacgtgac ctgcagagtg cccaaggcca
+     1021 gaaatcccac cgtgacctac ggcaagaatc aagtgatcat gctgctgtac cctgatcacc
+     1081 ccacactgct gagctaccgg aacatgggcg aagaacccaa ctaccaagag gaatgggtca
+     1141 cccacaagaa agaaatccgg ctgaccgtgc ctaccgaagg cctggaagtt acctggggca
+     1201 acaacgagcc ctacaagtac tggcctcagc tgtccaccaa tggcacagcc cacggacacc
+     1261 ctcacgagat catcctgtac tactacgagc tgtaccccac catgaccgtg gtggtggtgt
+     1321 ctgtggccag ctttgtgctg ctgagcatgg ttggagtggc cgtgggcatg tgtatgtgtg
+     1381 cccgcagaag atgcatcacc ccttacgagc ttacacccgg cgctaccgtg ccttttctgc
+     1441 tgagcctgat ctgctgcatc agaaccgcca aggccgccac ctatcaagag gccgctgtgt
+     1501 acctgtggaa cgagcagcaa cctctgttct ggctgcaagc cctgattcct ctggccgctc
+     1561 tgatcgtgct gtgcaattgc ctgagactgc tgccctgctt ctgcaaaacc ctgaccttcc
+     1621 tggccgtgat gtctgtggga gcccataccg tgtctgccta cgagcacgtg acagtgatcc
+     1681 ccaataccgt gggagtgcct tacaagaccc tggtcaacag acccggctac agcccaatgg
+     1741 tgctggaaat ggaactgctg tccgtgacac tggaacccac actgagcctg gactacatca
+     1801 catgcgagta caagaccgtg ataccctctc catacgtgaa gtgctgtggc accgccgagt
+     1861 gcaaggataa gagcctgcct gactactctt gcaaggtgtt caccggcgtg taccccttca
+     1921 tgtggggcgg agcctactgc ttctgtgaca ccgagaatac ccagctgagc gaggcccacg
+     1981 tggaaaagag cgagagctgc aagaccgagt tcgccagcgc ctatagagcc cacacagcct
+     2041 ctgcctctgc caagctgaga gtgctgtacc agggcaacaa tgtgacagtg tccgcctacg
+     2101 ccaatggcga ccatgccgtg actgtgaagg acgccaagtt catcgtgggc cccatgtcta
+     2161 gcgcctggac acccttcgac aacaagattg tggtgtataa gggcgacgtc tacaacatgg
+     2221 actaccctcc attcggagcc ggcagacctg gccagtttgg cgatatccag agcagaaccc
+     2281 ctgagagcga ggacgtgtac gccaacacac agctggtgct gcagaggcct tctgccggaa
+     2341 cagtgcacgt gccatattct caggccccta gcggcttcaa gtattggctg aaagagagag
+     2401 gcgcttccct gcagcacact gccccttttg gctgccagat cgccacaaat cctgtgcggg
+     2461 ccatgaattg cgccgtggga aacatgccca tcagcatcga catccccgac gccgccttta
+     2521 ccagagtggt ggatgctcct agcctgaccg acatgtcttg cgaggtgcca gcctgtacac
+     2581 acagcagcga ttttggcgga gtggccatca ttaagtacgc cgccagcaag aaaggcaagt
+     2641 gcgccgtgca cagcatgacc aacgccgtga ctatccggga agccgagatc gaagtggaag
+     2701 gcaacagcca gctgcagatc tccttcagca cagccctggc cagcgccgag tttagagtgc
+     2761 aagtctgtag cacccaggtg cactgcgccg ctgaatgtca ccctcctaag gaccacatcg
+     2821 tgaactaccc cgccagccac acaacactgg gcgtgcagga tatcagcgtg accgctatga
+     2881 gctgggtgca gaaaatcaca ggcggagtcg gactggtggt ggcagtggct gctctgattc
+     2941 tgatcgttgt gctgtgcgtg tccttcagcc ggcactaagg cgcgcctagt tggatcacac
+     3001 tctttcccta cacgacgctc ttccgatctn nnnnnnnnnn nnnnnt

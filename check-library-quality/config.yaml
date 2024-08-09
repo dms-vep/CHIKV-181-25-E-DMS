@@ -1,0 +1,13 @@
+#### ============== snakemake configuration file ============== ####
+
+# Configuration file for CHIKV library quality analysis
+# Author: William Hannon
+
+#### ------------------------- Samples ------------------------ ####
+
+runs: data/library_runs.csv
+
+#### -------------------------- Dirs ------------------------- ####
+
+data_dir: data
+gene_dir: results/gene_sequence

@@ -1,0 +1,7 @@
+library,run,fastq,design
+E3E2_Lib_A,E3E2_Lib_A_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2068--bc2068/m64272e_240719_173010.hifi_reads.bc2068--bc2068.fastq.gz,Plasmid_Pool
+6KE1_Lib_B,6KE1_Lib_B_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2069--bc2069/m64272e_240719_173010.hifi_reads.bc2069--bc2069.fastq.gz,Plasmid_Pool
+E3E2_BCPCR_A,E3E2_BCPCR_A_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2070--bc2070/m64272e_240719_173010.hifi_reads.bc2070--bc2070.fastq.gz,Barcode_PCR
+6KE1_BCPCR_B,6KE1_BCPCR_B_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2071--bc2071/m64272e_240719_173010.hifi_reads.bc2071--bc2071.fastq.gz,Barcode_PCR
+E3E2_1_GS,E3E2_1_GS_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2066--bc2066/m64272e_240719_173010.hifi_reads.bc2066--bc2066.fastq.gz,Genscript_Product
+6KE1_2_GS,6KE1_2_GS_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2067--bc2067/m64272e_240719_173010.hifi_reads.bc2067--bc2067.fastq.gz,Genscript_Product
