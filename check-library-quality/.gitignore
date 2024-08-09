@@ -12,10 +12,6 @@ results/gene_sequence/*
 !results/gene_sequence/codon.fasta
 !results/gene_sequence/protein.fasta
 
-!results/variants
-results/variants/*
-!results/variants/codon_variants.csv
-
 !results/barcode_counts
 results/barcode_counts/*
 !results/barcode_counts/*_counts.csv
