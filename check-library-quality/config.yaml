@@ -21,3 +21,12 @@ consensus_params:  # parameters for building PacBio consensus sequences
   max_minor_sub_frac: 1
   max_minor_indel_frac: 1
   min_support: 1
+
+mutation_design_classification:
+  csv: data/mutation_design_classification.csv # CSV with data
+  site_col: sequential_site # site column, should be reference_site or sequential_site
+
+site_numbering_map: data/site_numbering_map.csv
+
+# Created file with barcode-variant lookup table
+codon_variants: results/variants/codon_variants.csv
