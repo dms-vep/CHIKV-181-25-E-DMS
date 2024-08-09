@@ -6,8 +6,8 @@
 
 The goal of this analysis is to assess the quality of the CHIKV E protein libraries from GenScript. There are two separate libraries covering different segments of the E protein:
 
-- **E3E2**: 2:488
-- **6KE1**: 489:988
+- **E3E2**: Sites 2 -> 488
+- **6KE1**: Sites 489 -> 988
 
 For each library, we have PacBio sequencing from three stages of the experiment: 
 
@@ -37,3 +37,6 @@ And run the snakemake pipeline:
 snakemake --cores 6 -j 6
 ```
 
+## Results
+
+The mutation coverage and site coverage are fairly uniform. The liquid cultures didn't cause jack-potting in the plasmid pools. The key results files are [this plot of **site-level** coverage](./results/site_coverage_chart.html) and [this plot of **mutation-level** coverage](./results/mutation_coverage_chart.html).
