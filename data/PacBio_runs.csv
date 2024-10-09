@@ -1,3 +1,5 @@
 library,run,fastq
-E3E2_BCPCR_A,E3E2_BCPCR_A_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2070--bc2070/m64272e_240719_173010.hifi_reads.bc2070--bc2070.fastq.gz
-6KE1_BCPCR_B,6KE1_BCPCR_B_240719,/fh/fast/bloom_j/SR/ngs/pacbio/240719_XiaohuiJu/r64272e_20240719_171534/1_A01/bc2071--bc2071/m64272e_240719_173010.hifi_reads.bc2071--bc2071.fastq.gz
+E3E2_A,E3E2_A_240930,/fh/fast/bloom_j/SR/ngs/pacbio/240930_XiaohuiJu/r64272e_20240930_210627/1_A01/bc2123--bc2123/m64272e_240930_212410.hifi_reads.bc2123--bc2123.fastq.gz
+E3E2_B,E3E2_B_240930,/fh/fast/bloom_j/SR/ngs/pacbio/240930_XiaohuiJu/r64272e_20240930_210627/1_A01/bc2124--bc2124/m64272e_240930_212410.hifi_reads.bc2124--bc2124.fastq.gz
+6KE1_A,6KE1_A_240930,/fh/fast/bloom_j/SR/ngs/pacbio/240930_XiaohuiJu/r64272e_20240930_210627/2_B01/bc2125--bc2125/m64272e_241002_081958.hifi_reads.bc2125--bc2125.fastq.gz
+6KE1_B,6KE1_B_240930,/fh/fast/bloom_j/SR/ngs/pacbio/240930_XiaohuiJu/r64272e_20240930_210627/2_B01/bc2126--bc2126/m64272e_241002_081958.hifi_reads.bc2126--bc2126.fastq.gz
