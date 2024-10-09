@@ -29,7 +29,7 @@ Input data utilized by the pipeline are located in ./data/.
 Results and documentation
 The results of running the pipeline are placed in ./results/. Due to space, only some results are tracked. For those that are not, see the .gitignore document.
 
-The pipeline builds HTML documentation for the pipeline in ./docs/. These docs are rendered for viewing at https://dms-vep.org/RABV_Pasteur_G_DMS/ as stated above.
+The pipeline builds HTML documentation for the pipeline in ./docs/. 
 
 Non-pipeline analyses
 All other non-pipeline analyses are contained in ./scratch_notebook/. The notebooks in this directory are not part of the main pipeline but have been used to generate files used as input for the pipeline.
