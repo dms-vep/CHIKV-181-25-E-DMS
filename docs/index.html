@@ -3,6 +3,8 @@
 <p>See <a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS">https://github.com/dms-vep/CHIKV_181-25_E_DMS</a> for full code.</p>
 <div class="toc"><span class="toctitle">Contents</span><ul>
 <li><a href="#barcode-to-codon-variant-lookup-table">Barcode to codon-variant lookup table</a></li>
+<li><a href="#count-barcodes-for-variants">Count barcodes for variants</a></li>
+<li><a href="#functional-effects-of-mutations">Functional effects of mutations</a></li>
 </ul>
 </div>
 <h2 id="barcode-to-codon-variant-lookup-table">Barcode to codon-variant lookup table</h2>
@@ -17,4 +19,203 @@
 <li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/gene_sequence/codon.fasta">parental codon sequence</a></li>
 <li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/gene_sequence/protein.fasta">parental protein sequence</a></li>
 <li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/variants/codon_variants.csv">barcode to codon-variant lookup table</a></li>
+</ul>
+<h2 id="count-barcodes-for-variants">Count barcodes for variants</h2>
+<h4 id="analysis-notebooks_1">Analysis notebooks</h4>
+<h4 id="data-files_1">Data files</h4>
+<ul>
+<li><details><summary>Barcode count CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_Mxra8_no_antibody-1_counts.csv">E3E2_B-241028-293T_Mxra8_no_antibody-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_Mxra8_no_antibody-2_counts.csv">E3E2_B-241028-293T_Mxra8_no_antibody-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_TIM1_no_antibody-1_counts.csv">E3E2_B-241028-293T_TIM1_no_antibody-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_TIM1_no_antibody-2_counts.csv">E3E2_B-241028-293T_TIM1_no_antibody-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_Mxra8_no_antibody-1_counts.csv">6KE1_B-241028-293T_Mxra8_no_antibody-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_Mxra8_no_antibody-2_counts.csv">6KE1_B-241028-293T_Mxra8_no_antibody-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_TIM1_no_antibody-1_counts.csv">6KE1_B-241028-293T_TIM1_no_antibody-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_TIM1_no_antibody-2_counts.csv">6KE1_B-241028-293T_TIM1_no_antibody-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_Mxra8_VSVG-1_counts.csv">E3E2_B-241028-293T_Mxra8_VSVG-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_Mxra8_VSVG-2_counts.csv">E3E2_B-241028-293T_Mxra8_VSVG-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_TIM1_VSVG-1_counts.csv">E3E2_B-241028-293T_TIM1_VSVG-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/E3E2_B-241028-293T_TIM1_VSVG-2_counts.csv">E3E2_B-241028-293T_TIM1_VSVG-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_Mxra8_VSVG-1_counts.csv">6KE1_B-241028-293T_Mxra8_VSVG-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_Mxra8_VSVG-2_counts.csv">6KE1_B-241028-293T_Mxra8_VSVG-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_TIM1_VSVG-1_counts.csv">6KE1_B-241028-293T_TIM1_VSVG-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/barcode_counts/6KE1_B-241028-293T_TIM1_VSVG-2_counts.csv">6KE1_B-241028-293T_TIM1_VSVG-2</a></li>
+</ul></details>
+
+</li>
+</ul>
+<h2 id="functional-effects-of-mutations">Functional effects of mutations</h2>
+<h4 id="final-summary-plots">Final summary plots</h4>
+<ul>
+<li><details><summary>Interactive plots of average mutation functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/HEK293T-Mxra8_TIM1_entry_func_effects.html">HEK293T-Mxra8_TIM1_entry</a></li>
+<li><a href="htmls/HEK293T_Mxra8_entry_E3E2_B_func_effects.html">HEK293T_Mxra8_entry_E3E2_B</a></li>
+<li><a href="htmls/HEK293T-Mxra8_entry_6KE1_B_func_effects.html">HEK293T-Mxra8_entry_6KE1_B</a></li>
+<li><a href="htmls/HEK293T-TIM1_entry_E3E2_B_func_effects.html">HEK293T-TIM1_entry_E3E2_B</a></li>
+<li><a href="htmls/HEK293T-TIM1_entry_6KE1_B_func_effects.html">HEK293T-TIM1_entry_6KE1_B</a></li>
+<li><a href="htmls/HEK293T-Mxra8_entry_func_effects.html">HEK293T-Mxra8_entry</a></li>
+<li><a href="htmls/HEK293T-TIM1_entry_func_effects.html">HEK293T-TIM1_entry</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Interactive plots of average mutation latent-phenotype effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/HEK293T-Mxra8_TIM1_entry_latent_effects.html">HEK293T-Mxra8_TIM1_entry</a></li>
+<li><a href="htmls/HEK293T_Mxra8_entry_E3E2_B_latent_effects.html">HEK293T_Mxra8_entry_E3E2_B</a></li>
+<li><a href="htmls/HEK293T-Mxra8_entry_6KE1_B_latent_effects.html">HEK293T-Mxra8_entry_6KE1_B</a></li>
+<li><a href="htmls/HEK293T-TIM1_entry_E3E2_B_latent_effects.html">HEK293T-TIM1_entry_E3E2_B</a></li>
+<li><a href="htmls/HEK293T-TIM1_entry_6KE1_B_latent_effects.html">HEK293T-TIM1_entry_6KE1_B</a></li>
+<li><a href="htmls/HEK293T-Mxra8_entry_latent_effects.html">HEK293T-Mxra8_entry</a></li>
+<li><a href="htmls/HEK293T-TIM1_entry_latent_effects.html">HEK293T-TIM1_entry</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Interactive plots of average shifts in functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/E3E2_comparison_shifts.html">E3E2_comparison</a></li>
+<li><a href="htmls/6KE1_comparison_shifts.html">6KE1_comparison</a></li>
+</ul></details>
+
+</li>
+</ul>
+<h4 id="analysis-notebooks_2">Analysis notebooks</h4>
+<ul>
+<li><a href="notebooks/analyze_func_scores.html">Analysis of functional scores</a></li>
+<li><details><summary>Notebooks with per-selection global epistasis fitting (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-E3E2-B-241028-func-1.html">293T-Mxra8-E3E2-B-241028-func-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-E3E2-B-241028-func-2.html">293T-Mxra8-E3E2-B-241028-func-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-E3E2-B-241028-func-1.html">293T-TIM1-E3E2-B-241028-func-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-E3E2-B-241028-func-2.html">293T-TIM1-E3E2-B-241028-func-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-6KE1-B-241028-func-1.html">293T-Mxra8-6KE1-B-241028-func-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-6KE1-B-241028-func-2.html">293T-Mxra8-6KE1-B-241028-func-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-6KE1-B-241028-func-1.html">293T-TIM1-6KE1-B-241028-func-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-6KE1-B-241028-func-2.html">293T-TIM1-6KE1-B-241028-func-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG.html">293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG.html">293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG.html">293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG.html">293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG.html">293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG.html">293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG.html">293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG.html">293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Notebooks averaging mutation functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/avg_func_effects_HEK293T-Mxra8_TIM1_entry.html">HEK293T-Mxra8_TIM1_entry</a></li>
+<li><a href="notebooks/avg_func_effects_HEK293T_Mxra8_entry_E3E2_B.html">HEK293T_Mxra8_entry_E3E2_B</a></li>
+<li><a href="notebooks/avg_func_effects_HEK293T-Mxra8_entry_6KE1_B.html">HEK293T-Mxra8_entry_6KE1_B</a></li>
+<li><a href="notebooks/avg_func_effects_HEK293T-TIM1_entry_E3E2_B.html">HEK293T-TIM1_entry_E3E2_B</a></li>
+<li><a href="notebooks/avg_func_effects_HEK293T-TIM1_entry_6KE1_B.html">HEK293T-TIM1_entry_6KE1_B</a></li>
+<li><a href="notebooks/avg_func_effects_HEK293T-Mxra8_entry.html">HEK293T-Mxra8_entry</a></li>
+<li><a href="notebooks/avg_func_effects_HEK293T-TIM1_entry.html">HEK293T-TIM1_entry</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Notebooks fitting shifts in functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/func_effect_shifts_E3E2-B-1.html">E3E2-B-1</a></li>
+<li><a href="notebooks/func_effect_shifts_E3E2-B-2.html">E3E2-B-2</a></li>
+<li><a href="notebooks/func_effect_shifts_6KE1-B-1.html">6KE1-B-1</a></li>
+<li><a href="notebooks/func_effect_shifts_6KE1-B-2.html">6KE1-B-2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Notebooks averaging shifts in functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/avg_func_effect_shifts_E3E2_comparison.html">E3E2_comparison</a></li>
+<li><a href="notebooks/avg_func_effect_shifts_6KE1_comparison.html">6KE1_comparison</a></li>
+</ul></details>
+
+</li>
+</ul>
+<h4 id="data-files_2">Data files</h4>
+<ul>
+<li><details><summary>Per-variant functional score CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-E3E2-B-241028-func-1_func_scores.csv">293T-Mxra8-E3E2-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-E3E2-B-241028-func-2_func_scores.csv">293T-Mxra8-E3E2-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-E3E2-B-241028-func-1_func_scores.csv">293T-TIM1-E3E2-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-E3E2-B-241028-func-2_func_scores.csv">293T-TIM1-E3E2-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-6KE1-B-241028-func-1_func_scores.csv">293T-Mxra8-6KE1-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-6KE1-B-241028-func-2_func_scores.csv">293T-Mxra8-6KE1-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-6KE1-B-241028-func-1_func_scores.csv">293T-TIM1-6KE1-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-6KE1-B-241028-func-2_func_scores.csv">293T-TIM1-6KE1-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG_func_scores.csv">293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG_func_scores.csv">293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG_func_scores.csv">293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG_func_scores.csv">293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG_func_scores.csv">293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG_func_scores.csv">293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG_func_scores.csv">293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_scores/293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG_func_scores.csv">293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Per-selection mutation functional effect CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-E3E2-B-241028-func-1_func_effects.csv">293T-Mxra8-E3E2-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-E3E2-B-241028-func-2_func_effects.csv">293T-Mxra8-E3E2-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-E3E2-B-241028-func-1_func_effects.csv">293T-TIM1-E3E2-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-E3E2-B-241028-func-2_func_effects.csv">293T-TIM1-E3E2-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-6KE1-B-241028-func-1_func_effects.csv">293T-Mxra8-6KE1-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-6KE1-B-241028-func-2_func_effects.csv">293T-Mxra8-6KE1-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-6KE1-B-241028-func-1_func_effects.csv">293T-TIM1-6KE1-B-241028-func-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-6KE1-B-241028-func-2_func_effects.csv">293T-TIM1-6KE1-B-241028-func-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG_func_effects.csv">293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG_func_effects.csv">293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG_func_effects.csv">293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG_func_effects.csv">293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG_func_effects.csv">293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG_func_effects.csv">293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG_func_effects.csv">293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/by_selection/293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG_func_effects.csv">293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average mutation functional effects (CSV files) (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-Mxra8_TIM1_entry_func_effects.csv">HEK293T-Mxra8_TIM1_entry</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T_Mxra8_entry_E3E2_B_func_effects.csv">HEK293T_Mxra8_entry_E3E2_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-Mxra8_entry_6KE1_B_func_effects.csv">HEK293T-Mxra8_entry_6KE1_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-TIM1_entry_E3E2_B_func_effects.csv">HEK293T-TIM1_entry_E3E2_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-TIM1_entry_6KE1_B_func_effects.csv">HEK293T-TIM1_entry_6KE1_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-Mxra8_entry_func_effects.csv">HEK293T-Mxra8_entry</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-TIM1_entry_func_effects.csv">HEK293T-TIM1_entry</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average mutation latent-phenotype effects (CSV files) (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-Mxra8_TIM1_entry_func_effects.csv">HEK293T-Mxra8_TIM1_entry</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T_Mxra8_entry_E3E2_B_func_effects.csv">HEK293T_Mxra8_entry_E3E2_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-Mxra8_entry_6KE1_B_func_effects.csv">HEK293T-Mxra8_entry_6KE1_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-TIM1_entry_E3E2_B_func_effects.csv">HEK293T-TIM1_entry_E3E2_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-TIM1_entry_6KE1_B_func_effects.csv">HEK293T-TIM1_entry_6KE1_B</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-Mxra8_entry_func_effects.csv">HEK293T-Mxra8_entry</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effects/averages/HEK293T-TIM1_entry_func_effects.csv">HEK293T-TIM1_entry</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Per-condition functional effect shifts CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effect_shifts/by_comparison/E3E2-B-1_shifts.csv">E3E2-B-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effect_shifts/by_comparison/E3E2-B-2_shifts.csv">E3E2-B-2</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effect_shifts/by_comparison/6KE1-B-1_shifts.csv">6KE1-B-1</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effect_shifts/by_comparison/6KE1-B-2_shifts.csv">6KE1-B-2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average shifts in functional effects (CSV files) (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effect_shifts/averages/E3E2_comparison_shifts.csv">E3E2_comparison</a></li>
+<li><a href="https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/results/func_effect_shifts/averages/6KE1_comparison_shifts.csv">6KE1_comparison</a></li>
+</ul></details>
+
+</li>
 </ul>
