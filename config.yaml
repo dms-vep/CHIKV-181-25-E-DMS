@@ -50,7 +50,7 @@ site_numbering_map: data/site_numbering_map.csv
 # this file can be shown in the summary and average escape / functional effects
 # plots by specifying the relevant column as an additional slider stat in the
 # configuration for those plots.
-mutation_annotations: data/mutation_annotations.csv
+#mutation_annotations: null
 
 # Classify mutations into different categories, such as which ones are
 # designed to be in the library. If you don't have different categories of
@@ -114,4 +114,23 @@ codon_variants: results/variants/codon_variants.csv
 # Parameters related to counting the variants from barcode sequencing
 # ----------------------------------------------------------------------------
 
-barcode_runs: null
+barcode_runs: data/barcode_runs.csv
+
+# keyword parameters for `dms_variants.illuminabarcodeparser.IlluminaBarcodeParser`
+# https://jbloomlab.github.io/dms_variants/dms_variants.illuminabarcodeparser.html#dms_variants.illuminabarcodeparser.IlluminaBarcodeParser
+illumina_barcode_parser_params:
+  upstream: ACTCCACTAGGAACATTTCTCTCTCGAATCTAGA
+  downstream: ''
+  minq: 20
+  upstream_mismatch: 2
+
+# ----------------------------------------------------------------------------
+# Configuration related to other analyses
+# ----------------------------------------------------------------------------
+
+# For each variable, set to "null" or just don't provide if you aren't doing that type
+# of analysis. Otherwise provide path to configuration for that analysis.
+
+func_effects_config: data/func_effects_config.yml  # Functional effects of mutations
+antibody_escape_config: null  # Antibody/serum escape
+summaries_config: null #data/summaries_config.yml  # Summaries across assays
