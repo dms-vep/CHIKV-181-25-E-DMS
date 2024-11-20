@@ -180,75 +180,55 @@ avg_func_effects_default: &avg_func_effects_default
 
 # Define the functional effect conditions to average
 avg_func_effects:
-  HEK293T-Mxra8_TIM1_entry:
-    <<: *avg_func_effects_default
-    title: Mutation effects on entry into 293T-Mxra8 and 293T-TIM1 cells
-    selections:
-      - 293T-Mxra8-E3E2-B-241028-func-1
-      - 293T-Mxra8-E3E2-B-241028-func-2
-      - 293T-TIM1-E3E2-B-241028-func-1
-      - 293T-TIM1-E3E2-B-241028-func-2
-      - 293T-Mxra8-6KE1-B-241028-func-1
-      - 293T-Mxra8-6KE1-B-241028-func-2
-      - 293T-TIM1-6KE1-B-241028-func-1
-      - 293T-TIM1-6KE1-B-241028-func-2
-      - 293T-Mxra8-E3E2-A-241113-func-1
-      - 293T-Mxra8-E3E2-A-241113-func-2
-      - 293T-Mxra8-6KE1-A-241113-func-1
-      - 293T-Mxra8-6KE1-A-241113-func-2
-      - 293T-TIM1-E3E2-A-241113-func-1
-      - 293T-TIM1-E3E2-A-241113-func-2
-      - 293T-TIM1-6KE1-A-241113-func-1
-      - 293T-TIM1-6KE1-A-241113-func-2
-  HEK293T_Mxra8_entry_E3E2_B:
+  HEK293T-Mxra8_entry_E3E2_libB:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells by E3E2_B library
     selections:
       - 293T-Mxra8-E3E2-B-241028-func-1
       - 293T-Mxra8-E3E2-B-241028-func-2
-  HEK293T-Mxra8_entry_6KE1_B:
+  HEK293T-Mxra8_entry_6KE1_libB:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells by 6KE1_B library
     selections:
       - 293T-Mxra8-6KE1-B-241028-func-1
       - 293T-Mxra8-6KE1-B-241028-func-2
-  HEK293T-TIM1_entry_E3E2_B:
+  HEK293T-TIM1_entry_E3E2_libB:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells by E3E2_B library
     selections:
       - 293T-TIM1-E3E2-B-241028-func-1
       - 293T-TIM1-E3E2-B-241028-func-2
-  HEK293T-TIM1_entry_6KE1_B:
+  HEK293T-TIM1_entry_6KE1_libB:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells by 6KE1_B library
     selections:
       - 293T-TIM1-6KE1-B-241028-func-1
       - 293T-TIM1-6KE1-B-241028-func-2
-  HEK293T_Mxra8_entry_E3E2_A:
+  HEK293T-Mxra8_entry_E3E2_libA:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells by E3E2_A library
     selections:
       - 293T-Mxra8-E3E2-A-241113-func-1
       - 293T-Mxra8-E3E2-A-241113-func-2
-  HEK293T-Mxra8_entry_6KE1_A:
+  HEK293T-Mxra8_entry_6KE1_libA:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells by 6KE1_A library
     selections:
       - 293T-Mxra8-6KE1-A-241113-func-1
       - 293T-Mxra8-6KE1-A-241113-func-2
-  HEK293T-TIM1_entry_E3E2_A:
+  HEK293T-TIM1_entry_E3E2_libA:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells by E3E2_A library
     selections:
       - 293T-TIM1-E3E2-A-241113-func-1
       - 293T-TIM1-E3E2-A-241113-func-2
-  HEK293T-TIM1_entry_6KE1_A:
+  HEK293T-TIM1_entry_6KE1_libA:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells by 6KE1_A library
     selections:
       - 293T-TIM1-6KE1-A-241113-func-1
       - 293T-TIM1-6KE1-A-241113-func-2
-  HEK293T-Mxra8_entry_B:
+  HEK293T-Mxra8_entry_libB:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells 
     selections:
@@ -256,7 +236,7 @@ avg_func_effects:
       - 293T-Mxra8-E3E2-B-241028-func-2
       - 293T-Mxra8-6KE1-B-241028-func-1
       - 293T-Mxra8-6KE1-B-241028-func-2
-  HEK293T-TIM1_entry_B:
+  HEK293T-TIM1_entry_libB:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells
     selections:
@@ -264,7 +244,7 @@ avg_func_effects:
       - 293T-TIM1-E3E2-B-241028-func-2
       - 293T-TIM1-6KE1-B-241028-func-1
       - 293T-TIM1-6KE1-B-241028-func-2
-  HEK293T-Mxra8_entry_A:
+  HEK293T-Mxra8_entry_libA:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells 
     selections:
@@ -272,7 +252,7 @@ avg_func_effects:
       - 293T-Mxra8-E3E2-A-241113-func-2
       - 293T-Mxra8-6KE1-A-241113-func-1
       - 293T-Mxra8-6KE1-A-241113-func-2
-  HEK293T-TIM1_entry_A:
+  HEK293T-TIM1_entry_libA:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells
     selections:
