@@ -80,49 +80,47 @@ func_scores:
     post_selection_sample: 6KE1_B-241028-293T_TIM1_no_antibody-2
     pre_selection_sample: 6KE1_B-241028-293T_TIM1_VSVG-2 
     func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG:
-    post_selection_sample: E3E2_B-241028-293T_Mxra8_no_antibody-1
-    pre_selection_sample: E3E2_B-241028-293T_TIM1_VSVG-1
+    global_epistasis_params: *global_epistasis_params 
+  293T-Mxra8-E3E2-A-241113-func-1:
+    post_selection_sample: E3E2_A-241113-293T_Mxra8_no_antibody-1
+    pre_selection_sample: E3E2_A-241113-293T_Mxra8_VSVG-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG:
-    post_selection_sample: E3E2_B-241028-293T_Mxra8_no_antibody-2
-    pre_selection_sample: E3E2_B-241028-293T_TIM1_VSVG-2
+  293T-Mxra8-E3E2-A-241113-func-2:
+    post_selection_sample: E3E2_A-241113-293T_Mxra8_no_antibody-2
+    pre_selection_sample: E3E2_A-241113-293T_Mxra8_VSVG-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG:
-    post_selection_sample: E3E2_B-241028-293T_TIM1_no_antibody-1
-    pre_selection_sample: E3E2_B-241028-293T_Mxra8_VSVG-1
+  293T-TIM1-E3E2-A-241113-func-1:
+    post_selection_sample: E3E2_A-241113-293T_TIM1_no_antibody-1
+    pre_selection_sample: E3E2_A-241113-293T_TIM1_VSVG-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG:
-    post_selection_sample: E3E2_B-241028-293T_TIM1_no_antibody-2
-    pre_selection_sample: E3E2_B-241028-293T_Mxra8_VSVG-2
+  293T-TIM1-E3E2-A-241113-func-2:
+    post_selection_sample: E3E2_A-241113-293T_TIM1_no_antibody-2
+    pre_selection_sample: E3E2_A-241113-293T_TIM1_VSVG-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG:
-    post_selection_sample: 6KE1_B-241028-293T_Mxra8_no_antibody-1
-    pre_selection_sample: 6KE1_B-241028-293T_TIM1_VSVG-1
+  293T-Mxra8-6KE1-A-241113-func-1:
+    post_selection_sample: 6KE1_A-241113-293T_Mxra8_no_antibody-1
+    pre_selection_sample: 6KE1_A-241113-293T_Mxra8_VSVG-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG:
-    post_selection_sample: 6KE1_B-241028-293T_Mxra8_no_antibody-2
-    pre_selection_sample: 6KE1_B-241028-293T_TIM1_VSVG-2
+  293T-Mxra8-6KE1-A-241113-func-2:
+    post_selection_sample: 6KE1_A-241113-293T_Mxra8_no_antibody-2
+    pre_selection_sample: 6KE1_A-241113-293T_Mxra8_VSVG-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG:
-    post_selection_sample: 6KE1_B-241028-293T_TIM1_no_antibody-1
-    pre_selection_sample: 6KE1_B-241028-293T_Mxra8_VSVG-1
+  293T-TIM1-6KE1-A-241113-func-1:
+    post_selection_sample: 6KE1_A-241113-293T_TIM1_no_antibody-1
+    pre_selection_sample: 6KE1_A-241113-293T_TIM1_VSVG-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG:
-    post_selection_sample: 6KE1_B-241028-293T_TIM1_no_antibody-2
-    pre_selection_sample: 6KE1_B-241028-293T_Mxra8_VSVG-2 
+  293T-TIM1-6KE1-A-241113-func-2:
+    post_selection_sample: 6KE1_A-241113-293T_TIM1_no_antibody-2
+    pre_selection_sample: 6KE1_A-241113-293T_TIM1_VSVG-2
     func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params  
-
-
+    global_epistasis_params: *global_epistasis_params
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
@@ -194,46 +192,94 @@ avg_func_effects:
       - 293T-Mxra8-6KE1-B-241028-func-2
       - 293T-TIM1-6KE1-B-241028-func-1
       - 293T-TIM1-6KE1-B-241028-func-2
-      - 293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG
-      - 293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG
-      - 293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG
-      - 293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG
-      - 293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG
-      - 293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG
-      - 293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG
-      - 293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG
+      - 293T-Mxra8-E3E2-A-241113-func-1
+      - 293T-Mxra8-E3E2-A-241113-func-2
+      - 293T-Mxra8-6KE1-A-241113-func-1
+      - 293T-Mxra8-6KE1-A-241113-func-2
+      - 293T-TIM1-E3E2-A-241113-func-1
+      - 293T-TIM1-E3E2-A-241113-func-2
+      - 293T-TIM1-6KE1-A-241113-func-1
+      - 293T-TIM1-6KE1-A-241113-func-2
   HEK293T_Mxra8_entry_E3E2_B:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells by E3E2_B library
     selections:
       - 293T-Mxra8-E3E2-B-241028-func-1
       - 293T-Mxra8-E3E2-B-241028-func-2
-      - 293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG
-      - 293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG
   HEK293T-Mxra8_entry_6KE1_B:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells by 6KE1_B library
     selections:
       - 293T-Mxra8-6KE1-B-241028-func-1
       - 293T-Mxra8-6KE1-B-241028-func-2
-      - 293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG
-      - 293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG
   HEK293T-TIM1_entry_E3E2_B:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells by E3E2_B library
     selections:
       - 293T-TIM1-E3E2-B-241028-func-1
       - 293T-TIM1-E3E2-B-241028-func-2
-      - 293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG
-      - 293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG
   HEK293T-TIM1_entry_6KE1_B:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells by 6KE1_B library
     selections:
       - 293T-TIM1-6KE1-B-241028-func-1
       - 293T-TIM1-6KE1-B-241028-func-2
-      - 293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG
-      - 293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG  
+  HEK293T_Mxra8_entry_E3E2_A:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-Mxra8 cells by E3E2_A library
+    selections:
+      - 293T-Mxra8-E3E2-A-241113-func-1
+      - 293T-Mxra8-E3E2-A-241113-func-2
+  HEK293T-Mxra8_entry_6KE1_A:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-Mxra8 cells by 6KE1_A library
+    selections:
+      - 293T-Mxra8-6KE1-A-241113-func-1
+      - 293T-Mxra8-6KE1-A-241113-func-2
+  HEK293T-TIM1_entry_E3E2_A:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-TIM1 cells by E3E2_A library
+    selections:
+      - 293T-TIM1-E3E2-A-241113-func-1
+      - 293T-TIM1-E3E2-A-241113-func-2
+  HEK293T-TIM1_entry_6KE1_A:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-TIM1 cells by 6KE1_A library
+    selections:
+      - 293T-TIM1-6KE1-A-241113-func-1
+      - 293T-TIM1-6KE1-A-241113-func-2
+  HEK293T-Mxra8_entry_B:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-Mxra8 cells 
+    selections:
+      - 293T-Mxra8-E3E2-B-241028-func-1
+      - 293T-Mxra8-E3E2-B-241028-func-2
+      - 293T-Mxra8-6KE1-B-241028-func-1
+      - 293T-Mxra8-6KE1-B-241028-func-2
+  HEK293T-TIM1_entry_B:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-TIM1 cells
+    selections:
+      - 293T-TIM1-E3E2-B-241028-func-1
+      - 293T-TIM1-E3E2-B-241028-func-2
+      - 293T-TIM1-6KE1-B-241028-func-1
+      - 293T-TIM1-6KE1-B-241028-func-2
+  HEK293T-Mxra8_entry_A:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-Mxra8 cells 
+    selections:
+      - 293T-Mxra8-E3E2-A-241113-func-1
+      - 293T-Mxra8-E3E2-A-241113-func-2
+      - 293T-Mxra8-6KE1-A-241113-func-1
+      - 293T-Mxra8-6KE1-A-241113-func-2
+  HEK293T-TIM1_entry_A:
+    <<: *avg_func_effects_default
+    title: Mutation effects on entry into 293T-TIM1 cells
+    selections:
+      - 293T-TIM1-E3E2-A-241113-func-1
+      - 293T-TIM1-E3E2-A-241113-func-2
+      - 293T-TIM1-6KE1-A-241113-func-1
+      - 293T-TIM1-6KE1-A-241113-func-2
   HEK293T-Mxra8_entry:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-Mxra8 cells 
@@ -242,10 +288,10 @@ avg_func_effects:
       - 293T-Mxra8-E3E2-B-241028-func-2
       - 293T-Mxra8-6KE1-B-241028-func-1
       - 293T-Mxra8-6KE1-B-241028-func-2
-      - 293T-Mxra8-E3E2-B-241028-func-1-TIM1-VSVG
-      - 293T-Mxra8-E3E2-B-241028-func-2-TIM1-VSVG
-      - 293T-Mxra8-6KE1-B-241028-func-1-TIM1-VSVG
-      - 293T-Mxra8-6KE1-B-241028-func-2-TIM1-VSVG
+      - 293T-Mxra8-E3E2-A-241113-func-1
+      - 293T-Mxra8-E3E2-A-241113-func-2
+      - 293T-Mxra8-6KE1-A-241113-func-1
+      - 293T-Mxra8-6KE1-A-241113-func-2
   HEK293T-TIM1_entry:
     <<: *avg_func_effects_default
     title: Mutation effects on entry into 293T-TIM1 cells
@@ -254,11 +300,10 @@ avg_func_effects:
       - 293T-TIM1-E3E2-B-241028-func-2
       - 293T-TIM1-6KE1-B-241028-func-1
       - 293T-TIM1-6KE1-B-241028-func-2
-      - 293T-TIM1-E3E2-B-241028-func-1-Mxra8-VSVG
-      - 293T-TIM1-E3E2-B-241028-func-2-Mxra8-VSVG
-      - 293T-TIM1-6KE1-B-241028-func-1-Mxra8-VSVG
-      - 293T-TIM1-6KE1-B-241028-func-2-Mxra8-VSVG
-
+      - 293T-TIM1-E3E2-A-241113-func-1
+      - 293T-TIM1-E3E2-A-241113-func-2
+      - 293T-TIM1-6KE1-A-241113-func-1
+      - 293T-TIM1-6KE1-A-241113-func-2
 
 # --------------------------------------------------------------------------------------
 # Configuration for func effect shifts from `multidms` models comparing conditions.
@@ -298,26 +343,49 @@ func_effect_shifts:
     reference: 293T-Mxra8-E3E2-B
     conditions:
       293T-Mxra8-E3E2-B: 293T-Mxra8-E3E2-B-241028-func-1
-      293T-TIM1: 293T-TIM1-E3E2-B-241028-func-1
-
+      293T-TIM1-E3E2-B: 293T-TIM1-E3E2-B-241028-func-1
   E3E2-B-2:
     <<: *func_effect_shifts_default
     reference: 293T-Mxra8-E3E2-B
     conditions:
       293T-Mxra8-E3E2-B: 293T-Mxra8-E3E2-B-241028-func-2
-      293T-TIM1: 293T-TIM1-E3E2-B-241028-func-2
+      293T-TIM1-E3E2-B: 293T-TIM1-E3E2-B-241028-func-2
   6KE1-B-1:
     <<: *func_effect_shifts_default
     reference: 293T-Mxra8-6KE1-B
     conditions:
       293T-Mxra8-6KE1-B: 293T-Mxra8-6KE1-B-241028-func-1
-      293T-TIM1: 293T-TIM1-6KE1-B-241028-func-1
+      293T-TIM1-6KE1-B: 293T-TIM1-6KE1-B-241028-func-1
   6KE1-B-2:
     <<: *func_effect_shifts_default
     reference: 293T-Mxra8-6KE1-B
     conditions:
       293T-Mxra8-6KE1-B: 293T-Mxra8-6KE1-B-241028-func-2
-      293T-TIM1: 293T-TIM1-6KE1-B-241028-func-2
+      293T-TIM1-6KE1-B: 293T-TIM1-6KE1-B-241028-func-2
+  E3E2-A-1:
+    <<: *func_effect_shifts_default
+    reference: 293T-Mxra8-E3E2-A
+    conditions:
+      293T-Mxra8-E3E2-A: 293T-Mxra8-E3E2-A-241113-func-1
+      293T-TIM1-E3E2-A: 293T-TIM1-E3E2-A-241113-func-1
+  E3E2-A-2:
+    <<: *func_effect_shifts_default
+    reference: 293T-Mxra8-E3E2-A
+    conditions:
+      293T-Mxra8-E3E2-A: 293T-Mxra8-E3E2-A-241113-func-2
+      293T-TIM1-E3E2-A: 293T-TIM1-E3E2-A-241113-func-2
+  6KE1-A-1:
+    <<: *func_effect_shifts_default
+    reference: 293T-Mxra8-6KE1-A
+    conditions:
+      293T-Mxra8-6KE1-A: 293T-Mxra8-6KE1-A-241113-func-1
+      293T-TIM1-6KE1-A: 293T-TIM1-6KE1-A-241113-func-1
+  6KE1-A-2:
+    <<: *func_effect_shifts_default
+    reference: 293T-Mxra8-6KE1-A
+    conditions:
+      293T-Mxra8-6KE1-A: 293T-Mxra8-6KE1-A-241113-func-2
+      293T-TIM1-6KE1-A: 293T-TIM1-6KE1-A-241113-func-2
 
 
 
@@ -371,7 +439,7 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
     (*minimum n_comparisons*), what site summary statistic to show, etc.
 # Define the functional effect conditions to average
 avg_func_effect_shifts:
-  E3E2_comparison:
+  E3E2_B_comparison:
     <<: *avg_func_effect_shifts_default
     title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
     comparisons:
@@ -380,10 +448,28 @@ avg_func_effect_shifts:
     lasso_shift: 0.0001
 
     avg_func_effect_shifts:
-  6KE1_comparison:
+  6KE1_B_comparison:
     <<: *avg_func_effect_shifts_default
     title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
     comparisons:
       - 6KE1-B-1
       - 6KE1-B-2
+    lasso_shift: 0.0001
+
+    avg_func_effect_shifts:
+  E3E2_A_comparison:
+    <<: *avg_func_effect_shifts_default
+    title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
+    comparisons:
+      - E3E2-A-1
+      - E3E2-A-2
+    lasso_shift: 0.0001
+
+    avg_func_effect_shifts:
+  6KE1_A_comparison:
+    <<: *avg_func_effect_shifts_default
+    title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
+    comparisons:
+      - 6KE1-A-1
+      - 6KE1-A-2
     lasso_shift: 0.0001
