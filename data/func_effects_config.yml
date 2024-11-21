@@ -333,8 +333,6 @@ func_effect_shifts:
       293T-Mxra8-6KE1-A: 293T-Mxra8-6KE1-A-241113-func-2
       293T-TIM1-6KE1-A: 293T-TIM1-6KE1-A-241113-func-2
 
-
-
 # --------------------------------------------------------------------------------------
 # Configuration for averaging func effect shifts from multiple comparisons.
 # --------------------------------------------------------------------------------------
