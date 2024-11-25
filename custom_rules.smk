@@ -39,5 +39,5 @@ rule format_func_effects_dms_viz:
 
 # Files (Jupyter notebooks, HTML plots, or CSVs) that you want included in
 # the HTML docs should be added to the nested dict `docs`:
-other_target_files.append(os.path.join("results/dms-viz/CHIKV181E_E3E2_functional_effect_shifts.json"))
-other_target_files.append(os.path.join("results/dms-viz/CHIKV181E_6KE1_functional_effect_shifts.json"))
+#other_target_files.append(os.path.join("results/dms-viz/CHIKV181E_E3E2_functional_effect_shifts.json"))
+#other_target_files.append(os.path.join("results/dms-viz/CHIKV181E_6KE1_functional_effect_shifts.json"))
