@@ -1,0 +1,11 @@
+name: dms-viz
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python
+  - pip
+  - pip:
+    - configure-dms-viz
