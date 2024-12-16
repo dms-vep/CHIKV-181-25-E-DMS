@@ -150,6 +150,11 @@ func_scores:
 # Average/plot mutation functional effects from different selections w `avg_func_effects`
 # Each key is a condition which has the following values:
 #  - `selections`: list of selections for which we average mutation functional effects
+#                  or if you only want to average some sites for a given selection then
+#                  a dict keyed by the selection name and with the value being the sites
+#                  to include from this selection. Sites should be specified as *sequential*
+#                  sites as a list of site numbers or lists of inclusive ranges (so
+#                  [1, [3, 5]] means [1, 3, 4, 5])
 #  - `avg_method`: how to average across the selections, options are "median" and "mean"
 #  - `per_selection_tooltips`: whether to show per-selection effects via tooltips
 #  - `floor_for_effect_std`: before computing effect std, floor effects at this value.
@@ -180,113 +185,35 @@ avg_func_effects_default: &avg_func_effects_default
 
 # Define the functional effect conditions to average
 avg_func_effects:
-  HEK293T-Mxra8_entry_E3E2_libB:
+  293T-Mxra8_entry:
     <<: *avg_func_effects_default
     selections:
-      - 293T-Mxra8-E3E2-B-241028-func-1
-      - 293T-Mxra8-E3E2-B-241028-func-2
-  HEK293T-Mxra8_entry_6KE1_libB:
+      293T-Mxra8-E3E2-A-241113-func-1: [[1, 488]]
+      293T-Mxra8-E3E2-A-241113-func-2: [[1, 488]]
+      293T-Mxra8-E3E2-B-241028-func-1: [[1, 488]]
+      293T-Mxra8-E3E2-B-241028-func-2: [[1, 488]]
+      293T-Mxra8-6KE1-A-241113-func-1: [[489, 989]]
+      293T-Mxra8-6KE1-A-241113-func-2: [[489, 989]]
+      293T-Mxra8-6KE1-B-241028-func-1: [[489, 989]]
+      293T-Mxra8-6KE1-B-241028-func-2: [[489, 989]]
+  293T-TIM1_entry:
     <<: *avg_func_effects_default
     selections:
-      - 293T-Mxra8-6KE1-B-241028-func-1
-      - 293T-Mxra8-6KE1-B-241028-func-2
-  HEK293T-TIM1_entry_E3E2_libB:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-TIM1-E3E2-B-241028-func-1
-      - 293T-TIM1-E3E2-B-241028-func-2
-  HEK293T-TIM1_entry_6KE1_libB:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-TIM1-6KE1-B-241028-func-1
-      - 293T-TIM1-6KE1-B-241028-func-2
-  HEK293T-Mxra8_entry_E3E2_libA:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-Mxra8-E3E2-A-241113-func-1
-      - 293T-Mxra8-E3E2-A-241113-func-2
-  HEK293T-Mxra8_entry_6KE1_libA:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-Mxra8-6KE1-A-241113-func-1
-      - 293T-Mxra8-6KE1-A-241113-func-2
-  HEK293T-TIM1_entry_E3E2_libA:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-TIM1-E3E2-A-241113-func-1
-      - 293T-TIM1-E3E2-A-241113-func-2
-  HEK293T-TIM1_entry_6KE1_libA:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-TIM1-6KE1-A-241113-func-1
-      - 293T-TIM1-6KE1-A-241113-func-2
-  HEK293T-Mxra8_entry_libB:
+      293T-TIM1-E3E2-A-241113-func-1: [[1, 488]]
+      293T-TIM1-E3E2-A-241113-func-2: [[1, 488]]
+      293T-TIM1-E3E2-B-241028-func-1: [[1, 488]]
+      293T-TIM1-E3E2-B-241028-func-2: [[1, 488]]
+      293T-TIM1-6KE1-A-241113-func-1: [[489, 989]]
+      293T-TIM1-6KE1-A-241113-func-2: [[489, 989]]
+      293T-TIM1-6KE1-B-241028-func-1: [[489, 989]]
+      293T-TIM1-6KE1-B-241028-func-2: [[489, 989]]
+  C636_entry:
     <<: *avg_func_effects_default 
     selections:
-      - 293T-Mxra8-E3E2-B-241028-func-1
-      - 293T-Mxra8-E3E2-B-241028-func-2
-      - 293T-Mxra8-6KE1-B-241028-func-1
-      - 293T-Mxra8-6KE1-B-241028-func-2
-  HEK293T-TIM1_entry_libB:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-TIM1-E3E2-B-241028-func-1
-      - 293T-TIM1-E3E2-B-241028-func-2
-      - 293T-TIM1-6KE1-B-241028-func-1
-      - 293T-TIM1-6KE1-B-241028-func-2
-  HEK293T-Mxra8_entry_libA:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-Mxra8-E3E2-A-241113-func-1
-      - 293T-Mxra8-E3E2-A-241113-func-2
-      - 293T-Mxra8-6KE1-A-241113-func-1
-      - 293T-Mxra8-6KE1-A-241113-func-2
-  HEK293T-TIM1_entry_libA:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-TIM1-E3E2-A-241113-func-1
-      - 293T-TIM1-E3E2-A-241113-func-2
-      - 293T-TIM1-6KE1-A-241113-func-1
-      - 293T-TIM1-6KE1-A-241113-func-2
-  HEK293T-Mxra8_entry:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-Mxra8-E3E2-B-241028-func-1
-      - 293T-Mxra8-E3E2-B-241028-func-2
-      - 293T-Mxra8-6KE1-B-241028-func-1
-      - 293T-Mxra8-6KE1-B-241028-func-2
-      - 293T-Mxra8-E3E2-A-241113-func-1
-      - 293T-Mxra8-E3E2-A-241113-func-2
-      - 293T-Mxra8-6KE1-A-241113-func-1
-      - 293T-Mxra8-6KE1-A-241113-func-2
-  HEK293T-TIM1_entry:
-    <<: *avg_func_effects_default
-    selections:
-      - 293T-TIM1-E3E2-B-241028-func-1
-      - 293T-TIM1-E3E2-B-241028-func-2
-      - 293T-TIM1-6KE1-B-241028-func-1
-      - 293T-TIM1-6KE1-B-241028-func-2
-      - 293T-TIM1-E3E2-A-241113-func-1
-      - 293T-TIM1-E3E2-A-241113-func-2
-      - 293T-TIM1-6KE1-A-241113-func-1
-      - 293T-TIM1-6KE1-A-241113-func-2
-  C636_entry_libB:
-    <<: *avg_func_effects_default 
-    selections:
-      - C636-E3E2-B-241122-func-1
-      - C636-E3E2-B-241122-func-2
-      - C636-6KE1-B-241122-func-1
-      - C636-6KE1-B-241122-func-2
-  C636_entry_E3E2_libB:
-    <<: *avg_func_effects_default
-    selections:
-      - C636-E3E2-B-241122-func-1
-      - C636-E3E2-B-241122-func-2
-  C636_entry_6KE1_libB:
-    <<: *avg_func_effects_default
-    selections:
-      - C636-6KE1-B-241122-func-1
-      - C636-6KE1-B-241122-func-2
+      C636-E3E2-B-241122-func-1: [[1, 488]]
+      C636-E3E2-B-241122-func-2: [[1, 488]]
+      C636-6KE1-B-241122-func-1: [[489, 989]]
+      C636-6KE1-B-241122-func-2: [[489, 989]]
 
 # --------------------------------------------------------------------------------------
 # Configuration for func effect shifts from `multidms` models comparing conditions.
@@ -400,9 +327,11 @@ func_effect_shifts:
 
 # Define `func_effect_shifts` comparisons to average. `avg_func_effect_shifts` is keyed
 # by name of averaged comparisons. Keys within that are:
-#  - `title`: title of comparisons being averaged
 #  - `comparisons`: list of comparisons from `func_effect_shifts`, must have same
-#                   condition names, lasso shifts, and reference.
+#                   condition names, lasso shifts, and reference. If you want to take
+#                   only specific regions from a comparison in the averages, then
+#                   make this a dict with values the sequential site regions as
+#                   for `avg_func_effects`.
 #  - `lasso_shift`: the single lasso shift to use for the final averaged values.
 #  - `avg_method`: how to average across the selections, options are "median" and "mean"
 #  - `plot_kwargs`: keyword arguments passed to `polyclonal.plot.lineplot_and_heatmap`
@@ -429,52 +358,24 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
 
 # Define the functional effect conditions to average
 avg_func_effect_shifts:
-  293T-TIM1-Mxra8-E3E2_B_comparison:
+  293T-TIM1_vs_293T-Mxra8:
     <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
     comparisons:
-      - 293T-TIM1-Mxra8-E3E2-B-1
-      - 293T-TIM1-Mxra8-E3E2-B-2
+      293T-TIM1-Mxra8-E3E2-A-1: [[1, 488]]
+      293T-TIM1-Mxra8-E3E2-A-2: [[1, 488]]
+      293T-TIM1-Mxra8-E3E2-B-1: [[1, 488]]
+      293T-TIM1-Mxra8-E3E2-B-2: [[1, 488]]
+      293T-TIM1-Mxra8-6KE1-A-1: [[489, 989]]
+      293T-TIM1-Mxra8-6KE1-A-2: [[489, 989]]
+      293T-TIM1-Mxra8-6KE1-B-1: [[489, 989]]
+      293T-TIM1-Mxra8-6KE1-B-2: [[489, 989]]
     lasso_shift: 0.0001
-
-    avg_func_effect_shifts:
-  293T-TIM1-Mxra8-6KE1_B_comparison:
+  C636_vs_293T-Mxra8:
     <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
     comparisons:
-      - 293T-TIM1-Mxra8-6KE1-B-1
-      - 293T-TIM1-Mxra8-6KE1-B-2
-    lasso_shift: 0.0001
-
-    avg_func_effect_shifts:
-  293T-TIM1-Mxra8-E3E2_A_comparison:
-    <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
-    comparisons:
-      - 293T-TIM1-Mxra8-E3E2-A-1
-      - 293T-TIM1-Mxra8-E3E2-A-2
-    lasso_shift: 0.0001
-
-    avg_func_effect_shifts:
-  293T-TIM1-Mxra8-6KE1_A_comparison:
-    <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in 293T cells expressing Mxra8 or TIM1
-    comparisons:
-      - 293T-TIM1-Mxra8-6KE1-A-1
-      - 293T-TIM1-Mxra8-6KE1-A-2
-    lasso_shift: 0.0001
-  C636-293T-Mxra8-E3E2_B_comparison:
-    <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in 293T cells expressing Mxra8 or C636
-    comparisons:
-      - C636-293T-Mxra8-E3E2-B-1
-      - C636-293T-Mxra8-E3E2-B-2
-    lasso_shift: 0.0001
-  C636-293T-Mxra8-6KE1_B_comparison:
-    <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects in 293T cells expressing Mxra8 or C636
-    comparisons:
-      - C636-293T-Mxra8-6KE1-B-1
-      - C636-293T-Mxra8-6KE1-B-2
+      C636-293T-Mxra8-E3E2-B-1: [[1, 488]]
+      C636-293T-Mxra8-E3E2-B-2: [[1, 488]]
+      C636-293T-Mxra8-6KE1-B-1: [[489, 989]]
+      C636-293T-Mxra8-6KE1-B-2: [[489, 989]]
     lasso_shift: 0.0001
 
