@@ -1,4 +1,4 @@
-latent_phenotype_effect,shift_C636-E3E2-B,times_seen_293T-Mxra8-E3E2-B,times_seen_C636-E3E2-B,wildtype,site,mutant,lasso_shift
+latent_phenotype_effect,shift_C636,times_seen_293T-Mxra8,times_seen_C636,wildtype,site,mutant,lasso_shift
 -5.198,-0.7568,17,17,M,1,I,1e-05
 0,0,,,M,1,M,1e-05
 -2.333,-2.173,4,4,M,1,T,1e-05
