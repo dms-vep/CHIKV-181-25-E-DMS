@@ -250,76 +250,76 @@ func_effect_shifts_default: &func_effect_shifts_default
 func_effect_shifts:
   293T-TIM1-Mxra8-E3E2-B-1:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-E3E2-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-E3E2-B: 293T-Mxra8-E3E2-B-241028-func-1
-      293T-TIM1-E3E2-B: 293T-TIM1-E3E2-B-241028-func-1
+      293T-Mxra8: 293T-Mxra8-E3E2-B-241028-func-1
+      293T-TIM1: 293T-TIM1-E3E2-B-241028-func-1
   293T-TIM1-Mxra8-E3E2-B-2:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-E3E2-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-E3E2-B: 293T-Mxra8-E3E2-B-241028-func-2
-      293T-TIM1-E3E2-B: 293T-TIM1-E3E2-B-241028-func-2
+      293T-Mxra8: 293T-Mxra8-E3E2-B-241028-func-2
+      293T-TIM1: 293T-TIM1-E3E2-B-241028-func-2
   293T-TIM1-Mxra8-6KE1-B-1:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-6KE1-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-6KE1-B: 293T-Mxra8-6KE1-B-241028-func-1
-      293T-TIM1-6KE1-B: 293T-TIM1-6KE1-B-241028-func-1
+      293T-Mxra8: 293T-Mxra8-6KE1-B-241028-func-1
+      293T-TIM1: 293T-TIM1-6KE1-B-241028-func-1
   293T-TIM1-Mxra8-6KE1-B-2:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-6KE1-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-6KE1-B: 293T-Mxra8-6KE1-B-241028-func-2
-      293T-TIM1-6KE1-B: 293T-TIM1-6KE1-B-241028-func-2
+      293T-Mxra8: 293T-Mxra8-6KE1-B-241028-func-2
+      293T-TIM1: 293T-TIM1-6KE1-B-241028-func-2
   293T-TIM1-Mxra8-E3E2-A-1:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-E3E2-A
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-E3E2-A: 293T-Mxra8-E3E2-A-241113-func-1
-      293T-TIM1-E3E2-A: 293T-TIM1-E3E2-A-241113-func-1
+      293T-Mxra8: 293T-Mxra8-E3E2-A-241113-func-1
+      293T-TIM1: 293T-TIM1-E3E2-A-241113-func-1
   293T-TIM1-Mxra8-E3E2-A-2:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-E3E2-A
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-E3E2-A: 293T-Mxra8-E3E2-A-241113-func-2
-      293T-TIM1-E3E2-A: 293T-TIM1-E3E2-A-241113-func-2
+      293T-Mxra8: 293T-Mxra8-E3E2-A-241113-func-2
+      293T-TIM1: 293T-TIM1-E3E2-A-241113-func-2
   293T-TIM1-Mxra8-6KE1-A-1:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-6KE1-A
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-6KE1-A: 293T-Mxra8-6KE1-A-241113-func-1
-      293T-TIM1-6KE1-A: 293T-TIM1-6KE1-A-241113-func-1
+      293T-Mxra8: 293T-Mxra8-6KE1-A-241113-func-1
+      293T-TIM1: 293T-TIM1-6KE1-A-241113-func-1
   293T-TIM1-Mxra8-6KE1-A-2:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-6KE1-A
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-6KE1-A: 293T-Mxra8-6KE1-A-241113-func-2
-      293T-TIM1-6KE1-A: 293T-TIM1-6KE1-A-241113-func-2
+      293T-Mxra8: 293T-Mxra8-6KE1-A-241113-func-2
+      293T-TIM1: 293T-TIM1-6KE1-A-241113-func-2
   C636-293T-Mxra8-E3E2-B-1:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-E3E2-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-E3E2-B: 293T-Mxra8-E3E2-B-241028-func-1
-      C636-E3E2-B: C636-E3E2-B-241122-func-1
+      293T-Mxra8: 293T-Mxra8-E3E2-B-241028-func-1
+      C636: C636-E3E2-B-241122-func-1
   C636-293T-Mxra8-E3E2-B-2:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-E3E2-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-E3E2-B: 293T-Mxra8-E3E2-B-241028-func-2
-      C636-E3E2-B: C636-E3E2-B-241122-func-2
+      293T-Mxra8: 293T-Mxra8-E3E2-B-241028-func-2
+      C636: C636-E3E2-B-241122-func-2
   C636-293T-Mxra8-6KE1-B-1:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-6KE1-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-6KE1-B: 293T-Mxra8-6KE1-B-241028-func-1
-      C636-6KE1-B: C636-6KE1-B-241122-func-1
+      293T-Mxra8: 293T-Mxra8-6KE1-B-241028-func-1
+      C636: C636-6KE1-B-241122-func-1
   C636-293T-Mxra8-6KE1-B-2:
     <<: *func_effect_shifts_default
-    reference: 293T-Mxra8-6KE1-B
+    reference: 293T-Mxra8
     conditions:
-      293T-Mxra8-6KE1-B: 293T-Mxra8-6KE1-B-241028-func-2
-      C636-6KE1-B: C636-6KE1-B-241122-func-2
+      293T-Mxra8: 293T-Mxra8-6KE1-B-241028-func-2
+      C636: C636-6KE1-B-241122-func-2
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging func effect shifts from multiple comparisons.
