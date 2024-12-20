@@ -431,3 +431,107 @@ avg_func_effect_shifts:
       C636-293T-Mxra8-6KE1-B-2: [[489, 989]]
     lasso_shift: 0.0001
 
+# --------------------------------------------------------------------------------------
+# Configuration for the simple difference of func effects from different conditions
+# --------------------------------------------------------------------------------------
+
+# Compute simple difference between average functional effects for different conditions.
+# The difference is condition_1 minus condition_2. If you do not want to do this comparison,
+# set `func_effect_diffs` to `null` or just leave it out altogether.
+#
+# Each key is a comparison. Under that name, you should have the following keys:
+#  - `condition_1`: first condition, keys are name and selection (which gives list of selections,
+#                   or if you want to take specific regions for a selection then a dict with values
+#                   giving the sequential-site regions as for `avg_func_effects`)
+#  - `condition_2`: second condition, keys are name and selection (which gives list of selections)
+#  - `avg_method`: how to average across selections for a condition, "median" or "mean"
+#  - `plot_kwargs`: keyword arguments passed to `polyclonal.plot.lineplot_and_heatmap`
+
+func_effect_diffs:
+
+  293T-TIM1_vs_293T-Mxra8:
+    avg_method: median
+    plot_kwargs:
+      addtl_slider_stats:
+        times_seen: 2
+        fraction_pairs_w_mutation: 0.75  # fraction of all pairs between conditions w mutation
+        best_effect: -2  # effect must be >= for at least one condition
+        293T-TIM1 effect: -2
+        293T-Mxra8 effect: -2
+      addtl_slider_stats_hide_not_filter: [best_effect, 293T-TIM1 effect, 293T-Mxra8 effect]
+      heatmap_max_at_least: 1
+      heatmap_min_at_least: -1
+      init_floor_at_zero: false
+      init_site_statistic: mean_abs
+      site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
+      slider_binding_range_kwargs:
+        times_seen:
+          step: 1
+          min: 1
+          max: 25
+    condition_1:
+      name: 293T-TIM1
+      selections:
+        293T-TIM1-E3E2-A-241113-func-1: [[1, 488]]
+        293T-TIM1-E3E2-A-241113-func-2: [[1, 488]]
+        293T-TIM1-E3E2-B-241028-func-1: [[1, 488]]
+        293T-TIM1-E3E2-B-241028-func-2: [[1, 488]]
+        293T-TIM1-6KE1-A-241113-func-1: [[489, 989]]
+        293T-TIM1-6KE1-A-241113-func-2: [[489, 989]]
+        293T-TIM1-6KE1-B-241028-func-1: [[489, 989]]
+        293T-TIM1-6KE1-B-241028-func-2: [[489, 989]]
+    condition_2:
+      name: 293T-Mxra8
+      selections:
+        293T-Mxra8-E3E2-A-241113-func-1: [[1, 488]]
+        293T-Mxra8-E3E2-A-241113-func-2: [[1, 488]]
+        293T-Mxra8-E3E2-B-241028-func-1: [[1, 488]]
+        293T-Mxra8-E3E2-B-241028-func-2: [[1, 488]]
+        293T-Mxra8-6KE1-A-241113-func-1: [[489, 989]]
+        293T-Mxra8-6KE1-A-241113-func-2: [[489, 989]]
+        293T-Mxra8-6KE1-B-241028-func-1: [[489, 989]]
+        293T-Mxra8-6KE1-B-241028-func-2: [[489, 989]]
+
+  C636_vs_293T-Mxra8:
+    avg_method: median
+    per_selection_tooltips: true
+    plot_kwargs:
+      addtl_slider_stats:
+        times_seen: 2
+        fraction_pairs_w_mutation: 0.75  # fraction of all pairs between conditions w mutation
+        best_effect: -2  # effect must be >= for at least one condition
+        C636 effect: -2
+        293T-Mxra8 effect: -2
+      addtl_slider_stats_hide_not_filter: [best_effect, C636 effect, 293T-Mxra8 effect]
+      heatmap_max_at_least: 1
+      heatmap_min_at_least: -1
+      init_floor_at_zero: false
+      init_site_statistic: mean_abs
+      site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
+      slider_binding_range_kwargs:
+        times_seen:
+          step: 1
+          min: 1
+          max: 25
+    condition_1:
+      name: C636
+      selections:
+        C636-E3E2-B-241122-func-1: [[1, 488]]
+        C636-E3E2-B-241122-func-2: [[1, 488]]
+        C636-6KE1-B-241122-func-1: [[489, 989]]
+        C636-6KE1-B-241122-func-2: [[489, 989]]
+        C636-E3E2-A-241212-func-1: [[1, 488]]
+        C636-E3E2-A-241212-func-2: [[1, 488]]
+        C636-6KE1-A-241212-func-1: [[489, 989]]
+        C636-6KE1-A-241212-func-2: [[489, 989]]
+    condition_2:
+      name: 293T-Mxra8
+      selections:
+        293T-Mxra8-E3E2-A-241113-func-1: [[1, 488]]
+        293T-Mxra8-E3E2-A-241113-func-2: [[1, 488]]
+        293T-Mxra8-E3E2-B-241028-func-1: [[1, 488]]
+        293T-Mxra8-E3E2-B-241028-func-2: [[1, 488]]
+        293T-Mxra8-6KE1-A-241113-func-1: [[489, 989]]
+        293T-Mxra8-6KE1-A-241113-func-2: [[489, 989]]
+        293T-Mxra8-6KE1-B-241028-func-1: [[489, 989]]
+        293T-Mxra8-6KE1-B-241028-func-2: [[489, 989]]
