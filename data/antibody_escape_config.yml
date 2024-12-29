@@ -72,12 +72,12 @@ prob_escape_filters_default: &prob_escape_filters_default
   # error if sample used in fit doesn't have >= this many neut standard counts and
   # >= this fraction of all counts from neut standard.
   min_neut_standard_count: 1000
-  min_neut_standard_frac: 0.0001
+  min_neut_standard_frac: 0.001
   # Only retain for fitting variants with at least this many counts and this fraction
   # of total counts in the no-antibody sample **OR** the indicated counts and fraction
   # of total counts in the antibody sample.
   min_no_antibody_count: 20  # make bigger for real experiments, say 20
-  min_no_antibody_frac: 0.000001  # make smaller for large libraries, say ~0.1 / (library size)
+  min_no_antibody_frac: 0.0000005  # make smaller for large libraries, say ~0.1 / (library size)
   min_antibody_count: 300  # make bigger for real experiments, say 100
   min_antibody_frac: 0.0001  # make smaller for large libraries, say ~10 / (library size)
   # For averaging and plotting the mean probability (fraction) escape across variants, use
@@ -126,24 +126,24 @@ plot_hide_stats_default: &plot_hide_stats_default
 antibody_selections:
   # ---------------------------------------------------------------------------------
   # rCHKV8
-  E3E26KE1_A-241223-rCHKV8:
+  E_A-241223-rCHKV8:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *plot_hide_stats_default
-    no_antibody_sample: E3E26KE1_A-241223-293T_Mxra8-rCHKV8-0-1
+    no_antibody_sample: E_A-241223-293T_Mxra8-rCHKV8-0-1
     antibody_samples:
-     E3E26KE1_A-241223-293T_Mxra8-rCHKV8-05IC99-1: #IC 0.5*99
+     E_A-241223-293T_Mxra8-rCHKV8-05IC99-1: #IC 0.5*99
       concentration: 0.004425
       use_in_fit: true
-     E3E26KE1_A-241223-293T_Mxra8-rCHKV8-IC99-1: #IC 99
+     E_A-241223-293T_Mxra8-rCHKV8-IC99-1: #IC 99
       concentration: 0.00885
       use_in_fit: true
-     E3E26KE1_A-241223-293T_Mxra8-rCHKV8-2IC99-1: #IC 2*99
+     E_A-241223-293T_Mxra8-rCHKV8-2IC99-1: #IC 2*99
       concentration: 0.0177
       use_in_fit: true
-     E3E26KE1_A-241223-293T_Mxra8-rCHKV8-4IC99-1: #IC 4*99
+     E_A-241223-293T_Mxra8-rCHKV8-4IC99-1: #IC 4*99
       concentration: 0.0354
       use_in_fit: true
   # ---------------------------------------------------------------------------------
@@ -178,29 +178,29 @@ receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
 receptor_selections:
   # ---------------------------------------------------------------------------------
   # soluble mouse Mxra8 selections
-  E3E26KE1_B-241223-mouse-Mxra8:
+  E_B-241223-mouse-Mxra8:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
     polyclonal_params: *receptor_polyclonal_params_default
     escape_plot_kwargs: *escape_plot_kwargs_default
     plot_hide_stats: *receptor_plot_hide_stats_default
-    no_antibody_sample: E3E26KE1_B-241223-293T_Mxra8-sMxra8-0-1
+    no_antibody_sample: E_B-241223-293T_Mxra8-sMxra8-0-1
     antibody_samples:
-     E3E26KE1_B-241223-293T_Mxra8-sMxra8-IC20-1: 
+     E_B-241223-293T_Mxra8-sMxra8-IC20-1: 
       concentration: 0.045
       use_in_fit: true
-     E3E26KE1_B-241223-293T_Mxra8-sMxra8-IC50-1:
+     E_B-241223-293T_Mxra8-sMxra8-IC50-1:
       concentration: 0.219
       use_in_fit: true
-     E3E26KE1_B-241223-293T_Mxra8-sMxra8-IC85-1:
+     E_B-241223-293T_Mxra8-sMxra8-IC85-1:
       concentration: 1.59
       use_in_fit: true
-     E3E26KE1_B-241223-293T_Mxra8-sMxra8-IC95-1:
+     E_B-241223-293T_Mxra8-sMxra8-IC95-1:
       concentration: 6.36
       use_in_fit: true
-     E3E26KE1_B-241223-293T_Mxra8-sMxra8-IC99-1:
+     E_B-241223-293T_Mxra8-sMxra8-IC99-1:
       concentration: 20
-
+      use_in_fit: true
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging/plotting selections for same antibody or soluble receptor
@@ -239,7 +239,7 @@ avg_antibody_escape:
     <<: *avg_antibody_escape_default
     title: Escape map for antibody rCHKV8
     selections:
-      - E3E26KE1_A-241223-rCHKV8
+      - E_A-241223-rCHKV8
 
 # ------------------------------------------------------------------------------
 # Define the receptor affinity experiments to average
@@ -247,11 +247,10 @@ avg_receptor_affinity_default: &avg_receptor_affinity_default
   <<: *avg_antibody_escape_default
   icXX: 50  # IC50
 
-
 avg_receptor_affinity:
   mouse_Mxra8:
     <<: *avg_receptor_affinity_default
     title: Effects of RBP mutations on binding to mouse Mxra8
     plot_hide_stats: *receptor_plot_hide_stats_default
     selections:
-      - E3E26KE1_B-241223-mouse-Mxra8
+      - E_B-241223-mouse-Mxra8
