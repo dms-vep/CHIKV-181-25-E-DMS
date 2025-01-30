@@ -169,8 +169,38 @@ antibody_selections:
      E_A-250114-293T_Mxra8-rCHKV8-3600IC99-1:
       concentration: 30.00
       use_in_fit: true
+  E_B-250128-rCHKV8:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: E_B-250128-293T_Mxra8-antibody-0-1
+    antibody_samples:
+     E_B-250128-293T_Mxra8-rCHKV8-48IC99-1:
+      concentration: 0.40
+      use_in_fit: true
+     E_B-250128-293T_Mxra8-rCHKV8-192IC99-1:
+      concentration: 1.60
+      use_in_fit: true
+     E_B-250128-293T_Mxra8-rCHKV8-768IC99-1:
+      concentration: 6.40
+      use_in_fit: true
+  E_B-250128-rCHKV24:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: E_B-250128-293T_Mxra8-antibody-0-1
+    antibody_samples:
+     E_B-250128-293T_Mxra8-rCHKV24-59IC99-1:
+      concentration: 1.50
+      use_in_fit: true
+     E_B-250128-293T_Mxra8-rCHKV24-236IC99-1:
+      concentration: 6.00
+      use_in_fit: true
   # ---------------------------------------------------------------------------------
-
 
 # Note that for soluble receptor affinity selections, you define selection experiments
 # exactly analogously to `antibody_selections` in `receptor_selections`, using `antibody`
@@ -247,6 +277,29 @@ receptor_selections:
      E_B-250114-293T_Mxra8-sMxra8-27IC99-1:
       concentration: 540.00
       use_in_fit: true
+  E_A-250128-mouse-Mxra8:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: E_A-250128-293T_Mxra8-sMxra8-0-1
+    antibody_samples:
+     E_A-250128-293T_Mxra8-sMxra8-IC95-1:
+      concentration: 6.36
+      use_in_fit: true
+     E_A-250128-293T_Mxra8-sMxra8-IC99-1:
+      concentration: 20.00
+      use_in_fit: true
+     E_A-250128-293T_Mxra8-sMxra8-3IC99-1:
+      concentration: 60.00
+      use_in_fit: true
+     E_A-250128-293T_Mxra8-sMxra8-9IC99-1:
+      concentration: 180.00
+      use_in_fit: true
+     E_A-250128-293T_Mxra8-sMxra8-27IC99-1:
+      concentration: 540.00
+      use_in_fit: true
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging/plotting selections for same antibody or soluble receptor
@@ -286,7 +339,12 @@ avg_antibody_escape:
     title: Escape map for antibody rCHKV8
     selections:
       - E_A-250114-rCHKV8
-
+      - E_B-250128-rCHKV8
+  rCHKV24:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody rCHKV8
+    selections:
+      - E_B-250128-rCHKV24
 # ------------------------------------------------------------------------------
 # Define the receptor affinity experiments to average
 avg_receptor_affinity_default: &avg_receptor_affinity_default
@@ -300,3 +358,4 @@ avg_receptor_affinity:
     plot_hide_stats: *receptor_plot_hide_stats_default
     selections:
       - E_B-250114-mouse-Mxra8
+      - E_A-250128-mouse-Mxra8
