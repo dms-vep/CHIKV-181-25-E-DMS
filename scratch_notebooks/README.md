@@ -6,9 +6,9 @@ This directory contains custom analysis notebooks that will be added to the pipe
 
 - [average-functional-effects](average-functional-effects.ipynb): Combines functional effects of mutations in 181/25 E in three different cell lines; 293T cells expressing the known receptor **Mxra8**, 293T cells expressing the entry factor **TIM1**, and **C636** mosquito cells. 
 
-- [`compare-cell-entry`](/notebooks/compare-cell-entry.ipynb): Explores the differences between functional selections (cell entry) in three different cell lines; one expressing the known receptor **Mxra8**, one expressing the entry factor **TIM-1**, and **C636** mosquito cells expression an unknown receptor.
+- [`compare-cell-entry`](compare-cell-entry.ipynb): Explores the differences between functional selections (cell entry) in three different cell lines; one expressing the known receptor **Mxra8**, one expressing the entry factor **TIM-1**, and **C636** mosquito cells expression an unknown receptor.
 
-- [`plot-data-on-structures`](/notebooks/plot-data-on-structures.ipynb): Display the functional selections and difference between cell types on the CHIKV E + Mxra8 crystal structure with `dms-viz`.
+- [`plot-data-on-structures`](plot-data-on-structures.ipynb): Display the functional selections and difference between cell types on the CHIKV E + Mxra8 crystal structure with `dms-viz`.
 
 ## `dms-viz` visualizations
 
@@ -22,11 +22,11 @@ I plotted the functional scores and the difference in functional scores between 
 
 To illustrate the three types of contacts that Mxra8 makes with CHIKV E, I made `dms-viz` visualizations showing only the wrapped, interspike, and intraspike interactions respectively:
 
-- Wrapped [Functional Scores](/notebooks/dms-viz/output/CHIKV_VLP_wrapped_monomer_functional_scores.json) and [Differences](/notebooks/dms-viz/output/CHIKV_VLP_wrapped_monomer_functional_differences.json)
-- Intraspike [Functional Scores](/notebooks/dms-viz/output/CHIKV_VLP_intraspike_monomer_functional_scores.json) and [Differences](/notebooks/dms-viz/output/CHIKV_VLP_intraspike_monomer_functional_differences.json)
-- Interspike [Functional Scores](/notebooks/dms-viz/output/CHIKV_VLP_interspike_monomer_functional_scores.json) and [Differences](/notebooks/dms-viz/output/CHIKV_VLP_interspike_monomer_functional_differences.json)
+- Wrapped [Functional Scores](dms-viz/output/CHIKV_VLP_wrapped_monomer_functional_scores.json) and [Differences](dms-viz/output/CHIKV_VLP_wrapped_monomer_functional_differences.json)
+- Intraspike [Functional Scores](dms-viz/output/CHIKV_VLP_intraspike_monomer_functional_scores.json) and [Differences](dms-viz/output/CHIKV_VLP_intraspike_monomer_functional_differences.json)
+- Interspike [Functional Scores](dms-viz/output/CHIKV_VLP_interspike_monomer_functional_scores.json) and [Differences](dms-viz/output/CHIKV_VLP_interspike_monomer_functional_differences.json)
 
 Additionally, since E3 retention changes the number of sites that can bind to Mxra8 with high affinity, I plotted the data on a structure without E3 (the VLP) and with E3 (the infectious particle).
 
-- Without E3 [Functional Scores](/notebooks/dms-viz/output/CHIKV_VLP_full_functional_scores.json) and [Differences](/notebooks/dms-viz/output/CHIKV_VLP_full_functional_differences.json)
-- With E3 [Functional Scores](/notebooks/dms-viz/output/CHIKV_infectious_full_functional_scores.json) and [Differences](/notebooks/dms-viz/output/CHIKV_infectious_full_functional_differences.json)
+- Without E3 [Functional Scores](dms-viz/output/CHIKV_VLP_full_functional_scores.json) and [Differences](dms-viz/output/CHIKV_VLP_full_functional_differences.json)
+- With E3 [Functional Scores](dms-viz/output/CHIKV_infectious_full_functional_scores.json) and [Differences](     dms-viz/output/CHIKV_infectious_full_functional_differences.json)
