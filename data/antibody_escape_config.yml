@@ -186,6 +186,7 @@ antibody_selections:
      E_B-250128-293T_Mxra8-rCHKV8-768IC99-1:
       concentration: 6.40
       use_in_fit: true
+  # rCHKV24
   E_B-250128-rCHKV24:
     neut_standard_name: neut_standard
     prob_escape_filters: *prob_escape_filters_default
@@ -199,6 +200,83 @@ antibody_selections:
       use_in_fit: true
      E_B-250128-293T_Mxra8-rCHKV24-236IC99-1:
       concentration: 6.00
+      use_in_fit: true
+  E_A-250211-rCHKV24:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: E_A-250211-293T_Mxra8-antibody-0-1
+    antibody_samples:
+     E_A-250211-293T_Mxra8-rCHKV24-59IC99-1:
+      concentration: 1.50
+      use_in_fit: true
+     E_A-250211-293T_Mxra8-rCHKV24-236IC99-1:
+      concentration: 6.00
+      use_in_fit: true
+     E_A-250211-293T_Mxra8-rCHKV24-472IC99-1:
+      concentration: 12.00
+      use_in_fit: true
+  # CHK102
+  E_A-250211-CHK102:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: E_A-250211-293T_Mxra8-antibody-0-1
+    antibody_samples:
+     E_A-250211-293T_Mxra8-CHK102-65IC99-1:
+      concentration: 4.00
+      use_in_fit: true
+     E_A-250211-293T_Mxra8-CHK102-261IC99-1:
+      concentration: 16.00
+      use_in_fit: true
+  # CHK152
+  E_A-250211-CHK152:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: E_A-250211-293T_Mxra8-antibody-0-1
+    antibody_samples:
+     E_A-250211-293T_Mxra8-CHK152-73IC99-1:
+      concentration: 2.00
+      use_in_fit: true
+     E_A-250211-293T_Mxra8-CHK152-291IC99-1:
+      concentration: 8.00
+      use_in_fit: true
+  # CHK166
+  E_A-250211-CHK166:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: E_A-250211-293T_Mxra8-antibody-0-1
+    antibody_samples:
+     E_A-250211-293T_Mxra8-CHK166-50IC99-1:
+      concentration: 30.00
+      use_in_fit: true
+     E_A-250211-293T_Mxra8-CHK166-200IC99-1:
+      concentration: 120.00
+      use_in_fit: true
+  # CHK265
+  E_A-250211-CHK265:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *polyclonal_params_default
+    escape_plot_kwargs: *escape_plot_kwargs_default
+    plot_hide_stats: *plot_hide_stats_default
+    no_antibody_sample: E_A-250211-293T_Mxra8-antibody-0-1
+    antibody_samples:
+     E_A-250211-293T_Mxra8-CHK265-61IC99-1:
+      concentration: 0.50
+      use_in_fit: true
+     E_A-250211-293T_Mxra8-CHK265-245IC99-1:
+      concentration: 2.00
       use_in_fit: true
   # ---------------------------------------------------------------------------------
 
@@ -342,9 +420,30 @@ avg_antibody_escape:
       - E_B-250128-rCHKV8
   rCHKV24:
     <<: *avg_antibody_escape_default
-    title: Escape map for antibody rCHKV8
+    title: Escape map for antibody rCHKV24
     selections:
       - E_B-250128-rCHKV24
+      - E_A-250211-rCHKV24
+  CHK102:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody CHK102
+    selections:    
+      - E_A-250211-CHK102
+  CHK152:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody CHK152
+    selections:    
+      - E_A-250211-CHK152
+  CHK166:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody CHK166
+    selections:    
+      - E_A-250211-CHK166
+  CHK265:
+    <<: *avg_antibody_escape_default
+    title: Escape map for antibody CHK265
+    selections:    
+      - E_A-250211-CHK265    
 # ------------------------------------------------------------------------------
 # Define the receptor affinity experiments to average
 avg_receptor_affinity_default: &avg_receptor_affinity_default
