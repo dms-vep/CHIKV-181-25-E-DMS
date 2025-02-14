@@ -535,3 +535,46 @@ func_effect_diffs:
         293T-Mxra8-6KE1-A-241113-func-2: [[489, 989]]
         293T-Mxra8-6KE1-B-241028-func-1: [[489, 989]]
         293T-Mxra8-6KE1-B-241028-func-2: [[489, 989]]
+
+  293T-TIM1_vs_C636:
+    avg_method: median
+    plot_kwargs:
+      addtl_slider_stats:
+        times_seen: 2
+        fraction_pairs_w_mutation: 0.75  # fraction of all pairs between conditions w mutation
+        best_effect: -2  # effect must be >= for at least one condition
+        293T-TIM1 effect: -2
+        C636 effect: -2
+      addtl_slider_stats_hide_not_filter: [best_effect, 293T-TIM1 effect, C636 effect]
+      heatmap_max_at_least: 1
+      heatmap_min_at_least: -1
+      init_floor_at_zero: false
+      init_site_statistic: mean_abs
+      site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
+      slider_binding_range_kwargs:
+        times_seen:
+          step: 1
+          min: 1
+          max: 25
+    condition_1:
+      name: 293T-TIM1
+      selections:
+        293T-TIM1-E3E2-A-241113-func-1: [[1, 488]]
+        293T-TIM1-E3E2-A-241113-func-2: [[1, 488]]
+        293T-TIM1-E3E2-B-241028-func-1: [[1, 488]]
+        293T-TIM1-E3E2-B-241028-func-2: [[1, 488]]
+        293T-TIM1-6KE1-A-241113-func-1: [[489, 989]]
+        293T-TIM1-6KE1-A-241113-func-2: [[489, 989]]
+        293T-TIM1-6KE1-B-241028-func-1: [[489, 989]]
+        293T-TIM1-6KE1-B-241028-func-2: [[489, 989]]
+    condition_2:
+      name: C636
+      selections:
+        C636-E3E2-B-241122-func-1: [[1, 488]]
+        C636-E3E2-B-241122-func-2: [[1, 488]]
+        C636-6KE1-B-241122-func-1: [[489, 989]]
+        C636-6KE1-B-241122-func-2: [[489, 989]]
+        C636-E3E2-A-241212-func-1: [[1, 488]]
+        C636-E3E2-A-241212-func-2: [[1, 488]]
+        C636-6KE1-A-241212-func-1: [[489, 989]]
+        C636-6KE1-A-241212-func-2: [[489, 989]]
