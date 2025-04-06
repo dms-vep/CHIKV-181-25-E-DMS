@@ -42,4 +42,4 @@ To run the pipeline, build the conda environment `dms-vep-pipeline-3` in the `en
 
 To run on the Hutch cluster via [slurm](https://slurm.schedmd.com/), you can run the file [run_Hutch_cluster.bash](run_Hutch_cluster.bash):
 
-    sbatch -c 32 run_Hutch_cluster.bash
+    sbatch run_Hutch_cluster.bash
