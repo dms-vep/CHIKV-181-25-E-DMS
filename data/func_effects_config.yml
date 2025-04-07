@@ -26,7 +26,7 @@ global_epistasis_params: &global_epistasis_params
   #  - median_stop: median func score of all variants with stop codons
   #  - null: no clipping
   #  - a number: clip at this number
-  clip_lower: -6
+  clip_lower: -8
   clip_upper: null
   # Do we collapse barcodes with same variant?
   collapse_identical_variants: false  # {false, mean, median}
@@ -186,14 +186,16 @@ func_scores:
 avg_func_effects_default: &avg_func_effects_default
   avg_method: median
   per_selection_tooltips: true
+  floor_for_effect_std: -4
   plot_kwargs:
     alphabet: ['R','K','H','D','E','Q','N','S','T','Y','W','F','A','I','L','M','V','G','P','C',"'*'"]
     addtl_slider_stats:
       times_seen: 2
-      n_selections: 2
+      n_selections: 3
+      effect_std: 2.25
+    addtl_slider_stats_as_max: [effect_std]
     heatmap_max_at_least: 2
-    heatmap_min_at_least: -5
-    heatmap_min_fixed: -5
+    heatmap_min_fixed: -6
     init_floor_at_zero: false
     init_site_statistic: mean
     site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
@@ -458,11 +460,11 @@ func_effect_diffs:
         times_seen: 2
         fraction_pairs_w_mutation: 0.75  # fraction of all pairs between conditions w mutation
         best_effect: -2  # effect must be >= for at least one condition
-        293T-TIM1 effect: -2
-        293T-Mxra8 effect: -2
+        293T-TIM1 effect: -8
+        293T-Mxra8 effect: -8
       addtl_slider_stats_hide_not_filter: [best_effect, 293T-TIM1 effect, 293T-Mxra8 effect]
-      heatmap_max_at_least: 1
-      heatmap_min_at_least: -1
+      heatmap_max_at_least: 2
+      heatmap_min_at_least: -2
       init_floor_at_zero: false
       init_site_statistic: mean_abs
       site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
@@ -502,11 +504,11 @@ func_effect_diffs:
         times_seen: 2
         fraction_pairs_w_mutation: 0.75  # fraction of all pairs between conditions w mutation
         best_effect: -2  # effect must be >= for at least one condition
-        C636 effect: -2
-        293T-Mxra8 effect: -2
+        C636 effect: -8
+        293T-Mxra8 effect: -8
       addtl_slider_stats_hide_not_filter: [best_effect, C636 effect, 293T-Mxra8 effect]
-      heatmap_max_at_least: 1
-      heatmap_min_at_least: -1
+      heatmap_max_at_least: 2
+      heatmap_min_at_least: -2
       init_floor_at_zero: false
       init_site_statistic: mean_abs
       site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
@@ -545,11 +547,11 @@ func_effect_diffs:
         times_seen: 2
         fraction_pairs_w_mutation: 0.75  # fraction of all pairs between conditions w mutation
         best_effect: -2  # effect must be >= for at least one condition
-        293T-TIM1 effect: -2
-        C636 effect: -2
+        293T-TIM1 effect: -8
+        C636 effect: -8
       addtl_slider_stats_hide_not_filter: [best_effect, 293T-TIM1 effect, C636 effect]
-      heatmap_max_at_least: 1
-      heatmap_min_at_least: -1
+      heatmap_max_at_least: 2
+      heatmap_min_at_least: -2
       init_floor_at_zero: false
       init_site_statistic: mean_abs
       site_zoom_bar_color_col: region  # supplied in the `site_numbering_map`
