@@ -1,0 +1,20 @@
+#### ============== nextstrain analysis configuration file ============== ####
+
+# Author: Will Hannon
+
+#### ------------------------- Accessions ------------------------ ####
+
+accessions:
+  all: data/test.acc
+  library: MW473668.1
+  reference: NC_004162.2
+  outgroup: NC_075006.1
+
+#### ------------------------- Parameters ------------------------ ####
+
+feature: structural polyprotein
+
+#### -------------------------- Directories ------------------------- ####
+
+sequence_dir: results/sequences
+log_dir: results/logs

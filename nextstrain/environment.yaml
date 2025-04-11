@@ -1,0 +1,15 @@
+name: nextstrain
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - augur=24.3.0
+  - auspice=2.52.0
+  - emboss
+  - jupyterlab
+  - nextstrain-cli
+  - pandas
+  - altair=5.5
+  - biopython
+  - snakemake=8.25.3
+  - snakemake-executor-plugin-slurm

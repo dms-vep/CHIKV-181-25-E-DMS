@@ -1,0 +1,46 @@
+""" 
+Snakemake pipeline for the nextstrain analysis of CHIKV.
+Author: Will Hannon 
+"""
+
+#### ----------------------- Imports ----------------------- ####
+
+import pandas as pd 
+from os.path import join
+
+#### -------------------- Configuration -------------------- ####
+
+configfile: "configuration/pipeline.yaml"
+
+#### ----------------------- Targets ----------------------- ####
+
+rule all:
+    input:
+        join(config['sequence_dir'], "sequence_metadata.csv")
+
+#### ------------------------ Rules ------------------------ ####
+
+rule download_and_parse_sequences:
+    """
+    Download and parse all sequences and metadata from Genbank.
+    """
+    input: 
+        config['accessions']['all']
+    output: 
+        join(config['sequence_dir'], "sequence_metadata.csv")
+    params:
+        feature=config['feature'],
+        reference=config['accessions']['library'],
+        include=[config['accessions']['outgroup'], config['accessions']['reference']]
+    conda: "nextstrain"
+    log: join(config['log_dir'], "download_and_parse_sequences.log")
+    shell:
+        """
+        python workflow/scripts/download-and-parse-sequences.py \
+            --accessions {input} \
+            --feature "{params.feature}" \
+            --reference {params.reference} \
+            --include {params.include} \
+            --output {output} \
+            &>> {log}
+        """
