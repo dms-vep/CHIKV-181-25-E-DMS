@@ -4,7 +4,7 @@
 
 # define defaults shared across summaries
 summary_default: &summary_default
-  min_times_seen: 3  # only include mutations with times_seen >= this
+  min_times_seen: 2  # only include mutations with times_seen >= this
   min_frac_models: 0.75  # only include mutations in >= this fraction of models (selections)
   alphabet: [A, C, D, E, F, G, H, I, K, L, M, N, P, Q, R, S, T, V, W, Y]  # amino acids to include
   init_floor_escape_at_zero: true  # initially floor site escape to be >= 0?
