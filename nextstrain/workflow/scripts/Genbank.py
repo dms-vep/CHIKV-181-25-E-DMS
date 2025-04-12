@@ -1,4 +1,5 @@
 import requests
+import warnings
 from dateutil import parser
 from Bio import Entrez, SeqIO
 from Bio.SeqRecord import SeqRecord
@@ -39,10 +40,11 @@ class CDS:
         self.qualifiers = feature.qualifiers
         for key in ['codon_start', 'product', 'protein_id', 'translation']:
             if key not in self.qualifiers:
-                raise ValueError(f"Qualifier {key} is missing from the CDS feature")
+                print(f"Warning: Qualifier {key} is missing from the CDS feature for {self.record.id}")
+                value = "Unknown"
             value = self.qualifiers[key]
             if len(value) > 1:
-                raise ValueError(f"Qualifier {key} has multiple values in the CDS feature")
+                raise ValueError(f"Qualifier {key} has multiple values in the CDS feature for {self.record.id}")
             setattr(self, key, value[0])
     
 
@@ -107,7 +109,9 @@ class CDS:
         Entrez.email = email
         try:
             handle = Entrez.efetch(db="protein", id=self.protein_id, rettype="gb", retmode="text")
-            protein_record = SeqIO.read(handle, "genbank")
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                protein_record = SeqIO.read(handle, "genbank")
             handle.close()
             self.protein_record = protein_record
             return protein_record

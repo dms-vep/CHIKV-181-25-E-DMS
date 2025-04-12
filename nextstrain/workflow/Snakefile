@@ -44,3 +44,43 @@ rule download_and_parse_sequences:
             --output {output} \
             &>> {log}
         """
+
+
+# rule filter_sequences:
+#     """
+#     Filter sequences based on metadata and quality.
+#     """
+#     input:
+#         join(config['sequence_dir'], "sequence_metadata.csv")
+#     output:
+#         csv=join(config['sequence_dir'], "filtered_sequences.csv"),
+#         nucleotide=join(config['sequence_dir'], "nucleotide.fa"),
+#         protein=join(config['sequence_dir'], "protein.fa")
+#     params:
+#         min_genome_size=config['filter']['min_genome_size'],
+#         max_genome_size=config['filter']['max_genome_size'],
+#         min_feature_size=config['filter']['min_feature_size'],
+#         max_feature_size=config['filter']['max_feature_size'],
+#         min_genome_ambiguity=config['filter']['min_genome_ambiguity'],
+#         min_feature_ambiguity=config['filter']['min_feature_ambiguity'],
+#         min_alignment_score=config['filter']['min_alignment_score'],
+#         remove_duplicates=config['filter']['remove_duplicates'],
+#     conda: "nextstrain"
+#     log: join(config['log_dir'], "filter_sequences.log")
+#     shell:
+#         """
+#         python workflow/scripts/filter-sequences.py \
+#             --input {input} \
+#             --output-csv {output.csv} \
+#             --output-nucleotide {output.nucleotide} \
+#             --output-protein {output.protein} \
+#             --min-genome-size {params.min_genome_size} \
+#             --max-genome-size {params.max_genome_size} \
+#             --min-feature-size {params.min_feature_size} \
+#             --max-feature-size {params.max_feature_size} \
+#             --min-genome-ambiguity {params.min_genome_ambiguity} \
+#             --min-feature-ambiguity {params.min_feature_ambiguity} \
+#             --min-alignment-score {params.min_alignment_score} \
+#             --remove-duplicates {params.remove_duplicates} \
+#             &>> {log}
+#         """

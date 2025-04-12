@@ -5,7 +5,7 @@
 #### ------------------------- Accessions ------------------------ ####
 
 accessions:
-  all: data/test.acc
+  all: data/sequences.acc
   library: MW473668.1
   reference: NC_004162.2
   outgroup: NC_075006.1
@@ -13,6 +13,16 @@ accessions:
 #### ------------------------- Parameters ------------------------ ####
 
 feature: structural polyprotein
+
+filter:
+  min_genome_size: 0
+  max_genome_size: 15000
+  min_feature_size: 0
+  max_feature_size: 15000
+  min_genome_ambiguity: 1
+  min_feature_ambiguity: 1
+  min_alignment_score: 0
+  remove_duplicates: false
 
 #### -------------------------- Directories ------------------------- ####
 

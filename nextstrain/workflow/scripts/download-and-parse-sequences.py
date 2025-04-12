@@ -145,11 +145,13 @@ def parse_features(records, reference, feature_name, type='nucleotide'):
             _, reference_score = algin_feature(feature, feature, type)
             identity = (score / reference_score) * 100 if score != float('-inf') and score > 0 else 0
         name = match.product if match else "no coding sequence"
-        matches.append((accession, identity, name, len(queries), match.sequence, match.translation))
+        sequence = match.sequence if match else ""
+        translation = match.translation if match else ""
+        matches.append((accession, identity, name, len(queries), len(sequence), len(translation), sequence, translation))
     
     end_time = time.time()
     print(f"Parsed features from {len(records)} records from GenBank in {end_time - start_time:.4f} seconds.\n")
-    return pd.DataFrame(matches, columns=['accession', 'identity', 'feature', 'n_cds', 'sequence', 'translation'])
+    return pd.DataFrame(matches, columns=['accession', 'identity', 'feature', 'n_cds',  'feature_length', 'feature_translation_length', 'sequence', 'translation'])
 
 
 def extract_metadata(records):
