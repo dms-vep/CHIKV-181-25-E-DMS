@@ -42,7 +42,8 @@ class CDS:
             if key not in self.qualifiers:
                 print(f"Warning: Qualifier {key} is missing from the CDS feature for {self.record.id}")
                 value = "Unknown"
-            value = self.qualifiers[key]
+            else:
+                value = self.qualifiers[key]
             if len(value) > 1:
                 raise ValueError(f"Qualifier {key} has multiple values in the CDS feature for {self.record.id}")
             setattr(self, key, value[0])
@@ -670,5 +671,9 @@ class GenBankRecord:
         coding_sequences = []
         for feature in self.record.features:
             if feature.type == "CDS":
-                coding_sequences.append(CDS(self.record, feature))
+                try:
+                    coding_sequences.append(CDS(self.record, feature))
+                except Exception as e:
+                    print(f"Warning: Unable to parse CDS feature for {self.accession}:\n {e}")
+                    continue
         return coding_sequences
