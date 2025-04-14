@@ -41,7 +41,7 @@ class CDS:
         for key in ['codon_start', 'product', 'protein_id', 'translation']:
             if key not in self.qualifiers:
                 print(f"Warning: Qualifier {key} is missing from the CDS feature for {self.record.id}")
-                value = "Unknown"
+                value = ["Unknown"]
             else:
                 value = self.qualifiers[key]
             if len(value) > 1:
@@ -504,19 +504,23 @@ class GenBankRecord:
             return None
         source = self.source
         if 'collection_date' in source:
-            unformatted_data =  source['collection_date'][0]
-            formatted_data = parser.parse(unformatted_data)
-            parts = max(
-                len(unformatted_data.split("-")),
-                len(unformatted_data.split("/")),
-                len(unformatted_data.split("_"))
-            )
-            if parts == 3:
-                return formatted_data.strftime("%Y-%m-%d")
-            elif parts == 2:
-                return formatted_data.strftime("%Y-%m") + "-XX"
-            else:
-                return formatted_data.strftime("%Y") + "-XX-XX"
+            unformatted_date =  source['collection_date'][0]
+            try:
+                formatted_date = parser.parse(unformatted_date)
+                parts = max(
+                    len(unformatted_date.split("-")),
+                    len(unformatted_date.split("/")),
+                    len(unformatted_date.split("_"))
+                )
+                if parts == 3:
+                    return formatted_date.strftime("%Y-%m-%d")
+                elif parts == 2:
+                    return formatted_date.strftime("%Y-%m") + "-XX"
+                else:
+                    return formatted_date.strftime("%Y") + "-XX-XX"
+            except Exception as e:
+                print(f"Error parsing collection date for {self.accession}: {e}")
+                return unformatted_date
         return None
 
 
