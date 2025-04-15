@@ -1,3 +1,4 @@
+import time
 import requests
 import warnings
 from dateutil import parser
@@ -109,11 +110,14 @@ class CDS:
         """
         Entrez.email = email
         try:
-            handle = Entrez.efetch(db="protein", id=self.protein_id, rettype="gb", retmode="text")
-            with warnings.catch_warnings():
-                warnings.simplefilter("ignore")
+            with warnings.catch_warnings(record=True) as w:
+                warnings.simplefilter("always")
+                handle = Entrez.efetch(db="protein", id=self.protein_id, rettype="gb", retmode="text")
                 protein_record = SeqIO.read(handle, "genbank")
-            handle.close()
+                for warning in w:
+                    if "BiopythonParserWarning" in str(warning.category):
+                        print(f"BiopythonParserWarning: Found malformed header in GenBank record for {self.protein_id}")
+                handle.close()
             self.protein_record = protein_record
             return protein_record
         except Exception as e:
@@ -241,7 +245,7 @@ class GenBankRecord:
         return 0
     
 
-    def fetch(self):
+    def fetch(self, reties=3, retry_delay=5):
         """
         Fetch the GenBank record from NCBI using the accession number.
 
@@ -250,15 +254,27 @@ class GenBankRecord:
         GenBankRecord or None
             The GenBankRecord object if fetched successfully, otherwise None.
         """
-        try:
-            handle = Entrez.efetch(db="nucleotide", id=self.accession, rettype="gb", retmode="text")
-            self.record = SeqIO.read(handle, "genbank")
-            handle.close()
-            return self
-        except Exception as e:
-            print(f"Error fetching record for accession {self.accession}: {e}")
-            return None
-        
+        attempts = 0
+        while attempts < reties:
+            try:
+                with warnings.catch_warnings(record=True) as w:
+                    warnings.simplefilter("always")
+                    handle = Entrez.efetch(db="nucleotide", id=self.accession, rettype="gb", retmode="text")
+                    self.record = SeqIO.read(handle, "genbank")
+                    for warning in w:
+                        if "BiopythonParserWarning" in str(warning.category) and "malformed header line" in str(warning.message):
+                            print(f"BiopythonParserWarning: Found malformed header in GenBank record {self.accession}")
+                    handle.close()
+                return self
+            except Exception as e:
+                attempts += 1
+                if attempts < reties:
+                    print(f"Error fetching record for accession {self.accession}: {e}. Retrying ({attempts}/{reties})...")
+                    time.sleep(retry_delay)
+                else:
+                    print(f"Failed to fetch record for accession {self.accession} after {reties} attempts: {e}")
+                    return None
+            
     
     @property
     def source(self):

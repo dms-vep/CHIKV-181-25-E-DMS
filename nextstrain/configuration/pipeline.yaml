@@ -6,6 +6,7 @@
 
 accessions:
   all: data/sequences.acc
+  include: data/include.acc
   library: MW473668.1
   reference: NC_004162.2
   outgroup: NC_075006.1
@@ -15,14 +16,11 @@ accessions:
 feature: structural polyprotein
 
 filter:
-  min_genome_size: 0
-  max_genome_size: 15000
-  min_feature_size: 0
-  max_feature_size: 15000
-  min_genome_ambiguity: 1
-  min_feature_ambiguity: 1
-  min_alignment_score: 0
+  min_feature_length: 3647
+  max_feature_length: 3847
+  max_ambiguous_positions: 0
   remove_duplicates: false
+  min_alignment_score: 35
 
 #### -------------------------- Directories ------------------------- ####
 
