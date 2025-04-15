@@ -4,8 +4,6 @@ This directory contains custom analysis notebooks that will be added to the pipe
 
 ## Notebooks
 
-- [average-functional-effects](average-functional-effects.ipynb): Combines functional effects of mutations in 181/25 E in three different cell lines; 293T cells expressing the known receptor **Mxra8**, 293T cells expressing the entry factor **TIM1**, and **C636** mosquito cells. 
-
 - [`compare-cell-entry`](compare-cell-entry.ipynb): Explores the differences between functional selections (cell entry) in three different cell lines; one expressing the known receptor **Mxra8**, one expressing the entry factor **TIM-1**, and **C636** mosquito cells expression an unknown receptor.
 
 - [`plot-data-on-structures`](plot-data-on-structures.ipynb): Display the functional selections and difference between cell types on the CHIKV E + Mxra8 crystal structure with `dms-viz`.

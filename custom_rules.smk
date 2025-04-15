@@ -4,40 +4,55 @@ This file is included by the pipeline ``Snakefile``.
 
 """
 
-rule format_func_effects_dms_viz:
-    """Format the data for functional effects for input into dms-viz"""
+
+rule compare_cell_entry:
+    """Compare entry across cell lines."""
     input:
-        site_map="data/site_numbering_map.csv",
-        functional_data="results/func_effect_shifts/averages/{library}_comparison_shifts.csv",
-        input_pdb_file="data/PDBs/6jo8.pdb",
+        nb="notebooks/compare_cell_entry.ipynb",
+        mut_effects_csv="results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv",
     output:
-        output_json_file_name = os.path.join("results/dms-viz/CHIKV181E_{library}_functional_effect_shifts.json"),
+        nb="results/notebooks/compare_cell_entry.ipynb",
+        site_diffs_csv="results/compare_cell_entry/site_diffs.csv",
+        mut_scatter_chart="results/compare_cell_entry/compare_cell_entry_scatter.html",
+        site_zoom_chart="results/compare_cell_entry/compare_cell_entry_site_zoom.html",
     params:
-        env_chains = 'A C E B D F',
-        name="effect_shift",
-    log:
-        os.path.join("results/logs/", "dms-viz_file_{library}_functional_effect_shifts.txt"),
+        params_yaml=lambda wc, input: yaml_str(
+            {
+                # cells and their names in input CSV file
+                "cells": {
+                    "293T-Mxra8": "293T_Mxra8", "C6/36": "C636", "293T-TIM1": "293T_TIM1",
+                },
+                # for calculating differences and display, floor mutation effects at this
+                "floor_mut_effects": -5,
+            }
+        ),
     conda:
-        "dms-viz.yml"
+        os.path.join(config["pipeline_path"], "environment.yml"),
+    log:
+        "results/logs/compare_cell_entry.txt",
     shell:
         """
-        configure-dms-viz format \
-            --name {params.name} \
-            --input {input.functional_data} \
-            --metric  "shift" \
-            --metric-name "Functional Effect Shift" \
-            --exclude-amino-acids "*, -" \
-            --structure {input.input_pdb_file} \
-            --sitemap {input.site_map} \
-            --output {output.output_json_file_name} \
-            --included-chains "{params.env_chains}" \
-            --tooltip-cols "{{'times_seen': '# Obsv'}}" \
-            --filter-cols "{{'times_seen': 'Times Seen'}}" \
-            --filter-limits "{{'times_seen': [0, 2, 10]}}" \
+        papermill {input.nb} {output.nb} \
+            -p mut_effects_csv {input.mut_effects_csv} \
+            -p site_diffs_csv {output.site_diffs_csv} \
+            -p mut_scatter_chart {output.mut_scatter_chart} \
+            -p site_zoom_chart {output.site_zoom_chart} \
+            -y "{params.params_yaml}" \
             &> {log}
         """
 
+docs["Compare entry among cells"] = {
+    "Final plots": {
+        "Scatter plots of mutation effects in different cells": rules.compare_cell_entry.output.mut_scatter_chart,
+        "Zoomable site chart of differences": rules.compare_cell_entry.output.site_zoom_chart,
+    },
+    "Analysis notebooks": {
+        "Notebook making plots comparing entry": rules.compare_cell_entry.output.nb,
+    },
+    "Data files": {
+        "site-differences in entry effects": rules.compare_cell_entry.output.site_diffs_csv,
+    }
+}
+
 # Files (Jupyter notebooks, HTML plots, or CSVs) that you want included in
-# the HTML docs should be added to the nested dict `docs`:
-#other_target_files.append(os.path.join("results/dms-viz/CHIKV181E_E3E2_functional_effect_shifts.json"))
-#other_target_files.append(os.path.join("results/dms-viz/CHIKV181E_6KE1_functional_effect_shifts.json"))
+# the HTML docs should be added to the nested dict `docs` or `other_target_files`
