@@ -22,6 +22,10 @@ filter:
   remove_duplicates: false
   min_alignment_score: 35
 
+country_mapping:
+  "Cote d'ivoire": "Ivory Coast"
+  "Borneo": "Indonesia"
+
 #### -------------------------- Directories ------------------------- ####
 
 sequence_dir: results/sequences

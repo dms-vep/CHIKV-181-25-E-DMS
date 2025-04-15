@@ -6,6 +6,7 @@ Author: Will Hannon
 #### ----------------------- Imports ----------------------- ####
 
 import pandas as pd 
+import json
 from os.path import join
 
 #### -------------------- Configuration -------------------- ####
@@ -107,6 +108,8 @@ rule extract_metadata:
         filtered=join(config['sequence_dir'], "filtered_features.csv")
     output: 
         join(config['sequence_dir'], "metadata.csv")
+    params:
+        country_mapping=json.dumps(json.dumps(config['country_mapping']))
     conda: "nextstrain"
     log: join(config['log_dir'], "extract-metadata.log")
     shell:
@@ -114,6 +117,7 @@ rule extract_metadata:
         python workflow/scripts/extract-metadata.py \
             --records {input.records} \
             --filtered {input.filtered} \
+            --country-mapping {params.country_mapping} \
             --output {output} \
             &>> {log}
         """

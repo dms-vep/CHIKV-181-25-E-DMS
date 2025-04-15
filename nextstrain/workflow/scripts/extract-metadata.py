@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import json
 import time
 import pickle
 import pandas as pd
@@ -22,10 +23,16 @@ def parse_arguments():
         required=True,
         help="The path to the output metadata csv file"
     )
+    parser.add_argument(
+        "--country-mapping",
+        type=json.loads,
+        default=None,
+        help="Custom country name mappings"
+    )
     return parser.parse_args()
 
 
-def extract_metadata(records):
+def extract_metadata(records, country_mapping=None):
     """
     Extract metadata from GenBank records.
 
@@ -63,9 +70,14 @@ def extract_metadata(records):
         # Get base properties
         record_metadata = [getattr(record, prop, None) for prop in base_properties]
         # Fetch the geographic properties from a REST API
-        geographic_information = record.fetch_geographic_information()
+        geographic_information = record.fetch_geographic_information(
+            country_mapping=country_mapping
+        )
         if geographic_information is None:
-            print(f"Warning: Unable to fetch geographic information for {record.country}: {accession}")
+            if record.country == "Unknown":
+                print(f"Warning: Country is Unknown for {accession}")
+            else:
+                print(f"Warning: Unable to fetch geographic information for {record.country}: {accession}")
             record_metadata.extend([
                 getattr(record, 'country', "Unknown"),
                 getattr(record, 'local', "Unknown"),
@@ -97,7 +109,7 @@ def main():
 
     # Parse the metadata from the records
     print(f"Extracting metadata for {len(records)} records...")
-    metadata_df = extract_metadata(records)
+    metadata_df = extract_metadata(records, country_mapping=args.country_mapping)
 
     # Join the metadata with the filtered records
     metadata_df = metadata_df.merge(filtered_df, on='accession', how='inner')

@@ -600,7 +600,7 @@ class GenBankRecord:
         return "Unknown"
 
 
-    def fetch_geographic_information(self):
+    def fetch_geographic_information(self, retries=3, country_mapping=None):
         """
         Fetch geographic information for the GenBank record.
 
@@ -613,6 +613,11 @@ class GenBankRecord:
         -------
         dict
             A dictionary with geographic info from the REST API
+        retries : int
+            Number of retries for the API call
+        country_mapping : dict
+            A dictionary of custom mappings for country names
+            to use in the API call.
         """
         if self.record is None:
             return None
@@ -622,30 +627,53 @@ class GenBankRecord:
         
         location = source['geo_loc_name'][0].split(":")
         country = location[0].strip().lower().capitalize()
+        if country == "Unknown":
+            return None
+        
         if len(location) > 1:
             local = location[-1].strip().lower().capitalize()
         else:
             local = "Unknown"
         
+        if country_mapping is not None and country in country_mapping:
+            print(f"Using custom mapping for {country} -> {country_mapping[country]}")
+            url = f"https://restcountries.com/v3.1/name/{country_mapping[country]}"
+        else:
+            url = f"https://restcountries.com/v3.1/name/{country}"
+
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             'Accept': 'application/json'
         }
-        url = f"https://restcountries.com/v3.1/name/{country}"
-        try:
-            response = requests.get(url, headers=headers, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                if data:
-                    return {
-                        "country": data[0].get("name", {}).get("common", "Unknown"),
-                        "region": data[0].get("region", "Unknown"),
-                        "subregion": data[0].get("subregion", "Unknown"),
-                        "local": local
-                    }
-        except Exception as e:
-            print(f"Error fetching geographic information for {country}: {e}")
-            return None
+        for attempt in range(retries):
+            try:
+                response = requests.get(url, headers=headers, timeout=20)
+                if response.status_code == 200:
+                    data = response.json()
+                    if data:
+                        if country_mapping is not None and country in country_mapping:
+                            return {
+                                "country": country,
+                                "region": data[0].get("region", "Unknown"),
+                                "subregion": data[0].get("subregion", "Unknown"),
+                                "local": local
+                            }
+                        else:
+                            return {
+                                "country": data[0].get("name", {}).get("common", "Unknown"),
+                                "region": data[0].get("region", "Unknown"),
+                                "subregion": data[0].get("subregion", "Unknown"),
+                                "local": local
+                            }
+                print(f"Attempt {attempt+1} failed for {country} with status code {response.status_code}")
+            except Exception as e:
+                print(f"Attempt {attempt+1} failed for {country}: {e}")
+
+            if attempt < retries - 1:
+                time.sleep(2)
+        
+        print(f"All {retries} attempts failed for {country}")
+        return None
         
     
     @property
