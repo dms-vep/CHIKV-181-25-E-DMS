@@ -8,6 +8,9 @@ Author: Will Hannon
 import pandas as pd 
 import json
 from os.path import join
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
 
 #### -------------------- Configuration -------------------- ####
 
@@ -17,7 +20,8 @@ configfile: "configuration/pipeline.yaml"
 
 rule all:
     input:
-        join(config['sequence_dir'], "metadata.csv")
+        join(config['tree_dir'], "tree_no_outgroup.nwk"),
+
 
 
 #### ------------------------ Rules ------------------------ ####
@@ -74,25 +78,34 @@ rule filter_records:
     Filter the records base on feature alignment.
     """
     input: 
-        join(config['sequence_dir'], "parsed_features.csv")
+        features=join(config['sequence_dir'], "parsed_features.csv"),
+        records=join(config['sequence_dir'], "records.pickle")
     output: 
         join(config['sequence_dir'], "filtered_features.csv")
     params:
+        include=config['accessions']['include'],
+        outgroup=config['accessions']['outgroup'],
         min_feature_length=config['filter']['min_feature_length'],
         max_feature_length=config['filter']['max_feature_length'],
         max_ambiguous_positions=config['filter']['max_ambiguous_positions'],
         remove_duplicates=config['filter']['remove_duplicates'],
+        remove_partial=config['filter']['remove_partial'],
+        remove_incomplete=config['filter']['remove_incomplete'],
         min_alignment_score=config['filter']['min_alignment_score'],
     conda: "nextstrain"
     log: join(config['log_dir'], "filter-records.log")
     shell:
         """
         python workflow/scripts/filter-records.py \
-            --input {input} \
+            --features {input.features} \
+            --records {input.records} \
+            --include {params.include} \
+            --outgroup {params.outgroup} \
             --min_feature_length {params.min_feature_length} \
             --max_feature_length {params.max_feature_length} \
             --max_ambiguous_positions {params.max_ambiguous_positions} \
             --remove_duplicates {params.remove_duplicates} \
+            --remove_partial {params.remove_partial} \
             --min_alignment_score {params.min_alignment_score} \
             --output {output} \
             &>> {log}
@@ -117,7 +130,181 @@ rule extract_metadata:
         python workflow/scripts/extract-metadata.py \
             --records {input.records} \
             --filtered {input.filtered} \
-            --country-mapping {params.country_mapping} \
+            --country_mapping {params.country_mapping} \
             --output {output} \
             &>> {log}
+        """
+
+ 
+rule extract_sequences:
+    """
+    Extract the nucleotide sequences from the filtered accessions.
+    """
+    input: 
+        join(config['sequence_dir'], "filtered_features.csv")
+    output: 
+        join(config['sequence_dir'], "nucleotide.fa")
+    run:
+        df = pd.read_csv(input[0])
+        records = []
+        for idx, row in df.iterrows():
+            record = SeqRecord(
+                Seq(row['sequence']),
+                id=row['accession'],
+                description=""
+            )
+            records.append(record)
+        SeqIO.write(records, output[0], "fasta")
+
+
+rule extract_translations:
+    """
+    Extract the protein sequences from the filtered accessions.
+    """
+    input: 
+        join(config['sequence_dir'], "filtered_features.csv")
+    output: 
+        join(config['sequence_dir'], "protein.fa")
+    run:
+        df = pd.read_csv(input[0])
+        records = []
+        for idx, row in df.iterrows():
+            record = SeqRecord(
+                Seq(row['translation']),
+                id=row['accession'],
+                description=""
+            )
+            records.append(record)
+        SeqIO.write(records, output[0], "fasta")
+
+
+rule align_nucleotides:
+    """
+    Align the nucleotide sequences using MAFFT.
+    """
+    input: 
+        join(config['sequence_dir'], "nucleotide.fa")
+    output:
+        join(config['align_dir'], "nucleotide.fa")
+    conda: "nextstrain"
+    log: join(config['log_dir'], "align-nucleotides.log")
+    shell:
+        """
+        mafft --auto {input} > {output} 2>> {log}
+        """
+
+
+rule align_proteins:
+    """
+    Align the protein sequences using MAFFT.
+    """
+    input: 
+        join(config['sequence_dir'], "protein.fa")
+    output:
+        join(config['align_dir'], "protein.fa")
+    conda: "nextstrain"
+    log: join(config['log_dir'], "align-proteins.log")
+    shell:
+        """
+        mafft --auto {input} > {output} 2>> {log}
+        """
+
+
+rule align_codons:
+    """
+    Create a codon alignment from the protein alignment.
+    """
+    input: 
+        sequences=join(config['sequence_dir'], "nucleotide.fa"),
+        alignment=join(config['align_dir'], "protein.fa")
+    output:
+        join(config['align_dir'], "codon.fa")
+    conda: "nextstrain"
+    log: join(config['log_dir'], "align-codons.log")
+    shell:
+        """
+        python workflow/scripts/align-codons.py \
+            --alignment {input.alignment} \
+            --sequences {input.sequences} \
+            --output {output} \
+            &>> {log}
+        """
+
+
+rule build_tree:
+    """
+    Build a phylogenetic tree from the codon alignments.
+    """
+    input:
+        join(config['align_dir'], "codon.fa")
+    output:
+        join(config['tree_dir'], "tree_raw.nwk")
+    params:
+        outgroup=config['accessions']['outgroup'],
+    conda: "nextstrain"
+    log: join(config['log_dir'], "build-tree.log")
+    shell:
+        """
+        augur tree \
+            --alignment {input} \
+            --tree-builder-args '\-o {params.outgroup}' \
+            --output {output} \
+            &> {log}
+        """
+
+
+rule root_and_remove_outgroup:
+    """
+    Root the tree and remove the outgroup
+    """
+    input:
+        tree=join(config['tree_dir'], "tree_raw.nwk"),
+        protein=join(config['align_dir'], "protein.fa"),
+        codon=join(config['align_dir'], "codon.fa"),
+    output:
+        tree=join(config['tree_dir'], "tree_no_outgroup.nwk"),
+        protein=join(config['align_dir'], "protein_no_outgroup.fa"),
+        codon=join(config['align_dir'], "codon_no_outgroup.fa")    
+    params:
+        outgroup=config['accessions']['outgroup'],
+    conda: "nextstrain"
+    log: join(config['log_dir'], "root-and-remove-outgroup.log")
+    script:
+        """
+        python workflow/scripts/root-and-remove-outgroup.py \
+            --tree {input.tree} \
+            --protein {input.protein} \
+            --codon {input.codon} \
+            --outgroup {params.outgroup} \
+            --output_tree {output.tree} \
+            --output_protein {output.protein} \
+            --output_codon {output.codon} \
+            &> {log}
+        """
+
+
+rule refine_tree_sequences:
+    """
+    Refine the tree sequences using augur refine.
+    """
+    input:
+        tree=join(config['tree_dir'], "tree_no_outgroup.nwk"),
+        codon=join(config['align_dir'], "codon_no_outgroup.fa"),
+        metadata=join(config['sequence_dir'], "metadata.csv"),  
+    output:
+        tree=join(config['tree_dir'], "tree.nwk"),
+        nodes=join(config['tree_dir'], "tree_nodes.json"),
+    conda: "nextstrain"
+    log: join(config['log_dir'], "refine-tree-sequences.log")
+    shell:
+        """
+        augur refine \
+            --tree {input.tree} \
+            --alignment {input.codon} \
+            --metadata {input.metadata} \
+            --output-tree {output.tree} \
+            --output-node-data {output.nodes} \
+            --keep-root \
+            --verbosity 2 \
+            &> {log}
         """

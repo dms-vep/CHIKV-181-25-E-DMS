@@ -19,8 +19,10 @@ filter:
   min_feature_length: 3647
   max_feature_length: 3847
   max_ambiguous_positions: 0
-  remove_duplicates: false
+  remove_duplicates: "False"
   min_alignment_score: 35
+  remove_partial: "True"
+  remove_incomplete: "True"
 
 country_mapping:
   "Cote d'ivoire": "Ivory Coast"
@@ -29,4 +31,6 @@ country_mapping:
 #### -------------------------- Directories ------------------------- ####
 
 sequence_dir: results/sequences
+align_dir: results/alignments
+tree_dir: results/tree
 log_dir: results/logs

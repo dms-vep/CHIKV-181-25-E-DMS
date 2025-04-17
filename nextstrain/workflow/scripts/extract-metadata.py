@@ -24,7 +24,7 @@ def parse_arguments():
         help="The path to the output metadata csv file"
     )
     parser.add_argument(
-        "--country-mapping",
+        "--country_mapping",
         type=json.loads,
         default=None,
         help="Custom country name mappings"
@@ -111,8 +111,7 @@ def main():
     print(f"Extracting metadata for {len(records)} records...")
     metadata_df = extract_metadata(records, country_mapping=args.country_mapping)
 
-    # Join the metadata with the filtered records
-    metadata_df = metadata_df.merge(filtered_df, on='accession', how='inner')
+    # Export the metadata to a CSV file
     metadata_df.to_csv(args.output, index=False)
     end_time = time.time()
     print(f"Extracted metadata from {len(records)} records from GenBank in {end_time - start_time:.4f} seconds.\n")
