@@ -1,0 +1,13 @@
+# Configuration for `dms-viz`, keyed by names given to output JSONs
+
+#---------------------------------------------------------------------------------------
+# Structure 6nk6 visualizations:
+#  - chains A, B, C, D are E1
+#  - chains E, F, G, H are E2
+#  - chains I, J, K, L are capsid
+#  - chains M, N, O, P are mouse Mxra8
+#  - 6K and E3 are not in the structure
+#---------------------------------------------------------------------------------------
+vlp_w_mMxra8_6nk6:
+  pdb_id: 6nk6
+  csv: results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv
