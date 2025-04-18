@@ -1,4 +1,6 @@
-# Configuration for `dms-viz`, keyed by names given to output JSONs
+# Configuration for `configure-dms-viz`, keyed by names given to output JSONs
+# See https://dms-viz.github.io/dms-viz-docs/preparing-data/command-line-api/
+# for more on `configure-dms-viz`.
 
 #---------------------------------------------------------------------------------------
 # Structure 6nk6 visualizations:
@@ -8,6 +10,35 @@
 #  - chains M, N, O, P are mouse Mxra8
 #  - 6K and E3 are not in the structure
 #---------------------------------------------------------------------------------------
-vlp_w_mMxra8_6nk6:
-  pdb_id: 6nk6
-  csv: results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv
+
+vlp_w_mMxra8_6nk6:  # overall name for this visualization
+  pdb_id: 6nk6  # Protein Data Bank ID
+  name: CHIKV E mutation effects on cell entry  # name assigned to visualization
+  pdb_type: asymmetric_unit  # show 'asymmetric_unit' or 'biological_assembly' for structure
+  # `data_csv` is CSV of DMS data, must have columns 'site', 'wildtype', and 'mutant'. Also must
+  # have a column corresponding to `metric` defined below, and `opt_params[condition]` if that is
+  # defined; OR you must specify `melt_condition_metric_cols`.
+  data_csv: results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv  # CSV of DMS data
+  # `sitemap_csv` is CSV that must have columns 'reference_site' (corresponding to site in `data_csv`)
+  # as well as 'sequential_site', 'protein_site', and 'chains' which have meaning described here:
+  # https://dms-viz.github.io/dms-viz-docs/preparing-data/data-requirements/#sitemap
+  sitemap_csv: data/pdb_sitemaps/6nkb_sitemap.csv
+  # `melt_condition_metric_cols` is for when there are several columns in `data_csv`
+  # that need to be melted to create the 'metric' column and 'condition' column defined
+  # in `opt_params`. In that case, list the columns to melt. Otherwise set to 'null'.
+  melt_condition_metric_cols:
+    - entry in 293T_Mxra8 cells
+    - entry in C636 cells
+    - entry in 293T_TIM1 cells
+  metric: entry  # metric to plot, in `data_csv` or created by `melt_conditions_metric_cols`
+  # optional params, have same meaning as to `configure-dms-viz`:
+  # https://dms-viz.github.io/dms-viz-docs/preparing-data/command-line-api/
+  opt_params:
+    condition: cells
+    included-chains: A B C D E F G H
+    excluded-chains: I J K L
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region}
+    heatmap-limits: "-5, 0, 2"
