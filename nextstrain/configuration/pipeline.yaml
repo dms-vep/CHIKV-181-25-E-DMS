@@ -24,6 +24,8 @@ filter:
   remove_partial: "True"
   remove_incomplete: "True"
 
+virus: "CHIKV"
+
 country_mapping:
   "Cote d'ivoire": "Ivory Coast"
   "Borneo": "Indonesia"
@@ -31,6 +33,7 @@ country_mapping:
 #### -------------------------- Directories ------------------------- ####
 
 sequence_dir: results/sequences
+metadata_dir: results/metadata
 align_dir: results/alignments
 tree_dir: results/tree
 log_dir: results/logs

@@ -496,14 +496,14 @@ class GenBankRecord:
         Returns:
         -------
         str or None
-            A string of the host name if found, otherwise Unknown.
+            A string of the host name if found, otherwise ?.
         """
         if self.record is None:
             return None
         source = self.source
         if 'host' in source:
-            return source['host'][0]
-        return "Unknown"
+            return source['host'][0].split(":")[0]
+        return "?"
     
 
     @property
@@ -537,7 +537,9 @@ class GenBankRecord:
             except Exception as e:
                 print(f"Error parsing collection date for {self.accession}: {e}")
                 return unformatted_date
-        return None
+        else:
+            print(f"Warning: No collection date found for {self.accession}")
+        return "?"
 
 
     @property
@@ -568,7 +570,7 @@ class GenBankRecord:
         Returns:
         -------
         str or None
-            A string of the country if found, otherwise Unknown.
+            A string of the country if found, otherwise ?.
         """
         if self.record is None:
             return None
@@ -577,7 +579,7 @@ class GenBankRecord:
             parts = location.split(":")
             if len(parts) > 0:
                 return parts[0].strip().lower().capitalize()
-        return "Unknown"
+        return "?"
 
 
     @property
@@ -588,7 +590,7 @@ class GenBankRecord:
         Returns:
         -------
         str
-            A string of the local area if found, otherwise Unknown.
+            A string of the local area if found, otherwise ?.
         """
         if self.record is None:
             return None
@@ -597,7 +599,7 @@ class GenBankRecord:
             parts = location.split(":")
             if len(parts) > 1:
                 return parts[-1].strip().lower().capitalize()
-        return "Unknown"
+        return "?"
 
 
     def fetch_geographic_information(self, retries=3, country_mapping=None):
@@ -627,13 +629,13 @@ class GenBankRecord:
         
         location = source['geo_loc_name'][0].split(":")
         country = location[0].strip().lower().capitalize()
-        if country == "Unknown":
+        if country == "?":
             return None
         
         if len(location) > 1:
             local = location[-1].strip().lower().capitalize()
         else:
-            local = "Unknown"
+            local = "?"
         
         if country_mapping is not None and country in country_mapping:
             print(f"Using custom mapping for {country} -> {country_mapping[country]}")
@@ -654,15 +656,15 @@ class GenBankRecord:
                         if country_mapping is not None and country in country_mapping:
                             return {
                                 "country": country,
-                                "region": data[0].get("region", "Unknown"),
-                                "subregion": data[0].get("subregion", "Unknown"),
+                                "region": data[0].get("region", "?"),
+                                "subregion": data[0].get("subregion", "?"),
                                 "local": local
                             }
                         else:
                             return {
-                                "country": data[0].get("name", {}).get("common", "Unknown"),
-                                "region": data[0].get("region", "Unknown"),
-                                "subregion": data[0].get("subregion", "Unknown"),
+                                "country": data[0].get("name", {}).get("common", "?"),
+                                "region": data[0].get("region", "?"),
+                                "subregion": data[0].get("subregion", "?"),
                                 "local": local
                             }
                 print(f"Attempt {attempt+1} failed for {country} with status code {response.status_code}")

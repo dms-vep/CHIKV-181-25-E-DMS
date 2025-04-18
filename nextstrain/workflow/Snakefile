@@ -20,7 +20,7 @@ configfile: "configuration/pipeline.yaml"
 
 rule all:
     input:
-        join(config['tree_dir'], "tree_no_outgroup.nwk"),
+        join(config['tree_dir'], "tree_muts.json")
 
 
 
@@ -120,9 +120,10 @@ rule extract_metadata:
         records=join(config['sequence_dir'], "records.pickle"),
         filtered=join(config['sequence_dir'], "filtered_features.csv")
     output: 
-        join(config['sequence_dir'], "metadata.csv")
+        join(config['metadata_dir'], "metadata.csv")
     params:
-        country_mapping=json.dumps(json.dumps(config['country_mapping']))
+        country_mapping=json.dumps(json.dumps(config['country_mapping'])),
+        virus=config['virus'],
     conda: "nextstrain"
     log: join(config['log_dir'], "extract-metadata.log")
     shell:
@@ -130,6 +131,7 @@ rule extract_metadata:
         python workflow/scripts/extract-metadata.py \
             --records {input.records} \
             --filtered {input.filtered} \
+            --virus {params.virus} \
             --country_mapping {params.country_mapping} \
             --output {output} \
             &>> {log}
@@ -269,7 +271,7 @@ rule root_and_remove_outgroup:
         outgroup=config['accessions']['outgroup'],
     conda: "nextstrain"
     log: join(config['log_dir'], "root-and-remove-outgroup.log")
-    script:
+    shell:
         """
         python workflow/scripts/root-and-remove-outgroup.py \
             --tree {input.tree} \
@@ -290,7 +292,7 @@ rule refine_tree_sequences:
     input:
         tree=join(config['tree_dir'], "tree_no_outgroup.nwk"),
         codon=join(config['align_dir'], "codon_no_outgroup.fa"),
-        metadata=join(config['sequence_dir'], "metadata.csv"),  
+        metadata=join(config['metadata_dir'], "metadata.csv"),  
     output:
         tree=join(config['tree_dir'], "tree.nwk"),
         nodes=join(config['tree_dir'], "tree_nodes.json"),
@@ -308,3 +310,77 @@ rule refine_tree_sequences:
             --verbosity 2 \
             &> {log}
         """
+
+
+rule traits_tree_sequences:
+    """
+    This rule gets traits from the tree
+    """
+    input:
+        tree=join(config['tree_dir'], "tree.nwk"),
+        metadata=join(config['metadata_dir'], "metadata.csv"),  
+    output:
+        tree_traits=join(config['tree_dir'], "tree_traits.json"),
+    conda: "nextstrain"
+    log: join(config['log_dir'], "traits-tree-sequences.log")
+    shell:
+        """
+        augur traits \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            ---metadata-id-columns name \
+            --output-node-data {output.tree_traits} \
+            --columns subregion \
+            --confidence \
+            &> {log}
+        """
+
+
+rule ancestral_tree_sequences:
+    """
+    Reconstruct the ancestral sequences from the tree
+    """
+    input:
+        tree=join(config['tree_dir'], "tree.nwk"),
+        codon=join(config['align_dir'], "codon_no_outgroup.fa"),
+    output:
+        ancestral=join(config['tree_dir'], "tree_muts.json"),
+    conda: "nextstrain"
+    log: join(config['log_dir'], "ancestral-tree-sequences.log")
+    shell:
+        """
+        augur ancestral \
+            --tree {input.tree} \
+            --alignment {input.codon} \
+            --output-node-data {output.ancestral} \
+            --inference joint \
+            &> {log}
+        """
+
+
+# rule translate_tree_sequences:
+#     """
+#     Identifies amino-acid mutations from tree
+#     """
+#     input:
+#         tree=join(config['tree_dir'], "tree.nwk"),
+#         ancestral=join(config['tree_dir'], "tree_muts.json"),
+#         # reference="Results/{gene}/{gene}_reference.gb",
+#     output:
+#         translation=join(config['tree_dir'], "tree_aa_muts.json"),
+#         # gene_alignments=expand("Results/{{gene}}/Augur_AA_Alignements/{domains}.fasta", domains=["G_full_length", "G_ectodomain"])
+#     params:
+#         genes = ["G_full_length", "G_ectodomain"],
+#     conda: "nextstrain"
+#     log: join(config['log_dir'], "translate-tree-sequences.log")
+#     shell:
+#         """
+#         augur translate \
+#             --tree {input.tree} \
+#             --ancestral-sequences {input.ancestral} \
+#             --reference-sequence {input.reference} \
+#             --output-node-data {output.translation} \
+#             --genes {params.genes} \
+#             --alignment-output Results/{wildcards.gene}/Augur_AA_Alignements/%GENE.fasta \
+#             &> {log}
+#         """
