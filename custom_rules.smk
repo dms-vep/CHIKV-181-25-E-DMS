@@ -71,7 +71,7 @@ rule configure_dms_viz:
         pdb_file="results/dms-viz/{viz_name}/{viz_name}.pdb",
         input_data_csv="results/dms-viz/{viz_name}/{viz_name}_data.csv",
         input_sitemap_csv="results/dms-viz/{viz_name}/{viz_name}_sitemap.csv",
-        nb="results/dms-viz/{viz_name}/configure_dms_viz_{viz_name}.ipynb",
+        nb="results/notebooks/configure_dms_viz_{viz_name}.ipynb",
     params:
         params_yaml=lambda wc: yaml_str(
             {
