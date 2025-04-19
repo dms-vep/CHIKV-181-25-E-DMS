@@ -11,7 +11,8 @@
 #  - 6K and E3 are not in the structure
 #---------------------------------------------------------------------------------------
 
-vlp_w_mMxra8_6nk6:  # overall name for this visualization
+# Visualization of full asymmetric unit of E bound to mouse Mxra8
+cell_entry_on_6nk6_asymmetric_unit: &cell_entry_on_6nk6_asymmetric_unit # overall name for this visualization
   pdb_id: 6nk6  # Protein Data Bank ID
   name: CHIKV E mutation effects on cell entry  # name assigned to visualization
   pdb_type: asymmetric_unit  # show 'asymmetric_unit' or 'biological_assembly' for structure
@@ -22,7 +23,7 @@ vlp_w_mMxra8_6nk6:  # overall name for this visualization
   # `sitemap_csv` is CSV that must have columns 'reference_site' (corresponding to site in `data_csv`)
   # as well as 'sequential_site', 'protein_site', and 'chains' which have meaning described here:
   # https://dms-viz.github.io/dms-viz-docs/preparing-data/data-requirements/#sitemap
-  sitemap_csv: data/pdb_sitemaps/6nkb_sitemap.csv
+  sitemap_csv: data/pdb_sitemaps/6nk6_sitemap.csv
   # `melt_condition_metric_cols` is for when there are several columns in `data_csv`
   # that need to be melted to create the 'metric' column and 'condition' column defined
   # in `opt_params`. In that case, list the columns to melt. Otherwise set to 'null'.
@@ -42,3 +43,40 @@ vlp_w_mMxra8_6nk6:  # overall name for this visualization
     summary-stat: mean
     tooltip-cols: {sequential_site: sequential site, region: region}
     heatmap-limits: "-5, 0, 2"
+
+# Visualization of wrapped conformation of E bound to mouse Mxra8
+cell_entry_on_6nk6_wrapped:
+  <<: *cell_entry_on_6nk6_asymmetric_unit
+  opt_params:
+    condition: cells
+    included-chains: A E
+    excluded-chains: M N P B C D F G H I J K L
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region}
+    heatmap-limits: "-5, 0, 2"
+
+# Visualization of intraspike conformation of E bound to mouse Mxra8
+cell_entry_on_6nk6_intraspike:
+  <<: *cell_entry_on_6nk6_asymmetric_unit
+  opt_params:
+    condition: cells
+    included-chains: A E
+    excluded-chains: N O P B C D F G H I J K L
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region}
+
+# Visualization of interspike conformation of E bound to mouse Mxra8
+cell_entry_on_6nk6_interspike:
+  <<: *cell_entry_on_6nk6_asymmetric_unit
+  opt_params:
+    condition: cells
+    included-chains: H D 
+    excluded-chains: M N P A B C F G I J K L
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region}
