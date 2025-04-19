@@ -42,7 +42,7 @@ cell_entry_on_6nk6_asymmetric_unit: &cell_entry_on_6nk6_asymmetric_unit # overal
     floor: False
     summary-stat: mean
     tooltip-cols: {sequential_site: sequential site, region: region}
-    heatmap-limits: "-5, 0, 2"
+    heatmap-limits: "-6, 0, 2"
 
 # Visualization of wrapped conformation of E bound to mouse Mxra8
 cell_entry_on_6nk6_wrapped:
@@ -55,7 +55,7 @@ cell_entry_on_6nk6_wrapped:
     floor: False
     summary-stat: mean
     tooltip-cols: {sequential_site: sequential site, region: region}
-    heatmap-limits: "-5, 0, 2"
+    heatmap-limits: "-6, 0, 2"
 
 # Visualization of intraspike conformation of E bound to mouse Mxra8
 cell_entry_on_6nk6_intraspike:
@@ -68,6 +68,7 @@ cell_entry_on_6nk6_intraspike:
     floor: False
     summary-stat: mean
     tooltip-cols: {sequential_site: sequential site, region: region}
+    heatmap-limits: "-6, 0, 2"
 
 # Visualization of interspike conformation of E bound to mouse Mxra8
 cell_entry_on_6nk6_interspike:
@@ -80,3 +81,4 @@ cell_entry_on_6nk6_interspike:
     floor: False
     summary-stat: mean
     tooltip-cols: {sequential_site: sequential site, region: region}
+    heatmap-limits: "-6, 0, 2"
