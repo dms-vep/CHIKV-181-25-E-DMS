@@ -75,3 +75,7 @@ results/summaries/*
 !results/compare_cell_entry
 results/compare_cell_entry/*
 !results/compare_cell_entry/*.csv
+
+!results/dms-viz
+results/dms-viz/*/*
+!results/dms-viz/*/*.json
