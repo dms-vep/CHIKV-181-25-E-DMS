@@ -4,6 +4,7 @@ This file is included by the pipeline ``Snakefile``.
 
 """
 
+# Compare entry across cells ------------------------------------------------------------
 
 rule compare_cell_entry:
     """Compare entry across cell lines."""
@@ -54,6 +55,8 @@ docs["Compare entry among cells"] = {
     }
 }
 
+
+# Configure dms-viz JSONs ---------------------------------------------------------------
 
 # read configuration for `configure_dms_viz`
 with open("data/dms_viz_config.yaml") as f:
@@ -113,4 +116,42 @@ docs["dms-viz visualizations"] = {
         viz_name: rules.configure_dms_viz.output.nb.format(viz_name=viz_name)
         for viz_name in dms_viz_config
     },
+}
+
+
+# Make row-wrapped heatmaps -------------------------------------------------------------
+
+# read configuration for wrapped heatmaps
+with open("data/wrapped_heatmap_config.yaml") as f:
+    wrapped_heatmap_config = yaml.YAML(typ="safe", pure=True).load(f)
+
+
+rule wrapped_heatmap:
+    """Make row-wrapped heatmaps."""
+    input:
+        data_csv=lambda wc: wrapped_heatmap_config[wc.wrapped_hm]["data_csv"],
+        nb="notebooks/wrapped_heatmap.ipynb",
+    output:
+        chart_html="results/wrapped_heatmaps/{wrapped_hm}_wrapped_heatmap.html",
+        nb="results/notebooks/wrapped_heatmap_{wrapped_hm}.ipynb",
+    params:
+        params_yaml=lambda wc: yaml_str(wrapped_heatmap_config[wc.wrapped_hm])
+    log:
+        "results/logs/wrapped_heatmap_{wrapped_hm}.txt",
+    conda:
+        os.path.join(config["pipeline_path"], "environment.yml"),
+    shell:
+        """
+        papermill {input.nb} {output.nb} \
+            -p chart_html {output.chart_html} \
+            -y "{params.params_yaml}" \
+            &> {log}
+        """
+
+
+docs["Row-wrapped heatmaps"] = {
+    "Heatmap HTMLs" : {
+        wrapped_hm: rules.wrapped_heatmap.output.chart_html.format(wrapped_hm=wrapped_hm)
+        for wrapped_hm in wrapped_heatmap_config
+    }
 }
