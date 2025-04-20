@@ -10,6 +10,14 @@
 #  - chains M, N, O, P are mouse Mxra8
 #  - 6K and E3 are not in the structure
 #---------------------------------------------------------------------------------------
+# Structure 6nk7 visualizations:
+#  - chains A, B, C, D are E1
+#  - chains E, F, G, H are E2
+#  - chains U, V, W, X are E3
+#  - chains I, J, K, L are capsid
+#  - chains N is mouse Mxra8
+#  - 6K is not in the structure
+#---------------------------------------------------------------------------------------
 
 # Visualization of full asymmetric unit of E bound to mouse Mxra8
 cell_entry_on_6nk6_asymmetric_unit: &cell_entry_on_6nk6_asymmetric_unit # overall name for this visualization
@@ -83,6 +91,38 @@ cell_entry_on_6nk6_interspike:
     tooltip-cols: {sequential_site: sequential site, region: region}
     heatmap-limits: "-6, 0, 2"
 
+cell_entry_on_6nk7_asymmetric_unit: &cell_entry_on_6nk7_asymmetric_unit # overall name for this visualization
+  pdb_id: 6nk7  # Protein Data Bank ID
+  name: CHIKV E mutation effects on cell entry  # name assigned to visualization
+  pdb_type: asymmetric_unit  # show 'asymmetric_unit' or 'biological_assembly' for structure
+  # `data_csv` is CSV of DMS data, must have columns 'site', 'wildtype', and 'mutant'. Also must
+  # have a column corresponding to `metric` defined below, and `opt_params[condition]` if that is
+  # defined; OR you must specify `melt_condition_metric_cols`.
+  data_csv: results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv  # CSV of DMS data
+  # `sitemap_csv` is CSV that must have columns 'reference_site' (corresponding to site in `data_csv`)
+  # as well as 'sequential_site', 'protein_site', and 'chains' which have meaning described here:
+  # https://dms-viz.github.io/dms-viz-docs/preparing-data/data-requirements/#sitemap
+  sitemap_csv: data/pdb_sitemaps/6nk7_sitemap.csv
+  # `melt_condition_metric_cols` is for when there are several columns in `data_csv`
+  # that need to be melted to create the 'metric' column and 'condition' column defined
+  # in `opt_params`. In that case, list the columns to melt. Otherwise set to 'null'.
+  melt_condition_metric_cols:
+    - entry in 293T_Mxra8 cells
+    - entry in C636 cells
+    - entry in 293T_TIM1 cells
+  metric: entry  # metric to plot, in `data_csv` or created by `melt_conditions_metric_cols`
+  # optional params, have same meaning as to `configure-dms-viz`:
+  # https://dms-viz.github.io/dms-viz-docs/preparing-data/command-line-api/
+  opt_params:
+    condition: cells
+    included-chains: A B C D E F G H U V W X
+    excluded-chains: I J K L
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region}
+    heatmap-limits: "-6, 0, 2"
+
 # Visualization of full asymmetric unit w differences among entry in different cells
 cell_entry_diffs_on_6nk6_asymmetric_unit:
   pdb_id: 6nk6
@@ -98,6 +138,27 @@ cell_entry_diffs_on_6nk6_asymmetric_unit:
   opt_params:
     condition: comparison
     included-chains: A B C D E F G H
+    excluded-chains: I J K L
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region, 293T_TIM1: 293T-TIM1 entry, 293T_Mxra8: 293T-Mxra8 entry, C636: C6/36 entry}
+    heatmap-limits: "-4, 0, 4"
+
+cell_entry_diffs_on_6nk7_asymmetric_unit:
+  pdb_id: 6nk7
+  name: differences between cells in CHIKV E mutation effects on cell entry
+  pdb_type: asymmetric_unit
+  data_csv: results/compare_cell_entry/mut_diffs.csv
+  sitemap_csv: data/pdb_sitemaps/6nk7_sitemap.csv
+  melt_condition_metric_cols:
+    - 293T_Mxra8 minus C636
+    - 293T_Mxra8 minus 293T_TIM1
+    - C636 minus 293T_TIM1
+  metric: entry_difference
+  opt_params:
+    condition: comparison
+    included-chains: A B C D E F G H U V W X
     excluded-chains: I J K L
     alphabet: RKHDEQNSTYWFAILMVGPC
     floor: False
