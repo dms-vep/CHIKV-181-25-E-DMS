@@ -6,6 +6,36 @@ This file is included by the pipeline ``Snakefile``.
 
 # Compare entry across cells ------------------------------------------------------------
 
+rule cell_entry_mut_diffs:
+    """Get CSV with differences in entry for mutations between cells after flooring."""
+    input:
+        mut_effects_csv="results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv",
+        nb="notebooks/cell_entry_mut_diffs.ipynb",
+    output:
+        mut_diffs_csv="results/compare_cell_entry/mut_diffs.csv",
+        nb="results/notebooks/cell_entry_mut_diffs.ipynb",
+    params:
+        params_yaml=lambda wc: yaml_str(
+            {
+                # cells names in input CSV file
+                "cells": ["293T_Mxra8", "C636", "293T_TIM1"],
+                # for calculating differences and display, floor mutation effects at this
+                "floor_mut_effects": -5,
+            }
+        ),
+    conda:
+        os.path.join(config["pipeline_path"], "environment.yml"),
+    log:
+        "results/logs/cell_entry_mut_diffs.txt",
+    shell:
+        """
+        papermill {input.nb} {output.nb} \
+            -p mut_effects_csv {input.mut_effects_csv} \
+            -p mut_diffs_csv {output.mut_diffs_csv} \
+            -y "{params.params_yaml}" \
+            &> {log}
+        """
+
 rule compare_cell_entry:
     """Compare entry across cell lines."""
     input:
@@ -52,6 +82,8 @@ docs["Compare entry among cells"] = {
     },
     "Data files": {
         "site-differences in entry effects": rules.compare_cell_entry.output.site_diffs_csv,
+        "mutation-differences in entry effects (after flooring negative values)":
+            rules.cell_entry_mut_diffs.output.mut_diffs_csv,
     }
 }
 
@@ -61,7 +93,6 @@ docs["Compare entry among cells"] = {
 # read configuration for `configure_dms_viz`
 with open("data/dms_viz_config.yaml") as f:
     dms_viz_config = yaml.YAML(typ="safe", pure=True).load(f)
-
 
 rule configure_dms_viz:
     """Configure a JSON for `dms-viz`."""
@@ -106,7 +137,6 @@ rule configure_dms_viz:
             &> {log}
         """
 
-
 docs["dms-viz visualizations"] = {
     "dms-viz JSON files": {
         viz_name: rules.configure_dms_viz.output.dms_viz_json.format(viz_name=viz_name)
@@ -117,7 +147,6 @@ docs["dms-viz visualizations"] = {
         for viz_name in dms_viz_config
     },
 }
-
 
 # Make row-wrapped heatmaps -------------------------------------------------------------
 
@@ -147,7 +176,6 @@ rule wrapped_heatmap:
             -y "{params.params_yaml}" \
             &> {log}
         """
-
 
 docs["Row-wrapped heatmaps"] = {
     "Heatmap HTMLs" : {
