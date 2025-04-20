@@ -1,6 +1,8 @@
 # Deep mutational scanning of CHIKV 181/25 envelope protein
 Experiment by Xiaohui Ju and analysis helped by Will Hannon, Caelan Radford and Jesse Bloom.
 
+See [https://dms-vep.org/CHIKV_181-25_E_DMS/](https://dms-vep.org/CHIKV_181-25_E_DMS/) for the interactive HTML results of this pipeline.
+
 ## Organization of this repo
 
 ### `dms-vep-pipeline-3` submodule
@@ -26,8 +28,13 @@ The [conda](https://docs.conda.io/) environment used by the pipeline is that spe
 In addition to the core functionality of [dms-vep-pipeline-3](https://github.com/dms-vep/dms-vep-pipeline-3), some additional custom analyses are run by the pipeline.
 The notebooks for these analyses are in [./notebooks/](notebooks), and the code running them is in [custom_rules.smk](custom_rules.smk).
 
-These custom analyses include mappings for `dms-viz` visualizations.
+#### `dms-viz` visualization JSONs
+These custom analyses include mappings for [dms-viz](https://dms-viz.github.io/) visualizations.
 The configuration for those visualizations is specified in [./data/dms_viz_config.yaml](data/dms_viz_config.yaml), and uses the site maps that map protein sites to the PDB sites as defined in [data/pdb_sitemaps/](data/pdb_sitemaps/).
+
+#### Row-wrapped heatmaps
+These custom analyses include making row-wrapped heatmaps that are more sized for paper figures.
+The configuration for those visualizations is specified in [data/wrapped_heatmap_config.yaml](data/wrapped_heatmap_config.yaml), and HTMLs of the heatmaps are shown in the auto-rendered documentation.
 
 ### Data
 Input data utilized by the pipeline are located in [./data/](data). 
