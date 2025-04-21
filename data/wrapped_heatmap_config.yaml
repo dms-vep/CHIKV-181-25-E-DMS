@@ -43,3 +43,15 @@ entry_C636_minus_293T-TIM1:
   <<: *entry_293T-Mxra8_minus_C636
   title: effect of mutation to CHIKV E proteins on entry in C6/36 cells minus effect in 293T-TIM1 cells
   effect_col: C636 minus 293T_TIM1
+
+binding_mouse-Mxra8: &binding_mouse-Mxra8
+  data_csv: results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv
+  title: effect of mutations to CHIKV E proteins on binding to mouse Mxra8
+  effect_col: binding to mouse Mxra8
+  data_query_str: "site != '-1(E3)'"  # ignore this site
+  sites_per_row: 130  # how many sites in each row
+  site_label_freq: 5  # label sites at this frequency
+  color_scheme: purplegreen  # vega color scheme
+  fixed_min: -4  # fix heatmap min at this
+  fixed_max: 2  # fix heatmap max at this
+  alphabet: RKHDEQNSTYWFAILMVGPC  # amino acids in order
