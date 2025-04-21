@@ -310,7 +310,7 @@ receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
   functional effect:
     csv: results/func_effects/averages/293T-Mxra8_entry_func_effects.csv
     csv_col: effect
-    init: -5
+    init: -4
     min_filters:
       times_seen: 2
 
