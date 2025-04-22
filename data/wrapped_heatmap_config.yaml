@@ -48,7 +48,7 @@ binding_mouse-Mxra8: &binding_mouse-Mxra8
   data_csv: results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv
   title: effect of mutations to CHIKV E proteins on binding to mouse Mxra8
   effect_col: binding to mouse Mxra8
-  data_query_str: "site != '-1(E3)'"  # ignore this site
+  data_query_str: "(site != '-1(E3)') and (`entry in 293T_Mxra8 cells` >= -4)"  # ignore this site and set up entry cutoff
   sites_per_row: 130  # how many sites in each row
   site_label_freq: 5  # label sites at this frequency
   color_scheme: purplegreen  # vega color scheme
