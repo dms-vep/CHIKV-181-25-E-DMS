@@ -159,23 +159,17 @@ rule wrapped_heatmap:
     """Make row-wrapped heatmaps."""
     input:
         data_csv=lambda wc: wrapped_heatmap_config[wc.wrapped_hm]["data_csv"],
-        nb="notebooks/wrapped_heatmap.ipynb",
     output:
         chart_html="results/wrapped_heatmaps/{wrapped_hm}_wrapped_heatmap.html",
         nb="results/notebooks/wrapped_heatmap_{wrapped_hm}.ipynb",
     params:
-        params_yaml=lambda wc: yaml_str(wrapped_heatmap_config[wc.wrapped_hm])
+        params_dict=lambda wc: wrapped_heatmap_config[wc.wrapped_hm]
     log:
-        "results/logs/wrapped_heatmap_{wrapped_hm}.txt",
+        notebook="results/notebooks/wrapped_heatmap_{wrapped_hm}.ipynb",
     conda:
         os.path.join(config["pipeline_path"], "environment.yml"),
-    shell:
-        """
-        papermill {input.nb} {output.nb} \
-            -p chart_html {output.chart_html} \
-            -y "{params.params_yaml}" \
-            &> {log}
-        """
+    notebook:
+        "notebooks/wrapped_heatmap.py.ipynb"
 
 docs["Row-wrapped heatmaps"] = {
     "Heatmap HTMLs" : {
