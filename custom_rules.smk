@@ -4,6 +4,41 @@ This file is included by the pipeline ``Snakefile``.
 
 """
 
+# Compare Mxra8 binding to entry --------------------------------------------------------
+
+rule compare_mxra8_binding_to_entry:
+    """Compare Mxra8 binding to cell entry."""
+    input:
+        data_csv="results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv",
+        nb="notebooks/compare_mxra8_binding_to_entry.ipynb",
+    output:
+        corr_chart_html="results/compare_mxra8_binding_to_entry/compare_mxra8_binding_to_entry.html",
+        nb="results/notebooks/compare_mxra8_binding_to_entry.ipynb",
+    params:
+        params_yaml=lambda wc: yaml_str(
+            {
+                "mut_effects_floor": -5,  # floor mut effects on entry at this value
+                "min_293T_Mxra8_entry": -4,  # only consider binding for mutations w effects on 293T-Mxra8 entry >= this
+                "cells": ["293T_Mxra8", "C636", "293T_TIM1"],
+            }
+        ),
+    conda:
+        os.path.join(config["pipeline_path"], "environment.yml"),
+    log:
+        "results/logs/compare_mxra8_binding_to_entry.txt",
+    shell:
+        """
+        papermill {input.nb} {output.nb} \
+            -p data_csv {input.data_csv} \
+            -p corr_chart_html {output.corr_chart_html} \
+            -y "{params.params_yaml}" \
+            &> {log}
+        """
+
+docs["Compare Mxra8 binding to cell entry"] = {
+    "scatter plot": rules.compare_mxra8_binding_to_entry.output.corr_chart_html,
+}
+
 # Compare entry across cells ------------------------------------------------------------
 
 rule cell_entry_mut_diffs:
