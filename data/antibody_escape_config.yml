@@ -307,7 +307,7 @@ receptor_plot_kwargs_default: &receptor_plot_kwargs_default
 
 # default stats to hide cells on plot of receptor affinity
 receptor_plot_hide_stats_default: &receptor_plot_hide_stats_default
-  functional effect:
+  293T-Mxra8 cell entry:
     csv: results/func_effects/averages/293T-Mxra8_entry_func_effects.csv
     csv_col: effect
     init: -4
