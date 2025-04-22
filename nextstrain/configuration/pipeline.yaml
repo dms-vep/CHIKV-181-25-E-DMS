@@ -20,12 +20,12 @@ outgroup:
 feature: structural polyprotein
 name: CHIKVgp2
 genes:
-  - "CHIKVgp2"
-  - "capsid_protein"
-  - "E3_protein"
-  - "E2_envelope_glycoprotein"
-  - "6K_protein"
-  - "E1_envelope_glycoprotein"
+  "CHIKVgp2": "CHIKVgp2"
+  "capsid_protein": "Capsid"
+  "E3_protein": "E3"
+  "E2_envelope_glycoprotein": "E2"
+  "6K_protein": "6K"
+  "E1_envelope_glycoprotein": "E1"
 
 filter:
   min_feature_length: 3647
@@ -70,5 +70,5 @@ sequence_dir: results/sequences
 metadata_dir: results/metadata
 align_dir: results/alignments
 tree_dir: results/tree
-auspice_dir: results/auspice
+auspice_dir: auspice/
 log_dir: results/logs

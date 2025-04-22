@@ -35,6 +35,7 @@ rule make_reference:
         feature=config['feature'],
         name=config['name'],
         reference=config['accessions']['library'],
+        gene_mapping=json.dumps(json.dumps(config['genes'])),
     conda: "nextstrain"
     log: join(config['log_dir'], "make-reference.log")
     shell:
@@ -43,6 +44,7 @@ rule make_reference:
             --reference {params.reference} \
             --product "{params.feature}" \
             --name "{params.name}" \
+            --gene_mapping {params.gene_mapping} \
             --output {output} \
             &>> {log}
         """
@@ -394,9 +396,9 @@ rule translate_tree_sequences:
         reference=join(config['reference_dir'], "reference.gb")
     output:
         translation=join(config['tree_dir'], "tree_aa_muts.json"),
-        gene_alignments=expand(join(config['align_dir'], "{genes}.fasta"), genes=config['genes'])
+        gene_alignments=expand(join(config['align_dir'], "{genes}.fasta"), genes=[value for key, value in config['genes'].items()])
     params:
-        genes=config['genes'],
+        genes=[value for key, value in config['genes'].items()]
     conda: "nextstrain"
     log: join(config['log_dir'], "translate-tree-sequences.log")
     shell:
