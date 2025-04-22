@@ -13,6 +13,10 @@ accessions:
 
 #### ------------------------- Parameters ------------------------ ####
 
+outgroup:
+  accession: NC_075006.1
+  strain: SG650_NC_075006
+
 feature: structural polyprotein
 name: CHIKVgp2
 genes:

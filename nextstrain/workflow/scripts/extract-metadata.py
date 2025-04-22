@@ -24,12 +24,6 @@ def parse_arguments():
         help="The path to the output metadata csv file"
     )
     parser.add_argument(
-        "--virus", 
-        type=str,
-        default=None,
-        help="Abbreviation of the virus name for strain name (e.g. 'CHIKV' for Chikungunya virus)"
-    )
-    parser.add_argument(
         "--country_mapping",
         type=json.loads,
         default=None,
@@ -103,13 +97,13 @@ def extract_metadata(records, country_mapping=None):
     return pd.DataFrame(metadata, columns=properties)
 
 
-def make_unique_id(df, virus):
+def make_strain_unique(df):
     """
-    Make a unique 'strain' identifier for each record in the dataframe.
-    Check if the strains are unique in the dataframe.
+    Strain needs to be unique in the dataframe.
 
     If they aren't unique, print a warning.
-    Make a new columns called 'name'
+    Make a new, unique strain column.
+    Rename the existing 'strain' column to 'isolate'.
 
     Parameters
     ----------
@@ -119,7 +113,7 @@ def make_unique_id(df, virus):
     Returns
     -------
     pd.DataFrame
-        The dataframe with the new 'name' column.
+        The dataframe with the new 'strain' column.
     """
     # Check if the strains are unique
     if df.strain.duplicated().any():
@@ -131,13 +125,15 @@ def make_unique_id(df, virus):
             print(f"\nStrain: {strain}\n----------")
             duplicate_strain_accessions = df[df.strain == strain].accession.unique()
             for i, acc in enumerate(duplicate_strain_accessions):
-                print(f"\tAccession: {acc}")
-                df.loc[df.accession == acc, 'strain'] = f"{strain}_{i+1}"
-    # Make a new column called 'name'
-    if virus:
-        df['name'] = df.apply(lambda row: f"{virus}/{row['strain']}/{row['host']}/{row['date'][:4]}", axis=1)
-    else:
-        df['name'] = df.apply(lambda row: f"{row['strain']}/{row['host']}/{row['date'][:4]}", axis=1)
+                print(f"\tAccession: {acc}") 
+    # Rename the existing 'strain' column to 'isolate'
+    df.rename(columns={'strain': 'isolate'}, inplace=True)
+    # Replace characters like '/', ' ', and '.' with '-' in the isolate names
+    df['isolate'] = df['isolate'].str.replace(r'[ /.]', '-', regex=True)
+    # Replace any remaining non-alphanumeric characters with '-'
+    df['isolate'] = df['isolate'].str.replace(r'[^a-zA-Z0-9-]', '-', regex=True)
+    # Make a new 'strain' column that is unique
+    df['strain'] = df.apply(lambda row: f"{row['isolate']}_{row['accession'].split('.')[0]}", axis=1)
     return df
 
 
@@ -209,12 +205,15 @@ def main():
     metadata_df = extract_metadata(records, country_mapping=args.country_mapping)
 
     # Check the strains, accessions, and species
-    metadata_df = make_unique_id(metadata_df, args.virus)
+    metadata_df = make_strain_unique(metadata_df)
     metadata_df = check_hosts(metadata_df, host_mapping=args.host_mapping)
     check_accessions(metadata_df)
 
-    # Export the metadata to a CSV file
-    metadata_df.to_csv(args.output, index=False)
+    # Sort the columns so that 'strain' is the first column
+    metadata_df = metadata_df[['strain'] + [col for col in metadata_df.columns if col != 'strain']]
+    
+    # Export the metadata to a TSV file
+    metadata_df.to_csv(args.output, sep='\t', index=False)
     end_time = time.time()
     print(f"Extracted metadata from {len(records)} records from GenBank in {end_time - start_time:.4f} seconds.\n")
     print(f"Finished. Results exported to {args.output}")

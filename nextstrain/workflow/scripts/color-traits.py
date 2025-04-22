@@ -34,7 +34,7 @@ def main():
     args = parse_arguments()
 
     # Read the metadata file
-    metadata_df = pd.read_csv(args.metadata)
+    metadata_df = pd.read_csv(args.metadata, sep="\t")
 
     # Read the color schemes file
     schemes = {}

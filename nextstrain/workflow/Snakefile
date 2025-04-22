@@ -141,11 +141,10 @@ rule extract_metadata:
         records=join(config['sequence_dir'], "records.pickle"),
         filtered=join(config['sequence_dir'], "filtered_features.csv")
     output: 
-        join(config['metadata_dir'], "metadata.csv")
+        join(config['metadata_dir'], "metadata.tsv")
     params:
         country_mapping=json.dumps(json.dumps(config['country_mapping'])),
         host_mapping=json.dumps(json.dumps(config['host_mapping'])),
-        virus=config['virus'],
     conda: "nextstrain"
     log: join(config['log_dir'], "extract-metadata.log")
     shell:
@@ -153,7 +152,6 @@ rule extract_metadata:
         python workflow/scripts/extract-metadata.py \
             --records {input.records} \
             --filtered {input.filtered} \
-            --virus {params.virus} \
             --country_mapping {params.country_mapping} \
             --host_mapping {params.host_mapping} \
             --output {output} \
@@ -166,16 +164,19 @@ rule extract_sequences:
     Extract the nucleotide sequences from the filtered accessions.
     """
     input: 
-        join(config['sequence_dir'], "filtered_features.csv")
+        features=join(config['sequence_dir'], "filtered_features.csv"),
+        metadata=join(config['metadata_dir'], "metadata.tsv")
     output: 
         join(config['sequence_dir'], "nucleotide.fa")
     run:
-        df = pd.read_csv(input[0])
+        features_df = pd.read_csv(input.features)
+        metadata_df = pd.read_csv(input.metadata, sep='\t')
         records = []
-        for idx, row in df.iterrows():
+        for idx, row in features_df.iterrows():
+            strain = metadata_df.loc[metadata_df['accession'] == row['accession'], 'strain'].values[0]
             record = SeqRecord(
                 Seq(row['sequence']),
-                id=row['accession'],
+                id=strain,
                 description=""
             )
             records.append(record)
@@ -187,16 +188,19 @@ rule extract_translations:
     Extract the protein sequences from the filtered accessions.
     """
     input: 
-        join(config['sequence_dir'], "filtered_features.csv")
+        features=join(config['sequence_dir'], "filtered_features.csv"),
+        metadata=join(config['metadata_dir'], "metadata.tsv")
     output: 
         join(config['sequence_dir'], "protein.fa")
     run:
-        df = pd.read_csv(input[0])
+        features_df = pd.read_csv(input.features)
+        metadata_df = pd.read_csv(input.metadata, sep='\t')
         records = []
-        for idx, row in df.iterrows():
+        for idx, row in features_df.iterrows():
+            strain = metadata_df.loc[metadata_df['accession'] == row['accession'], 'strain'].values[0]
             record = SeqRecord(
                 Seq(row['translation']),
-                id=row['accession'],
+                id=strain,
                 description=""
             )
             records.append(record)
@@ -265,7 +269,7 @@ rule build_tree:
     output:
         join(config['tree_dir'], "tree_raw.nwk")
     params:
-        outgroup=config['accessions']['outgroup'],
+        outgroup=config['outgroup']['strain'],
     conda: "nextstrain"
     log: join(config['log_dir'], "build-tree.log")
     shell:
@@ -291,7 +295,7 @@ rule root_and_remove_outgroup:
         protein=join(config['align_dir'], "protein_no_outgroup.fa"),
         codon=join(config['align_dir'], "codon_no_outgroup.fa")    
     params:
-        outgroup=config['accessions']['outgroup'],
+        outgroup=config['outgroup']['strain'],
     conda: "nextstrain"
     log: join(config['log_dir'], "root-and-remove-outgroup.log")
     shell:
@@ -315,7 +319,7 @@ rule refine_tree_sequences:
     input:
         tree=join(config['tree_dir'], "tree_no_outgroup.nwk"),
         codon=join(config['align_dir'], "codon_no_outgroup.fa"),
-        metadata=join(config['metadata_dir'], "metadata.csv"),  
+        metadata=join(config['metadata_dir'], "metadata.tsv"),  
     output:
         tree=join(config['tree_dir'], "tree.nwk"),
         nodes=join(config['tree_dir'], "tree_nodes.json"),
@@ -341,7 +345,7 @@ rule traits_tree_sequences:
     """
     input:
         tree=join(config['tree_dir'], "tree.nwk"),
-        metadata=join(config['metadata_dir'], "metadata.csv"),  
+        metadata=join(config['metadata_dir'], "metadata.tsv"),  
     output:
         tree_traits=join(config['tree_dir'], "tree_traits.json"),
     conda: "nextstrain"
@@ -351,8 +355,6 @@ rule traits_tree_sequences:
         augur traits \
             --tree {input.tree} \
             --metadata {input.metadata} \
-            --metadata-delimiters "," \
-            --metadata-id-columns name \
             --output-node-data {output.tree_traits} \
             --columns subregion \
             --confidence \
@@ -416,7 +418,7 @@ rule color_traits:
     """
     input:
         schemes=config["color"]["scheme"],
-        metadata=join(config['metadata_dir'], "metadata.csv"),  
+        metadata=join(config['metadata_dir'], "metadata.tsv"),  
     output:
         join(config['tree_dir'], "colors.tsv"),
     params:
@@ -440,7 +442,7 @@ rule export_tree:
     """
     input:
         tree=join(config['tree_dir'], "tree.nwk"),
-        metadata=join(config['metadata_dir'], "metadata.csv"),  
+        metadata=join(config['metadata_dir'], "metadata.tsv"),  
         nodes=join(config['tree_dir'], "tree_nodes.json"),
         traits=join(config['tree_dir'], "tree_traits.json"),
         ancestral=join(config['tree_dir'], "tree_muts.json"),
