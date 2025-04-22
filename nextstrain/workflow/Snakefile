@@ -20,11 +20,32 @@ configfile: "configuration/pipeline.yaml"
 
 rule all:
     input:
-        join(config['tree_dir'], "tree_muts.json")
-
-
+        join(config['auspice_dir'], "auspice.json")
 
 #### ------------------------ Rules ------------------------ ####
+
+
+rule make_reference:
+    """
+    Make a reference GenBank from a CDS for Nextstrain.
+    """
+    output: 
+        join(config['reference_dir'], "reference.gb")
+    params:
+        feature=config['feature'],
+        name=config['name'],
+        reference=config['accessions']['library'],
+    conda: "nextstrain"
+    log: join(config['log_dir'], "make-reference.log")
+    shell:
+        """
+        python workflow/scripts/make-reference.py \
+            --reference {params.reference} \
+            --product "{params.feature}" \
+            --name "{params.name}" \
+            --output {output} \
+            &>> {log}
+        """
 
 
 rule download_records:
@@ -123,6 +144,7 @@ rule extract_metadata:
         join(config['metadata_dir'], "metadata.csv")
     params:
         country_mapping=json.dumps(json.dumps(config['country_mapping'])),
+        host_mapping=json.dumps(json.dumps(config['host_mapping'])),
         virus=config['virus'],
     conda: "nextstrain"
     log: join(config['log_dir'], "extract-metadata.log")
@@ -133,6 +155,7 @@ rule extract_metadata:
             --filtered {input.filtered} \
             --virus {params.virus} \
             --country_mapping {params.country_mapping} \
+            --host_mapping {params.host_mapping} \
             --output {output} \
             &>> {log}
         """
@@ -328,7 +351,8 @@ rule traits_tree_sequences:
         augur traits \
             --tree {input.tree} \
             --metadata {input.metadata} \
-            ---metadata-id-columns name \
+            --metadata-delimiters "," \
+            --metadata-id-columns name \
             --output-node-data {output.tree_traits} \
             --columns subregion \
             --confidence \
@@ -358,29 +382,91 @@ rule ancestral_tree_sequences:
         """
 
 
-# rule translate_tree_sequences:
-#     """
-#     Identifies amino-acid mutations from tree
-#     """
-#     input:
-#         tree=join(config['tree_dir'], "tree.nwk"),
-#         ancestral=join(config['tree_dir'], "tree_muts.json"),
-#         # reference="Results/{gene}/{gene}_reference.gb",
-#     output:
-#         translation=join(config['tree_dir'], "tree_aa_muts.json"),
-#         # gene_alignments=expand("Results/{{gene}}/Augur_AA_Alignements/{domains}.fasta", domains=["G_full_length", "G_ectodomain"])
-#     params:
-#         genes = ["G_full_length", "G_ectodomain"],
-#     conda: "nextstrain"
-#     log: join(config['log_dir'], "translate-tree-sequences.log")
-#     shell:
-#         """
-#         augur translate \
-#             --tree {input.tree} \
-#             --ancestral-sequences {input.ancestral} \
-#             --reference-sequence {input.reference} \
-#             --output-node-data {output.translation} \
-#             --genes {params.genes} \
-#             --alignment-output Results/{wildcards.gene}/Augur_AA_Alignements/%GENE.fasta \
-#             &> {log}
-#         """
+rule translate_tree_sequences:
+    """
+    Identifies amino-acid mutations from tree
+    """
+    input:
+        tree=join(config['tree_dir'], "tree.nwk"),
+        ancestral=join(config['tree_dir'], "tree_muts.json"),
+        reference=join(config['reference_dir'], "reference.gb")
+    output:
+        translation=join(config['tree_dir'], "tree_aa_muts.json"),
+        gene_alignments=expand(join(config['align_dir'], "{genes}.fasta"), genes=config['genes'])
+    params:
+        genes=config['genes'],
+    conda: "nextstrain"
+    log: join(config['log_dir'], "translate-tree-sequences.log")
+    shell:
+        """
+        augur translate \
+            --tree {input.tree} \
+            --ancestral-sequences {input.ancestral} \
+            --reference-sequence {input.reference} \
+            --output-node-data {output.translation} \
+            --genes {params.genes} \
+            --alignment-output results/alignments/%GENE.fasta \
+            &> {log}
+        """
+
+
+rule color_traits:
+    """
+    Assign color schemes to traits in the tree.
+    """
+    input:
+        schemes=config["color"]["scheme"],
+        metadata=join(config['metadata_dir'], "metadata.csv"),  
+    output:
+        join(config['tree_dir'], "colors.tsv"),
+    params:
+        traits=config['color']['traits'],
+    conda: "nextstrain"
+    log: join(config['log_dir'], "color-traits.log")
+    shell:
+        """
+        python workflow/scripts/color-traits.py \
+            --metadata {input.metadata} \
+            --schemes {input.schemes} \
+            --traits {params.traits} \
+            --output {output} \
+            &> {log}
+        """
+
+
+rule export_tree:
+    """
+    Exports the tree to visualize with Auspice
+    """
+    input:
+        tree=join(config['tree_dir'], "tree.nwk"),
+        metadata=join(config['metadata_dir'], "metadata.csv"),  
+        nodes=join(config['tree_dir'], "tree_nodes.json"),
+        traits=join(config['tree_dir'], "tree_traits.json"),
+        ancestral=join(config['tree_dir'], "tree_muts.json"),
+        translation=join(config['tree_dir'], "tree_aa_muts.json"),
+        colors=join(config['tree_dir'], "colors.tsv"),
+        config=config["auspice"]["config"],
+        coordinates=config["auspice"]["coordinates"],
+    params:
+        title=config["auspice"]["title"],
+        description=config["auspice"]["description"],
+    output:
+        join(config['auspice_dir'], "auspice.json"),
+    conda: "nextstrain"
+    log: join(config['log_dir'], "export-tree.log")
+    shell:
+        """
+        augur export v2 \
+            --tree {input.tree} \
+            --title "{params.title}" \
+            --description "{params.description}" \
+            --metadata {input.metadata} \
+            --node-data {input.nodes} {input.traits} {input.ancestral} {input.translation} \
+            --include-root-sequence-inline \
+            --colors {input.colors} \
+            --lat-longs {input.coordinates} \
+            --auspice-config {input.config} \
+            --output {output} \
+            &> {log}
+        """

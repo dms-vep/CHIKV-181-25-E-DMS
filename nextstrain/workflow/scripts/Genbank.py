@@ -502,7 +502,9 @@ class GenBankRecord:
             return None
         source = self.source
         if 'host' in source:
-            return source['host'][0].split(":")[0]
+            # Split by both delimiters at once by using regular expressions
+            import re
+            return re.split(r'[;:]', source['host'][0])[0]
         return "?"
     
 
@@ -653,20 +655,12 @@ class GenBankRecord:
                 if response.status_code == 200:
                     data = response.json()
                     if data:
-                        if country_mapping is not None and country in country_mapping:
-                            return {
-                                "country": country,
-                                "region": data[0].get("region", "?"),
-                                "subregion": data[0].get("subregion", "?"),
-                                "local": local
-                            }
-                        else:
-                            return {
-                                "country": data[0].get("name", {}).get("common", "?"),
-                                "region": data[0].get("region", "?"),
-                                "subregion": data[0].get("subregion", "?"),
-                                "local": local
-                            }
+                        return {
+                            "country": data[0].get("name", {}).get("common", "?"),
+                            "region": data[0].get("region", "?"),
+                            "subregion": data[0].get("subregion", "?"),
+                            "local": local
+                        }
                 print(f"Attempt {attempt+1} failed for {country} with status code {response.status_code}")
             except Exception as e:
                 print(f"Attempt {attempt+1} failed for {country}: {e}")

@@ -14,13 +14,21 @@ accessions:
 #### ------------------------- Parameters ------------------------ ####
 
 feature: structural polyprotein
+name: CHIKVgp2
+genes:
+  - "CHIKVgp2"
+  - "capsid_protein"
+  - "E3_protein"
+  - "E2_envelope_glycoprotein"
+  - "6K_protein"
+  - "E1_envelope_glycoprotein"
 
 filter:
   min_feature_length: 3647
   max_feature_length: 3847
   max_ambiguous_positions: 0
   remove_duplicates: "False"
-  min_alignment_score: 35
+  min_alignment_score: 35 
   remove_partial: "True"
   remove_incomplete: "True"
 
@@ -30,10 +38,33 @@ country_mapping:
   "Cote d'ivoire": "Ivory Coast"
   "Borneo": "Indonesia"
 
+host_mapping:
+  "male patient": "Homo sapiens"
+  "Aedes aegypti (mosquito)": "Aedes aegypti"
+  "Anopheles (Ceilia) funestus": "Anopheles funestus"
+  "mosquito" : Mosquito
+  "sentinel mouse" : Mouse
+
+color:
+  scheme: configuration/color-schemes.tsv
+  traits:
+    - host
+    - region
+    - subregion
+    - country
+
+auspice:
+  config: configuration/auspice-config.json
+  coordinates: configuration/coordinates.tsv
+  title: "'CHIKV structural glycoprotein'"
+  description: ""
+
 #### -------------------------- Directories ------------------------- ####
 
+reference_dir: results/references
 sequence_dir: results/sequences
 metadata_dir: results/metadata
 align_dir: results/alignments
 tree_dir: results/tree
+auspice_dir: results/auspice
 log_dir: results/logs
