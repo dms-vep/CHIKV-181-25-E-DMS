@@ -23,6 +23,11 @@
       "type": "categorical"
     },
     {
+      "key": "lineage",
+      "title": "Lineage",
+      "type": "categorical"
+    },
+    {
       "key": "host",
       "title": "Host",
       "type": "categorical"
@@ -45,6 +50,7 @@
   "filters": [
     "host",
     "region",
-    "country"
+    "country",
+    "lineage"
   ]
 }

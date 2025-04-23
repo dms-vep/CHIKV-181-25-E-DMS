@@ -1,6 +1,8 @@
 """ 
 Snakemake pipeline for the nextstrain analysis of CHIKV.
-Author: Will Hannon 
+
+Author: Will Hannon
+Based loosely on Caleb Carr's RABV nextstrain pipeline.
 """
 
 #### ----------------------- Imports ----------------------- ####
@@ -27,7 +29,9 @@ rule all:
 
 rule make_reference:
     """
-    Make a reference GenBank from a CDS for Nextstrain.
+    Make a reference GenBank from a CDS.
+
+    The reference is used to translate nucleotide mutations.
     """
     output: 
         join(config['reference_dir'], "reference.gb")
@@ -53,6 +57,10 @@ rule make_reference:
 rule download_records:
     """
     Download all sequence records from GenBank.
+
+    Records are fetched using the Entrez API.
+    Note that this rule takes a long time to run,
+    approximately 1 second per record to download.
     """
     input: 
         config['accessions']['all']
@@ -74,7 +82,10 @@ rule download_records:
 
 rule parse_feature:
     """
-    Parse the target sequence feature from all sequences using alignment.
+    Parse the target sequence feature from all sequences.
+    
+    The features matching your target are identified by alignment.
+    A single feature is returned per record, whichever aligns best.
     """
     input: 
         join(config['sequence_dir'], "records.pickle")
@@ -99,6 +110,10 @@ rule parse_feature:
 rule filter_records:
     """
     Filter the records base on feature alignment.
+
+    Given a set of parameters defined in the config,
+    this rule extracts sequences that meet the criteria.
+    The resulting sequences are used to build the tree.
     """
     input: 
         features=join(config['sequence_dir'], "parsed_features.csv"),
@@ -138,6 +153,14 @@ rule filter_records:
 rule extract_metadata:
     """
     Extract the metadata for the filtered accessions.
+
+    The sanitized metadata for each record is stored in
+    a custom GenBank object. Some additional sanitization
+    may be required.
+
+    The geographic information is parsed using API calls
+    to the REST Countries API. This will fail if you
+    don't have an internet connection.
     """
     input: 
         records=join(config['sequence_dir'], "records.pickle"),
@@ -160,14 +183,35 @@ rule extract_metadata:
             &>> {log}
         """
 
+
+rule custom_metadata_formatting:
+    """
+    Custom metadata formatting performed in an notebook.
+
+    Edit this notebook for custom metadata formatting.
+    """
+    input: 
+        metadata=join(config['metadata_dir'], "metadata.tsv"),
+        lineages=join("data", "ViennaRNA_CHIKV_metadata.tsv")
+    output:
+        metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
+    conda: "nextstrain"
+    log: notebook=join(config['notebook_dir'],"custom-metadata-formatting.ipynb")
+    notebook: 'notebooks/custom-metadata-formatting.ipynb'
+
  
 rule extract_sequences:
     """
     Extract the nucleotide sequences from the filtered accessions.
+
+    The name of the sequence is set to the strain name.
+    Strain names MUST be unique across all records. A 
+    safe way to ensure this is to use the accession appended
+    to the strain name from the GenBank record.
     """
     input: 
         features=join(config['sequence_dir'], "filtered_features.csv"),
-        metadata=join(config['metadata_dir'], "metadata.tsv")
+        metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
     output: 
         join(config['sequence_dir'], "nucleotide.fa")
     run:
@@ -191,7 +235,7 @@ rule extract_translations:
     """
     input: 
         features=join(config['sequence_dir'], "filtered_features.csv"),
-        metadata=join(config['metadata_dir'], "metadata.tsv")
+        metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
     output: 
         join(config['sequence_dir'], "protein.fa")
     run:
@@ -244,6 +288,10 @@ rule align_proteins:
 rule align_codons:
     """
     Create a codon alignment from the protein alignment.
+
+    The codon alignment is created by aligning the protein
+    translations and then extracting the codon sequences
+    from the unaligned nucleotide sequences.
     """
     input: 
         sequences=join(config['sequence_dir'], "nucleotide.fa"),
@@ -265,6 +313,10 @@ rule align_codons:
 rule build_tree:
     """
     Build a phylogenetic tree from the codon alignments.
+
+    THe outgroup is specified in the config file using the
+    strain name that appears in the fasta header for that
+    sequence.
     """
     input:
         join(config['align_dir'], "codon.fa")
@@ -286,7 +338,7 @@ rule build_tree:
 
 rule root_and_remove_outgroup:
     """
-    Root the tree and remove the outgroup
+    Root the tree and remove the outgroup.
     """
     input:
         tree=join(config['tree_dir'], "tree_raw.nwk"),
@@ -317,11 +369,15 @@ rule root_and_remove_outgroup:
 rule refine_tree_sequences:
     """
     Refine the tree sequences using augur refine.
+
+    At this point, branch lengths are estimated and 
+    appended to each node. This step can also generate
+    a time tree.
     """
     input:
         tree=join(config['tree_dir'], "tree_no_outgroup.nwk"),
         codon=join(config['align_dir'], "codon_no_outgroup.fa"),
-        metadata=join(config['metadata_dir'], "metadata.tsv"),  
+        metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
     output:
         tree=join(config['tree_dir'], "tree.nwk"),
         nodes=join(config['tree_dir'], "tree_nodes.json"),
@@ -343,13 +399,18 @@ rule refine_tree_sequences:
 
 rule traits_tree_sequences:
     """
-    This rule gets traits from the tree
+    Add the traits from the metadata to the tree.
+
+    Additionally, this step will infer traits specified
+    in the config file.
     """
     input:
         tree=join(config['tree_dir'], "tree.nwk"),
-        metadata=join(config['metadata_dir'], "metadata.tsv"),  
+        metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
     output:
         tree_traits=join(config['tree_dir'], "tree_traits.json"),
+    params:
+        traits=config['inferred_traits'],
     conda: "nextstrain"
     log: join(config['log_dir'], "traits-tree-sequences.log")
     shell:
@@ -358,7 +419,7 @@ rule traits_tree_sequences:
             --tree {input.tree} \
             --metadata {input.metadata} \
             --output-node-data {output.tree_traits} \
-            --columns subregion \
+            --columns {params.traits} \
             --confidence \
             &> {log}
         """
@@ -366,7 +427,9 @@ rule traits_tree_sequences:
 
 rule ancestral_tree_sequences:
     """
-    Reconstruct the ancestral sequences from the tree
+    Reconstruct the ancestral sequences from the tree.
+
+    These are the nucleotide sequences at each node.
     """
     input:
         tree=join(config['tree_dir'], "tree.nwk"),
@@ -388,7 +451,9 @@ rule ancestral_tree_sequences:
 
 rule translate_tree_sequences:
     """
-    Identifies amino-acid mutations from tree
+    Use the GenBank reference to translate the nucleotide mutations.
+
+    Generally, this should be the same sequence as your library.
     """
     input:
         tree=join(config['tree_dir'], "tree.nwk"),
@@ -417,14 +482,17 @@ rule translate_tree_sequences:
 rule color_traits:
     """
     Assign color schemes to traits in the tree.
+
+    Optionally, order traits by a column in the metadata.
     """
     input:
         schemes=config["color"]["scheme"],
-        metadata=join(config['metadata_dir'], "metadata.tsv"),  
+        metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
     output:
         join(config['tree_dir'], "colors.tsv"),
     params:
         traits=config['color']['traits'],
+        ordering=json.dumps(json.dumps(config['color']['ordering'])),
     conda: "nextstrain"
     log: join(config['log_dir'], "color-traits.log")
     shell:
@@ -433,6 +501,7 @@ rule color_traits:
             --metadata {input.metadata} \
             --schemes {input.schemes} \
             --traits {params.traits} \
+            --ordering {params.ordering} \
             --output {output} \
             &> {log}
         """
@@ -441,10 +510,12 @@ rule color_traits:
 rule export_tree:
     """
     Exports the tree to visualize with Auspice
+
+    View the tree in your browser at https://auspice.us/
     """
     input:
         tree=join(config['tree_dir'], "tree.nwk"),
-        metadata=join(config['metadata_dir'], "metadata.tsv"),  
+        metadata=join(config['metadata_dir'], "metadata_formatted.tsv"),
         nodes=join(config['tree_dir'], "tree_nodes.json"),
         traits=join(config['tree_dir'], "tree_traits.json"),
         ancestral=join(config['tree_dir'], "tree_muts.json"),

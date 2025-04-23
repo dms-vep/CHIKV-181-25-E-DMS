@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
+import json
 import argparse
 import pandas as pd
-
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Make an Auspice color scheme for traits of interest.")
@@ -20,6 +20,12 @@ def parse_arguments():
         nargs="+",
         required=True,
         help="List of metadata columns to treat as traits (space-separated)"
+    )
+    parser.add_argument(
+        "--ordering",
+        type=json.loads,
+        default=None,
+        help="Group key columns by value columns before sorting"
     )
     parser.add_argument(
         "--output", 
@@ -51,8 +57,20 @@ def main():
         
         print(f"\nMaking color scheme for trait '{trait}':\n--------------------------------------")
         
-        # Get unique values for the trait, excluding '?'
-        trait_values = sorted([trait for trait in metadata_df[trait].unique() if trait != "?"])
+        # Sort geographical traits by their hierarchy
+        if trait in args.ordering:
+            print(f"Ordering '{trait}' by {args.ordering[trait]}.")
+            if args.ordering[trait] not in metadata_df.columns:
+                raise ValueError(f"Ordering column '{args.ordering[trait]}' not found in metadata columns: {metadata_df.columns.tolist()}")
+            groups = list(metadata_df[args.ordering[trait]].unique())
+            trait_values = []
+            for group in groups:
+                values = sorted([t for t in metadata_df[metadata_df[args.ordering[trait]] == group][trait].unique() if t != "?"])
+                trait_values.extend(values)
+        else:
+            trait_values = sorted([t for t in metadata_df[trait].unique() if t != "?"])
+        
+        # Print the unique trait values
         for value in trait_values:
             print(f"\t- {value}")
 

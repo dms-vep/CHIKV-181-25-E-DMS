@@ -8,7 +8,6 @@ accessions:
   all: data/sequences.acc
   include: data/include.acc
   library: MW473668.1
-  reference: NC_004162.2
   outgroup: NC_075006.1
 
 #### ------------------------- Parameters ------------------------ ####
@@ -49,13 +48,21 @@ host_mapping:
   "mosquito" : Mosquito
   "sentinel mouse" : Mouse
 
+inferred_traits:
+  - lineage
+  - subregion
+
 color:
   scheme: configuration/color-schemes.tsv
   traits:
     - host
+    - lineage
     - region
     - subregion
     - country
+  ordering:
+    "country": "region"
+    "subregion": "region"
 
 auspice:
   config: configuration/auspice-config.json
@@ -68,6 +75,7 @@ auspice:
 reference_dir: results/references
 sequence_dir: results/sequences
 metadata_dir: results/metadata
+notebook_dir: results/notebooks
 align_dir: results/alignments
 tree_dir: results/tree
 auspice_dir: auspice/
