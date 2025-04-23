@@ -52,7 +52,7 @@ binding_mouse-Mxra8: &binding_mouse-Mxra8
   sites_per_row: 130  # how many sites in each row
   site_label_freq: 5  # label sites at this frequency
   color_scheme: purplegreen  # vega color scheme
-  fixed_min: -3  # fix heatmap min at this
+  fixed_min: -4  # fix heatmap min at this
   fixed_max: 3  # fix heatmap max at this
   alphabet: RKHDEQNSTYWFAILMVGPC  # amino acids in order
   # `dark_gray_muts` is optional: if a mutation has the indicated column less than the
