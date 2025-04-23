@@ -7607,7 +7607,7 @@ input_sitemap_csv = "results/dms-viz/vlp_w_mMxra8_6nk6/vlp_w_mMxra8_6nk6_sitemap
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=d0586dfd">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=2e9d1f34">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7655,6 +7655,20 @@ input_sitemap_csv = "results/dms-viz/vlp_w_mMxra8_6nk6/vlp_w_mMxra8_6nk6_sitemap
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Reading data from </span><span class="si">{</span><span class="n">data_csv</span><span class="si">=}</span><span class="s2">"</span><span class="p">)</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_csv</span><span class="p">)</span>
+
+<span class="c1"># cannot have spaces in filter-cols, so rename columns with underscore if needed</span>
+<span class="k">if</span> <span class="s2">"filter-cols"</span> <span class="ow">in</span> <span class="n">opt_params</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">opt_params</span><span class="p">[</span><span class="s2">"filter-cols"</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="s2">" "</span> <span class="ow">in</span> <span class="n">col</span><span class="p">:</span>
+            <span class="n">new_col</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="s2">"_"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">col</span><span class="si">=}</span><span class="s2"> has space, renaming to </span><span class="si">{</span><span class="n">new_col</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="k">assert</span> <span class="n">new_col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">new_col</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="si">=}</span><span class="s2">"</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">new_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>
+            <span class="n">opt_params</span><span class="p">[</span><span class="s2">"filter-cols"</span><span class="p">][</span><span class="n">new_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+            <span class="k">del</span> <span class="n">opt_params</span><span class="p">[</span><span class="s2">"filter-cols"</span><span class="p">][</span><span class="n">col</span><span class="p">]</span>
+            <span class="k">if</span> <span class="s2">"filter-limits"</span> <span class="ow">in</span> <span class="n">opt_params</span><span class="p">:</span>
+                <span class="n">opt_params</span><span class="p">[</span><span class="s2">"filter-limits"</span><span class="p">][</span><span class="n">new_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">opt_params</span><span class="p">[</span><span class="s2">"filter-limits"</span><span class="p">][</span><span class="n">col</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">opt_params</span><span class="p">[</span><span class="s2">"filter-limits"</span><span class="p">][</span><span class="n">col</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -7947,9 +7961,9 @@ Comparing `site` in data to `reference_site` in sitemap:
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>PDB has all_chains=['M', 'N', 'O', 'P', 'A', 'E', 'I', 'B', 'F', 'J', 'C', 'G', 'K', 'D', 'H', 'L']
 Included chains for mapping DMS data: included_chains=['H', 'D']
-The chains specified in the sitemap are sitemap_chains={'A', 'D', 'H', 'G', 'E', 'F', 'B', 'C'}
+The chains specified in the sitemap are sitemap_chains={'A', 'F', 'D', 'C', 'G', 'E', 'B', 'H'}
 Removing the following sitemap chains which are not in included-chains:
-{'A', 'G', 'E', 'F', 'B', 'C'}
+{'A', 'F', 'C', 'G', 'E', 'B'}
 
 Comparing wildtype residues in DMS data and PDB for chainset=['D']
 Comparing wildtype amino acids for sites with DMS data versus sites in PDB:
@@ -8145,7 +8159,13 @@ Here are sites with different amino acids between DMS data and PDB:
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
 Comparing wildtype residues in DMS data and PDB for chainset=['H']
-Comparing wildtype amino acids for sites with DMS data versus sites in PDB:
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Comparing wildtype amino acids for sites with DMS data versus sites in PDB:
   - sites with same amino acid: 389
   - sites with different amino acid: 30
   - sites missing in DMS data: 0
@@ -8508,7 +8528,7 @@ Here are sites with different amino acids between DMS data and PDB:
 
 <span class="c1"># get required columns</span>
 <span class="n">data_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"site"</span><span class="p">,</span> <span class="s2">"wildtype"</span><span class="p">,</span> <span class="s2">"mutant"</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"tooltip-cols"</span><span class="p">,</span> <span class="s2">"filter_cols"</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"tooltip-cols"</span><span class="p">,</span> <span class="s2">"filter-cols"</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">opt_params</span><span class="p">:</span>
         <span class="n">data_cols</span> <span class="o">+=</span> <span class="n">opt_params</span><span class="p">[</span><span class="n">param</span><span class="p">]</span>
 <span class="k">if</span> <span class="ow">not</span> <span class="nb">set</span><span class="p">(</span><span class="n">data_cols</span><span class="p">)</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
@@ -8645,7 +8665,15 @@ Writing data for data_cols=['site', 'wildtype', 'mutant', 'sequential_site', 're
     <span class="n">cmds</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">"--</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">)]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Running the following cmds:</span><span class="se">\n</span><span class="si">{</span><span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cmds</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">res_str</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"returncode"</span><span class="p">,</span> <span class="s2">"args"</span><span class="p">,</span> <span class="s2">"stdout"</span><span class="p">,</span> <span class="s2">"stderr"</span><span class="p">]:</span>
+    <span class="n">res_str</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">attr</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">attr</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">res_str</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">res_str</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Command failed:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Command succeeded:</span><span class="se">\n\n</span><span class="si">{</span><span class="n">res_str</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8667,7 +8695,16 @@ configure-dms-viz format --name CHIKV E mutation effects on cell entry --input r
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
+<pre>Command succeeded:
+
+returncode:
+0
+
+args:
+['configure-dms-viz', 'format', '--name', 'CHIKV E mutation effects on cell entry', '--input', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike_data.csv', '--metric', 'entry', '--sitemap', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike_sitemap.csv', '--structure', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike.pdb', '--output', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike.json', '--condition', 'cells', '--included-chains', 'H D', '--excluded-chains', 'M N P A B C F G I J K L', '--alphabet', 'RKHDEQNSTYWFAILMVGPC', '--floor', 'False', '--summary-stat', 'mean', '--tooltip-cols', "{'sequential_site': 'sequential site', 'region': 'region'}", '--heatmap-limits', '-6, 0, 2', '--colors', '#db5f57,#57db5f,#5f57db']
+
+stdout:
+
 Formatting data for visualization using the 'entry' column from 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike_data.csv'...
 
 Using sitemap from 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike_sitemap.csv'.
@@ -8675,29 +8712,15 @@ Using sitemap from 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_
 Warning: NaN values were found in the metric column. These rows will be filtered out.
 Three values were provided for heatmap limits, these will be the min, center, and max of the scale.
 
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>About 94.64% (812 of 858) of the wildtype residues in the data match the corresponding residues in the structure.
+About 94.64% (812 of 858) of the wildtype residues in the data match the corresponding residues in the structure.
 About 0.46% (4 of 862) of the data sites are missing from the structure.
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
+
 Success! The visualization JSON was written to 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike.json'
+
+
+stderr:
+
 </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>CompletedProcess(args=['configure-dms-viz', 'format', '--name', 'CHIKV E mutation effects on cell entry', '--input', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike_data.csv', '--metric', 'entry', '--sitemap', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike_sitemap.csv', '--structure', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike.pdb', '--output', 'results/dms-viz/cell_entry_on_6nk6_interspike/cell_entry_on_6nk6_interspike.json', '--condition', 'cells', '--included-chains', 'H D', '--excluded-chains', 'M N P A B C F G I J K L', '--alphabet', 'RKHDEQNSTYWFAILMVGPC', '--floor', 'False', '--summary-stat', 'mean', '--tooltip-cols', "{'sequential_site': 'sequential site', 'region': 'region'}", '--heatmap-limits', '-6, 0, 2', '--colors', '#db5f57,#57db5f,#5f57db'], returncode=0)</pre>
 </div>
 </div>
 </div>
