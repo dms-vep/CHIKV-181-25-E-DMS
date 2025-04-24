@@ -2,7 +2,7 @@
 Snakemake pipeline for the nextstrain analysis of CHIKV.
 
 Author: Will Hannon
-Based loosely on Caleb Carr's RABV nextstrain pipeline.
+Based on Caleb Carr's RABV nextstrain pipeline.
 """
 
 #### ----------------------- Imports ----------------------- ####
@@ -38,7 +38,7 @@ rule make_reference:
     params:
         feature=config['feature'],
         name=config['name'],
-        reference=config['accessions']['library'],
+        reference=config['library']['accession'],
         gene_mapping=json.dumps(json.dumps(config['genes'])),
     conda: "nextstrain"
     log: join(config['log_dir'], "make-reference.log")
@@ -93,7 +93,7 @@ rule parse_feature:
         join(config['sequence_dir'], "parsed_features.csv")
     params:
         feature=config['feature'],
-        reference=config['accessions']['library'],
+        reference=config['library']['accession'],
     conda: "nextstrain"
     log: join(config['log_dir'], "parse-feature.log")
     shell:
@@ -122,7 +122,7 @@ rule filter_records:
         join(config['sequence_dir'], "filtered_features.csv")
     params:
         include=config['accessions']['include'],
-        outgroup=config['accessions']['outgroup'],
+        outgroup=config['outgroup']['accession'],
         min_feature_length=config['filter']['min_feature_length'],
         max_feature_length=config['filter']['max_feature_length'],
         max_ambiguous_positions=config['filter']['max_ambiguous_positions'],
@@ -189,6 +189,7 @@ rule custom_metadata_formatting:
     Custom metadata formatting performed in an notebook.
 
     Edit this notebook for custom metadata formatting.
+    This is also a good place to before custom checks.
     """
     input: 
         metadata=join(config['metadata_dir'], "metadata.tsv"),

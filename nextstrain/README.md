@@ -21,6 +21,14 @@ conda activate nextstrain
 
 Options for the pipeline are specified in [`configuration/pipeline.yaml`](configuration/pipeline.yaml). The appearance of the `auspice` visualization is specified in [`configuration/auspice-config.json`](configuration/auspice-config.json). The color schemes for the `auspice` 'Color By' feature are defined in [`configuration/color-schemes.tsv`](configuration/color-schemes.tsv). The coordinates for the geographical features in the metadata are defined in [`configuration/coordinates.tsv`](configuration/coordinates.tsv): if there are locations in your metadata that aren't specified here, add them.
 
+### Running
+
+To run the analysis on the Fred Hutch Gizmo HPC, simply submit the run script to `slurm`:
+
+```bash
+sbatch run_analysis.bash
+```
+
 ### Data
 
 The pipeline requires a list of accessions. These accessions are stored in a plan text file where each row is a unique NCBI accession ([`data/sequences.acc`](data/sequences.acc)). Optionally, you can specify accessions that *should* be included in the analysis in a similarly formatted file ([`data/included.acc`](data/included.acc)). The analysis will warn you if these accessions are filtered out by subsequent steps.
@@ -61,3 +69,13 @@ The tree is built using the `augur` toolkit from [Nextstrain](https://nextstrain
 ## Notes
 
 There's a reasonably up-to-date tree of the entire CHIKV genome here: https://github.com/ViennaRNA/CHIKV. I used the metadata from this build to assign lineages to every shared sequence. I used `augur traits` to infer the missing lineage information.
+
+## To Do:
+
+1. **Remove the Capsid sequence from the alignment:** I'm using the annotated coding regions in the CHIKV GenBank files to extract the structural polyprotein sequence, which includes the capsid. I could either attempt to parse the Glycoprotein without using GenBank annotations (maybe I could use an alignment-based strategy?), or I could remove the capsid sequence after alignment. The downside of the latter is that I could be filtering out complete Glycoprotein sequences that simply lack the capsid.
+
+2. **Remove gaps from the codon alignment:** In other workflows, people remove gaps relative to the reference. I should probably include this, although there aren't many gaps in the alignments.
+
+3. **Allow for truncated and ambiguous sequences:** The current filtering parameters require full length structural polyprotein sequences with no ambiguous nucleotides. This results in the omission of at least a few hundred sequences.
+
+4. **Color the tree by predicted receptor affinity:** This might not make much sense. Coloring by antibody or serum escape will be more informative when we have that information. 
