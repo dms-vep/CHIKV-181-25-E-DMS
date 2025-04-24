@@ -74,8 +74,6 @@ There's a reasonably up-to-date tree of the entire CHIKV genome here: https://gi
 
 1. **Remove the Capsid sequence from the alignment:** I'm using the annotated coding regions in the CHIKV GenBank files to extract the structural polyprotein sequence, which includes the capsid. I could either attempt to parse the Glycoprotein without using GenBank annotations (maybe I could use an alignment-based strategy?), or I could remove the capsid sequence after alignment. The downside of the latter is that I could be filtering out complete Glycoprotein sequences that simply lack the capsid.
 
-2. **Remove gaps from the codon alignment:** In other workflows, people remove gaps relative to the reference. I should probably include this, although there aren't many gaps in the alignments.
-
-3. **Allow for truncated and ambiguous sequences:** The current filtering parameters require full length structural polyprotein sequences with no ambiguous nucleotides. This results in the omission of at least a few hundred sequences.
+2. **Allow for truncated and ambiguous sequences:** The current filtering parameters require full length structural polyprotein sequences with no ambiguous nucleotides. This results in the omission of at least a few hundred sequences.
 
 4. **Color the tree by predicted receptor affinity:** This might not make much sense. Coloring by antibody or serum escape will be more informative when we have that information. 
