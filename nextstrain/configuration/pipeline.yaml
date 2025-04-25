@@ -35,13 +35,12 @@ genes:
 
 # Filtering parameters for parsed features
 filter:
-  min_feature_length: 3647
-  max_feature_length: 3847
-  max_ambiguous_positions: 0
+  min_feature_length: 3347
+  max_feature_length: 4200
+  max_ambiguous_positions: 0.1
   remove_duplicates: "False"
   min_alignment_score: 35 
-  remove_partial: "True"
-  remove_incomplete: "True"
+  remove_partial: "False"
 
 # Rename countries in metadata
 country_mapping:

@@ -22,7 +22,7 @@ configfile: "configuration/pipeline.yaml"
 
 rule all:
     input:
-        join(config['align_dir'], "codon_ungapped.fa")
+        join(config['auspice_dir'], "auspice.json"),
 
 #### ------------------------ Rules ------------------------ ####
 
@@ -128,7 +128,6 @@ rule filter_records:
         max_ambiguous_positions=config['filter']['max_ambiguous_positions'],
         remove_duplicates=config['filter']['remove_duplicates'],
         remove_partial=config['filter']['remove_partial'],
-        remove_incomplete=config['filter']['remove_incomplete'],
         min_alignment_score=config['filter']['min_alignment_score'],
     conda: "nextstrain"
     log: join(config['log_dir'], "filter-records.log")
@@ -230,28 +229,58 @@ rule extract_sequences:
         SeqIO.write(records, output[0], "fasta")
 
 
-rule extract_translations:
+rule extract_orfs:
     """
-    Extract the protein sequences from the filtered accessions.
+    Use EMBOSS to extract the open reading frames for each sequence.
+
+    This is necessary when dealing with non-exact coordinates in the
+    GenBank records. In those cases, the sequences don't always match
+    the CDS translation in the GenBank record. This causes issues with
+    the codon alignment and tree building steps.
+    """
+    input:
+        join(config['sequence_dir'], "nucleotide.fa")
+    params:
+        min_feature_length=config["filter"]['min_feature_length']
+    output:
+        join(config['sequence_dir'], "orfs.fa")
+    conda: "nextstrain"
+    log: join(config['log_dir'], "extract-orfs.log")
+    shell:
+        """
+        getorf \
+            -sequence {input} \
+            -outseq {output} \
+            -find 0 \
+            -minsize {params.min_feature_length} \
+            -reverse No \
+            -methionine No \
+            -verbose \
+            &> {log}
+        """
+
+
+rule extract_coding_regions:
+    """
+    Extract the protein and codon sequences from the ORFs.
     """
     input: 
-        features=join(config['sequence_dir'], "filtered_features.csv"),
-        metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
-    output: 
-        join(config['sequence_dir'], "protein.fa")
-    run:
-        features_df = pd.read_csv(input.features)
-        metadata_df = pd.read_csv(input.metadata, sep='\t')
-        records = []
-        for idx, row in features_df.iterrows():
-            strain = metadata_df.loc[metadata_df['accession'] == row['accession'], 'strain'].values[0]
-            record = SeqRecord(
-                Seq(row['translation']),
-                id=strain,
-                description=""
-            )
-            records.append(record)
-        SeqIO.write(records, output[0], "fasta")
+        orfs=join(config['sequence_dir'], "orfs.fa"),
+        sequences=join(config['sequence_dir'], "nucleotide.fa")
+    output:
+        protein=join(config['sequence_dir'], "protein.fa"),
+        codon=join(config['sequence_dir'], "codon.fa")
+    conda: "nextstrain"
+    log: join(config['log_dir'], "extract-coding-regions.log")
+    shell:
+        """
+        python workflow/scripts/extract-coding-regions.py \
+            --orfs {input.orfs} \
+            --sequences {input.sequences} \
+            --protein {output.protein} \
+            --codon {output.codon} \
+            &> {log}
+        """
 
 
 rule align_proteins:
@@ -270,27 +299,6 @@ rule align_proteins:
         """
 
 
-rule ungap_alignment:
-    """
-    Remove gaps from the protein alignment relative to the reference.
-    """
-    input: 
-        join(config['align_dir'], "protein.fa")
-    output:
-        join(config['align_dir'], "protein_ungapped.fa")
-    params: reference=config['library']['strain']
-    conda: "nextstrain"
-    log: join(config['log_dir'], "ungap-alignment.log")
-    shell:
-        """
-        python workflow/scripts/ungap-alignment.py \
-            --alignment {input.alignment} \
-            --reference {params.reference} \
-            --output {output} \
-            &>> {log}
-        """
-
-
 rule align_codons:
     """
     Create a codon alignment from the protein alignment.
@@ -300,8 +308,8 @@ rule align_codons:
     from the unaligned nucleotide sequences.
     """
     input: 
-        sequences=join(config['sequence_dir'], "nucleotide.fa"),
-        alignment=join(config['align_dir'], "protein_ungapped.fa")
+        sequences=join(config['sequence_dir'], "codon.fa"),
+        alignment=join(config['align_dir'], "protein.fa")
     output:
         join(config['align_dir'], "codon.fa")
     conda: "nextstrain"
@@ -316,6 +324,48 @@ rule align_codons:
         """
 
 
+rule ungap_protein_alignment:
+    """
+    Remove gaps from the protein alignment relative to the reference.
+    """
+    input: 
+        join(config['align_dir'], "protein.fa")
+    output:
+        join(config['align_dir'], "protein_ungapped.fa")
+    params: reference=config['library']['strain']
+    conda: "nextstrain"
+    log: join(config['log_dir'], "ungap-protein-alignment.log")
+    shell:
+        """
+        python workflow/scripts/ungap-alignment.py \
+            --alignment {input} \
+            --reference {params.reference} \
+            --output {output} \
+            &>> {log}
+        """
+
+
+rule ungap_codon_alignment:
+    """
+    Remove gaps from the codon alignment relative to the reference.
+    """
+    input: 
+        join(config['align_dir'], "codon.fa")
+    output:
+        join(config['align_dir'], "codon_ungapped.fa")
+    params: reference=config['library']['strain']
+    conda: "nextstrain"
+    log: join(config['log_dir'], "ungap-codon-alignment.log")
+    shell:
+        """
+        python workflow/scripts/ungap-alignment.py \
+            --alignment {input} \
+            --reference {params.reference} \
+            --output {output} \
+            &>> {log}
+        """
+
+
 rule build_tree:
     """
     Build a phylogenetic tree from the codon alignments.
@@ -325,7 +375,7 @@ rule build_tree:
     sequence.
     """
     input:
-        join(config['align_dir'], "codon.fa")
+        join(config['align_dir'], "codon_ungapped.fa")
     output:
         join(config['tree_dir'], "tree_raw.nwk")
     params:
@@ -348,8 +398,8 @@ rule root_and_remove_outgroup:
     """
     input:
         tree=join(config['tree_dir'], "tree_raw.nwk"),
-        protein=join(config['align_dir'], "protein.fa"),
-        codon=join(config['align_dir'], "codon.fa"),
+        protein=join(config['align_dir'], "protein_ungapped.fa"),
+        codon=join(config['align_dir'], "codon_ungapped.fa"),
     output:
         tree=join(config['tree_dir'], "tree_no_outgroup.nwk"),
         protein=join(config['align_dir'], "protein_no_outgroup.fa"),

@@ -12,6 +12,7 @@ echo "Running Snakemake version ${SNAKEMAKE_VERSION}..."
 
 # Run the main analysis on `slurm` cluster
 snakemake \
+    -R filter_records \
     --software-deployment-method conda \
     --conda-frontend mamba \
     --rerun-incomplete

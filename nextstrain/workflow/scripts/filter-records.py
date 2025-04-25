@@ -42,13 +42,13 @@ def parse_arguments():
     )
     parser.add_argument(
         "--max_ambiguous_positions",
-        type=int,
+        type=float,
         default=None,
-        help="Maximum number of ambiguous bases in the feature to be included in the output"
+        help="Maximum fraction of ambiguous bases in the feature to be included in the output"
     )
     parser.add_argument(
         "--min_alignment_score",
-        type=int,
+        type=float,
         default=None,
         help="Minimum alignment score of the feature to be included in the output"
     )
@@ -143,7 +143,7 @@ def filter_records(
     df = df.query("n_cds > 0")
     df = df.assign(
         feature_ambiguous=lambda df: df.apply(
-                lambda x: sum(1 for base in x.sequence if base not in "ACGT"),
+                lambda x: sum(1 for base in x.sequence if base not in "ACGT") / len(x.sequence),
                 axis=1
             )
     )
