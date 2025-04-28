@@ -4,6 +4,32 @@ A `Snakemake` pipeline that builds an interactive [Nextstrain](https://nextstrai
 
 Analysis by Will Hannon, based on Caleb Carr's [RABV-G Nextstrain pipeline](https://github.com/dms-vep/RABV_Pasteur_G_DMS/tree/main/non-pipeline_analyses/RABV_nextstrain).
 
+## Organization
+
+The contents of `nextstrain/` are organized as follows:
+
+```bash
+.
+├── auspice # <------------ Final auspice interactive tree
+├── configuration # <------ Pipeline and auspice configuration
+├── data # <--------------- Accessions and metadata 
+├── environment.yaml
+├── README.md
+├── results # <------------ Sequences, alignments, trees, etc...
+├── run_analysis.bash
+└── workflow # <----------- Code to run the analysis
+```
+
+The `Snakemake` pipeline (and associated code) that creates the `Nextstrain` tree is in the [`workflow/`](workflow/) directory:
+
+```bash
+workflow/
+├── notebooks # <---- Jupyter notebooks
+├── profiles # <----- Cluster resource configuration
+├── scripts # <------ Python scripts
+└── Snakefile # <---- Snakemake workflow
+```
+
 ## Workflow
 
 A [Nextstrain](https://nextstrain.org/) is built by (1) downloading sequence records for a virus from GenBank, (2) extracting a CDS feature of interest——in this case the Envelope Glycoprotein——(3) filtering to get only high-quality sequences, (4) building and annotating a tree of these sequences with `augur`, and (5) making a visualization with `auspice`.
