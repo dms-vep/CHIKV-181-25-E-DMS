@@ -57,7 +57,7 @@ sbatch run_analysis.bash
 
 ### Data
 
-The pipeline requires a list of accessions. These accessions are stored in a plan text file where each row is a unique NCBI accession ([`data/sequences.acc`](data/sequences.acc)). Optionally, you can specify accessions that *should* be included in the analysis in a similarly formatted file ([`data/included.acc`](data/included.acc)). The analysis will warn you if these accessions are filtered out by subsequent steps.
+The pipeline requires a list of accessions. These accessions are stored in a plan text file where each row is a unique NCBI accession ([`data/sequences.acc`](data/sequences.acc)). Optionally, you can specify accessions that *should* be included in the analysis in a similarly formatted file ([`data/include.acc`](data/include.acc)). The analysis will warn you if these accessions are filtered out by subsequent steps.
 
 #### Identifying Viral Accessions
 
