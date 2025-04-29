@@ -9,6 +9,11 @@
   ],
   "colorings": [
     {
+      "key": "date",
+      "title": "Date",
+      "type": "temporal"
+    },
+    {
       "key": "subregion",
       "title": "Subregion",
       "type": "categorical"
@@ -56,6 +61,7 @@
   "display_defaults": {
     "map_triplicate": true,
     "distance_measure": "div",
+    "color_by" : "lineage",
     "transmission_lines": false
   },
   "filters": [
@@ -63,5 +69,8 @@
     "region",
     "country",
     "lineage"
+  ],
+  "metadata_columns": [
+    "date"
   ]
 }
