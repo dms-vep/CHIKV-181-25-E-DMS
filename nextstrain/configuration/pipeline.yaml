@@ -52,12 +52,13 @@ host_mapping:
   "male patient": "Homo sapiens"
   "Aedes aegypti (mosquito)": "Aedes aegypti"
   "Anopheles (Ceilia) funestus": "Anopheles funestus"
-  "mosquito" : Mosquito
-  "sentinel mouse" : Mouse
+  "mosquito" : "Mosquito"
+  "sentinel mouse" : "Mouse"
 
 # Trains to infer with discrete state analysis
 inferred_traits:
   - lineage
+  - sublineage
   - subregion
 
 # Colors for the Auspice tree
@@ -66,7 +67,9 @@ color:
   # Traits to make color schemes for
   traits:
     - host
+    - organism
     - lineage
+    - sublineage
     - region
     - subregion
     - country
@@ -74,13 +77,14 @@ color:
   ordering:
     "country": "region"
     "subregion": "region"
+    "sublineage": "lineage"
 
 # Configure the Auspice tree visualization
 auspice:
   config: configuration/auspice-config.json
   coordinates: configuration/coordinates.tsv
-  title: "'Phylogenetic tree of the CHIKV structural glycoprotein'"
-  description: ""
+  title: "Circulating diversity of the CHIKV structural glycoprotein"
+  description: configuration/description.md
 
 #### -------------------------- Directories ------------------------- ####
 

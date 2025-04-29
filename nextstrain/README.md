@@ -69,7 +69,7 @@ The tree is rooted using a closely related virus as an outgroup: [O'nyong'nyong 
 
 ### Reference
 
-The mutations in the tree are identified relative to a reference sequence. Generally, the reference sequence should correspond to the strain used to make the library: [`MW473668.1`](https://www.ncbi.nlm.nih.gov/nuccore/MW473668.1).
+The mutations in the tree are identified relative to a reference sequence. The reference sequence corresponds to the strain used to make the library: [`MW473668.1`](https://www.ncbi.nlm.nih.gov/nuccore/MW473668.1).
 
 ### Parsing
 
@@ -95,9 +95,3 @@ The tree is built using the `augur` toolkit from [Nextstrain](https://nextstrain
 ## Notes
 
 There's a reasonably up-to-date tree of the entire CHIKV genome here: https://github.com/ViennaRNA/CHIKV. I used the metadata from this build to assign lineages to every shared sequence. I used `augur traits` to infer the missing lineage information.
-
-## To Do:
-
-1. **Remove the Capsid sequence from the alignment:** I'm using the annotated coding regions in the CHIKV GenBank files to extract the structural polyprotein sequence, which includes the capsid. I could either attempt to parse the Glycoprotein without using GenBank annotations (maybe I could use an alignment-based strategy?), or I could remove the capsid sequence after alignment. The downside of the latter is that I could be filtering out complete Glycoprotein sequences that simply lack the capsid.
-
-2. **Color the tree by predicted receptor affinity:** This might not make much sense. Coloring by antibody or serum escape will be more informative when we have that information. 
