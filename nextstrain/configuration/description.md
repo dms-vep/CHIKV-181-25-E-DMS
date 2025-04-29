@@ -1,0 +1,1 @@
+Amino acid mutations are relative the 181/25 strain ([MW473668.1](https://www.ncbi.nlm.nih.gov/nuccore/MW473668.1)) used to make an associated deep mutational scanning library of the CHIKV E glycoprotein. To search for this strain on the tree, type '181-25_MW473668' in the search bar.
