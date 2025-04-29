@@ -5,3 +5,7 @@ _*
 !.gitignore
 
 results/*
+!results/alignments
+results/alignments/*
+!results/alignments/protein.fa
+!results/alignments/codon.fa
