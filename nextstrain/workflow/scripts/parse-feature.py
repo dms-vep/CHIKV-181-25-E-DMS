@@ -32,7 +32,7 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def algin_feature(feature, queries, type='nucleotide'):
+def align_feature(feature, queries, type='nucleotide'):
     """
     Align a set of query coding sequences to a reference coding sequence.
     Either the nucleotide or protein sequences based on specified type.
@@ -103,11 +103,11 @@ def parse_features(records, reference, feature_name, type='nucleotide'):
     matches = []
     for accession, record in records.items():
         queries = record.coding_regions
-        match, score = algin_feature(feature, queries, type)
+        match, score = align_feature(feature, queries, type)
         if type == 'nucleotide':
             identity = ((score / 2) / len(feature.sequence)) * 100 if score != float('-inf') and score > 0 else 0
         else:
-            _, reference_score = algin_feature(feature, feature, type)
+            _, reference_score = align_feature(feature, feature, type)
             identity = (score / reference_score) * 100 if score != float('-inf') and score > 0 else 0
         name = match.product if match else "no coding sequence"
         sequence = match.sequence if match else ""

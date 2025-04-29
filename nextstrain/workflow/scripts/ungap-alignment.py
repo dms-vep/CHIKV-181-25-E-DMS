@@ -39,9 +39,13 @@ def ungap_alignment(alignment, reference):
         The ungapped alignment with gaps removed relative to the reference.
     """
     # Get the reference sequence from the alignment
+    reference_sequence = None
     for seq in alignment:
         if reference in seq.description or reference == seq.id:
             reference_sequence = str(seq.seq)
+            break
+    if reference_sequence is None:
+        raise ValueError(f"Reference strain '{reference}' not found in the alignment.")
 
     # Remove gaps from the alignment relative to the reference
     num_gaps_removed = 0
