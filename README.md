@@ -32,6 +32,9 @@ The notebooks for these analyses are in [./notebooks/](notebooks), and the code 
 These custom analyses include mappings for [dms-viz](https://dms-viz.github.io/) visualizations.
 The configuration for those visualizations is specified in [./data/dms_viz_config.yaml](data/dms_viz_config.yaml), and uses the site maps that map protein sites to the PDB sites as defined in [data/pdb_sitemaps/](data/pdb_sitemaps/).
 
+### [Nextstrain](https://nextstrain.org/) phylogeny
+A `Snakemake` pipeline in [`./nextstrain`](./nextstrain/) builds an interactive phylogeny of the CHIKV structural glycoprotein (Capisd, E3, E2, 6K, E1) using publicly available sequences from NCBI virus.
+
 #### Row-wrapped heatmaps
 These custom analyses include making row-wrapped heatmaps that are more sized for paper figures.
 The configuration for those visualizations is specified in [data/wrapped_heatmap_config.yaml](data/wrapped_heatmap_config.yaml), and HTMLs of the heatmaps are shown in the auto-rendered documentation.
