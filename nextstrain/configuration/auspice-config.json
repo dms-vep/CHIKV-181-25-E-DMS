@@ -1,0 +1,76 @@
+{
+  "title": "",
+  "build_url": "https://github.com/dms-vep/CHIKV_181-25_E_DMS",
+  "maintainers": [
+    {
+      "name": "the Bloom lab",
+      "url": "https://jbloomlab.org/"
+    }
+  ],
+  "colorings": [
+    {
+      "key": "date",
+      "title": "Date",
+      "type": "temporal"
+    },
+    {
+      "key": "subregion",
+      "title": "Subregion",
+      "type": "categorical"
+    },
+    {
+      "key": "region",
+      "title": "Region",
+      "type": "categorical"
+    },
+    {
+      "key": "country",
+      "title": "Country",
+      "type": "categorical"
+    },
+    {
+      "key": "lineage",
+      "title": "Lineage",
+      "type": "categorical"
+    },
+    {
+      "key": "sublineage",
+      "title": "Sublineage",
+      "type": "categorical"
+    },
+    {
+      "key": "host",
+      "title": "Host",
+      "type": "categorical"
+    },    
+    {
+      "key": "organism",
+      "title": "Organism",
+      "type": "categorical"
+    }
+  ],
+  "geo_resolutions": [
+    "country",
+    "region"
+  ],
+  "panels": [
+     "tree",
+     "map",
+     "entropy"
+  ],
+  "display_defaults": {
+    "map_triplicate": true,
+    "distance_measure": "div",
+    "color_by" : "lineage",
+    "transmission_lines": false
+  },
+  "filters": [
+    "host",
+    "region",
+    "country",
+    "lineage"
+  ],
+  "metadata_columns": [
+    "date"
+  ]
+}

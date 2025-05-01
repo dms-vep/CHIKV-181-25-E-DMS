@@ -1,0 +1,97 @@
+# CHIKV 181/25 envelope protein Nextstrain build
+
+A `Snakemake` pipeline that builds an interactive [Nextstrain](https://nextstrain.org/) tree of CHIKV glycoprotein sequences. The tree is built using the **entire structural polyprotein**, which includes the Capsid. Sequences are annotated by geographic information, lineage, and host.
+
+Analysis by Will Hannon, based on Caleb Carr's [RABV-G Nextstrain pipeline](https://github.com/dms-vep/RABV_Pasteur_G_DMS/tree/main/non-pipeline_analyses/RABV_nextstrain).
+
+## Organization
+
+The contents of `nextstrain/` are organized as follows:
+
+```bash
+.
+├── auspice # <------------ Final auspice interactive tree
+├── configuration # <------ Pipeline and auspice configuration
+├── data # <--------------- Accessions and metadata 
+├── environment.yaml
+├── README.md
+├── results # <------------ Sequences, alignments, trees, etc...
+├── run_analysis.bash
+└── workflow # <----------- Code to run the analysis
+```
+
+The `Snakemake` pipeline (and associated code) that creates the `Nextstrain` tree is in the [`workflow/`](workflow/) directory:
+
+```bash
+workflow/
+├── notebooks # <---- Jupyter notebooks
+├── profiles # <----- Cluster resource configuration
+├── scripts # <------ Python scripts
+└── Snakefile # <---- Snakemake workflow
+```
+
+## Workflow
+
+A [Nextstrain](https://nextstrain.org/) is built by (1) downloading sequence records for a virus from GenBank, (2) extracting a CDS feature of interest——in this case the Envelope Glycoprotein——(3) filtering to get only high-quality sequences, (4) building and annotating a tree of these sequences with `augur`, and (5) making a visualization with `auspice`.
+
+### Installation
+
+Create and activate the `conda` environment:
+
+```bash
+conda create env -f environment.yaml
+conda activate nextstrain
+```
+
+### Configuration 
+
+Options for the pipeline are specified in [`configuration/pipeline.yaml`](configuration/pipeline.yaml). The appearance of the `auspice` visualization is specified in [`configuration/auspice-config.json`](configuration/auspice-config.json). The color schemes for the `auspice` 'Color By' feature are defined in [`configuration/color-schemes.tsv`](configuration/color-schemes.tsv). The coordinates for the geographical features in the metadata are defined in [`configuration/coordinates.tsv`](configuration/coordinates.tsv): if there are locations in your metadata that aren't specified here, add them.
+
+### Running
+
+To run the analysis on the Fred Hutch Gizmo HPC, simply submit the run script to `slurm`:
+
+```bash
+sbatch run_analysis.bash
+```
+
+### Data
+
+The pipeline requires a list of accessions. These accessions are stored in a plan text file where each row is a unique NCBI accession ([`data/sequences.acc`](data/sequences.acc)). Optionally, you can specify accessions that *should* be included in the analysis in a similarly formatted file ([`data/include.acc`](data/include.acc)). The analysis will warn you if these accessions are filtered out by subsequent steps.
+
+#### Identifying Viral Accessions
+
+To download accessions for your virus, go to [NCBI Virus](https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/) and click *Search by virus*. In the *Search by virus name or taxonomy* box, enter **Chikungunya virus, taxid:37124** and hit enter. Then click the  *Download* option, select *Accession List* and *Nucleotide* options and hit *Next*. On the next page, select *Download All Records* and hit *Next*. On the next page, select *Accession with version* and click *Download*. Sequences are downloaded from the list of accessions because more information is extracted from the genbank file during the download process. The [current accession list](configuration/sequences.acc) was downloaded on **April 4th, 2025**.
+
+### Rooting
+
+The tree is rooted using a closely related virus as an outgroup: [O'nyong'nyong virus (ONNV)](https://www.ncbi.nlm.nih.gov/nuccore/NC_075006.1). The outgroup is subsequently removed.
+
+### Reference
+
+The mutations in the tree are identified relative to a reference sequence. The reference sequence corresponds to the strain used to make the library: [`MW473668.1`](https://www.ncbi.nlm.nih.gov/nuccore/MW473668.1).
+
+### Parsing
+
+Each GenBank record will have multiple features (annotated coding regions), only one of which is used to build the tree. Unfortunately, the same feature can be named differently between records. To extract the sequence from the correct feature, we align each coding region (CDS) to a reference coding region and extract the feature with the highest alignment score (roughly percent identity with a gap penalty).
+
+### Filtering
+
+After parsing the sequence of interest from each record, a filtering step removes highly divergent, ambiguous, or incomplete records. These parameters are defined in the pipeline's config ([`configuration/pipeline.yaml`](configuration/pipeline.yaml)).
+
+### Alignment 
+
+After extracting and filtering the targeted nucleotide sequences and protein translations from the GenBank records, both are aligned using `mafft --auto`. A codon alignment is generated by extracting the codon sequence for each amino acid in the protein alignment from the original nucleotide sequence. **The codon alignment is used to build the phylogenetic tree**.
+
+### Phylogenetic Tree
+
+The tree is built using the `augur` toolkit from [Nextstrain](https://nextstrain.org/). This part of the pipeline is based on Caleb Carr's [RABV-G Nextstrain pipeline](https://github.com/dms-vep/RABV_Pasteur_G_DMS/tree/main/non-pipeline_analyses/RABV_nextstrain). Briefly: (1) an initial tree is built that includes the outgroup sequence, (2) the tree is rooted and the outgroup is removed, (3) branch lengths are calculated, (4) traits are added to the tree from the metadata and missing traits are inferred, (5) ancestral sequences are predicted for each node, and (6) nucleotide mutations relative to the reference are translated into coding changes.
+
+## Tree Visualization
+
+`auspice` is used to generate a Nextstrain-style visualization of the phylogenetic tree. To visualize the tree download [this file](auspice/auspice.json) and upload it to [this website](https://auspice.us/).
+
+
+## Notes
+
+There's a reasonably up-to-date tree of the entire CHIKV genome here: https://github.com/ViennaRNA/CHIKV. I used the metadata from this build to assign lineages to every shared sequence. I used `augur traits` to infer the missing lineage information.

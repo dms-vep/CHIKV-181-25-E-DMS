@@ -1,0 +1,98 @@
+#### ============== nextstrain analysis configuration file ============== ####
+
+# Author: Will Hannon
+
+#### ------------------------- Parameters ------------------------ ####
+
+# Accessions to download from GenBank
+accessions:
+  # Download all sequences from GenBank
+  all: data/sequences.acc 
+  # Check if these are removed by filtering
+  include: data/include.acc
+
+# The record corresponding to the library sequence
+library:
+  accession: MW473668.1
+  strain: 181-25_MW473668
+
+# The record corresponding to the outgroup sequence
+outgroup:
+  accession: NC_075006.1
+  strain: SG650_NC_075006
+
+# Feature to parse from the GenBank records (relative to the library sequence)
+feature: structural polyprotein
+name: CHIKVgp2
+# Rename these features in reference record
+genes:
+  "CHIKVgp2": "CHIKVgp2"
+  "capsid_protein": "Capsid"
+  "E3_protein": "E3"
+  "E2_envelope_glycoprotein": "E2"
+  "6K_protein": "6K"
+  "E1_envelope_glycoprotein": "E1"
+
+# Filtering parameters for parsed features
+filter:
+  min_feature_length: 3347
+  max_feature_length: 4200
+  max_ambiguous_positions: 0.1
+  remove_duplicates: "False"
+  min_alignment_score: 35 
+  remove_partial: "False"
+
+# Rename countries in metadata
+country_mapping:
+  "Cote d'ivoire": "Ivory Coast"
+  "Borneo": "Indonesia"
+
+# Rename hosts in the metadata
+host_mapping:
+  "male patient": "Homo sapiens"
+  "Aedes aegypti (mosquito)": "Aedes aegypti"
+  "Anopheles (Ceilia) funestus": "Anopheles funestus"
+  "mosquito" : "Mosquito"
+  "sentinel mouse" : "Mouse"
+
+# Trains to infer with discrete state analysis
+inferred_traits:
+  - lineage
+  - sublineage
+  - subregion
+
+# Colors for the Auspice tree
+color:
+  scheme: configuration/color-schemes.tsv
+  # Traits to make color schemes for
+  traits:
+    - host
+    - organism
+    - lineage
+    - sublineage
+    - region
+    - subregion
+    - country
+  # Order the column on the left by the column on the right
+  ordering:
+    "country": "region"
+    "subregion": "region"
+    "sublineage": "lineage"
+
+# Configure the Auspice tree visualization
+auspice:
+  config: configuration/auspice-config.json
+  coordinates: configuration/coordinates.tsv
+  title: "Circulating diversity of the CHIKV structural glycoprotein"
+  description: configuration/description.md
+
+#### -------------------------- Directories ------------------------- ####
+
+reference_dir: results/references
+sequence_dir: results/sequences
+metadata_dir: results/metadata
+notebook_dir: results/notebooks
+align_dir: results/alignments
+tree_dir: results/tree
+auspice_dir: auspice/
+log_dir: results/logs
