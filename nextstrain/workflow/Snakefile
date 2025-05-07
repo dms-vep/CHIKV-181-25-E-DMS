@@ -563,6 +563,33 @@ rule color_traits:
         """
 
 
+rule color_by_dms:
+    """
+    Export predicted DMS data to node data for the tree coloring.
+    """
+    input:
+        data=join(config['pipeline_dir'], "compare_cell_entry", "mut_diffs.csv"),
+        alignment=join(config['align_dir'], "protein_no_outgroup.fa"),
+    output:
+        join(config['dms_dir'], "{column}.json"),
+    params:
+        reference=config['library']['strain'],
+        data_offset=config['data_offset'],
+    conda: "nextstrain"
+    log: join(config['log_dir'], "{column}-color-by-dms.log")
+    shell:
+        """
+        python workflow/scripts/color-by-dms.py \
+            --data {input.data} \
+            --alignment {input.alignment} \
+            --reference {params.reference} \
+            --column {wildcards.column} \
+            --data-offset {params.data_offset} \
+            --output {output} \
+            &> {log}
+        """
+
+
 rule export_tree:
     """
     Exports the tree to visualize with Auspice
@@ -579,6 +606,7 @@ rule export_tree:
         colors=join(config['tree_dir'], "colors.tsv"),
         config=config["auspice"]["config"],
         coordinates=config["auspice"]["coordinates"],
+        dms_scores=expand(join(config['dms_dir'], "{column}.json"), column=config['dms_columns']),
     params:
         title=config["auspice"]["title"],
         description=config["auspice"]["description"],
@@ -593,7 +621,7 @@ rule export_tree:
             --title "{params.title}" \
             --description "{params.description}" \
             --metadata {input.metadata} \
-            --node-data {input.nodes} {input.traits} {input.ancestral} {input.translation} \
+            --node-data {input.nodes} {input.traits} {input.ancestral} {input.translation} {input.dms_scores} \
             --include-root-sequence-inline \
             --colors {input.colors} \
             --lat-longs {input.coordinates} \

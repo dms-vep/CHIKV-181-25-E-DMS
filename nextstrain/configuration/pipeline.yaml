@@ -79,6 +79,12 @@ color:
     "subregion": "region"
     "sublineage": "lineage"
 
+# Color the tree by dms data (column names have spaces replaced with '_')
+data_offset: 1
+dms_columns:
+  - "293T_Mxra8_minus_293T_TIM1"
+  - "C636_minus_293T_TIM1"
+
 # Configure the Auspice tree visualization
 auspice:
   config: configuration/auspice-config.json
@@ -88,11 +94,13 @@ auspice:
 
 #### -------------------------- Directories ------------------------- ####
 
+pipeline_dir: ../results
 reference_dir: results/references
 sequence_dir: results/sequences
 metadata_dir: results/metadata
 notebook_dir: results/notebooks
 align_dir: results/alignments
 tree_dir: results/tree
+dms_dir: results/dms
 auspice_dir: auspice/
 log_dir: results/logs
