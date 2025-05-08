@@ -79,3 +79,7 @@ results/compare_cell_entry/*
 !results/dms-viz
 results/dms-viz/*/*
 !results/dms-viz/*/*.json
+
+!results/annotated_summary_csvs
+results/annotated_summary_csvs/*
+!results/annotated_summary_csvs/*.csv
