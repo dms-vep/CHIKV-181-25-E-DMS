@@ -29,4 +29,6 @@ site_mean = (
     .aggregate(**{c: pd.NamedAgg(c, "mean") for c in value_cols})
     .sort_values("sequential_site")
 )
+if ("protein_site" in site_mean.columns) and all(site_mean["protein_site"] == site_mean["protein_site"].astype(int)):
+    site_mean["protein_site"] = site_mean["protein_site"].astype(int)
 site_mean.to_csv(snakemake.output.site_mean, index=False, float_format="%.4f")
