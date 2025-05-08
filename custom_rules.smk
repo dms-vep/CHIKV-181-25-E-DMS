@@ -212,3 +212,28 @@ docs["Row-wrapped heatmaps"] = {
         for wrapped_hm in wrapped_heatmap_config
     }
 }
+
+
+# Make annotated CSVs ------------------------------------------------------------------
+
+rule annotated_summary_csvs:
+    """Make annotated summary CSVs with addtl annotations."""
+    input:
+        data="results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv",
+        addtl_annotations="data/addtl_site_annotations.csv",
+    output:
+        mut="results/annotated_summary_csvs/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_annotated.csv",
+        site_mean="results/annotated_summary_csvs/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_annotated_site_means.csv",
+    log:
+        "results/logs/annotated_summary_csvs.txt",
+    conda:
+        os.path.join(config["pipeline_path"], "environment.yml"),
+    script:
+        "scripts/annotated_summary_csvs.py"
+
+docs["additional data CSVs"] = {
+    "CSVs": {
+        "annotated entry/binding mutation CSV": rules.annotated_summary_csvs.output.mut,
+        "annotated entry/binding site mean CSV": rules.annotated_summary_csvs.output.site_mean,
+    }
+}
