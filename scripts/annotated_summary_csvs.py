@@ -25,10 +25,10 @@ mut.to_csv(snakemake.output.mut, index=False, float_format="%.4g")
 site_mean = (
     mut
     [(~mut["mutant"].isin(["*", "-"])) & (mut["mutant"] != mut["wildtype"])]
-    .groupby([c for c in mut.columns if c not in ["mutant"] + value_cols], as_index=False)
+    .groupby([c for c in mut.columns if c not in ["mutant"] + value_cols], as_index=False, dropna=False)
     .aggregate(**{c: pd.NamedAgg(c, "mean") for c in value_cols})
     .sort_values("sequential_site")
 )
-if ("protein_site" in site_mean.columns) and all(site_mean["protein_site"] == site_mean["protein_site"].astype(int)):
-    site_mean["protein_site"] = site_mean["protein_site"].astype(int)
+if "protein_site" in site_mean.columns:
+    site_mean["protein_site"] = site_mean["protein_site"].astype("Int64")
 site_mean.to_csv(snakemake.output.site_mean, index=False, float_format="%.4f")
