@@ -568,24 +568,25 @@ rule color_by_dms:
     Export predicted DMS data to node data for the tree coloring.
     """
     input:
-        data=join(config['pipeline_dir'], "compare_cell_entry", "mut_diffs.csv"),
         alignment=join(config['align_dir'], "protein_no_outgroup.fa"),
+        auspice=config["auspice"]["config"],
     output:
-        join(config['dms_dir'], "{column}.json"),
+        dms_scores=[f"results/dms/{metric}.json" for metric in config['dms_data'].keys()],
+        auspice=join(config['tree_dir'], "auspice-config.json"),
     params:
         reference=config['library']['strain'],
-        data_offset=config['data_offset'],
+        dms_config=json.dumps(json.dumps(config['dms_data'])),
     conda: "nextstrain"
-    log: join(config['log_dir'], "{column}-color-by-dms.log")
+    log: join(config['log_dir'], "color-by-dms.log")
     shell:
         """
         python workflow/scripts/color-by-dms.py \
-            --data {input.data} \
             --alignment {input.alignment} \
+            --template-auspice {input.auspice} \
             --reference {params.reference} \
-            --column {wildcards.column} \
-            --data-offset {params.data_offset} \
-            --output {output} \
+            --dms-config {params.dms_config} \
+            --auspice-config {output.auspice} \
+            --dms-scores {output.dms_scores} \
             &> {log}
         """
 
@@ -604,9 +605,9 @@ rule export_tree:
         ancestral=join(config['tree_dir'], "tree_muts.json"),
         translation=join(config['tree_dir'], "tree_aa_muts.json"),
         colors=join(config['tree_dir'], "colors.tsv"),
-        config=config["auspice"]["config"],
+        config=join(config['tree_dir'], "auspice-config.json"),
         coordinates=config["auspice"]["coordinates"],
-        dms_scores=expand(join(config['dms_dir'], "{column}.json"), column=config['dms_columns']),
+        dms_scores=rules.color_by_dms.output.dms_scores,
     params:
         title=config["auspice"]["title"],
         description=config["auspice"]["description"],

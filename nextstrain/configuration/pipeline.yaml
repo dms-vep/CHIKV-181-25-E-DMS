@@ -79,12 +79,24 @@ color:
     "subregion": "region"
     "sublineage": "lineage"
 
-# Color the tree by dms data (column names have spaces replaced with '_')
-data_offset: 1
-dms_columns:
-  - "293T_Mxra8_minus_293T_TIM1"
-  - "C636_minus_293T_TIM1"
-
+# Color the tree with data from DMS experiments (replace spaces with "_")
+dms_data:
+  "C636_minus_293T_TIM1":
+    file: ../results/compare_cell_entry/mut_diffs.csv
+    offset: 1
+    title: "summed entry in C636 vs 293T-TIM1"
+    scale: [ "#1e1bcc", "#dfdff0"]
+  "293T_Mxra8_minus_293T_TIM1":
+    file: ../results/compare_cell_entry/mut_diffs.csv
+    offset: 1
+    title: "summed entry in 293T-Mxra8 vs 293T-TIM1"
+    scale: [ "#1e1bcc", "#dfdff0"]
+  "293T_Mxra8_minus_C636":
+    file: ../results/compare_cell_entry/mut_diffs.csv
+    offset: 1
+    title: "summed entry in 293T-Mxra8 vs C636"
+    scale: [ "#1e1bcc", "#dfdff0"]
+  
 # Configure the Auspice tree visualization
 auspice:
   config: configuration/auspice-config.json

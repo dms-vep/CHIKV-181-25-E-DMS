@@ -47,36 +47,6 @@
       "key": "organism",
       "title": "Organism",
       "type": "categorical"
-    },
-    {
-      "key": "293T_Mxra8_minus_293T_TIM1",
-      "title": "Predicted preference Mxra8 minus TIM1",
-      "type": "continuous",
-      "scale": [
-        [
-          -11.5,
-          "#FFFFFF"
-        ],
-        [
-          1.7,
-          "#0D0FA1"
-        ]
-      ]
-    },
-    {
-      "key": "C636_minus_293T_TIM1",
-      "title": "Predicted preference C636 minus TIM1",
-      "type": "continuous",
-      "scale": [
-        [
-          -7.5,
-          "#FFFFFF"
-        ],
-        [
-          3.3,
-          "#0D0FA1"
-        ]
-      ]
     }
   ],
   "geo_resolutions": [
