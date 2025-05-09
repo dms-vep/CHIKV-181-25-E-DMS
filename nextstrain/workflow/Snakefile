@@ -563,6 +563,34 @@ rule color_traits:
         """
 
 
+rule color_by_dms:
+    """
+    Export predicted DMS data to node data for the tree coloring.
+    """
+    input:
+        alignment=join(config['align_dir'], "protein_no_outgroup.fa"),
+        auspice=config["auspice"]["config"],
+    output:
+        dms_scores=[f"results/dms/{metric}.json" for metric in config['dms_data'].keys()],
+        auspice=join(config['tree_dir'], "auspice-config.json"),
+    params:
+        reference=config['library']['strain'],
+        dms_config=json.dumps(json.dumps(config['dms_data'])),
+    conda: "nextstrain"
+    log: join(config['log_dir'], "color-by-dms.log")
+    shell:
+        """
+        python workflow/scripts/color-by-dms.py \
+            --alignment {input.alignment} \
+            --template-auspice {input.auspice} \
+            --reference {params.reference} \
+            --dms-config {params.dms_config} \
+            --auspice-config {output.auspice} \
+            --dms-scores {output.dms_scores} \
+            &> {log}
+        """
+
+
 rule export_tree:
     """
     Exports the tree to visualize with Auspice
@@ -577,8 +605,9 @@ rule export_tree:
         ancestral=join(config['tree_dir'], "tree_muts.json"),
         translation=join(config['tree_dir'], "tree_aa_muts.json"),
         colors=join(config['tree_dir'], "colors.tsv"),
-        config=config["auspice"]["config"],
+        config=join(config['tree_dir'], "auspice-config.json"),
         coordinates=config["auspice"]["coordinates"],
+        dms_scores=rules.color_by_dms.output.dms_scores,
     params:
         title=config["auspice"]["title"],
         description=config["auspice"]["description"],
@@ -593,7 +622,7 @@ rule export_tree:
             --title "{params.title}" \
             --description "{params.description}" \
             --metadata {input.metadata} \
-            --node-data {input.nodes} {input.traits} {input.ancestral} {input.translation} \
+            --node-data {input.nodes} {input.traits} {input.ancestral} {input.translation} {input.dms_scores} \
             --include-root-sequence-inline \
             --colors {input.colors} \
             --lat-longs {input.coordinates} \
