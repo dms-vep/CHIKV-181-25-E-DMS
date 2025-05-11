@@ -79,6 +79,24 @@ color:
     "subregion": "region"
     "sublineage": "lineage"
 
+# Color the tree with data from DMS experiments (replace spaces with "_")
+dms_data:
+  "C636_minus_293T_TIM1":
+    file: ../results/compare_cell_entry/mut_diffs.csv
+    offset: 1
+    title: "summed entry in C636 vs 293T-TIM1"
+    scale: [ "#1e1bcc", "#dfdff0"]
+  "293T_Mxra8_minus_293T_TIM1":
+    file: ../results/compare_cell_entry/mut_diffs.csv
+    offset: 1
+    title: "summed entry in 293T-Mxra8 vs 293T-TIM1"
+    scale: [ "#1e1bcc", "#dfdff0"]
+  "293T_Mxra8_minus_C636":
+    file: ../results/compare_cell_entry/mut_diffs.csv
+    offset: 1
+    title: "summed entry in 293T-Mxra8 vs C636"
+    scale: [ "#1e1bcc", "#dfdff0"]
+  
 # Configure the Auspice tree visualization
 auspice:
   config: configuration/auspice-config.json
@@ -88,11 +106,13 @@ auspice:
 
 #### -------------------------- Directories ------------------------- ####
 
+pipeline_dir: ../results
 reference_dir: results/references
 sequence_dir: results/sequences
 metadata_dir: results/metadata
 notebook_dir: results/notebooks
 align_dir: results/alignments
 tree_dir: results/tree
+dms_dir: results/dms
 auspice_dir: auspice/
 log_dir: results/logs
