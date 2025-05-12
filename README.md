@@ -39,6 +39,10 @@ A `Snakemake` pipeline in [`./nextstrain`](./nextstrain/) builds an interactive 
 These custom analyses include making row-wrapped heatmaps that are more sized for paper figures.
 The configuration for those visualizations is specified in [data/wrapped_heatmap_config.yaml](data/wrapped_heatmap_config.yaml), and HTMLs of the heatmaps are shown in the auto-rendered documentation.
 
+#### Chimera_structures
+These custom analyses include making files for ChimeraX visualization of functional effects on structure.
+The file generated that can be read by ChimeraX is [`293T-Mxra8_entry_func_effects.defattr`](manual_analyses/chimera_structures/results/293T-Mxra8_entry_func_effects.defattr).
+
 ### Data
 Input data utilized by the pipeline are located in [./data/](data). 
 
