@@ -84,6 +84,9 @@ def main():
         data_df = pd.read_csv(data)
         data_df.columns = data_df.columns.str.replace(" ", "_")
 
+        # Remove any rows with NaN values in the metric column
+        data_df = data_df.dropna(subset=[metric])
+
         # Find the index in the reference sequence where the data starts
         data_seq = "".join(data_df[data_df['mutant'] == data_df['wildtype']].reset_index(drop=True).wildtype)
         assert data_seq[offset:] in reference_seq, "Reference sequence does not contain the data sequence."
