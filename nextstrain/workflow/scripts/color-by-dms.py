@@ -112,15 +112,30 @@ def main():
             score_dict[id] = score
 
         # Update the auspice configuration file for this metric
-        data_config = {
-            "key": metric,
-            "title": args.dms_config[metric]["title"],
-            "type": "continuous",
-            "scale": [
-                [min(score_dict.values()), args.dms_config[metric]['scale'][0]],
-                [max(score_dict.values()), args.dms_config[metric]['scale'][1]]
-            ]
-        }
+        if len(args.dms_config[metric]['scale']) == 2:
+            data_config = {
+                "key": metric,
+                "title": args.dms_config[metric]["title"],
+                "type": "continuous",
+                "scale": [
+                    [min(score_dict.values()), args.dms_config[metric]['scale'][0]],
+                    [max(score_dict.values()), args.dms_config[metric]['scale'][1]]
+                ]
+            }
+        elif len(args.dms_config[metric]['scale']) == 3:
+            data_config = {
+                "key": metric,
+                "title": args.dms_config[metric]["title"],
+                "type": "continuous",
+                "scale": [
+                    [min(score_dict.values()), args.dms_config[metric]['scale'][0]],
+                    [0, args.dms_config[metric]['scale'][1]],
+                    [max(score_dict.values()), args.dms_config[metric]['scale'][2]]
+                ]
+            }
+        else:
+            raise ValueError(f"Scale for {metric} must be of length 2 or 3.")
+        # Add the data to the auspice configuration file
         auspice_config['colorings'].append(data_config)
         
         # Output a JSON with the node data
