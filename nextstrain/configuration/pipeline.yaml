@@ -79,24 +79,30 @@ color:
     "subregion": "region"
     "sublineage": "lineage"
 
-# Color the tree with data from DMS experiments (replace spaces with "_")
+# Color the tree with data from DMS experiments (IMPORTANT: replace spaces with "_")
+# If three values are provided for the scale, the middle will be assigned to ZERO
 dms_data:
   "C636_minus_293T_TIM1":
     file: ../results/compare_cell_entry/mut_diffs.csv
     offset: 1
     title: "summed entry in C636 vs 293T-TIM1"
-    scale: [ "#1e1bcc", "#dfdff0"]
+    scale: [ "#eb4034", "#a1a1a1" , "#1e1bcc"]
   "293T_Mxra8_minus_293T_TIM1":
     file: ../results/compare_cell_entry/mut_diffs.csv
     offset: 1
     title: "summed entry in 293T-Mxra8 vs 293T-TIM1"
-    scale: [ "#1e1bcc", "#dfdff0"]
+    scale: [ "#eb4034", "#a1a1a1" , "#1e1bcc"]
   "293T_Mxra8_minus_C636":
     file: ../results/compare_cell_entry/mut_diffs.csv
     offset: 1
     title: "summed entry in 293T-Mxra8 vs C636"
-    scale: [ "#1e1bcc", "#dfdff0"]
-  
+    scale: [ "#eb4034", "#a1a1a1" , "#1e1bcc"]
+  "binding_to_mouse_Mxra8":
+    file: ../results/annotated_summary_csvs/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_annotated.csv
+    offset: 1
+    title: "binding to mouse Mxra8"
+    scale: [ "#eb4034", "#a1a1a1" , "#1e1bcc"]
+
 # Configure the Auspice tree visualization
 auspice:
   config: configuration/auspice-config.json

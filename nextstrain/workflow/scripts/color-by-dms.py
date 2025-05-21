@@ -84,6 +84,9 @@ def main():
         data_df = pd.read_csv(data)
         data_df.columns = data_df.columns.str.replace(" ", "_")
 
+        # Remove any rows with NaN values in the metric column
+        data_df = data_df.dropna(subset=[metric])
+
         # Find the index in the reference sequence where the data starts
         data_seq = "".join(data_df[data_df['mutant'] == data_df['wildtype']].reset_index(drop=True).wildtype)
         assert data_seq[offset:] in reference_seq, "Reference sequence does not contain the data sequence."
@@ -109,15 +112,30 @@ def main():
             score_dict[id] = score
 
         # Update the auspice configuration file for this metric
-        data_config = {
-            "key": metric,
-            "title": args.dms_config[metric]["title"],
-            "type": "continuous",
-            "scale": [
-                [min(score_dict.values()), args.dms_config[metric]['scale'][0]],
-                [max(score_dict.values()), args.dms_config[metric]['scale'][1]]
-            ]
-        }
+        if len(args.dms_config[metric]['scale']) == 2:
+            data_config = {
+                "key": metric,
+                "title": args.dms_config[metric]["title"],
+                "type": "continuous",
+                "scale": [
+                    [min(score_dict.values()), args.dms_config[metric]['scale'][0]],
+                    [max(score_dict.values()), args.dms_config[metric]['scale'][1]]
+                ]
+            }
+        elif len(args.dms_config[metric]['scale']) == 3:
+            data_config = {
+                "key": metric,
+                "title": args.dms_config[metric]["title"],
+                "type": "continuous",
+                "scale": [
+                    [min(score_dict.values()), args.dms_config[metric]['scale'][0]],
+                    [0, args.dms_config[metric]['scale'][1]],
+                    [max(score_dict.values()), args.dms_config[metric]['scale'][2]]
+                ]
+            }
+        else:
+            raise ValueError(f"Scale for {metric} must be of length 2 or 3.")
+        # Add the data to the auspice configuration file
         auspice_config['colorings'].append(data_config)
         
         # Output a JSON with the node data
