@@ -1,0 +1,12 @@
+#### ============== intrahost analysis configuration file ============== ####
+
+# Author: Will Hannon
+
+#### ------------------------- Parameters ------------------------ ####
+
+library:
+  accession: MW473668.1
+
+#### -------------------------- Directories ------------------------- ####
+
+pipeline_dir: ../results

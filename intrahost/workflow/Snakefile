@@ -1,0 +1,26 @@
+""" 
+Snakemake pipeline for the intrahost variant analysis of CHIKV.
+
+Author: Will Hannon
+"""
+
+#### ----------------------- Imports ----------------------- ####
+
+import pandas as pd 
+import json
+from os.path import join
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+
+#### -------------------- Configuration -------------------- ####
+
+configfile: "configuration/pipeline.yaml"
+
+#### ----------------------- Targets ----------------------- ####
+
+rule all:
+    input:
+        
+
+#### ------------------------ Rules ------------------------ ####

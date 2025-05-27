@@ -1,0 +1,11 @@
+name: intrahost
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - jupyterlab
+  - pandas
+  - altair=5.5
+  - biopython
+  - snakemake=8.25.3
+  - snakemake-executor-plugin-slurm
