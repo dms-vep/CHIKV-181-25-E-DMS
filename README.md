@@ -40,7 +40,7 @@ These custom analyses include making row-wrapped heatmaps that are more sized fo
 The configuration for those visualizations is specified in [data/wrapped_heatmap_config.yaml](data/wrapped_heatmap_config.yaml), and HTMLs of the heatmaps are shown in the auto-rendered documentation.
 
 #### manual_analyses
-These custom analyses include making files for ChimeraX visualization of functional effects on structure, analyzing cell entry and cell entry validations.
+These custom analyses include making files for ChimeraX visualization of functional effects, Mxra8 binding on structure, analyzing cell entry, Mxra8 binding and validations.
 
 #### Chimera_structures
 These custom analyses include making files for ChimeraX visualization of functional effects on structure.
