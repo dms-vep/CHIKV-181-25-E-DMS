@@ -3,10 +3,46 @@
 # Author: Will Hannon
 
 #### ------------------------- Parameters ------------------------ ####
-
-library:
-  accession: MW473668.1
+# Reference genome in GenBank format for the analysis
+reference: configuration/MW473668.gb
+# Fetch parameters — parameters for downloading runs from the NCBI SRA
+fetch:
+  # Table with SRA accessions including matching reads
+  sra_table: data/SRA_Runs.csv
+  # Minimum number of reads to qualify a run for download
+  min_total_count: 10000
+  # Parameter for Kingfisher
+  method: 'prefetch'
+  format: 'sra'
+  threads: 2
+# Trim parameters — parameters for trimming reads with fastp
+trim:
+  threads: 4
+# Filter parameters — parameters for trimming reads by kmers
+filter:
+  threads: 4
+  kmer_length: 31
+  hamming_distance: 1
+# Align parameters — parameters for trimming reads by kmers
+align:
+  threads: 4
+# Variant calling parameters — parameters for calling variants with ivar
+variants:
+  max_depth: 0
+  min_freq: 0.05
+  min_qual: 20
+  min_depth: 0
 
 #### -------------------------- Directories ------------------------- ####
 
 pipeline_dir: ../results
+ref_dir: results/ref
+sra_dir: results/sra
+fastq_dir: results/fastq
+trim_dir: results/trim
+filter_dir: results/filter
+align_dir: results/align
+variants_dir: results/variants
+depth_dir: results/depth
+qc_dir: results/qc
+log_dir: results/logs

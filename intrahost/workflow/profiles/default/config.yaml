@@ -10,4 +10,16 @@ default-resources:
   cpus_per_task: 1
   mem_mb: 4000
 
-# set-resources:
+set-resources:
+  fetch_runs_from_sra:
+    cpus_per_task: 2
+  align_with_minimap:
+    cpus_per_task: 4
+  trim_all_reads_pe:
+    cpus_per_task: 4
+  trim_all_reads_se:
+    cpus_per_task: 4
+  filter_viral_reads_w_bbduk_pe:
+    cpus_per_task: 4
+  filter_viral_reads_w_bbduk_se:
+    cpus_per_task: 4

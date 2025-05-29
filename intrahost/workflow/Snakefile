@@ -7,20 +7,147 @@ Author: Will Hannon
 #### ----------------------- Imports ----------------------- ####
 
 import pandas as pd 
-import json
 from os.path import join
-from Bio import SeqIO
-from Bio.Seq import Seq
-from Bio.SeqRecord import SeqRecord
+from Bio import Entrez
+from io import StringIO
 
 #### -------------------- Configuration -------------------- ####
 
 configfile: "configuration/pipeline.yaml"
 
+# Load and filter the SRA runs based on the config
+sra_df = pd.read_csv(config["fetch"]["sra_table"])
+accessions = sra_df[sra_df["total_count"] >= config["fetch"]["min_total_count"]]["acc"].tolist()
+print(f"Found {len(accessions)} accessions to download.")
+
+#### ---------------------- Rule Files --------------------- ####
+
+include: "rules/functions.smk"
+include: "rules/paired.smk"
+include: "rules/single.smk"
+
 #### ----------------------- Targets ----------------------- ####
 
 rule all:
     input:
-        
+        expand(join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv"), accession=accessions[:5]),
+        expand(join(config['depth_dir'], "{accession}", "{accession}.depth"), accession=accessions[:5]),
+
 
 #### ------------------------ Rules ------------------------ ####
+
+rule extract_reference_from_genbank:
+    """
+    Extract the reference genome from a GenBank file.
+    """
+    input: 
+        gb = config['reference']
+    output: 
+        fa = join(config['ref_dir'], "reference.fa"),
+        gff = join(config['ref_dir'], "reference.gff")
+    run:
+        from Bio import SeqIO
+        from Bio.SeqRecord import SeqRecord
+        import BCBio.GFF
+        # Read the GenBank file with SeqIO
+        seq = SeqIO.read(input.gb, "genbank")
+        # Write the reference genome to a FASTA file
+        SeqIO.write([seq], output.fa, "fasta")
+        # Write the feature annotations to a GFF file
+        with open(output.gff, "w") as gff:
+            BCBio.GFF.write([seq], gff)
+
+
+rule fetch_runs_from_sra:
+    output:
+        join(config['sra_dir'], "{accession}", "{accession}.sra")
+    params:
+        method=config['fetch']['method'],
+        filetype=config['fetch']['format'],
+        directory=join(config['sra_dir'], "{accession}"),
+    conda: 'intrahost'
+    threads: config['fetch']['threads']
+    log: join(config['log_dir'], "fetch_runs_from_sra", "fetch_runs_from_sra_{accession}.log")
+    shell:
+        """
+        kingfisher get \
+            -r {wildcards.accession} \
+            -m {params.method} \
+            -f {params.filetype} \
+            --output-directory {params.directory} \
+            --download-threads {threads} \
+            &>> {log}
+        """
+
+
+rule align_with_minimap:
+    input:
+        reads=get_processed_fastqs,
+        reference = join(config['ref_dir'], "reference.fa"),
+    output:
+        bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
+        flagstat = join(config['qc_dir'], "{accession}", "{accession}.flagstat")
+    log: join(config['log_dir'], "align_with_minimap", "align_with_minimap_{accession}.log")
+    params:
+        preset = lambda wildcards: get_minimap_preset(wildcards.accession)
+    conda: 'intrahost'
+    threads: config['align']['threads']
+    shell:
+        """
+        minimap2 -ax {params.preset} \
+            --cs \
+            -t {threads} \
+            {input.reference} \
+            {input.reads} 2> {log} | \
+        samtools view -b - | \
+        samtools sort -@ {threads} -o {output.bam} -
+        samtools index {output.bam}
+        samtools flagstat -@ {threads} {output.bam} > {output.flagstat}
+        """
+
+
+rule calculate_read_depth:
+    input:
+        bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
+    output:
+        depth = join(config['depth_dir'], "{accession}", "{accession}.depth")
+    conda: 'intrahost'
+    shell:
+        """
+        samtools depth -aa -Q 0 {input.bam} > {output.depth}
+        sed -i "s/$/\t{wildcards.accession}/" {output}
+        """
+
+
+rule call_variants_with_ivar:
+    input: 
+        bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
+        reference = join(config['ref_dir'], "reference.fa"),
+        gff = join(config['ref_dir'], "reference.gff")
+    output:
+        join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv")
+    params:
+        prefix = join(config['variants_dir'], "{accession}", "{accession}.ivar"),
+        max_depth = config['variants']['max_depth'],
+        min_qual = config['variants']['min_qual'],
+        min_freq = config['variants']['min_freq'],
+        min_depth = config['variants']['min_depth']
+    conda: 'intrahost'
+    log: join(config['log_dir'], "call_variants_with_ivar", "call_variants_with_ivar_{accession}.log")
+    shell:
+        """
+        samtools mpileup \
+            -aa -A -B \
+            -d {params.max_depth} \
+            -Q 0 \
+            {input.bam} \
+        | ivar variants \
+            -p {params.prefix} \
+            -q {params.min_qual} \
+            -t {params.min_freq} \
+            -m {params.min_depth} \
+            -r {input.reference} \
+            -g {input.gff} \
+            &>> {log}
+        """
+
