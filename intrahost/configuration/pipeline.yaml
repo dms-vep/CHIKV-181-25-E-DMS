@@ -42,6 +42,8 @@ fastq_dir: results/fastq
 trim_dir: results/trim
 filter_dir: results/filter
 align_dir: results/align
+realign_dir: results/realign
+consensus_dir: results/consensus
 variants_dir: results/variants
 depth_dir: results/depth
 qc_dir: results/qc

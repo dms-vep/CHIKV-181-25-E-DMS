@@ -31,8 +31,7 @@ include: "rules/single.smk"
 rule all:
     input:
         expand(join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv"), accession=accessions[:5]),
-        expand(join(config['depth_dir'], "{accession}", "{accession}.depth"), accession=accessions[:5]),
-
+        expand(join(config['depth_dir'], "{accession}", "{accession}.depth"), accession=accessions[:5])
 
 #### ------------------------ Rules ------------------------ ####
 
@@ -60,7 +59,7 @@ rule extract_reference_from_genbank:
 
 rule fetch_runs_from_sra:
     output:
-        join(config['sra_dir'], "{accession}", "{accession}.sra")
+        temp(join(config['sra_dir'], "{accession}", "{accession}.sra"))
     params:
         method=config['fetch']['method'],
         filetype=config['fetch']['format'],
@@ -119,10 +118,49 @@ rule calculate_read_depth:
         """
 
 
-rule call_variants_with_ivar:
+rule create_consensus_with_ivar:
     input: 
         bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
-        reference = join(config['ref_dir'], "reference.fa"),
+    output: 
+        join(config['consensus_dir'], "{accession}", "{accession}.fa")
+    params: prefix = join(config['consensus_dir'], "{accession}", "{accession}")
+    conda: 'intrahost'
+    shell:
+        """
+        samtools mpileup -d 1000 -A -Q 0 {input.bam} | ivar consensus -p {params.prefix} -q 20 -t 0
+        """
+
+
+rule realign_to_consensus_with_minimap:
+    input:
+        reads=get_processed_fastqs,
+        reference = join(config['consensus_dir'], "{accession}", "{accession}.fa"),
+    output:
+        bam = join(config['realign_dir'], "{accession}", "{accession}.bam"),
+        flagstat = join(config['qc_dir'], "{accession}", "{accession}.flagstat")
+    log: join(config['log_dir'], "realign_to_consensus_with_minimap", "realign_to_consensus_with_minimap_{accession}.log")
+    params:
+        preset = lambda wildcards: get_minimap_preset(wildcards.accession)
+    conda: 'intrahost'
+    threads: config['align']['threads']
+    shell:
+        """
+        minimap2 -ax {params.preset} \
+            --cs \
+            -t {threads} \
+            {input.reference} \
+            {input.reads} 2> {log} | \
+        samtools view -b - | \
+        samtools sort -@ {threads} -o {output.bam} -
+        samtools index {output.bam}
+        samtools flagstat -@ {threads} {output.bam} > {output.flagstat}
+        """
+
+
+rule call_variants_with_ivar:
+    input: 
+        bam = join(config['realign_dir'], "{accession}", "{accession}.bam"),
+        reference = join(config['consensus_dir'], "{accession}", "{accession}.fa"),
         gff = join(config['ref_dir'], "reference.gff")
     output:
         join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv")

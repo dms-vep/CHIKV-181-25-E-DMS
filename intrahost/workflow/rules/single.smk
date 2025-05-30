@@ -1,7 +1,7 @@
 rule convert_sra_to_fastq_se:
     input: join(config['sra_dir'], "{accession}", "{accession}.sra")
     output:        
-        join(config['fastq_dir'], "{accession}", "{accession}.fastq.gz"),
+        temp(join(config['fastq_dir'], "{accession}", "{accession}.fastq.gz")),
     params:
         directory = join(config['fastq_dir'], "{accession}"),
     conda: 'intrahost'
@@ -24,7 +24,7 @@ rule trim_all_reads_se:
     input:
         R1 = join(config['fastq_dir'], "{accession}", "{accession}.fastq.gz"),
     output:
-        R1 = join(config['trim_dir'], "{accession}", "{accession}.fastq.gz"),
+        R1 = temp(join(config['trim_dir'], "{accession}", "{accession}.fastq.gz")),
         html = join(config['qc_dir'], "{accession}", "{accession}.fastp.html"),
         json = join(config['qc_dir'], "{accession}", "{accession}.fastp.json")
     conda: 'intrahost'
@@ -53,7 +53,7 @@ rule filter_viral_reads_w_bbduk_se:
         R1 = join(config['trim_dir'], "{accession}", "{accession}.fastq.gz"),
         reference = join(config['ref_dir'], "reference.fa"),
     output:
-        R1 = join(config['filter_dir'], "{accession}", "{accession}.fastq.gz"),
+        R1 = temp(join(config['filter_dir'], "{accession}", "{accession}.fastq.gz")),
         stats = join(config['qc_dir'], "{accession}", "{accession}.filter.stats"),
     params:
         k = config['filter']['kmer_length'],
