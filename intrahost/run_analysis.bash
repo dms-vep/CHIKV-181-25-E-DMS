@@ -12,5 +12,6 @@ echo "Running Snakemake version ${SNAKEMAKE_VERSION}..."
 
 # Run the main analysis on `slurm` cluster
 snakemake \
+    --keep-going \
     --software-deployment-method conda \
     --rerun-incomplete

@@ -11,8 +11,10 @@ default-resources:
   mem_mb: 4000
 
 set-resources:
-  fetch_runs_from_sra:
-    cpus_per_task: 2
+  fetch_sra_to_fastq_pe:
+    cpus_per_task: 4
+  fetch_sra_to_fastq_se:
+    cpus_per_task: 4
   align_with_minimap:
     cpus_per_task: 4
   trim_all_reads_pe:

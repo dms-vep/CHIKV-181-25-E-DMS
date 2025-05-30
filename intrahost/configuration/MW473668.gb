@@ -28,6 +28,7 @@ FEATURES             Location/Qualifiers
                      /transl_except=(pos:5619..5621,aa:OTHER)
                      /product="nonstructural polyprotein"
                      /protein_id="UFI00979.1"
+                     /gene="nonstructural polyprotein"
                      /translation="MDSVYVDIDADSAFLKALQRAYPMFEVEPRQVTSNDHANARAFS
                      HLAIKLIEQEIDPDSTILDIGSAPARRMMSDRKYHCVCPMRSAEDPERLANYARKLAS
                      AAGKVLDRNISGKIGDLQAVMAVPDTETPTFCLHTDVSCRQRADVAIYQDVYAVHAPT
@@ -83,6 +84,7 @@ FEATURES             Location/Qualifiers
                      /codon_start=1
                      /product="structural polyprotein"
                      /protein_id="UFI00980.1"
+                     /gene="structural polyprotein"
                      /translation="MEFIPTQTFYNRRYQPRPWTPRPTIQVIRPRPRPQRKAGQLAQL
                      ISAVNKLTMRAVPQQKPRKNRKNKKQKQKQQAPRNNMNQKKQPPKKKPAQKKKKPGRR
                      ERMCMKIENDCIFEVKHEGKVTGYACLVGDKVMKPAHVKGTIDNADLAKLAFKRSSKY

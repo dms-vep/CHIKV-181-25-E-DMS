@@ -15,6 +15,10 @@ fetch:
   method: 'prefetch'
   format: 'sra'
   threads: 2
+  # Runs to exclude from the analysis
+  exclude:
+    - 'SRR1993829'
+    - 'SRR3927366'
 # Trim parameters — parameters for trimming reads with fastp
 trim:
   threads: 4

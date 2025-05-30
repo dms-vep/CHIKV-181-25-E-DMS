@@ -1,25 +1,21 @@
-rule convert_sra_to_fastq_pe:
-    input: join(config['sra_dir'], "{accession}", "{accession}.sra")
+rule fetch_sra_to_fastq_pe:
     output:        
         R1 = temp(join(config['fastq_dir'], "{accession}", "{accession}_1.fastq.gz")),
         R2 = temp(join(config['fastq_dir'], "{accession}", "{accession}_2.fastq.gz")),
     params:
         directory = join(config['fastq_dir'], "{accession}"),
     conda: 'intrahost'
-    log: join(config['log_dir'], "convert_sra_to_fastq", "convert_sra_to_fastq_pe_{accession}.log")
+    threads: 4
+    log: join(config['log_dir'], "fetch_sra_to_fastq_pe", "fetch_sra_to_fastq_pe_{accession}.log")
     shell:
         """
-        fastq-dump \
+        parallel-fastq-dump \
+            --sra-id {wildcards.accession} \
+            -t {threads} \
             --gzip \
-            --dumpbase \
-            --clip \
-            --skip-technical \
-            --readids \
-            --origfmt \
             --split-spot \
             --split-3 \
             --outdir {params.directory} \
-            {input} \
             &>> {log}
         """
 

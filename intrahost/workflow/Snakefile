@@ -18,6 +18,9 @@ configfile: "configuration/pipeline.yaml"
 # Load and filter the SRA runs based on the config
 sra_df = pd.read_csv(config["fetch"]["sra_table"])
 accessions = sra_df[sra_df["total_count"] >= config["fetch"]["min_total_count"]]["acc"].tolist()
+# remove accessions in the exclude list
+if "exclude" in config["fetch"]:
+    accessions = [acc for acc in accessions if acc not in config["fetch"]["exclude"]]
 print(f"Found {len(accessions)} accessions to download.")
 
 #### ---------------------- Rule Files --------------------- ####
@@ -30,8 +33,8 @@ include: "rules/single.smk"
 
 rule all:
     input:
-        expand(join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv"), accession=accessions[:5]),
-        expand(join(config['depth_dir'], "{accession}", "{accession}.depth"), accession=accessions[:5])
+        expand(join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv"), accession=accessions),
+        expand(join(config['depth_dir'], "{accession}", "{accession}.depth"), accession=accessions)
 
 #### ------------------------ Rules ------------------------ ####
 
@@ -55,28 +58,6 @@ rule extract_reference_from_genbank:
         # Write the feature annotations to a GFF file
         with open(output.gff, "w") as gff:
             BCBio.GFF.write([seq], gff)
-
-
-rule fetch_runs_from_sra:
-    output:
-        temp(join(config['sra_dir'], "{accession}", "{accession}.sra"))
-    params:
-        method=config['fetch']['method'],
-        filetype=config['fetch']['format'],
-        directory=join(config['sra_dir'], "{accession}"),
-    conda: 'intrahost'
-    threads: config['fetch']['threads']
-    log: join(config['log_dir'], "fetch_runs_from_sra", "fetch_runs_from_sra_{accession}.log")
-    shell:
-        """
-        kingfisher get \
-            -r {wildcards.accession} \
-            -m {params.method} \
-            -f {params.filetype} \
-            --output-directory {params.directory} \
-            --download-threads {threads} \
-            &>> {log}
-        """
 
 
 rule align_with_minimap:
