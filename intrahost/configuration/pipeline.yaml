@@ -17,9 +17,9 @@ fetch:
   threads: 2
   # Runs to exclude from the analysis
   exclude:
-    - 'SRR1993829'
-    - 'SRR3927366'
-    - 'SRR12678733'
+    - 'SRR1993829' # Says it's single but it's not
+    - 'SRR3927366' # Says it's single but it's not
+    - 'SRR12678733' # Huge metagenome run that's not useful
 # Trim parameters — parameters for trimming reads with fastp
 trim:
   threads: 4
@@ -37,7 +37,13 @@ variants:
   min_freq: 0.05
   min_qual: 20
   min_depth: 0
-
+# Final filters on the raw variants
+filter_variants:
+  min_freq: 0.05
+  min_depth: 10
+  pvalue: 0.05
+  region: "structural polyprotein"
+  
 #### -------------------------- Directories ------------------------- ####
 
 pipeline_dir: ../results

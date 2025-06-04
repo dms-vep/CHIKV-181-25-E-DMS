@@ -5,3 +5,6 @@ _*
 !.gitignore
 
 results/*
+!results/summary
+results/summary/*/*
+!results/summary/*/*.csv
