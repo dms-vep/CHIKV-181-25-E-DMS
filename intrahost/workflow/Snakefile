@@ -7,7 +7,7 @@ Author: Will Hannon
 #### ----------------------- Imports ----------------------- ####
 
 import pandas as pd 
-from os.path import join
+from os.path import join, basename
 from Bio import Entrez
 from io import StringIO
 
@@ -33,8 +33,9 @@ include: "rules/single.smk"
 
 rule all:
     input:
-        expand(join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv"), accession=accessions),
-        expand(join(config['depth_dir'], "{accession}", "{accession}.depth"), accession=accessions)
+        join(config['variants_dir'], "variants.ivar.csv"),
+        join(config['depth_dir'], "merged.depth"),
+        join(config['consensus_dir'], "consensus.fa")
 
 #### ------------------------ Rules ------------------------ ####
 
@@ -99,6 +100,21 @@ rule calculate_read_depth:
         """
 
 
+
+rule aggregate_read_depth:
+    input: 
+        expand(join(config['depth_dir'], "{accession}", "{accession}.depth"), accession=accessions)
+    output: 
+        depth = join(config['depth_dir'], "merged.depth"),
+        header = temp(join(config['depth_dir'], "merged.depth.tmp"))
+    shell:
+        """
+        cat {input} > {output.header}
+
+        awk 'BEGIN{{print "REF\tPOS\tDP\tAccession"}}1' {output.header} > {output.depth}
+        """
+        
+
 rule create_consensus_with_ivar:
     input: 
         bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
@@ -112,36 +128,48 @@ rule create_consensus_with_ivar:
         """
 
 
-rule realign_to_consensus_with_minimap:
-    input:
-        reads=get_processed_fastqs,
-        reference = join(config['consensus_dir'], "{accession}", "{accession}.fa"),
-    output:
-        bam = join(config['realign_dir'], "{accession}", "{accession}.bam"),
-        flagstat = join(config['qc_dir'], "{accession}", "{accession}.flagstat")
-    log: join(config['log_dir'], "realign_to_consensus_with_minimap", "realign_to_consensus_with_minimap_{accession}.log")
-    params:
-        preset = lambda wildcards: get_minimap_preset(wildcards.accession)
-    conda: 'intrahost'
-    threads: config['align']['threads']
-    shell:
-        """
-        minimap2 -ax {params.preset} \
-            --cs \
-            -t {threads} \
-            {input.reference} \
-            {input.reads} 2> {log} | \
-        samtools view -b - | \
-        samtools sort -@ {threads} -o {output.bam} -
-        samtools index {output.bam}
-        samtools flagstat -@ {threads} {output.bam} > {output.flagstat}
-        """
+rule aggregate_consensus_sequences:
+    input: 
+        expand(join(config['consensus_dir'], "{accession}", "{accession}.fa"), accession=accessions)
+    output: 
+        join(config['consensus_dir'], "consensus.fa")
+    run:
+        with open(output[0], 'w') as outfile:
+            for file in input:
+                with open(file, 'r') as infile:
+                    outfile.write(infile.read())
+
+
+# rule realign_to_consensus_with_minimap:
+#     input:
+#         reads=get_processed_fastqs,
+#         reference = join(config['consensus_dir'], "{accession}", "{accession}.fa"),
+#     output:
+#         bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
+#         flagstat = join(config['qc_dir'], "{accession}", "{accession}.flagstat")
+#     log: join(config['log_dir'], "realign_to_consensus_with_minimap", "realign_to_consensus_with_minimap_{accession}.log")
+#     params:
+#         preset = lambda wildcards: get_minimap_preset(wildcards.accession)
+#     conda: 'intrahost'
+#     threads: config['align']['threads']
+#     shell:
+#         """
+#         minimap2 -ax {params.preset} \
+#             --cs \
+#             -t {threads} \
+#             {input.reference} \
+#             {input.reads} 2> {log} | \
+#         samtools view -b - | \
+#         samtools sort -@ {threads} -o {output.bam} -
+#         samtools index {output.bam}
+#         samtools flagstat -@ {threads} {output.bam} > {output.flagstat}
+#         """
 
 
 rule call_variants_with_ivar:
     input: 
-        bam = join(config['realign_dir'], "{accession}", "{accession}.bam"),
-        reference = join(config['consensus_dir'], "{accession}", "{accession}.fa"),
+        bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
+        reference = join(config['ref_dir'], "reference.fa"),
         gff = join(config['ref_dir'], "reference.gff")
     output:
         join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv")
@@ -170,3 +198,19 @@ rule call_variants_with_ivar:
             &>> {log}
         """
 
+
+rule aggregate_ivar_variants:
+    input: 
+        expand(join(config['variants_dir'], "{accession}", "{accession}.ivar.tsv"), accession=accessions),
+
+    output: 
+        variants = join(config['variants_dir'], "variants.ivar.csv"),
+    run:
+        dfs = []
+        for file in input:
+            accession, _, _ = basename(file).split('.')
+            df = pd.read_csv(file, sep='\t')
+            df['Accession'] = accession
+            dfs.append(df)
+        df = pd.concat(dfs)
+        df.to_csv(output.variants, index=False)

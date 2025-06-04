@@ -19,6 +19,7 @@ fetch:
   exclude:
     - 'SRR1993829'
     - 'SRR3927366'
+    - 'SRR12678733'
 # Trim parameters — parameters for trimming reads with fastp
 trim:
   threads: 4
