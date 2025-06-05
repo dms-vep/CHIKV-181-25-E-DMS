@@ -140,32 +140,6 @@ rule aggregate_consensus_sequences:
                     outfile.write(infile.read())
 
 
-# rule realign_to_consensus_with_minimap:
-#     input:
-#         reads=get_processed_fastqs,
-#         reference = join(config['consensus_dir'], "{accession}", "{accession}.fa"),
-#     output:
-#         bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
-#         flagstat = join(config['qc_dir'], "{accession}", "{accession}.flagstat")
-#     log: join(config['log_dir'], "realign_to_consensus_with_minimap", "realign_to_consensus_with_minimap_{accession}.log")
-#     params:
-#         preset = lambda wildcards: get_minimap_preset(wildcards.accession)
-#     conda: 'intrahost'
-#     threads: config['align']['threads']
-#     shell:
-#         """
-#         minimap2 -ax {params.preset} \
-#             --cs \
-#             -t {threads} \
-#             {input.reference} \
-#             {input.reads} 2> {log} | \
-#         samtools view -b - | \
-#         samtools sort -@ {threads} -o {output.bam} -
-#         samtools index {output.bam}
-#         samtools flagstat -@ {threads} {output.bam} > {output.flagstat}
-#         """
-
-
 rule call_variants_with_ivar:
     input: 
         bam = join(config['align_dir'], "{accession}", "{accession}.bam"),
