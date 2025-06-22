@@ -386,6 +386,52 @@ receptor_selections:
      E_A-250128-293T_Mxra8-sMxra8-27IC99-1:
       concentration: 540.00
       use_in_fit: true
+  E_A-250618-human-Mxra8:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *receptor_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: E_A-250618-293T_Mxra8-shMxra8-0-1
+    antibody_samples:
+     E_A-250618-293T_Mxra8-shMxra8-6-1:
+      concentration: 6.4
+      use_in_fit: true
+     E_A-250618-293T_Mxra8-shMxra8-20-1:
+      concentration: 20
+      use_in_fit: true
+     E_A-250618-293T_Mxra8-shMxra8-60-1:
+      concentration: 60
+      use_in_fit: true
+     E_A-250618-293T_Mxra8-shMxra8-120-1:
+      concentration: 120
+      use_in_fit: true
+     E_A-250618-293T_Mxra8-shMxra8-240-1:
+      concentration: 240
+      use_in_fit: true
+  E_B-250618-human-Mxra8:
+    neut_standard_name: neut_standard
+    prob_escape_filters: *prob_escape_filters_default
+    polyclonal_params: *receptor_polyclonal_params_default
+    escape_plot_kwargs: *receptor_plot_kwargs_default
+    plot_hide_stats: *receptor_plot_hide_stats_default
+    no_antibody_sample: E_B-250618-293T_Mxra8-shMxra8-0-1
+    antibody_samples:
+     E_B-250618-293T_Mxra8-shMxra8-6-1:
+      concentration: 6.4
+      use_in_fit: true
+     E_B-250618-293T_Mxra8-shMxra8-20-1:
+      concentration: 20
+      use_in_fit: true
+     E_B-250618-293T_Mxra8-shMxra8-60-1:
+      concentration: 60
+      use_in_fit: true
+     E_B-250618-293T_Mxra8-shMxra8-120-1:
+      concentration: 120
+      use_in_fit: true
+     E_B-250618-293T_Mxra8-shMxra8-240-1:
+      concentration: 240
+      use_in_fit: true
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging/plotting selections for same antibody or soluble receptor
@@ -468,3 +514,9 @@ avg_receptor_affinity:
     selections:
       - E_B-250114-mouse-Mxra8
       - E_A-250128-mouse-Mxra8
+  human_Mxra8:
+    <<: *avg_receptor_affinity_default
+    selections:
+      - E_A-250618-human-Mxra8
+      - E_B-250618-human-Mxra8
+
