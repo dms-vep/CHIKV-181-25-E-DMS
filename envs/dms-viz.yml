@@ -16,5 +16,5 @@ dependencies:
   - python=3.12
   - seaborn=0.13
   - pip:
-    - configure-dms-viz==1.6.0
+    - configure-dms-viz==1.7.0
     - dmslogo==0.7.0
