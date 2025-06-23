@@ -11,13 +11,22 @@ summary_default: &summary_default
   init_site_escape_stat: sum  # initially show site escape as this statistic
 
 cell_entry_default: &cell_entry_default
-    stat: effect  # column to plot
-    color_scheme: redblue
-    max_at_least: 2
-    fixed_min: -6
-    init_min_value: null
-    le_filters:
-      effect_std: 2.25  # remove if std less than this
+  stat: effect  # column to plot
+  color_scheme: redblue
+  max_at_least: 2
+  fixed_min: -6
+  init_min_value: null
+  le_filters:
+    effect_std: 2.25  # remove if std less than this
+
+mxra8_binding_default: &mxra8_binding_default
+  stat: Mxra8 binding_median  # column to plot
+  color_scheme: purplegreen
+  max_at_least: 2
+  min_at_least: 2
+  init_min_value: null
+  le_filters:
+    Mxra8 binding_std: 2.25
 
 # Entry into three different cell lines and Mxra8 binding
 entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding:
@@ -34,11 +43,21 @@ entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding:
       <<: *cell_entry_default
       csv: results/func_effects/averages/293T-TIM1_entry_func_effects.csv
     binding to mouse Mxra8:
+      <<: *mxra8_binding_default
       csv: results/receptor_affinity/averages/mouse_Mxra8_mut_effect.csv
-      stat: Mxra8 binding_median  # column to plot
-      color_scheme: purplegreen
-      max_at_least: 2
-      min_at_least: 2
-      init_min_value: null
-      le_filters:
-        Mxra8 binding_std: 2.25
+
+# binding to human versus mouse Mxra8
+entry_mouse_human_Mxra8:
+  <<: *summary_default
+  antibody_escape: {}
+  other_phenotypes:
+    entry in 293T_Mxra8 cells:
+      <<: *cell_entry_default
+      init_min_value: -4
+      csv: results/func_effects/averages/293T-Mxra8_entry_func_effects.csv
+    binding to mouse Mxra8:
+      <<: *mxra8_binding_default
+      csv: results/receptor_affinity/averages/mouse_Mxra8_mut_effect.csv
+    binding to human Mxra8:
+      <<: *mxra8_binding_default
+      csv: results/receptor_affinity/averages/human_Mxra8_mut_effect.csv
