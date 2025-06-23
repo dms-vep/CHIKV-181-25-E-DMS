@@ -4,6 +4,47 @@ This file is included by the pipeline ``Snakefile``.
 
 """
 
+# Compare human and mouse Mxra8 binding -------------------------------------------------
+
+rule compare_human_mouse_mxra8_binding:
+    """Compare human versus mouse Mxra8 binding."""
+    input:
+        nb="notebooks/compare_human_mouse_mxra8_binding.ipynb",
+        entry_293T_human_Mxra8="results/func_effects/averages/293T-Mxra8_entry_func_effects.csv",
+        binding_human_Mxra8="results/receptor_affinity/averages/human_Mxra8_mut_effect.csv",
+        binding_mouse_Mxra8="results/receptor_affinity/averages/mouse_Mxra8_mut_effect.csv",
+    output:
+        nb="results/notebooks/compare_human_mouse_mxra8_binding.ipynb",
+        corr_chart_html="results/compare_human_mouse_mxra8_binding.html",
+    params:
+        params_yaml=lambda wc: yaml_str(
+            {
+                "min_entry_293T_human_Mxra8": -3,
+                "min_entry_293T_human_Mxra8_std": 2.25,
+                "min_binding_std": 2.25,
+                "min_times_seen": 2,
+            }
+        ),
+    conda:
+        os.path.join(config["pipeline_path"], "environment.yml")
+    log:
+        "results/logs/compare_human_mouse_mxra8_binding.txt",
+    shell:
+        """
+        papermill {input.nb} {output.nb} \
+            -p entry_293T_human_Mxra8 {input.entry_293T_human_Mxra8} \
+            -p binding_human_Mxra8 {input.binding_human_Mxra8} \
+            -p binding_mouse_Mxra8 {input.binding_mouse_Mxra8} \
+            -p corr_chart_html {output.corr_chart_html} \
+            -y "{params.params_yaml}" \
+            &> {log}
+        """
+
+docs["Compare binding to human vs mouse Mxra8"] = {
+    "scatter plot": rules.compare_human_mouse_mxra8_binding.output.corr_chart_html,
+}
+
+
 # Compare Mxra8 binding to entry --------------------------------------------------------
 
 rule compare_mxra8_binding_to_entry:
