@@ -53,6 +53,7 @@ entry_mouse_human_Mxra8:
   other_phenotypes:
     entry in 293T_Mxra8 cells:
       <<: *cell_entry_default
+      init_min_value: -4
       csv: results/func_effects/averages/293T-Mxra8_entry_func_effects.csv
     binding to mouse Mxra8:
       <<: *mxra8_binding_default
