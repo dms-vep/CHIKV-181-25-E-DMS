@@ -237,7 +237,6 @@ rule wrapped_heatmap:
         data_csv=lambda wc: wrapped_heatmap_config[wc.wrapped_hm]["data_csv"],
     output:
         chart_html="results/wrapped_heatmaps/{wrapped_hm}_wrapped_heatmap.html",
-        nb="results/notebooks/wrapped_heatmap_{wrapped_hm}.ipynb",
     params:
         params_dict=lambda wc: wrapped_heatmap_config[wc.wrapped_hm]
     log:
@@ -278,3 +277,27 @@ docs["additional data CSVs"] = {
         "annotated entry/binding site mean CSV": rules.annotated_summary_csvs.output.site_mean,
     }
 }
+
+
+# Make some paper figures ---------------------------------------------------------------
+
+rule paper_figures:
+    """Make some paper figures."""
+    input:
+        **{
+            f"func_scores_{s}": rules.func_scores.output.func_scores.format(selection=s)
+            for s in func_scores
+        },
+        nb="notebooks/paper_figures.ipynb",
+    output:
+        nb="results/notebooks/paper_figures.ipynb",
+    log:
+        "results/logs/paper_figures.txt",
+    params:
+        params_yaml=lambda _, input: yaml_str({"params": dict(input.items())}),
+    conda:
+        os.path.join(config["pipeline_path"], "environment.yml"),
+    shell:
+        'papermill {input.nb} {output.nb} -y "{params.params_yaml}" &> {log}'
+
+docs["Custom paper figures"] = {"Notebook w figures" : rules.paper_figures.output.nb}
