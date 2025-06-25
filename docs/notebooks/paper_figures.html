@@ -7535,7 +7535,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=04b553a3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=0678fc42">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7569,6 +7569,7 @@ a.anchor-link {
     <span class="s2">"func_scores_C636-E3E2-A-241212-func-2"</span><span class="p">:</span> <span class="s2">"results/func_scores/C636-E3E2-A-241212-func-2_func_scores.csv"</span><span class="p">,</span>
     <span class="s2">"func_scores_C636-6KE1-A-241212-func-1"</span><span class="p">:</span> <span class="s2">"results/func_scores/C636-6KE1-A-241212-func-1_func_scores.csv"</span><span class="p">,</span>
     <span class="s2">"func_scores_C636-6KE1-A-241212-func-2"</span><span class="p">:</span> <span class="s2">"results/func_scores/C636-6KE1-A-241212-func-2_func_scores.csv"</span><span class="p">,</span>
+    <span class="s2">"codon_variants"</span><span class="p">:</span> <span class="s2">"results/variants/codon_variants.csv"</span><span class="p">,</span>
     <span class="s2">"nb"</span><span class="p">:</span> <span class="s2">"notebooks/paper_figures.ipynb"</span><span class="p">,</span>
 <span class="p">}</span>
 </pre></div>
@@ -7985,23 +7986,23 @@ a.anchor-link {
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <style>
-  #altair-viz-9d316721564c4d81b5e1261796972659.vega-embed {
+  #altair-viz-f0e45ca530c940e3ab3fbe4b3eb273aa.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-9d316721564c4d81b5e1261796972659.vega-embed details,
-  #altair-viz-9d316721564c4d81b5e1261796972659.vega-embed details summary {
+  #altair-viz-f0e45ca530c940e3ab3fbe4b3eb273aa.vega-embed details,
+  #altair-viz-f0e45ca530c940e3ab3fbe4b3eb273aa.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-9d316721564c4d81b5e1261796972659"></div>
+<div id="altair-viz-f0e45ca530c940e3ab3fbe4b3eb273aa"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9d316721564c4d81b5e1261796972659") {
-      outputDiv = document.getElementById("altair-viz-9d316721564c4d81b5e1261796972659");
+    if (outputDiv.id !== "altair-viz-f0e45ca530c940e3ab3fbe4b3eb273aa") {
+      outputDiv = document.getElementById("altair-viz-f0e45ca530c940e3ab3fbe4b3eb273aa");
     }
 
     const paths = {
@@ -8055,7 +8056,226 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=09dcca00-92c1-4e6c-b7ba-077238af5ad3">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9ce0f9c7-560a-4573-b9cd-3f84269d04d5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Number-of-mutations-per-variant">Number of mutations per variant<a class="anchor-link" href="#Number-of-mutations-per-variant">¶</a></h2><p>Plot number of mutations per variant as <a href="https://dms-vep.org/CHIKV_181-25_E_DMS/notebooks/build_codon_variants.html">here</a> but with better axis limits and labels, only keeping the combined libraries:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0dc8b2a6-fe91-405f-9ab5-7d93e8a84a9c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">codon_variants</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="s2">"codon_variants"</span><span class="p">])</span>
+
+<span class="n">lib_rename</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"E_A"</span><span class="p">:</span> <span class="s2">"library A"</span><span class="p">,</span> <span class="s2">"E_B"</span><span class="p">:</span> <span class="s2">"library B"</span><span class="p">}</span>
+
+<span class="n">display</span><span class="p">(</span>
+    <span class="n">codon_variants</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"library"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">n_variants</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="s2">"barcode"</span><span class="p">,</span> <span class="s2">"count"</span><span class="p">))</span>
+<span class="p">)</span>
+
+<span class="n">max_muts</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Only keeping </span><span class="si">{</span><span class="n">lib_rename</span><span class="si">=}</span><span class="s2">, and clipping at </span><span class="si">{</span><span class="n">max_muts</span><span class="si">=}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">nmuts_dist</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">codon_variants</span>
+    <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">"library in @lib_rename"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">library</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">"library"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">lib_rename</span><span class="p">),</span>
+        <span class="n">n_muts</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">"n_aa_substitutions"</span><span class="p">]</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">upper</span><span class="o">=</span><span class="n">max_muts</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"library"</span><span class="p">,</span> <span class="s2">"n_muts"</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">n_variants</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">NamedAgg</span><span class="p">(</span><span class="s2">"barcode"</span><span class="p">,</span> <span class="s2">"count"</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">n_muts_label</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">"n_muts"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">max_muts</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">"&gt;</span><span class="si">{</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">"</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">nmuts_dist_chart</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">nmuts_dist</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span>
+            <span class="s2">"n_muts_label"</span><span class="p">,</span>
+            <span class="n">sort</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">SortField</span><span class="p">(</span><span class="s2">"n_muts"</span><span class="p">),</span>
+            <span class="n">title</span><span class="o">=</span><span class="s2">"number amino-acid mutations"</span><span class="p">,</span>
+            <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="n">labelAngle</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"n_variants"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"number of barcoded variants"</span><span class="p">),</span>
+        <span class="n">alt</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span>
+            <span class="s2">"library"</span><span class="p">,</span>
+            <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">header</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Header</span><span class="p">(</span><span class="n">labelFontStyle</span><span class="o">=</span><span class="s2">"bold"</span><span class="p">,</span> <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">labelPadding</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"black"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">nmuts_dist_chart</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>n_variants</th>
+</tr>
+<tr>
+<th>library</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>6KE1_A</th>
+<td>69359</td>
+</tr>
+<tr>
+<th>6KE1_B</th>
+<td>62446</td>
+</tr>
+<tr>
+<th>E3E2_A</th>
+<td>65426</td>
+</tr>
+<tr>
+<th>E3E2_B</th>
+<td>62495</td>
+</tr>
+<tr>
+<th>E_A</th>
+<td>134757</td>
+</tr>
+<tr>
+<th>E_B</th>
+<td>124915</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Only keeping lib_rename={'E_A': 'library A', 'E_B': 'library B'}, and clipping at max_muts=4
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style>
+  #altair-viz-8c442edc6ce2465ca2ed2e4d59e5d4a4.vega-embed {
+    width: 100%;
+    display: flex;
+  }
+
+  #altair-viz-8c442edc6ce2465ca2ed2e4d59e5d4a4.vega-embed details,
+  #altair-viz-8c442edc6ce2465ca2ed2e4d59e5d4a4.vega-embed details summary {
+    position: relative;
+  }
+</style>
+<div id="altair-viz-8c442edc6ce2465ca2ed2e4d59e5d4a4"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-8c442edc6ce2465ca2ed2e4d59e5d4a4") {
+      outputDiv = document.getElementById("altair-viz-8c442edc6ce2465ca2ed2e4d59e5d4a4");
+    }
+
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      let deps = ["vega-embed"];
+      require(deps, displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"name": "data-8d20bb28be3b0aa124a665010392c6de"}, "mark": {"type": "bar", "color": "black"}, "encoding": {"column": {"field": "library", "header": {"labelFontSize": 11, "labelFontStyle": "bold", "labelPadding": 0}, "title": null, "type": "nominal"}, "x": {"axis": {"labelAngle": 0}, "field": "n_muts_label", "sort": {"field": "n_muts"}, "title": "number amino-acid mutations", "type": "nominal"}, "y": {"field": "n_variants", "title": "number of barcoded variants", "type": "quantitative"}}, "height": 150, "width": 150, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-8d20bb28be3b0aa124a665010392c6de": [{"library": "library A", "n_muts": 0, "n_variants": 17232, "n_muts_label": "0"}, {"library": "library A", "n_muts": 1, "n_variants": 73610, "n_muts_label": "1"}, {"library": "library A", "n_muts": 2, "n_variants": 33800, "n_muts_label": "2"}, {"library": "library A", "n_muts": 3, "n_variants": 8182, "n_muts_label": "3"}, {"library": "library A", "n_muts": 4, "n_variants": 1933, "n_muts_label": ">3"}, {"library": "library B", "n_muts": 0, "n_variants": 16034, "n_muts_label": "0"}, {"library": "library B", "n_muts": 1, "n_variants": 68122, "n_muts_label": "1"}, {"library": "library B", "n_muts": 2, "n_variants": 31255, "n_muts_label": "2"}, {"library": "library B", "n_muts": 3, "n_variants": 7696, "n_muts_label": "3"}, {"library": "library B", "n_muts": 4, "n_variants": 1808, "n_muts_label": ">3"}]}}, {"mode": "vega-lite"});
+</script>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6cb54343-9798-4642-9e04-a0db610872d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

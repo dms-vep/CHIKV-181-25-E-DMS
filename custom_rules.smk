@@ -288,6 +288,7 @@ rule paper_figures:
             f"func_scores_{s}": rules.func_scores.output.func_scores.format(selection=s)
             for s in func_scores
         },
+        codon_variants="results/variants/codon_variants.csv",
         nb="notebooks/paper_figures.ipynb",
     output:
         nb="results/notebooks/paper_figures.ipynb",
