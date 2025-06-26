@@ -288,13 +288,21 @@ rule paper_figures:
             f"func_scores_{s}": rules.func_scores.output.func_scores.format(selection=s)
             for s in func_scores
         },
+        **{
+            f"func_effects_{c}_{s}": f"results/func_effects/by_selection/{s}_func_effects.csv"
+            for c in func_effects_config["avg_func_effects"]
+            for s in func_effects_config["avg_func_effects"][c]["selections"]
+        },
+        codon_variants="results/variants/codon_variants.csv",
         nb="notebooks/paper_figures.ipynb",
     output:
         nb="results/notebooks/paper_figures.ipynb",
     log:
         "results/logs/paper_figures.txt",
     params:
-        params_yaml=lambda _, input: yaml_str({"params": dict(input.items())}),
+        params_yaml=lambda _, input: yaml_str(
+            {"params": dict(input.items()), "min_times_seen": 2}
+        ),
     conda:
         os.path.join(config["pipeline_path"], "environment.yml"),
     shell:
