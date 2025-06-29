@@ -294,6 +294,8 @@ rule paper_figures:
             for s in func_effects_config["avg_func_effects"][c]["selections"]
         },
         codon_variants="results/variants/codon_variants.csv",
+        annotated_mut_summary=rules.annotated_summary_csvs.output.mut,
+        annotated_site_summary=rules.annotated_summary_csvs.output.site_mean,
         nb="notebooks/paper_figures.ipynb",
     output:
         nb="results/notebooks/paper_figures.ipynb",
@@ -301,7 +303,11 @@ rule paper_figures:
         "results/logs/paper_figures.txt",
     params:
         params_yaml=lambda _, input: yaml_str(
-            {"params": dict(input.items()), "min_times_seen": 2}
+            {
+                "params": dict(input.items()),
+                "min_times_seen": 2,
+                "cell_entry_clip_lower": -6,
+            }
         ),
     conda:
         os.path.join(config["pipeline_path"], "environment.yml"),
