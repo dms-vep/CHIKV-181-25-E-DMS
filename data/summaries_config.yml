@@ -61,3 +61,5 @@ entry_mouse_human_Mxra8:
     binding to human Mxra8:
       <<: *mxra8_binding_default
       csv: results/receptor_affinity/averages/human_Mxra8_mut_effect.csv
+      le_filters:
+        Mxra8 binding_std: 2.5
