@@ -13,6 +13,7 @@ rule compare_human_mouse_mxra8_binding:
         entry_293T_human_Mxra8="results/func_effects/averages/293T-Mxra8_entry_func_effects.csv",
         binding_human_Mxra8="results/receptor_affinity/averages/human_Mxra8_mut_effect.csv",
         binding_mouse_Mxra8="results/receptor_affinity/averages/mouse_Mxra8_mut_effect.csv",
+        addtl_annotations="data/addtl_site_annotations.csv",
     output:
         nb="results/notebooks/compare_human_mouse_mxra8_binding.ipynb",
         corr_chart_html="results/compare_human_mouse_mxra8_binding.html",
@@ -21,7 +22,8 @@ rule compare_human_mouse_mxra8_binding:
             {
                 "min_entry_293T_human_Mxra8": -3,
                 "min_entry_293T_human_Mxra8_std": 2.25,
-                "min_binding_std": 2.25,
+                "min_mouse_Mxra8_binding_std": 2.25,
+                "min_human_Mxra8_binding_std": 2.5,
                 "min_times_seen": 2,
             }
         ),
@@ -35,6 +37,7 @@ rule compare_human_mouse_mxra8_binding:
             -p entry_293T_human_Mxra8 {input.entry_293T_human_Mxra8} \
             -p binding_human_Mxra8 {input.binding_human_Mxra8} \
             -p binding_mouse_Mxra8 {input.binding_mouse_Mxra8} \
+            -p addtl_annotations {input.addtl_annotations} \
             -p corr_chart_html {output.corr_chart_html} \
             -y "{params.params_yaml}" \
             &> {log}

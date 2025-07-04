@@ -47,7 +47,7 @@ entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding:
       csv: results/receptor_affinity/averages/mouse_Mxra8_mut_effect.csv
 
 # binding to human versus mouse Mxra8
-entry_mouse_human_Mxra8:
+binding_mouse_vs_human_Mxra8:
   <<: *summary_default
   antibody_escape: {}
   other_phenotypes:
