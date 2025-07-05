@@ -516,6 +516,9 @@ avg_receptor_affinity:
       - E_A-250128-mouse-Mxra8
   human_Mxra8:
     <<: *avg_receptor_affinity_default
+    addtl_slider_stats:
+      times_seen: 2
+      escape_std: 2.5
     selections:
       - E_A-250618-human-Mxra8
       - E_B-250618-human-Mxra8
