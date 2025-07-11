@@ -83,3 +83,5 @@ results/dms-viz/*/*
 !results/annotated_summary_csvs
 results/annotated_summary_csvs/*
 !results/annotated_summary_csvs/*.csv
+
+!results/paper_figures

@@ -299,15 +299,21 @@ rule paper_figures:
         codon_variants="results/variants/codon_variants.csv",
         annotated_mut_summary=rules.annotated_summary_csvs.output.mut,
         annotated_site_summary=rules.annotated_summary_csvs.output.site_mean,
+        mxra8_binding_effects="results/summaries/binding_mouse_vs_human_Mxra8.csv",
+        mxra8_validation_curves="manual_analyses/experimental_data/RVP.mutants.neutralization.by.soluble.mouse.Mxra8.csv",
         nb="notebooks/paper_figures.ipynb",
     output:
         nb="results/notebooks/paper_figures.ipynb",
+        mxra8_validation_svg="results/paper_figures/mxra8_validation.svg",
     log:
         "results/logs/paper_figures.txt",
     params:
-        params_yaml=lambda _, input: yaml_str(
+        params_yaml=lambda _, input, output: yaml_str(
             {
-                "params": dict(input.items()),
+                "params": dict(
+                    tup for tup in list(input.items()) + list(output.items())
+                    if tup[0] != "nb"
+                ),
                 "min_times_seen": 2,
                 "cell_entry_clip_lower": -6,
             }
