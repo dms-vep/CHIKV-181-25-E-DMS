@@ -85,3 +85,7 @@ results/annotated_summary_csvs/*
 !results/annotated_summary_csvs/*.csv
 
 !results/paper_figures
+
+!results/compare_human_mouse_mxra8
+results/compare_human_mouse_mxra8/*
+!results/compare_human_mouse_mxra8/*.csv

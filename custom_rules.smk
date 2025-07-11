@@ -17,9 +17,10 @@ rule compare_human_mouse_mxra8_binding:
         site_numbering_map=config["site_numbering_map"],
     output:
         nb="results/notebooks/compare_human_mouse_mxra8_binding.ipynb",
-        mut_corr_chart_html="results/compare_human_mouse_mxra8_mut_binding_corr.html",
-        site_corr_chart_html="results/compare_human_mouse_mxra8_site_binding_corr.html",
-        site_chart_html = "results/compare_human_mouse_mxra8_site_chart.html",
+        site_csv="results/compare_human_mouse_mxra8/site_binding.csv",
+        mut_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_mut_binding_corr.html",
+        site_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_site_binding_corr.html",
+        site_chart_html = "results/compare_human_mouse_mxra8/mxra8_site_chart.html",
     conda:
         os.path.join(config["pipeline_path"], "environment.yml")
     log:
@@ -32,6 +33,7 @@ rule compare_human_mouse_mxra8_binding:
             -p binding_mouse_Mxra8 {input.binding_mouse_Mxra8} \
             -p addtl_site_annotations {input.addtl_site_annotations} \
             -p site_numbering_map {input.site_numbering_map} \
+            -p site_csv {output.site_csv} \
             -p mut_corr_chart_html {output.mut_corr_chart_html} \
             -p site_corr_chart_html {output.site_corr_chart_html} \
             -p site_chart_html {output.site_chart_html} \
@@ -43,6 +45,7 @@ docs["Compare binding to human vs mouse Mxra8"] = {
         "site chart of binding effects": rules.compare_human_mouse_mxra8_binding.output.site_chart_html,
         "site correlation chart": rules.compare_human_mouse_mxra8_binding.output.site_corr_chart_html,
         "mutation correlation chart": rules.compare_human_mouse_mxra8_binding.output.mut_corr_chart_html,
+        "CSV with site-level effects on Mxra8 binding": rules.compare_human_mouse_mxra8_binding.output.site_csv,
         "notebook with comparison analysis": rules.compare_human_mouse_mxra8_binding.output.nb,
     },
 }
