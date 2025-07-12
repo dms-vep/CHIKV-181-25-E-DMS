@@ -60,6 +60,7 @@ rule compare_mxra8_binding_to_entry:
         nb="notebooks/compare_mxra8_binding_to_entry.ipynb",
     output:
         corr_chart_html="results/compare_mxra8_binding_to_entry/compare_mxra8_binding_to_entry.html",
+        paper_fig_corr_chart_html="results/compare_mxra8_binding_to_entry/compare_mxra8_binding_to_entry_fig.html",
         nb="results/notebooks/compare_mxra8_binding_to_entry.ipynb",
     params:
         params_yaml=lambda wc: yaml_str(
@@ -78,12 +79,16 @@ rule compare_mxra8_binding_to_entry:
         papermill {input.nb} {output.nb} \
             -p data_csv {input.data_csv} \
             -p corr_chart_html {output.corr_chart_html} \
+            -p paper_fig_corr_chart_html {output.paper_fig_corr_chart_html} \
             -y "{params.params_yaml}" \
             &> {log}
         """
 
 docs["Compare Mxra8 binding to cell entry"] = {
-    "scatter plot": rules.compare_mxra8_binding_to_entry.output.corr_chart_html,
+    "Charts and notebooks": {
+        "Interactive scatter plot": rules.compare_mxra8_binding_to_entry.output.corr_chart_html,
+        "293T-Mxra8 entry vs binding paper figure": rules.compare_mxra8_binding_to_entry.output.paper_fig_corr_chart_html,
+    },
 }
 
 # Compare entry across cells ------------------------------------------------------------
