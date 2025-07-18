@@ -272,9 +272,11 @@ rule annotated_summary_csvs:
     input:
         data="results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv",
         addtl_annotations="data/addtl_site_annotations.csv",
+        site_diffs="results/compare_cell_entry/site_diffs.csv",
     output:
         mut="results/annotated_summary_csvs/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_annotated.csv",
         site_mean="results/annotated_summary_csvs/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_annotated_site_means.csv",
+        site_diffs="results/annotated_summary_csvs/site_diffs_annotated.csv",
     log:
         "results/logs/annotated_summary_csvs.txt",
     conda:
@@ -286,6 +288,7 @@ docs["additional data CSVs"] = {
     "CSVs": {
         "annotated entry/binding mutation CSV": rules.annotated_summary_csvs.output.mut,
         "annotated entry/binding site mean CSV": rules.annotated_summary_csvs.output.site_mean,
+        "annotated site diffs between cells CSV": rules.annotated_summary_csvs.output.site_diffs,
     }
 }
 

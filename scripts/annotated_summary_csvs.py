@@ -32,3 +32,13 @@ site_mean = (
 if "protein_site" in site_mean.columns:
     site_mean["protein_site"] = site_mean["protein_site"].astype("Int64")
 site_mean.to_csv(snakemake.output.site_mean, index=False, float_format="%.4f")
+
+site_diffs = pd.read_csv(snakemake.input.site_diffs)
+site_diffs_shared_cols = sorted(set(site_diffs.columns).intersection(addtl_annotations.columns))
+assert site_diffs_shared_cols, f"{site_diffs.columns=}, {addtl_annotations.columns=}"
+(
+    site_diffs
+    .merge(addtl_annotations, on=site_diffs_shared_cols, how="outer", validate="m:1")
+    .sort_values(["cell_1", "cell_2", "sequential_site"])
+    .to_csv(snakemake.output.site_diffs, index=False, float_format="%.4g")
+)
