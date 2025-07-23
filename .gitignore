@@ -89,3 +89,7 @@ results/annotated_summary_csvs/*
 !results/compare_human_mouse_mxra8
 results/compare_human_mouse_mxra8/*
 !results/compare_human_mouse_mxra8/*.csv
+
+!results/mxra8_distances
+results/mxra8_distances/*
+!results/mxra8_distances/mxra8_dists.csv

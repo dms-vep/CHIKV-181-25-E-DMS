@@ -4,6 +4,56 @@ This file is included by the pipeline ``Snakefile``.
 
 """
 
+
+# Get distances of residues to Mxra8 ----------------------------------------------------
+
+rule mxra8_dists:
+    """Get distances to Mxra8 in structures."""
+    input:
+        addtl_site_annotations_csv="data/addtl_site_annotations.csv",
+        nb="notebooks/get_mxra8_distances.ipynb",
+    output:
+        dists_csv="results/mxra8_distances/mxra8_dists.csv",
+        nb="results/notebooks/get_mxra8_distances.ipynb",
+    params:
+        params_yaml=lambda wc: yaml_str(
+            {
+                "chain_defs": {
+                    "6nk7": {
+                        "E1": ["A", "B", "C", "D"],
+                        "E2": ["E", "F", "G", "H"],
+                        "E3": ["U", "V", "W", "X"],
+                        "Mxra8": ["N"],
+                    },
+                    "6nk6": {
+                        "E1": ["A", "B", "C", "D"],
+                        "E2": ["E", "F", "G", "H"],
+                        "Mxra8": ["M", "N", "O", "P"],
+                    },
+                },
+            }
+        ),
+    conda:
+        os.path.join(config["pipeline_path"], "environment.yml")
+    log:
+        "results/logs/mxra8_dists.txt",
+    shell:
+        """
+        papermill {input.nb} {output.nb} \
+            -p addtl_site_annotations_csv {input.addtl_site_annotations_csv} \
+            -p dists_csv {output.dists_csv} \
+            -y "{params.params_yaml}" \
+            &> {log}
+        """
+
+docs["Distances to Mxra8 in structures"] = {
+    "Distances to Mxra8": {
+        "CSV of distances": rules.mxra8_dists.output.dists_csv,
+        "Notebook computing distances": rules.mxra8_dists.output.nb,
+    }
+}
+        
+
 # Compare human and mouse Mxra8 binding -------------------------------------------------
 
 rule compare_human_mouse_mxra8_binding:
@@ -128,6 +178,7 @@ rule compare_cell_entry:
     input:
         nb="notebooks/compare_cell_entry.ipynb",
         mut_effects_csv="results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv",
+        addtl_site_annotations_csv="data/addtl_site_annotations.csv",
     output:
         nb="results/notebooks/compare_cell_entry.ipynb",
         site_diffs_csv="results/compare_cell_entry/site_diffs.csv",
@@ -152,6 +203,7 @@ rule compare_cell_entry:
         """
         papermill {input.nb} {output.nb} \
             -p mut_effects_csv {input.mut_effects_csv} \
+            -p addtl_site_annotations_csv {input.addtl_site_annotations_csv} \
             -p site_diffs_csv {output.site_diffs_csv} \
             -p mut_scatter_chart {output.mut_scatter_chart} \
             -p site_zoom_chart {output.site_zoom_chart} \
