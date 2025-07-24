@@ -64,12 +64,14 @@ rule compare_human_mouse_mxra8_binding:
         binding_human_Mxra8="results/receptor_affinity/averages/human_Mxra8_mut_effect.csv",
         binding_mouse_Mxra8="results/receptor_affinity/averages/mouse_Mxra8_mut_effect.csv",
         addtl_site_annotations="data/addtl_site_annotations.csv",
+        mxra8_dists_csv="results/mxra8_distances/mxra8_dists.csv",
         site_numbering_map=config["site_numbering_map"],
     output:
         nb="results/notebooks/compare_human_mouse_mxra8_binding.ipynb",
         site_csv="results/compare_human_mouse_mxra8/site_binding.csv",
         mut_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_mut_binding_corr.html",
         site_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_site_binding_corr.html",
+        dist_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_site_binding_dist_corr.html",
         site_chart_html = "results/compare_human_mouse_mxra8/mxra8_site_chart.html",
     conda:
         os.path.join(config["pipeline_path"], "environment.yml")
@@ -82,10 +84,12 @@ rule compare_human_mouse_mxra8_binding:
             -p binding_human_Mxra8 {input.binding_human_Mxra8} \
             -p binding_mouse_Mxra8 {input.binding_mouse_Mxra8} \
             -p addtl_site_annotations {input.addtl_site_annotations} \
+            -p mxra8_dists_csv {input.mxra8_dists_csv} \
             -p site_numbering_map {input.site_numbering_map} \
             -p site_csv {output.site_csv} \
             -p mut_corr_chart_html {output.mut_corr_chart_html} \
             -p site_corr_chart_html {output.site_corr_chart_html} \
+            -p dist_corr_chart_html {output.dist_corr_chart_html} \
             -p site_chart_html {output.site_chart_html} \
             &> {log}
         """
@@ -95,6 +99,7 @@ docs["Compare binding to human vs mouse Mxra8"] = {
         "site chart of binding effects": rules.compare_human_mouse_mxra8_binding.output.site_chart_html,
         "site correlation chart": rules.compare_human_mouse_mxra8_binding.output.site_corr_chart_html,
         "mutation correlation chart": rules.compare_human_mouse_mxra8_binding.output.mut_corr_chart_html,
+        "site effect vs distance to Mxra8": rules.compare_human_mouse_mxra8_binding.output.dist_corr_chart_html,
         "CSV with site-level effects on Mxra8 binding": rules.compare_human_mouse_mxra8_binding.output.site_csv,
         "notebook with comparison analysis": rules.compare_human_mouse_mxra8_binding.output.nb,
     },
