@@ -27,7 +27,7 @@ entry_293T-Mxra8_minus_C636: &entry_293T-Mxra8_minus_C636
   title: effect of mutation to CHIKV E proteins on entry in 293T-Mxr8 cells minus effect in C6/36 cells
   effect_col: 293T_Mxra8 minus C636
   data_query_str: "site != '-1(E3)'"  # ignore this site
-  sites_per_row: 130
+  sites_per_row: 142
   site_label_freq: 5
   color_scheme: redblue
   fixed_min: -4
