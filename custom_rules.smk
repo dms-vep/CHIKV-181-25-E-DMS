@@ -184,6 +184,7 @@ rule compare_cell_entry:
         nb="notebooks/compare_cell_entry.ipynb",
         mut_effects_csv="results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv",
         addtl_site_annotations_csv="data/addtl_site_annotations.csv",
+        mxra8_dists_csv="results/mxra8_distances/mxra8_dists.csv",
     output:
         nb="results/notebooks/compare_cell_entry.ipynb",
         site_diffs_csv="results/compare_cell_entry/site_diffs.csv",
@@ -209,6 +210,7 @@ rule compare_cell_entry:
         papermill {input.nb} {output.nb} \
             -p mut_effects_csv {input.mut_effects_csv} \
             -p addtl_site_annotations_csv {input.addtl_site_annotations_csv} \
+            -p mxra8_dists_csv {input.mxra8_dists_csv} \
             -p site_diffs_csv {output.site_diffs_csv} \
             -p mut_scatter_chart {output.mut_scatter_chart} \
             -p site_zoom_chart {output.site_zoom_chart} \
