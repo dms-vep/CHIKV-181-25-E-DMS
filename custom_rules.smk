@@ -371,6 +371,8 @@ rule paper_figures:
         annotated_site_summary=rules.annotated_summary_csvs.output.site_mean,
         mxra8_binding_effects="results/summaries/binding_mouse_vs_human_Mxra8.csv",
         mxra8_validation_curves="manual_analyses/experimental_data/RVP.mutants.neutralization.by.soluble.mouse.Mxra8.csv",
+        chikv_titers="manual_analyses/experimental_data/CHIKV_mutant_titers.csv",
+        rvp_titers="manual_analyses/experimental_data/RVP_mutant_titers.csv",
         nb="notebooks/paper_figures.ipynb",
     output:
         nb="results/notebooks/paper_figures.ipynb",
