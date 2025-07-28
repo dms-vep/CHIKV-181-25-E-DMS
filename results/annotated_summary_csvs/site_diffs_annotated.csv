@@ -74,7 +74,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 8(E2),73,E2,0.11,0.004,-0.442,293T-Mxra8,293T-TIM1,8,E2-n-linker,"E,F,G,H","E,F,G,H",no
 9(E2),74,E2,-0.137,0.007,-0.573,293T-Mxra8,293T-TIM1,9,E2-n-linker,"E,F,G,H","E,F,G,H",no
 10(E2),75,E2,-0.331,0.014,-1.353,293T-Mxra8,293T-TIM1,10,E2-n-linker,"E,F,G,H","E,F,G,H",no
-11(E2),76,E2,-0.145,0.008,-0.685,293T-Mxra8,293T-TIM1,11,E2-n-linker,"E,F,G,H","E,F,G,H",no
+11(E2),76,E2,-0.097,0.009,-0.502,293T-Mxra8,293T-TIM1,11,E2-n-linker,"E,F,G,H","E,F,G,H",no
 12(E2),77,E2,-0.108,0.023,-0.189,293T-Mxra8,293T-TIM1,12,E2-n-linker,"E,F,G,H","E,F,G,H",no
 13(E2),78,E2,-0.547,0.018,-2.122,293T-Mxra8,293T-TIM1,13,E2-n-linker,"E,F,G,H","E,F,G,H",no
 14(E2),79,E2,-0.055,0.004,-0.09,293T-Mxra8,293T-TIM1,14,E2-n-linker,"E,F,G,H","E,F,G,H",no
@@ -105,7 +105,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 39(E2),104,E2,-0.122,0.004,-0.588,293T-Mxra8,293T-TIM1,39,E2-domain a,"E,F,G,H","E,F,G,H",no
 40(E2),105,E2,-0.053,0.004,-0.307,293T-Mxra8,293T-TIM1,40,E2-domain a,"E,F,G,H","E,F,G,H",no
 41(E2),106,E2,-0.018,0.001,-0.1,293T-Mxra8,293T-TIM1,41,E2-domain a,"E,F,G,H","E,F,G,H",no
-42(E2),107,E2,-0.111,0.008,-0.324,293T-Mxra8,293T-TIM1,42,E2-domain a,"E,F,G,H","E,F,G,H",no
+42(E2),107,E2,-0.127,0.008,-0.475,293T-Mxra8,293T-TIM1,42,E2-domain a,"E,F,G,H","E,F,G,H",no
 43(E2),108,E2,-0.025,0.003,-0.056,293T-Mxra8,293T-TIM1,43,E2-domain a,"E,F,G,H","E,F,G,H",no
 44(E2),109,E2,-0.305,0.027,-0.873,293T-Mxra8,293T-TIM1,44,E2-domain a,"E,F,G,H","E,F,G,H",no
 45(E2),110,E2,-0.143,0.008,-0.925,293T-Mxra8,293T-TIM1,45,E2-domain a,"E,F,G,H","E,F,G,H",no
@@ -224,7 +224,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 158(E2),223,E2,-0.42,0.049,-1.897,293T-Mxra8,293T-TIM1,158,E2-arch1,"E,F,G,H","E,F,G,H",intraspike
 159(E2),224,E2,-0.723,0.041,-1.837,293T-Mxra8,293T-TIM1,159,E2-arch1,"E,F,G,H","E,F,G,H",intraspike
 160(E2),225,E2,-0.24,0.01,-1.046,293T-Mxra8,293T-TIM1,160,E2-arch1,"E,F,G,H","E,F,G,H",intraspike
-161(E2),226,E2,-0.38,0.021,-1.258,293T-Mxra8,293T-TIM1,161,E2-arch1,"E,F,G,H","E,F,G,H",no
+161(E2),226,E2,-0.547,0.035,-2.118,293T-Mxra8,293T-TIM1,161,E2-arch1,"E,F,G,H","E,F,G,H",no
 162(E2),227,E2,-0.142,0.01,-0.902,293T-Mxra8,293T-TIM1,162,E2-arch1,"E,F,G,H","E,F,G,H",no
 163(E2),228,E2,-0.624,0.02,-3.421,293T-Mxra8,293T-TIM1,163,E2-arch1,"E,F,G,H","E,F,G,H",no
 164(E2),229,E2,-0.188,0.006,-0.52,293T-Mxra8,293T-TIM1,164,E2-arch1,"E,F,G,H","E,F,G,H",no
@@ -243,7 +243,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 177(E2),242,E2,-0.111,0.011,-0.383,293T-Mxra8,293T-TIM1,177,E2-domain b,"E,F,G,H","E,F,G,H",no
 178(E2),243,E2,-0.211,0.04,-1.174,293T-Mxra8,293T-TIM1,178,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 179(E2),244,E2,-0.622,0.044,-0.683,293T-Mxra8,293T-TIM1,179,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
-180(E2),245,E2,-0.018,0.009,0.008,293T-Mxra8,293T-TIM1,180,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
+180(E2),245,E2,-0.02,0.009,0.009,293T-Mxra8,293T-TIM1,180,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 181(E2),246,E2,-0.092,0.004,-0.083,293T-Mxra8,293T-TIM1,181,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 182(E2),247,E2,-0.091,0.018,-0.226,293T-Mxra8,293T-TIM1,182,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 183(E2),248,E2,-0.163,0.017,-0.052,293T-Mxra8,293T-TIM1,183,E2-domain b,"E,F,G,H","E,F,G,H",no
@@ -255,7 +255,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 189(E2),254,E2,0.074,0.006,-0.092,293T-Mxra8,293T-TIM1,189,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 190(E2),255,E2,0.051,0.001,0.064,293T-Mxra8,293T-TIM1,190,E2-domain b,"E,F,G,H","E,F,G,H",no
 191(E2),256,E2,-0.244,0.021,-1.526,293T-Mxra8,293T-TIM1,191,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
-192(E2),257,E2,-0.006,0.002,0.059,293T-Mxra8,293T-TIM1,192,E2-domain b,"E,F,G,H","E,F,G,H",no
+192(E2),257,E2,0.071,0.004,0.205,293T-Mxra8,293T-TIM1,192,E2-domain b,"E,F,G,H","E,F,G,H",no
 193(E2),258,E2,-0.392,0.039,-1.823,293T-Mxra8,293T-TIM1,193,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 194(E2),259,E2,-0.062,0.007,0.109,293T-Mxra8,293T-TIM1,194,E2-domain b,"E,F,G,H","E,F,G,H",no
 195(E2),260,E2,-0.674,0.022,-2.128,293T-Mxra8,293T-TIM1,195,E2-domain b,"E,F,G,H","E,F,G,H",no
@@ -268,14 +268,14 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 202(E2),267,E2,-0.096,0.007,-0.066,293T-Mxra8,293T-TIM1,202,E2-domain b,"E,F,G,H","E,F,G,H",no
 203(E2),268,E2,0,0,0.004,293T-Mxra8,293T-TIM1,203,E2-domain b,"E,F,G,H","E,F,G,H",no
 204(E2),269,E2,-0.412,0.048,-0.391,293T-Mxra8,293T-TIM1,204,E2-domain b,"E,F,G,H","E,F,G,H",no
-205(E2),270,E2,0.134,0.005,0.365,293T-Mxra8,293T-TIM1,205,E2-domain b,"E,F,G,H","E,F,G,H",no
+205(E2),270,E2,0.159,0.005,0.514,293T-Mxra8,293T-TIM1,205,E2-domain b,"E,F,G,H","E,F,G,H",no
 206(E2),271,E2,-0.057,0.005,-0.147,293T-Mxra8,293T-TIM1,206,E2-domain b,"E,F,G,H","E,F,G,H",no
 207(E2),272,E2,-0.064,0.01,-0.518,293T-Mxra8,293T-TIM1,207,E2-domain b,"E,F,G,H","E,F,G,H",no
 208(E2),273,E2,0.003,0.013,-0.272,293T-Mxra8,293T-TIM1,208,E2-domain b,"E,F,G,H","E,F,G,H",no
 209(E2),274,E2,-0.126,0.007,-0.667,293T-Mxra8,293T-TIM1,209,E2-domain b,"E,F,G,H","E,F,G,H",no
 210(E2),275,E2,-0.032,0.006,-0.356,293T-Mxra8,293T-TIM1,210,E2-domain b,"E,F,G,H","E,F,G,H",no
 211(E2),276,E2,-0.124,0.017,0.025,293T-Mxra8,293T-TIM1,211,E2-domain b,"E,F,G,H","E,F,G,H",no
-212(E2),277,E2,-0.072,0.005,-0.321,293T-Mxra8,293T-TIM1,212,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
+212(E2),277,E2,-0.121,0.008,-0.688,293T-Mxra8,293T-TIM1,212,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 213(E2),278,E2,-0.027,0.002,-0.241,293T-Mxra8,293T-TIM1,213,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 214(E2),279,E2,-0.439,0.053,-2.104,293T-Mxra8,293T-TIM1,214,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 215(E2),280,E2,-0.034,0.003,-0.173,293T-Mxra8,293T-TIM1,215,E2-domain b,"E,F,G,H","E,F,G,H",no
@@ -323,9 +323,9 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 257(E2),322,E2,-0.25,0.012,-1.154,293T-Mxra8,293T-TIM1,257,E2-arch2,"E,F,G,H","E,F,G,H",no
 258(E2),323,E2,-0.038,0.005,-0.262,293T-Mxra8,293T-TIM1,258,E2-arch2,"E,F,G,H","E,F,G,H",no
 259(E2),324,E2,-0.046,0.004,-0.18,293T-Mxra8,293T-TIM1,259,E2-arch2,"E,F,G,H","E,F,G,H",no
-260(E2),325,E2,-0.616,0.019,-2.341,293T-Mxra8,293T-TIM1,260,E2-arch2,"E,F,G,H","E,F,G,H",no
+260(E2),325,E2,-0.599,0.018,-2.386,293T-Mxra8,293T-TIM1,260,E2-arch2,"E,F,G,H","E,F,G,H",no
 261(E2),326,E2,-0.119,0.005,-0.368,293T-Mxra8,293T-TIM1,261,E2-arch2,"E,F,G,H","E,F,G,H",no
-262(E2),327,E2,-0.124,0.012,-0.871,293T-Mxra8,293T-TIM1,262,E2-arch2,"E,F,G,H","E,F,G,H",no
+262(E2),327,E2,-0.238,0.019,-1.516,293T-Mxra8,293T-TIM1,262,E2-arch2,"E,F,G,H","E,F,G,H",no
 263(E2),328,E2,-0.18,0.018,-0.665,293T-Mxra8,293T-TIM1,263,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
 264(E2),329,E2,-0.571,0.036,-3.426,293T-Mxra8,293T-TIM1,264,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
 265(E2),330,E2,0.023,0.01,-0.376,293T-Mxra8,293T-TIM1,265,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
@@ -364,7 +364,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 298(E2),363,E2,0,0,-0.001,293T-Mxra8,293T-TIM1,298,E2-domain c,"E,F,G,H","E,F,G,H",no
 299(E2),364,E2,-0.081,0.005,-0.308,293T-Mxra8,293T-TIM1,299,E2-domain c,"E,F,G,H","E,F,G,H",no
 300(E2),365,E2,-0.032,0.001,-0.005,293T-Mxra8,293T-TIM1,300,E2-domain c,"E,F,G,H","E,F,G,H",no
-301(E2),366,E2,-0.145,0.017,-0.547,293T-Mxra8,293T-TIM1,301,E2-domain c,"E,F,G,H","E,F,G,H",no
+301(E2),366,E2,-0.156,0.018,-0.597,293T-Mxra8,293T-TIM1,301,E2-domain c,"E,F,G,H","E,F,G,H",no
 302(E2),367,E2,-0.03,0.005,-0.04,293T-Mxra8,293T-TIM1,302,E2-domain c,"E,F,G,H","E,F,G,H",no
 303(E2),368,E2,-0.088,0.005,-0.249,293T-Mxra8,293T-TIM1,303,E2-domain c,"E,F,G,H","E,F,G,H",no
 304(E2),369,E2,-0.047,0.007,-0.17,293T-Mxra8,293T-TIM1,304,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -401,7 +401,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 335(E2),400,E2,0.011,0.002,0.052,293T-Mxra8,293T-TIM1,335,E2-domain c,"E,F,G,H","E,F,G,H",no
 336(E2),401,E2,-0.274,0.012,-1.374,293T-Mxra8,293T-TIM1,336,E2-domain c,"E,F,G,H","E,F,G,H",no
 337(E2),402,E2,-0.226,0.007,-1.539,293T-Mxra8,293T-TIM1,337,E2-domain c,"E,F,G,H","E,F,G,H",no
-338(E2),403,E2,-0.081,0.001,-0.095,293T-Mxra8,293T-TIM1,338,E2-domain c,"E,F,G,H","E,F,G,H",no
+338(E2),403,E2,-0.092,0.001,-0.116,293T-Mxra8,293T-TIM1,338,E2-domain c,"E,F,G,H","E,F,G,H",no
 339(E2),404,E2,-0.077,0.013,-0.525,293T-Mxra8,293T-TIM1,339,E2-domain c,"E,F,G,H","E,F,G,H",no
 340(E2),405,E2,-0.011,0.01,0.004,293T-Mxra8,293T-TIM1,340,E2-domain c,"E,F,G,H","E,F,G,H",no
 341(E2),406,E2,-0.41,0.006,-1.156,293T-Mxra8,293T-TIM1,341,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -421,7 +421,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 355(E2),420,E2,-0.455,0.014,-1.526,293T-Mxra8,293T-TIM1,355,E2-stem,"E,F,G,H","E,F,G,H",no
 356(E2),421,E2,-0.12,0.004,-0.569,293T-Mxra8,293T-TIM1,356,E2-stem,"E,F,G,H","E,F,G,H",no
 357(E2),422,E2,-0.135,0.02,-1.605,293T-Mxra8,293T-TIM1,357,E2-stem,"E,F,G,H","E,F,G,H",no
-358(E2),423,E2,-0.619,0.017,-1.756,293T-Mxra8,293T-TIM1,358,E2-stem,"E,F,G,H","E,F,G,H",no
+358(E2),423,E2,-0.668,0.019,-2.128,293T-Mxra8,293T-TIM1,358,E2-stem,"E,F,G,H","E,F,G,H",no
 359(E2),424,E2,-0.243,0.012,-1.211,293T-Mxra8,293T-TIM1,359,E2-stem,"E,F,G,H","E,F,G,H",no
 360(E2),425,E2,-0.518,0.013,-1.485,293T-Mxra8,293T-TIM1,360,E2-stem,"E,F,G,H","E,F,G,H",no
 361(E2),426,E2,-0.276,0.006,-0.838,293T-Mxra8,293T-TIM1,361,E2-stem,"E,F,G,H","E,F,G,H",no
@@ -430,24 +430,24 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 364(E2),429,E2,-0.075,0.007,-0.232,293T-Mxra8,293T-TIM1,364,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 365(E2),430,E2,-0.228,0.013,-0.436,293T-Mxra8,293T-TIM1,365,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 366(E2),431,E2,-0.369,0.014,-1.081,293T-Mxra8,293T-TIM1,366,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-367(E2),432,E2,-0.249,0.013,-1.057,293T-Mxra8,293T-TIM1,367,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+367(E2),432,E2,-0.322,0.016,-1.494,293T-Mxra8,293T-TIM1,367,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 368(E2),433,E2,-0.241,0.018,-1.383,293T-Mxra8,293T-TIM1,368,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 369(E2),434,E2,-0.339,0.023,-0.734,293T-Mxra8,293T-TIM1,369,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 370(E2),435,E2,-0.312,0.043,-0.945,293T-Mxra8,293T-TIM1,370,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-371(E2),436,E2,-0.128,0.01,-0.586,293T-Mxra8,293T-TIM1,371,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+371(E2),436,E2,-0.15,0.011,-0.79,293T-Mxra8,293T-TIM1,371,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 372(E2),437,E2,-0.168,0.003,-0.235,293T-Mxra8,293T-TIM1,372,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 373(E2),438,E2,-0.217,0.006,-0.527,293T-Mxra8,293T-TIM1,373,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 374(E2),439,E2,-0.154,0.002,-0.467,293T-Mxra8,293T-TIM1,374,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 375(E2),440,E2,-0.298,0.005,-1.071,293T-Mxra8,293T-TIM1,375,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 376(E2),441,E2,-0.124,0.005,-0.681,293T-Mxra8,293T-TIM1,376,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-377(E2),442,E2,-0.489,0.02,-1.758,293T-Mxra8,293T-TIM1,377,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+377(E2),442,E2,-0.464,0.02,-1.763,293T-Mxra8,293T-TIM1,377,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 378(E2),443,E2,-0.427,0.01,-1.379,293T-Mxra8,293T-TIM1,378,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 379(E2),444,E2,-0.145,0.002,-0.175,293T-Mxra8,293T-TIM1,379,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 380(E2),445,E2,-0.446,0.006,-1.105,293T-Mxra8,293T-TIM1,380,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 381(E2),446,E2,-0.55,0.01,-1.489,293T-Mxra8,293T-TIM1,381,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 382(E2),447,E2,-0.454,0.012,-1.365,293T-Mxra8,293T-TIM1,382,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 383(E2),448,E2,-0.356,0.009,-1.145,293T-Mxra8,293T-TIM1,383,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-384(E2),449,E2,-0.136,0.008,-0.672,293T-Mxra8,293T-TIM1,384,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+384(E2),449,E2,-0.156,0.008,-0.792,293T-Mxra8,293T-TIM1,384,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 385(E2),450,E2,-0.428,0.009,-1.313,293T-Mxra8,293T-TIM1,385,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 386(E2),451,E2,-0.158,0.004,-0.615,293T-Mxra8,293T-TIM1,386,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 387(E2),452,E2,-0.065,0.007,-0.231,293T-Mxra8,293T-TIM1,387,E2-transmembrane,"E,F,G,H","E,F,G,H",no
@@ -456,21 +456,21 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 390(E2),455,E2,-0.409,0.011,-1.563,293T-Mxra8,293T-TIM1,390,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 391(E2),456,E2,-0.03,0.006,-0.055,293T-Mxra8,293T-TIM1,391,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 392(E2),457,E2,-0.581,0.021,-2.514,293T-Mxra8,293T-TIM1,392,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-393(E2),458,E2,-1.116,0.037,-4.264,293T-Mxra8,293T-TIM1,393,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+393(E2),458,E2,-1.097,0.036,-4.566,293T-Mxra8,293T-TIM1,393,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 394(E2),459,E2,-0.392,0.006,-0.909,293T-Mxra8,293T-TIM1,394,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 395(E2),460,E2,-0.327,0.009,-1.006,293T-Mxra8,293T-TIM1,395,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 396(E2),461,E2,-0.592,0.02,-1.622,293T-Mxra8,293T-TIM1,396,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 397(E2),462,E2,-0.672,0.014,-2.205,293T-Mxra8,293T-TIM1,397,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 398(E2),463,E2,-0.101,0.011,-0.805,293T-Mxra8,293T-TIM1,398,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 399(E2),464,E2,-0.084,0.006,-0.384,293T-Mxra8,293T-TIM1,399,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-400(E2),465,E2,-0.056,0.021,-0.387,293T-Mxra8,293T-TIM1,400,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+400(E2),465,E2,-0.072,0.021,-0.474,293T-Mxra8,293T-TIM1,400,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 401(E2),466,E2,-0.059,0.006,-0.53,293T-Mxra8,293T-TIM1,401,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 402(E2),467,E2,-0.135,0.007,-0.446,293T-Mxra8,293T-TIM1,402,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 403(E2),468,E2,-0.243,0.009,-0.954,293T-Mxra8,293T-TIM1,403,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 404(E2),469,E2,-0.167,0.003,-0.787,293T-Mxra8,293T-TIM1,404,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 405(E2),470,E2,-0.323,0.019,-1.984,293T-Mxra8,293T-TIM1,405,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-406(E2),471,E2,-0.273,0.011,-1.196,293T-Mxra8,293T-TIM1,406,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-407(E2),472,E2,-0.241,0.013,-0.763,293T-Mxra8,293T-TIM1,407,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+406(E2),471,E2,-0.264,0.011,-1.214,293T-Mxra8,293T-TIM1,406,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+407(E2),472,E2,-0.182,0.016,-0.452,293T-Mxra8,293T-TIM1,407,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 408(E2),473,E2,-0.607,0.012,-1.914,293T-Mxra8,293T-TIM1,408,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 409(E2),474,E2,-0.619,0.047,-2.194,293T-Mxra8,293T-TIM1,409,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 410(E2),475,E2,-0.325,0.007,-1.209,293T-Mxra8,293T-TIM1,410,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
@@ -479,7 +479,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 413(E2),478,E2,-0.68,0.03,-3.169,293T-Mxra8,293T-TIM1,413,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 414(E2),479,E2,-0.306,0.021,-1.601,293T-Mxra8,293T-TIM1,414,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 415(E2),480,E2,-0.471,0.016,-1.269,293T-Mxra8,293T-TIM1,415,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-416(E2),481,E2,-0.665,0.038,-2.512,293T-Mxra8,293T-TIM1,416,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+416(E2),481,E2,-0.59,0.044,-2.389,293T-Mxra8,293T-TIM1,416,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 417(E2),482,E2,-0.638,0.037,-1.841,293T-Mxra8,293T-TIM1,417,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 418(E2),483,E2,-0.609,0.017,-1.175,293T-Mxra8,293T-TIM1,418,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 419(E2),484,E2,-0.416,0.013,-1.646,293T-Mxra8,293T-TIM1,419,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
@@ -505,7 +505,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 16(6K),504,6K,0.038,0.003,-0.156,293T-Mxra8,293T-TIM1,16,6K,,,no
 17(6K),505,6K,-0.153,0.013,-0.644,293T-Mxra8,293T-TIM1,17,6K,,,no
 18(6K),506,6K,-0.134,0.011,-0.845,293T-Mxra8,293T-TIM1,18,6K,,,no
-19(6K),507,6K,-0.149,0.01,-0.962,293T-Mxra8,293T-TIM1,19,6K,,,no
+19(6K),507,6K,-0.202,0.013,-1.353,293T-Mxra8,293T-TIM1,19,6K,,,no
 20(6K),508,6K,0.023,0.003,0.083,293T-Mxra8,293T-TIM1,20,6K,,,no
 21(6K),509,6K,-0.051,0.005,-0.141,293T-Mxra8,293T-TIM1,21,6K,,,no
 22(6K),510,6K,-0.094,0.005,-0.463,293T-Mxra8,293T-TIM1,22,6K,,,no
@@ -531,7 +531,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 42(6K),530,6K,-0.126,0.005,-0.688,293T-Mxra8,293T-TIM1,42,6K,,,no
 43(6K),531,6K,-0.051,0.001,-0.208,293T-Mxra8,293T-TIM1,43,6K,,,no
 44(6K),532,6K,-0.095,0.002,-0.365,293T-Mxra8,293T-TIM1,44,6K,,,no
-45(6K),533,6K,-0.127,0.004,-0.342,293T-Mxra8,293T-TIM1,45,6K,,,no
+45(6K),533,6K,-0.097,0.005,-0.199,293T-Mxra8,293T-TIM1,45,6K,,,no
 46(6K),534,6K,-0.187,0.007,-0.829,293T-Mxra8,293T-TIM1,46,6K,,,no
 47(6K),535,6K,-0.037,0.004,-0.225,293T-Mxra8,293T-TIM1,47,6K,,,no
 48(6K),536,6K,-0.333,0.007,-1.407,293T-Mxra8,293T-TIM1,48,6K,,,no
@@ -572,7 +572,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 22(E1),571,E1,-0.361,0.014,-1.427,293T-Mxra8,293T-TIM1,22,E1-domain I,"A,B,C,D","A,B,C,D",no
 23(E1),572,E1,-0.539,0.018,-1.985,293T-Mxra8,293T-TIM1,23,E1-domain I,"A,B,C,D","A,B,C,D",no
 24(E1),573,E1,-0.475,0.01,-1.69,293T-Mxra8,293T-TIM1,24,E1-domain I,"A,B,C,D","A,B,C,D",no
-25(E1),574,E1,-0.285,0.005,-0.602,293T-Mxra8,293T-TIM1,25,E1-domain I,"A,B,C,D","A,B,C,D",no
+25(E1),574,E1,-0.211,0.007,-0.485,293T-Mxra8,293T-TIM1,25,E1-domain I,"A,B,C,D","A,B,C,D",no
 26(E1),575,E1,-0.481,0.023,-2.461,293T-Mxra8,293T-TIM1,26,E1-domain I,"A,B,C,D","A,B,C,D",no
 27(E1),576,E1,-0.293,0.011,-1.458,293T-Mxra8,293T-TIM1,27,E1-domain I,"A,B,C,D","A,B,C,D",no
 28(E1),577,E1,-0.105,0.007,-0.721,293T-Mxra8,293T-TIM1,28,E1-domain I,"A,B,C,D","A,B,C,D",no
@@ -655,7 +655,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 105(E1),654,E1,-0.364,0.021,-0.885,293T-Mxra8,293T-TIM1,105,E1-domain II,"A,B,C,D","A,B,C,D",no
 106(E1),655,E1,-0.192,0.014,-0.983,293T-Mxra8,293T-TIM1,106,E1-domain II,"A,B,C,D","A,B,C,D",no
 107(E1),656,E1,-0.111,0.003,-0.503,293T-Mxra8,293T-TIM1,107,E1-domain II,"A,B,C,D","A,B,C,D",no
-108(E1),657,E1,-0.236,0.012,-0.75,293T-Mxra8,293T-TIM1,108,E1-domain II,"A,B,C,D","A,B,C,D",no
+108(E1),657,E1,-0.25,0.012,-0.838,293T-Mxra8,293T-TIM1,108,E1-domain II,"A,B,C,D","A,B,C,D",no
 109(E1),658,E1,-0.315,0.01,-0.775,293T-Mxra8,293T-TIM1,109,E1-domain II,"A,B,C,D","A,B,C,D",no
 110(E1),659,E1,-0.06,0.039,0.837,293T-Mxra8,293T-TIM1,110,E1-domain II,"A,B,C,D","A,B,C,D",no
 111(E1),660,E1,-0.092,0.01,-0.435,293T-Mxra8,293T-TIM1,111,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -696,7 +696,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 146(E1),695,E1,-0.204,0.008,-0.84,293T-Mxra8,293T-TIM1,146,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
 147(E1),696,E1,0.097,0.002,0.322,293T-Mxra8,293T-TIM1,147,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
 148(E1),697,E1,-0.503,0.014,-1.373,293T-Mxra8,293T-TIM1,148,E1-domain I,"A,B,C,D","A,B,C,D",no
-149(E1),698,E1,-0.347,0.02,-0.936,293T-Mxra8,293T-TIM1,149,E1-domain I,"A,B,C,D","A,B,C,D",no
+149(E1),698,E1,-0.463,0.042,-1.249,293T-Mxra8,293T-TIM1,149,E1-domain I,"A,B,C,D","A,B,C,D",no
 150(E1),699,E1,-0.677,0.036,-3.145,293T-Mxra8,293T-TIM1,150,E1-domain I,"A,B,C,D","A,B,C,D",no
 151(E1),700,E1,0.042,0.002,0.04,293T-Mxra8,293T-TIM1,151,E1-domain I,"A,B,C,D","A,B,C,D",no
 152(E1),701,E1,-0.052,0.019,-0.318,293T-Mxra8,293T-TIM1,152,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
@@ -723,7 +723,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 173(E1),722,E1,-0.063,0.006,-0.174,293T-Mxra8,293T-TIM1,173,E1-domain II,"A,B,C,D","A,B,C,D",no
 174(E1),723,E1,0.146,0.006,-0.021,293T-Mxra8,293T-TIM1,174,E1-domain II,"A,B,C,D","A,B,C,D",no
 175(E1),724,E1,-0.124,0.004,-0.306,293T-Mxra8,293T-TIM1,175,E1-domain II,"A,B,C,D","A,B,C,D",no
-176(E1),725,E1,-0.462,0.014,-1.843,293T-Mxra8,293T-TIM1,176,E1-domain II,"A,B,C,D","A,B,C,D",no
+176(E1),725,E1,-0.48,0.014,-1.953,293T-Mxra8,293T-TIM1,176,E1-domain II,"A,B,C,D","A,B,C,D",no
 177(E1),726,E1,-0.111,0.004,-0.271,293T-Mxra8,293T-TIM1,177,E1-domain II,"A,B,C,D","A,B,C,D",no
 178(E1),727,E1,-0.217,0.015,-0.826,293T-Mxra8,293T-TIM1,178,E1-domain II,"A,B,C,D","A,B,C,D",no
 179(E1),728,E1,-0.355,0.027,-1.314,293T-Mxra8,293T-TIM1,179,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -744,7 +744,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 194(E1),743,E1,0.032,0.01,0.414,293T-Mxra8,293T-TIM1,194,E1-domain II,"A,B,C,D","A,B,C,D",no
 195(E1),744,E1,-0.241,0.025,-1.32,293T-Mxra8,293T-TIM1,195,E1-domain II,"A,B,C,D","A,B,C,D",no
 196(E1),745,E1,-0.503,0.022,-1.797,293T-Mxra8,293T-TIM1,196,E1-domain II,"A,B,C,D","A,B,C,D",no
-197(E1),746,E1,-1.456,0.128,-6.061,293T-Mxra8,293T-TIM1,197,E1-domain II,"A,B,C,D","A,B,C,D",no
+197(E1),746,E1,-1.44,0.125,-6.446,293T-Mxra8,293T-TIM1,197,E1-domain II,"A,B,C,D","A,B,C,D",no
 198(E1),747,E1,-0.125,0.011,-0.542,293T-Mxra8,293T-TIM1,198,E1-domain II,"A,B,C,D","A,B,C,D",no
 199(E1),748,E1,-0.604,0.026,-2.942,293T-Mxra8,293T-TIM1,199,E1-domain II,"A,B,C,D","A,B,C,D",no
 200(E1),749,E1,-0.044,0.011,-0.032,293T-Mxra8,293T-TIM1,200,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -753,7 +753,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 203(E1),752,E1,0.016,0.004,0.028,293T-Mxra8,293T-TIM1,203,E1-domain II,"A,B,C,D","A,B,C,D",no
 204(E1),753,E1,-0.394,0.043,-1.264,293T-Mxra8,293T-TIM1,204,E1-domain II,"A,B,C,D","A,B,C,D",no
 205(E1),754,E1,0.048,0.014,0.479,293T-Mxra8,293T-TIM1,205,E1-domain II,"A,B,C,D","A,B,C,D",no
-206(E1),755,E1,-0.045,0.013,0.685,293T-Mxra8,293T-TIM1,206,E1-domain II,"A,B,C,D","A,B,C,D",interspike
+206(E1),755,E1,0.027,0.017,1.179,293T-Mxra8,293T-TIM1,206,E1-domain II,"A,B,C,D","A,B,C,D",interspike
 207(E1),756,E1,0.024,0.005,-0.104,293T-Mxra8,293T-TIM1,207,E1-domain II,"A,B,C,D","A,B,C,D",interspike
 208(E1),757,E1,-0.025,0.017,0.281,293T-Mxra8,293T-TIM1,208,E1-domain II,"A,B,C,D","A,B,C,D",no
 209(E1),758,E1,0.033,0.004,-0.095,293T-Mxra8,293T-TIM1,209,E1-domain II,"A,B,C,D","A,B,C,D",interspike
@@ -770,7 +770,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 220(E1),769,E1,-0.29,0.019,-1.824,293T-Mxra8,293T-TIM1,220,E1-domain II,"A,B,C,D","A,B,C,D",no
 221(E1),770,E1,-0.134,0.008,-0.612,293T-Mxra8,293T-TIM1,221,E1-domain II,"A,B,C,D","A,B,C,D",no
 222(E1),771,E1,-0.418,0.033,-2.719,293T-Mxra8,293T-TIM1,222,E1-domain II,"A,B,C,D","A,B,C,D",no
-223(E1),772,E1,-0.815,0.042,-2.892,293T-Mxra8,293T-TIM1,223,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
+223(E1),772,E1,-0.789,0.042,-2.916,293T-Mxra8,293T-TIM1,223,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
 224(E1),773,E1,0,0,0.017,293T-Mxra8,293T-TIM1,224,E1-domain II,"A,B,C,D","A,B,C,D",no
 225(E1),774,E1,-1.253,0.06,-5.262,293T-Mxra8,293T-TIM1,225,E1-domain II,"A,B,C,D","A,B,C,D",no
 226(E1),775,E1,-0.517,0.017,-2.03,293T-Mxra8,293T-TIM1,226,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
@@ -794,17 +794,17 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 244(E1),793,E1,-0.475,0.015,-1.166,293T-Mxra8,293T-TIM1,244,E1-domain II,"A,B,C,D","A,B,C,D",no
 245(E1),794,E1,0.071,0.001,0.031,293T-Mxra8,293T-TIM1,245,E1-domain II,"A,B,C,D","A,B,C,D",no
 246(E1),795,E1,-1.914,0.161,-5.604,293T-Mxra8,293T-TIM1,246,E1-domain II,"A,B,C,D","A,B,C,D",no
-247(E1),796,E1,-0.624,0.024,-1.999,293T-Mxra8,293T-TIM1,247,E1-domain II,"A,B,C,D","A,B,C,D",no
+247(E1),796,E1,-0.661,0.026,-2.206,293T-Mxra8,293T-TIM1,247,E1-domain II,"A,B,C,D","A,B,C,D",no
 248(E1),797,E1,-0.578,0.021,-0.768,293T-Mxra8,293T-TIM1,248,E1-domain II,"A,B,C,D","A,B,C,D",no
-249(E1),798,E1,-0.052,0.014,-0.296,293T-Mxra8,293T-TIM1,249,E1-domain II,"A,B,C,D","A,B,C,D",no
+249(E1),798,E1,-0.076,0.015,-0.44,293T-Mxra8,293T-TIM1,249,E1-domain II,"A,B,C,D","A,B,C,D",no
 250(E1),799,E1,-0.241,0.008,-0.637,293T-Mxra8,293T-TIM1,250,E1-domain II,"A,B,C,D","A,B,C,D",no
-251(E1),800,E1,-0.126,0.045,-0.396,293T-Mxra8,293T-TIM1,251,E1-domain II,"A,B,C,D","A,B,C,D",no
+251(E1),800,E1,-0.071,0.047,-0.18,293T-Mxra8,293T-TIM1,251,E1-domain II,"A,B,C,D","A,B,C,D",no
 252(E1),801,E1,-0.134,0.007,-0.619,293T-Mxra8,293T-TIM1,252,E1-domain II,"A,B,C,D","A,B,C,D",no
-253(E1),802,E1,0.138,0.006,0.176,293T-Mxra8,293T-TIM1,253,E1-domain II,"A,B,C,D","A,B,C,D",no
+253(E1),802,E1,-0.149,0.056,-0.529,293T-Mxra8,293T-TIM1,253,E1-domain II,"A,B,C,D","A,B,C,D",no
 254(E1),803,E1,0.086,0.045,0.121,293T-Mxra8,293T-TIM1,254,E1-domain II,"A,B,C,D","A,B,C,D",no
 255(E1),804,E1,-0.038,0.001,-0.142,293T-Mxra8,293T-TIM1,255,E1-domain II,"A,B,C,D","A,B,C,D",no
 256(E1),805,E1,-0.062,0.007,-0.243,293T-Mxra8,293T-TIM1,256,E1-domain II,"A,B,C,D","A,B,C,D",no
-257(E1),806,E1,-0.04,0.008,-0.061,293T-Mxra8,293T-TIM1,257,E1-domain II,"A,B,C,D","A,B,C,D",no
+257(E1),806,E1,-0.125,0.012,-0.26,293T-Mxra8,293T-TIM1,257,E1-domain II,"A,B,C,D","A,B,C,D",no
 258(E1),807,E1,0.13,0.005,0.385,293T-Mxra8,293T-TIM1,258,E1-domain II,"A,B,C,D","A,B,C,D",no
 259(E1),808,E1,0,0,0.006,293T-Mxra8,293T-TIM1,259,E1-domain II,"A,B,C,D","A,B,C,D",no
 260(E1),809,E1,-0.049,0.006,-0.039,293T-Mxra8,293T-TIM1,260,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -848,7 +848,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 298(E1),847,E1,-0.156,0.009,-0.354,293T-Mxra8,293T-TIM1,298,E1-domain III,"A,B,C,D","A,B,C,D",no
 299(E1),848,E1,-0.095,0.005,-0.611,293T-Mxra8,293T-TIM1,299,E1-domain III,"A,B,C,D","A,B,C,D",no
 300(E1),849,E1,0.017,0.004,0.04,293T-Mxra8,293T-TIM1,300,E1-domain III,"A,B,C,D","A,B,C,D",no
-301(E1),850,E1,0,0,0.002,293T-Mxra8,293T-TIM1,301,E1-domain III,"A,B,C,D","A,B,C,D",no
+301(E1),850,E1,0.018,0,0.035,293T-Mxra8,293T-TIM1,301,E1-domain III,"A,B,C,D","A,B,C,D",no
 302(E1),851,E1,-0.057,0.007,-0.239,293T-Mxra8,293T-TIM1,302,E1-domain III,"A,B,C,D","A,B,C,D",no
 303(E1),852,E1,-0.04,0.009,-0.214,293T-Mxra8,293T-TIM1,303,E1-domain III,"A,B,C,D","A,B,C,D",no
 304(E1),853,E1,-0.138,0.013,-0.181,293T-Mxra8,293T-TIM1,304,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -880,7 +880,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 330(E1),879,E1,0.051,0.004,0.167,293T-Mxra8,293T-TIM1,330,E1-domain III,"A,B,C,D","A,B,C,D",no
 331(E1),880,E1,-0.019,0.012,-0.208,293T-Mxra8,293T-TIM1,331,E1-domain III,"A,B,C,D","A,B,C,D",no
 332(E1),881,E1,-0.153,0.004,-0.246,293T-Mxra8,293T-TIM1,332,E1-domain III,"A,B,C,D","A,B,C,D",no
-333(E1),882,E1,-0.084,0.003,-0.242,293T-Mxra8,293T-TIM1,333,E1-domain III,"A,B,C,D","A,B,C,D",no
+333(E1),882,E1,-0.074,0.003,-0.207,293T-Mxra8,293T-TIM1,333,E1-domain III,"A,B,C,D","A,B,C,D",no
 334(E1),883,E1,-0.001,0.002,0.043,293T-Mxra8,293T-TIM1,334,E1-domain III,"A,B,C,D","A,B,C,D",no
 335(E1),884,E1,-0.127,0.004,-0.39,293T-Mxra8,293T-TIM1,335,E1-domain III,"A,B,C,D","A,B,C,D",no
 336(E1),885,E1,0.027,0.003,-0.165,293T-Mxra8,293T-TIM1,336,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -956,7 +956,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 406(E1),955,E1,-0.038,0.004,0.116,293T-Mxra8,293T-TIM1,406,E1-stem,"A,B,C,D","A,B,C,D",no
 407(E1),956,E1,0.1,0.011,0.82,293T-Mxra8,293T-TIM1,407,E1-stem,"A,B,C,D","A,B,C,D",no
 408(E1),957,E1,-0.094,0.004,-0.386,293T-Mxra8,293T-TIM1,408,E1-stem,"A,B,C,D","A,B,C,D",no
-409(E1),958,E1,0.185,0.013,0.813,293T-Mxra8,293T-TIM1,409,E1-stem,"A,B,C,D","A,B,C,D",no
+409(E1),958,E1,0.194,0.012,0.875,293T-Mxra8,293T-TIM1,409,E1-stem,"A,B,C,D","A,B,C,D",no
 410(E1),959,E1,-0.027,0.004,-0.128,293T-Mxra8,293T-TIM1,410,E1-stem,"A,B,C,D","A,B,C,D",no
 411(E1),960,E1,0.046,0.006,0.403,293T-Mxra8,293T-TIM1,411,E1-stem,"A,B,C,D","A,B,C,D",no
 412(E1),961,E1,0.033,0.013,0.8,293T-Mxra8,293T-TIM1,412,E1-stem,"A,B,C,D","A,B,C,D",no
@@ -974,12 +974,12 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 424(E1),973,E1,-0.23,0.006,-0.609,293T-Mxra8,293T-TIM1,424,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 425(E1),974,E1,-0.049,0.01,-0.068,293T-Mxra8,293T-TIM1,425,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 426(E1),975,E1,-0.238,0.014,-1.04,293T-Mxra8,293T-TIM1,426,E1-transmembrane,"A,B,C,D","A,B,C,D",no
-427(E1),976,E1,-0.391,0.013,-1.255,293T-Mxra8,293T-TIM1,427,E1-transmembrane,"A,B,C,D","A,B,C,D",no
+427(E1),976,E1,-0.371,0.013,-1.246,293T-Mxra8,293T-TIM1,427,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 428(E1),977,E1,-0.16,0.004,-0.421,293T-Mxra8,293T-TIM1,428,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 429(E1),978,E1,0.012,0.043,0.505,293T-Mxra8,293T-TIM1,429,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 430(E1),979,E1,-0.224,0.008,-0.962,293T-Mxra8,293T-TIM1,430,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 431(E1),980,E1,-0.149,0.01,-0.714,293T-Mxra8,293T-TIM1,431,E1-transmembrane,"A,B,C,D","A,B,C,D",no
-432(E1),981,E1,-0.205,0.009,-1.035,293T-Mxra8,293T-TIM1,432,E1-transmembrane,"A,B,C,D","A,B,C,D",no
+432(E1),981,E1,-0.091,0.017,-0.483,293T-Mxra8,293T-TIM1,432,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 433(E1),982,E1,-0.175,0.014,-1.13,293T-Mxra8,293T-TIM1,433,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 434(E1),983,E1,-0.077,0.007,-0.382,293T-Mxra8,293T-TIM1,434,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 435(E1),984,E1,0.122,0.009,0.512,293T-Mxra8,293T-TIM1,435,E1-transmembrane,"A,B,C,D","A,B,C,D",no
@@ -1046,8 +1046,8 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 56(E3),57,E3,-0.127,0.019,0.805,293T-Mxra8,C6/36,56,E3,,"U,V,W,X",no
 57(E3),58,E3,0.281,0.019,0.911,293T-Mxra8,C6/36,57,E3,,"U,V,W,X",no
 58(E3),59,E3,0.039,0.01,0.93,293T-Mxra8,C6/36,58,E3,,"U,V,W,X",no
-59(E3),60,E3,0.032,0.005,0.473,293T-Mxra8,C6/36,59,E3,,"U,V,W,X",no
-60(E3),61,E3,0.007,0.02,0.823,293T-Mxra8,C6/36,60,E3,,"U,V,W,X",no
+59(E3),60,E3,0.203,0.017,1.321,293T-Mxra8,C6/36,59,E3,,"U,V,W,X",no
+60(E3),61,E3,-0.055,0.027,1.002,293T-Mxra8,C6/36,60,E3,,"U,V,W,X",no
 61(E3),62,E3,-0.808,0.043,-1.589,293T-Mxra8,C6/36,61,E3,,"U,V,W,X",no
 62(E3),63,E3,-0.07,0.011,0.845,293T-Mxra8,C6/36,62,E3,,"U,V,W,X",no
 63(E3),64,E3,-0.093,0.009,-0.228,293T-Mxra8,C6/36,63,E3,,"U,V,W,X",no
@@ -1057,7 +1057,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 3(E2),68,E2,0.468,0.046,2.689,293T-Mxra8,C6/36,3,E2-n-linker,"E,F,G,H","E,F,G,H",no
 4(E2),69,E2,1.133,0.068,6.188,293T-Mxra8,C6/36,4,E2-n-linker,"E,F,G,H","E,F,G,H",no
 5(E2),70,E2,0.759,0.071,5.102,293T-Mxra8,C6/36,5,E2-n-linker,"E,F,G,H","E,F,G,H",intraspike
-6(E2),71,E2,1.459,0.079,4.527,293T-Mxra8,C6/36,6,E2-n-linker,"E,F,G,H","E,F,G,H",intraspike
+6(E2),71,E2,1.492,0.083,5.146,293T-Mxra8,C6/36,6,E2-n-linker,"E,F,G,H","E,F,G,H",intraspike
 7(E2),72,E2,0.59,0.023,1.842,293T-Mxra8,C6/36,7,E2-n-linker,"E,F,G,H","E,F,G,H",no
 8(E2),73,E2,1.092,0.045,3.008,293T-Mxra8,C6/36,8,E2-n-linker,"E,F,G,H","E,F,G,H",no
 9(E2),74,E2,0.301,0.048,0.991,293T-Mxra8,C6/36,9,E2-n-linker,"E,F,G,H","E,F,G,H",no
@@ -1093,7 +1093,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 39(E2),104,E2,0.299,0.009,0.804,293T-Mxra8,C6/36,39,E2-domain a,"E,F,G,H","E,F,G,H",no
 40(E2),105,E2,0.106,0.01,0.36,293T-Mxra8,C6/36,40,E2-domain a,"E,F,G,H","E,F,G,H",no
 41(E2),106,E2,0.058,0.006,0.171,293T-Mxra8,C6/36,41,E2-domain a,"E,F,G,H","E,F,G,H",no
-42(E2),107,E2,0.175,0.007,0.418,293T-Mxra8,C6/36,42,E2-domain a,"E,F,G,H","E,F,G,H",no
+42(E2),107,E2,0.224,0.011,0.685,293T-Mxra8,C6/36,42,E2-domain a,"E,F,G,H","E,F,G,H",no
 43(E2),108,E2,0,0,-0.01,293T-Mxra8,C6/36,43,E2-domain a,"E,F,G,H","E,F,G,H",no
 44(E2),109,E2,0.076,0.014,0.348,293T-Mxra8,C6/36,44,E2-domain a,"E,F,G,H","E,F,G,H",no
 45(E2),110,E2,0.32,0.007,1.063,293T-Mxra8,C6/36,45,E2-domain a,"E,F,G,H","E,F,G,H",no
@@ -1104,7 +1104,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 50(E2),115,E2,0.236,0.021,1.037,293T-Mxra8,C6/36,50,E2-domain a,"E,F,G,H","E,F,G,H",no
 51(E2),116,E2,0.123,0.022,0.72,293T-Mxra8,C6/36,51,E2-domain a,"E,F,G,H","E,F,G,H",no
 52(E2),117,E2,0.214,0.012,0.985,293T-Mxra8,C6/36,52,E2-domain a,"E,F,G,H","E,F,G,H",no
-53(E2),118,E2,0.094,0.006,0.13,293T-Mxra8,C6/36,53,E2-domain a,"E,F,G,H","E,F,G,H",no
+53(E2),118,E2,0.089,0.006,0.116,293T-Mxra8,C6/36,53,E2-domain a,"E,F,G,H","E,F,G,H",no
 54(E2),119,E2,0.243,0.016,1.193,293T-Mxra8,C6/36,54,E2-domain a,"E,F,G,H","E,F,G,H",no
 55(E2),120,E2,0.361,0.051,1.141,293T-Mxra8,C6/36,55,E2-domain a,"E,F,G,H","E,F,G,H",no
 56(E2),121,E2,0.463,0.079,2.155,293T-Mxra8,C6/36,56,E2-domain a,"E,F,G,H","E,F,G,H",no
@@ -1141,7 +1141,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 87(E2),152,E2,0.038,0.001,0.072,293T-Mxra8,C6/36,87,E2-domain a,"E,F,G,H","E,F,G,H",no
 88(E2),153,E2,0.038,0.009,1.204,293T-Mxra8,C6/36,88,E2-domain a,"E,F,G,H","E,F,G,H",no
 89(E2),154,E2,-0.006,0.011,0.868,293T-Mxra8,C6/36,89,E2-domain a,"E,F,G,H","E,F,G,H",no
-90(E2),155,E2,0.177,0.012,0.118,293T-Mxra8,C6/36,90,E2-domain a,"E,F,G,H","E,F,G,H",no
+90(E2),155,E2,0.256,0.021,0.526,293T-Mxra8,C6/36,90,E2-domain a,"E,F,G,H","E,F,G,H",no
 91(E2),156,E2,0,0,-0.003,293T-Mxra8,C6/36,91,E2-domain a,"E,F,G,H","E,F,G,H",no
 92(E2),157,E2,0.23,0.031,2.027,293T-Mxra8,C6/36,92,E2-domain a,"E,F,G,H","E,F,G,H",no
 93(E2),158,E2,0.186,0.011,0.657,293T-Mxra8,C6/36,93,E2-domain a,"E,F,G,H","E,F,G,H",no
@@ -1212,7 +1212,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 158(E2),223,E2,1.342,0.111,5.227,293T-Mxra8,C6/36,158,E2-arch1,"E,F,G,H","E,F,G,H",intraspike
 159(E2),224,E2,0.584,0.071,2.743,293T-Mxra8,C6/36,159,E2-arch1,"E,F,G,H","E,F,G,H",intraspike
 160(E2),225,E2,1.291,0.102,7.622,293T-Mxra8,C6/36,160,E2-arch1,"E,F,G,H","E,F,G,H",intraspike
-161(E2),226,E2,0.692,0.051,1.802,293T-Mxra8,C6/36,161,E2-arch1,"E,F,G,H","E,F,G,H",no
+161(E2),226,E2,0.59,0.053,1.494,293T-Mxra8,C6/36,161,E2-arch1,"E,F,G,H","E,F,G,H",no
 162(E2),227,E2,0.127,0.016,0.535,293T-Mxra8,C6/36,162,E2-arch1,"E,F,G,H","E,F,G,H",no
 163(E2),228,E2,1.142,0.052,3.822,293T-Mxra8,C6/36,163,E2-arch1,"E,F,G,H","E,F,G,H",no
 164(E2),229,E2,-0.031,0.013,0.579,293T-Mxra8,C6/36,164,E2-arch1,"E,F,G,H","E,F,G,H",no
@@ -1226,7 +1226,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 172(E2),237,E2,0.194,0.031,0.753,293T-Mxra8,C6/36,172,E2-arch1,"E,F,G,H","E,F,G,H",no
 173(E2),238,E2,0.083,0.005,0.18,293T-Mxra8,C6/36,173,E2-domain b,"E,F,G,H","E,F,G,H",no
 174(E2),239,E2,0.322,0.028,0.745,293T-Mxra8,C6/36,174,E2-domain b,"E,F,G,H","E,F,G,H",no
-175(E2),240,E2,0.516,0.046,2.672,293T-Mxra8,C6/36,175,E2-domain b,"E,F,G,H","E,F,G,H",no
+175(E2),240,E2,0.531,0.045,2.916,293T-Mxra8,C6/36,175,E2-domain b,"E,F,G,H","E,F,G,H",no
 176(E2),241,E2,0.022,0,0.021,293T-Mxra8,C6/36,176,E2-domain b,"E,F,G,H","E,F,G,H",no
 177(E2),242,E2,0.041,0.002,0.083,293T-Mxra8,C6/36,177,E2-domain b,"E,F,G,H","E,F,G,H",no
 178(E2),243,E2,0.636,0.076,4.684,293T-Mxra8,C6/36,178,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
@@ -1240,10 +1240,10 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 186(E2),251,E2,1.39,0.054,3.369,293T-Mxra8,C6/36,186,E2-domain b,"E,F,G,H","E,F,G,H",no
 187(E2),252,E2,0.293,0.017,0.87,293T-Mxra8,C6/36,187,E2-domain b,"E,F,G,H","E,F,G,H",no
 188(E2),253,E2,0.065,0.002,0.065,293T-Mxra8,C6/36,188,E2-domain b,"E,F,G,H","E,F,G,H",no
-189(E2),254,E2,0.392,0.029,1.461,293T-Mxra8,C6/36,189,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
+189(E2),254,E2,0.426,0.029,1.535,293T-Mxra8,C6/36,189,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 190(E2),255,E2,0.185,0.035,0.721,293T-Mxra8,C6/36,190,E2-domain b,"E,F,G,H","E,F,G,H",no
 191(E2),256,E2,0.458,0.038,2.636,293T-Mxra8,C6/36,191,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
-192(E2),257,E2,0.198,0.015,0.765,293T-Mxra8,C6/36,192,E2-domain b,"E,F,G,H","E,F,G,H",no
+192(E2),257,E2,0.264,0.017,0.91,293T-Mxra8,C6/36,192,E2-domain b,"E,F,G,H","E,F,G,H",no
 193(E2),258,E2,0.397,0.059,0.733,293T-Mxra8,C6/36,193,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 194(E2),259,E2,0.166,0.023,2.117,293T-Mxra8,C6/36,194,E2-domain b,"E,F,G,H","E,F,G,H",no
 195(E2),260,E2,-0.315,0.031,0.909,293T-Mxra8,C6/36,195,E2-domain b,"E,F,G,H","E,F,G,H",no
@@ -1263,7 +1263,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 209(E2),274,E2,0.713,0.021,2.399,293T-Mxra8,C6/36,209,E2-domain b,"E,F,G,H","E,F,G,H",no
 210(E2),275,E2,0.621,0.036,3.83,293T-Mxra8,C6/36,210,E2-domain b,"E,F,G,H","E,F,G,H",no
 211(E2),276,E2,0.006,0.009,0.163,293T-Mxra8,C6/36,211,E2-domain b,"E,F,G,H","E,F,G,H",no
-212(E2),277,E2,0.345,0.014,1.819,293T-Mxra8,C6/36,212,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
+212(E2),277,E2,0.288,0.016,1.549,293T-Mxra8,C6/36,212,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 213(E2),278,E2,0.448,0.02,2.291,293T-Mxra8,C6/36,213,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 214(E2),279,E2,0.09,0.007,0.284,293T-Mxra8,C6/36,214,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 215(E2),280,E2,0.161,0.014,1.53,293T-Mxra8,C6/36,215,E2-domain b,"E,F,G,H","E,F,G,H",no
@@ -1311,15 +1311,15 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 257(E2),322,E2,0.635,0.08,2.614,293T-Mxra8,C6/36,257,E2-arch2,"E,F,G,H","E,F,G,H",no
 258(E2),323,E2,0.061,0.004,0.129,293T-Mxra8,C6/36,258,E2-arch2,"E,F,G,H","E,F,G,H",no
 259(E2),324,E2,0.11,0.066,0.774,293T-Mxra8,C6/36,259,E2-arch2,"E,F,G,H","E,F,G,H",no
-260(E2),325,E2,1.259,0.079,5.3,293T-Mxra8,C6/36,260,E2-arch2,"E,F,G,H","E,F,G,H",no
+260(E2),325,E2,1.332,0.084,5.863,293T-Mxra8,C6/36,260,E2-arch2,"E,F,G,H","E,F,G,H",no
 261(E2),326,E2,0.109,0.036,0.558,293T-Mxra8,C6/36,261,E2-arch2,"E,F,G,H","E,F,G,H",no
-262(E2),327,E2,0.425,0.057,1.523,293T-Mxra8,C6/36,262,E2-arch2,"E,F,G,H","E,F,G,H",no
+262(E2),327,E2,0.498,0.058,1.675,293T-Mxra8,C6/36,262,E2-arch2,"E,F,G,H","E,F,G,H",no
 263(E2),328,E2,-0.007,0.042,1.774,293T-Mxra8,C6/36,263,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
 264(E2),329,E2,0.64,0.076,1.099,293T-Mxra8,C6/36,264,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
 265(E2),330,E2,0.305,0.024,1.359,293T-Mxra8,C6/36,265,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
 266(E2),331,E2,0,0,-0.004,293T-Mxra8,C6/36,266,E2-arch2,"E,F,G,H","E,F,G,H",no
 267(E2),332,E2,-0.176,0.011,0.506,293T-Mxra8,C6/36,267,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
-268(E2),333,E2,0.112,0.013,0.406,293T-Mxra8,C6/36,268,E2-arch2,"E,F,G,H","E,F,G,H",no
+268(E2),333,E2,0.113,0.012,0.422,293T-Mxra8,C6/36,268,E2-arch2,"E,F,G,H","E,F,G,H",no
 269(E2),334,E2,0.18,0.038,0.857,293T-Mxra8,C6/36,269,E2-arch2,"E,F,G,H","E,F,G,H",no
 270(E2),335,E2,-0.087,0.015,1.85,293T-Mxra8,C6/36,270,E2-arch2,"E,F,G,H","E,F,G,H",no
 271(E2),336,E2,0.09,0.005,0.216,293T-Mxra8,C6/36,271,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -1336,7 +1336,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 282(E2),347,E2,0.431,0.028,2.695,293T-Mxra8,C6/36,282,E2-domain c,"E,F,G,H","E,F,G,H",no
 283(E2),348,E2,0.05,0.005,0.312,293T-Mxra8,C6/36,283,E2-domain c,"E,F,G,H","E,F,G,H",no
 284(E2),349,E2,0.494,0.026,2.596,293T-Mxra8,C6/36,284,E2-domain c,"E,F,G,H","E,F,G,H",no
-285(E2),350,E2,0.166,0.015,0.737,293T-Mxra8,C6/36,285,E2-domain c,"E,F,G,H","E,F,G,H",no
+285(E2),350,E2,0.124,0.016,0.706,293T-Mxra8,C6/36,285,E2-domain c,"E,F,G,H","E,F,G,H",no
 286(E2),351,E2,0.392,0.032,3.854,293T-Mxra8,C6/36,286,E2-domain c,"E,F,G,H","E,F,G,H",no
 287(E2),352,E2,0.016,0.038,0.073,293T-Mxra8,C6/36,287,E2-domain c,"E,F,G,H","E,F,G,H",no
 288(E2),353,E2,-0.766,0.068,-0.128,293T-Mxra8,C6/36,288,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -1389,7 +1389,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 335(E2),400,E2,0.058,0.006,0.245,293T-Mxra8,C6/36,335,E2-domain c,"E,F,G,H","E,F,G,H",no
 336(E2),401,E2,0.137,0.016,1.463,293T-Mxra8,C6/36,336,E2-domain c,"E,F,G,H","E,F,G,H",no
 337(E2),402,E2,0.67,0.028,2.75,293T-Mxra8,C6/36,337,E2-domain c,"E,F,G,H","E,F,G,H",no
-338(E2),403,E2,0.056,0.001,0.109,293T-Mxra8,C6/36,338,E2-domain c,"E,F,G,H","E,F,G,H",no
+338(E2),403,E2,0.081,0.002,0.143,293T-Mxra8,C6/36,338,E2-domain c,"E,F,G,H","E,F,G,H",no
 339(E2),404,E2,0.055,0.007,0.311,293T-Mxra8,C6/36,339,E2-domain c,"E,F,G,H","E,F,G,H",no
 340(E2),405,E2,0.242,0.023,2.798,293T-Mxra8,C6/36,340,E2-domain c,"E,F,G,H","E,F,G,H",no
 341(E2),406,E2,0.372,0.027,2.74,293T-Mxra8,C6/36,341,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -1403,7 +1403,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 349(E2),414,E2,0.02,0.011,1.263,293T-Mxra8,C6/36,349,E2-stem,"E,F,G,H","E,F,G,H",no
 350(E2),415,E2,-0.304,0.009,0.715,293T-Mxra8,C6/36,350,E2-stem,"E,F,G,H","E,F,G,H",no
 351(E2),416,E2,0.033,0.012,0.892,293T-Mxra8,C6/36,351,E2-stem,"E,F,G,H","E,F,G,H",no
-352(E2),417,E2,0.265,0.016,1.746,293T-Mxra8,C6/36,352,E2-stem,"E,F,G,H","E,F,G,H",no
+352(E2),417,E2,0.238,0.014,1.725,293T-Mxra8,C6/36,352,E2-stem,"E,F,G,H","E,F,G,H",no
 353(E2),418,E2,-0.273,0.007,0.761,293T-Mxra8,C6/36,353,E2-stem,"E,F,G,H","E,F,G,H",no
 354(E2),419,E2,0.266,0.015,1.608,293T-Mxra8,C6/36,354,E2-stem,"E,F,G,H","E,F,G,H",no
 355(E2),420,E2,0.385,0.01,1.186,293T-Mxra8,C6/36,355,E2-stem,"E,F,G,H","E,F,G,H",no
@@ -1415,14 +1415,14 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 361(E2),426,E2,-0.133,0.017,0.662,293T-Mxra8,C6/36,361,E2-stem,"E,F,G,H","E,F,G,H",no
 362(E2),427,E2,0.167,0.013,-0.388,293T-Mxra8,C6/36,362,E2-stem,"E,F,G,H","E,F,G,H",no
 363(E2),428,E2,0.265,0.023,0.995,293T-Mxra8,C6/36,363,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-364(E2),429,E2,0,0.001,-0.071,293T-Mxra8,C6/36,364,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+364(E2),429,E2,0.058,0.003,-0.01,293T-Mxra8,C6/36,364,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 365(E2),430,E2,0.287,0.031,1.435,293T-Mxra8,C6/36,365,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 366(E2),431,E2,0.135,0.018,0.404,293T-Mxra8,C6/36,366,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-367(E2),432,E2,0.12,0.013,0.443,293T-Mxra8,C6/36,367,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+367(E2),432,E2,0.171,0.013,0.54,293T-Mxra8,C6/36,367,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 368(E2),433,E2,0.163,0.021,2.352,293T-Mxra8,C6/36,368,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 369(E2),434,E2,0.151,0.01,0.522,293T-Mxra8,C6/36,369,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 370(E2),435,E2,0.124,0.023,0.654,293T-Mxra8,C6/36,370,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-371(E2),436,E2,0.099,0.023,0.97,293T-Mxra8,C6/36,371,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+371(E2),436,E2,0.256,0.033,1.577,293T-Mxra8,C6/36,371,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 372(E2),437,E2,0.102,0.001,0.112,293T-Mxra8,C6/36,372,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 373(E2),438,E2,0.133,0.008,0.667,293T-Mxra8,C6/36,373,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 374(E2),439,E2,0.027,0.027,0.721,293T-Mxra8,C6/36,374,E2-transmembrane,"E,F,G,H","E,F,G,H",no
@@ -1435,7 +1435,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 381(E2),446,E2,0.287,0.011,0.899,293T-Mxra8,C6/36,381,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 382(E2),447,E2,0.13,0.007,0.587,293T-Mxra8,C6/36,382,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 383(E2),448,E2,0.029,0.013,0.061,293T-Mxra8,C6/36,383,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-384(E2),449,E2,0.004,0.009,0.542,293T-Mxra8,C6/36,384,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+384(E2),449,E2,0.138,0.01,0.77,293T-Mxra8,C6/36,384,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 385(E2),450,E2,0.366,0.014,1.446,293T-Mxra8,C6/36,385,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 386(E2),451,E2,0.105,0.013,1.138,293T-Mxra8,C6/36,386,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 387(E2),452,E2,0.036,0.012,1.169,293T-Mxra8,C6/36,387,E2-transmembrane,"E,F,G,H","E,F,G,H",no
@@ -1444,21 +1444,21 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 390(E2),455,E2,-0.067,0.011,0.943,293T-Mxra8,C6/36,390,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 391(E2),456,E2,0.088,0.015,1.628,293T-Mxra8,C6/36,391,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 392(E2),457,E2,0.206,0.022,0.979,293T-Mxra8,C6/36,392,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-393(E2),458,E2,0.21,0.04,0.985,293T-Mxra8,C6/36,393,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+393(E2),458,E2,0.231,0.04,1.153,293T-Mxra8,C6/36,393,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 394(E2),459,E2,0.25,0.024,2.437,293T-Mxra8,C6/36,394,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 395(E2),460,E2,-0.016,0.017,1.871,293T-Mxra8,C6/36,395,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 396(E2),461,E2,0.082,0.01,0.992,293T-Mxra8,C6/36,396,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-397(E2),462,E2,0.04,0.011,0.017,293T-Mxra8,C6/36,397,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+397(E2),462,E2,0.038,0.011,0.015,293T-Mxra8,C6/36,397,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 398(E2),463,E2,-0.006,0.012,0.553,293T-Mxra8,C6/36,398,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-399(E2),464,E2,-0.146,0.019,0.604,293T-Mxra8,C6/36,399,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-400(E2),465,E2,0.455,0.032,0.954,293T-Mxra8,C6/36,400,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+399(E2),464,E2,0.016,0.031,1.435,293T-Mxra8,C6/36,399,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+400(E2),465,E2,0.435,0.031,0.923,293T-Mxra8,C6/36,400,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 401(E2),466,E2,-0.164,0.004,0.843,293T-Mxra8,C6/36,401,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 402(E2),467,E2,-0.057,0.01,0.363,293T-Mxra8,C6/36,402,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 403(E2),468,E2,-0.087,0.016,1.264,293T-Mxra8,C6/36,403,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 404(E2),469,E2,0.18,0.004,0.981,293T-Mxra8,C6/36,404,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 405(E2),470,E2,0.17,0.017,1.711,293T-Mxra8,C6/36,405,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-406(E2),471,E2,0.123,0.015,1.434,293T-Mxra8,C6/36,406,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-407(E2),472,E2,-0.034,0.011,0.297,293T-Mxra8,C6/36,407,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+406(E2),471,E2,0.097,0.015,1.326,293T-Mxra8,C6/36,406,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+407(E2),472,E2,0.011,0.014,0.563,293T-Mxra8,C6/36,407,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 408(E2),473,E2,0.237,0.009,1.288,293T-Mxra8,C6/36,408,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 409(E2),474,E2,0.184,0.016,0.572,293T-Mxra8,C6/36,409,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 410(E2),475,E2,0.09,0.013,0.924,293T-Mxra8,C6/36,410,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
@@ -1493,7 +1493,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 16(6K),504,6K,0.015,0.004,0.156,293T-Mxra8,C6/36,16,6K,,,no
 17(6K),505,6K,-0.18,0.021,-0.521,293T-Mxra8,C6/36,17,6K,,,no
 18(6K),506,6K,-0.102,0.01,-0.166,293T-Mxra8,C6/36,18,6K,,,no
-19(6K),507,6K,0.135,0.01,0.747,293T-Mxra8,C6/36,19,6K,,,no
+19(6K),507,6K,0.032,0.022,0.342,293T-Mxra8,C6/36,19,6K,,,no
 20(6K),508,6K,0.028,0.008,0.58,293T-Mxra8,C6/36,20,6K,,,no
 21(6K),509,6K,-0.09,0.005,-0.079,293T-Mxra8,C6/36,21,6K,,,no
 22(6K),510,6K,-0.001,0.012,0.136,293T-Mxra8,C6/36,22,6K,,,no
@@ -1560,7 +1560,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 22(E1),571,E1,0.523,0.014,1.611,293T-Mxra8,C6/36,22,E1-domain I,"A,B,C,D","A,B,C,D",no
 23(E1),572,E1,0.232,0.028,2.126,293T-Mxra8,C6/36,23,E1-domain I,"A,B,C,D","A,B,C,D",no
 24(E1),573,E1,0.05,0.01,0.205,293T-Mxra8,C6/36,24,E1-domain I,"A,B,C,D","A,B,C,D",no
-25(E1),574,E1,0.209,0.011,0.87,293T-Mxra8,C6/36,25,E1-domain I,"A,B,C,D","A,B,C,D",no
+25(E1),574,E1,0.257,0.013,1.002,293T-Mxra8,C6/36,25,E1-domain I,"A,B,C,D","A,B,C,D",no
 26(E1),575,E1,0.668,0.039,2.884,293T-Mxra8,C6/36,26,E1-domain I,"A,B,C,D","A,B,C,D",no
 27(E1),576,E1,-0.068,0.02,-0.028,293T-Mxra8,C6/36,27,E1-domain I,"A,B,C,D","A,B,C,D",no
 28(E1),577,E1,0.212,0.007,0.52,293T-Mxra8,C6/36,28,E1-domain I,"A,B,C,D","A,B,C,D",no
@@ -1684,7 +1684,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 146(E1),695,E1,0.063,0.017,0.564,293T-Mxra8,C6/36,146,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
 147(E1),696,E1,0.17,0.011,0.103,293T-Mxra8,C6/36,147,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
 148(E1),697,E1,-0.093,0.02,0.142,293T-Mxra8,C6/36,148,E1-domain I,"A,B,C,D","A,B,C,D",no
-149(E1),698,E1,-0.13,0.022,0.315,293T-Mxra8,C6/36,149,E1-domain I,"A,B,C,D","A,B,C,D",no
+149(E1),698,E1,-0.126,0.022,0.334,293T-Mxra8,C6/36,149,E1-domain I,"A,B,C,D","A,B,C,D",no
 150(E1),699,E1,-0.13,0.034,-0.841,293T-Mxra8,C6/36,150,E1-domain I,"A,B,C,D","A,B,C,D",no
 151(E1),700,E1,-0.073,0.006,0.579,293T-Mxra8,C6/36,151,E1-domain I,"A,B,C,D","A,B,C,D",no
 152(E1),701,E1,0.481,0.024,1.178,293T-Mxra8,C6/36,152,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
@@ -1732,10 +1732,10 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 194(E1),743,E1,0.697,0.034,2.161,293T-Mxra8,C6/36,194,E1-domain II,"A,B,C,D","A,B,C,D",no
 195(E1),744,E1,-0.142,0.01,-0.376,293T-Mxra8,C6/36,195,E1-domain II,"A,B,C,D","A,B,C,D",no
 196(E1),745,E1,0.527,0.026,1.36,293T-Mxra8,C6/36,196,E1-domain II,"A,B,C,D","A,B,C,D",no
-197(E1),746,E1,-0.072,0.039,-0.259,293T-Mxra8,C6/36,197,E1-domain II,"A,B,C,D","A,B,C,D",no
+197(E1),746,E1,-0.081,0.038,-0.339,293T-Mxra8,C6/36,197,E1-domain II,"A,B,C,D","A,B,C,D",no
 198(E1),747,E1,0.108,0.012,0.243,293T-Mxra8,C6/36,198,E1-domain II,"A,B,C,D","A,B,C,D",no
 199(E1),748,E1,0.29,0.026,1.849,293T-Mxra8,C6/36,199,E1-domain II,"A,B,C,D","A,B,C,D",no
-200(E1),749,E1,-0.039,0.004,-0.126,293T-Mxra8,C6/36,200,E1-domain II,"A,B,C,D","A,B,C,D",no
+200(E1),749,E1,-0.026,0.006,-0.011,293T-Mxra8,C6/36,200,E1-domain II,"A,B,C,D","A,B,C,D",no
 201(E1),750,E1,-0.007,0.001,-0.086,293T-Mxra8,C6/36,201,E1-domain II,"A,B,C,D","A,B,C,D",no
 202(E1),751,E1,0,0,-0.015,293T-Mxra8,C6/36,202,E1-domain II,"A,B,C,D","A,B,C,D",no
 203(E1),752,E1,-0.208,0.02,-0.951,293T-Mxra8,C6/36,203,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -1753,12 +1753,12 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 215(E1),764,E1,0.003,0.01,-0.132,293T-Mxra8,C6/36,215,E1-domain II,"A,B,C,D","A,B,C,D",no
 216(E1),765,E1,0.2,0.023,1.289,293T-Mxra8,C6/36,216,E1-domain II,"A,B,C,D","A,B,C,D",no
 217(E1),766,E1,-0.052,0.009,-0.263,293T-Mxra8,C6/36,217,E1-domain II,"A,B,C,D","A,B,C,D",no
-218(E1),767,E1,-0.012,0.026,0.474,293T-Mxra8,C6/36,218,E1-domain II,"A,B,C,D","A,B,C,D",no
+218(E1),767,E1,-0.012,0.026,0.459,293T-Mxra8,C6/36,218,E1-domain II,"A,B,C,D","A,B,C,D",no
 219(E1),768,E1,-0.017,0.015,0.048,293T-Mxra8,C6/36,219,E1-domain II,"A,B,C,D","A,B,C,D",no
-220(E1),769,E1,0.343,0.015,1.518,293T-Mxra8,C6/36,220,E1-domain II,"A,B,C,D","A,B,C,D",no
-221(E1),770,E1,-0.151,0.015,-0.769,293T-Mxra8,C6/36,221,E1-domain II,"A,B,C,D","A,B,C,D",no
+220(E1),769,E1,0.456,0.019,2.073,293T-Mxra8,C6/36,220,E1-domain II,"A,B,C,D","A,B,C,D",no
+221(E1),770,E1,-0.142,0.015,-0.779,293T-Mxra8,C6/36,221,E1-domain II,"A,B,C,D","A,B,C,D",no
 222(E1),771,E1,-0.03,0.037,0.61,293T-Mxra8,C6/36,222,E1-domain II,"A,B,C,D","A,B,C,D",no
-223(E1),772,E1,0.163,0.033,0.522,293T-Mxra8,C6/36,223,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
+223(E1),772,E1,0.22,0.034,0.665,293T-Mxra8,C6/36,223,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
 224(E1),773,E1,0,0,0.001,293T-Mxra8,C6/36,224,E1-domain II,"A,B,C,D","A,B,C,D",no
 225(E1),774,E1,0,0.025,0.609,293T-Mxra8,C6/36,225,E1-domain II,"A,B,C,D","A,B,C,D",no
 226(E1),775,E1,0.517,0.02,1.642,293T-Mxra8,C6/36,226,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
@@ -1767,9 +1767,9 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 229(E1),778,E1,0.027,0.023,-0.056,293T-Mxra8,C6/36,229,E1-domain II,"A,B,C,D","A,B,C,D",no
 230(E1),779,E1,0.041,0.005,0.176,293T-Mxra8,C6/36,230,E1-domain II,"A,B,C,D","A,B,C,D",no
 231(E1),780,E1,0.21,0.029,0.554,293T-Mxra8,C6/36,231,E1-domain II,"A,B,C,D","A,B,C,D",no
-232(E1),781,E1,0.107,0.021,0.433,293T-Mxra8,C6/36,232,E1-domain II,"A,B,C,D","A,B,C,D",no
+232(E1),781,E1,0.102,0.021,0.432,293T-Mxra8,C6/36,232,E1-domain II,"A,B,C,D","A,B,C,D",no
 233(E1),782,E1,-0.743,0.04,-2.417,293T-Mxra8,C6/36,233,E1-domain II,"A,B,C,D","A,B,C,D",no
-234(E1),783,E1,-0.078,0.036,-0.156,293T-Mxra8,C6/36,234,E1-domain II,"A,B,C,D","A,B,C,D",no
+234(E1),783,E1,-0.136,0.039,-0.468,293T-Mxra8,C6/36,234,E1-domain II,"A,B,C,D","A,B,C,D",no
 235(E1),784,E1,-0.273,0.015,-0.738,293T-Mxra8,C6/36,235,E1-domain II,"A,B,C,D","A,B,C,D",no
 236(E1),785,E1,0.056,0.034,0.589,293T-Mxra8,C6/36,236,E1-domain II,"A,B,C,D","A,B,C,D",no
 237(E1),786,E1,-0.93,0.057,-2.504,293T-Mxra8,C6/36,237,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -1782,13 +1782,13 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 244(E1),793,E1,-0.282,0.009,-0.13,293T-Mxra8,C6/36,244,E1-domain II,"A,B,C,D","A,B,C,D",no
 245(E1),794,E1,-0.087,0.007,0.392,293T-Mxra8,C6/36,245,E1-domain II,"A,B,C,D","A,B,C,D",no
 246(E1),795,E1,-0.604,0.021,-1.035,293T-Mxra8,C6/36,246,E1-domain II,"A,B,C,D","A,B,C,D",no
-247(E1),796,E1,-0.143,0.057,0.082,293T-Mxra8,C6/36,247,E1-domain II,"A,B,C,D","A,B,C,D",no
+247(E1),796,E1,-0.215,0.059,-0.108,293T-Mxra8,C6/36,247,E1-domain II,"A,B,C,D","A,B,C,D",no
 248(E1),797,E1,-0.279,0.045,0.367,293T-Mxra8,C6/36,248,E1-domain II,"A,B,C,D","A,B,C,D",no
-249(E1),798,E1,0.141,0.01,0.823,293T-Mxra8,C6/36,249,E1-domain II,"A,B,C,D","A,B,C,D",no
+249(E1),798,E1,0.177,0.01,0.985,293T-Mxra8,C6/36,249,E1-domain II,"A,B,C,D","A,B,C,D",no
 250(E1),799,E1,-0.171,0.054,-0.124,293T-Mxra8,C6/36,250,E1-domain II,"A,B,C,D","A,B,C,D",no
-251(E1),800,E1,-0.004,0.098,0.24,293T-Mxra8,C6/36,251,E1-domain II,"A,B,C,D","A,B,C,D",no
+251(E1),800,E1,0.051,0.099,0.481,293T-Mxra8,C6/36,251,E1-domain II,"A,B,C,D","A,B,C,D",no
 252(E1),801,E1,-0.008,0.008,0.627,293T-Mxra8,C6/36,252,E1-domain II,"A,B,C,D","A,B,C,D",no
-253(E1),802,E1,0.451,0.02,1.703,293T-Mxra8,C6/36,253,E1-domain II,"A,B,C,D","A,B,C,D",no
+253(E1),802,E1,0.125,0.085,1.069,293T-Mxra8,C6/36,253,E1-domain II,"A,B,C,D","A,B,C,D",no
 254(E1),803,E1,0.526,0.049,1.605,293T-Mxra8,C6/36,254,E1-domain II,"A,B,C,D","A,B,C,D",no
 255(E1),804,E1,0.071,0.012,0.286,293T-Mxra8,C6/36,255,E1-domain II,"A,B,C,D","A,B,C,D",no
 256(E1),805,E1,0.108,0.008,0.559,293T-Mxra8,C6/36,256,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -1822,7 +1822,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 284(E1),833,E1,-0.438,0.033,-0.82,293T-Mxra8,C6/36,284,,"A,B,C,D","A,B,C,D",no
 285(E1),834,E1,-0.2,0.014,-0.851,293T-Mxra8,C6/36,285,,"A,B,C,D","A,B,C,D",no
 286(E1),835,E1,0.069,0.009,0.655,293T-Mxra8,C6/36,286,,"A,B,C,D","A,B,C,D",no
-287(E1),836,E1,-0.057,0.005,-0.142,293T-Mxra8,C6/36,287,,"A,B,C,D","A,B,C,D",no
+287(E1),836,E1,0.03,0.048,0.139,293T-Mxra8,C6/36,287,,"A,B,C,D","A,B,C,D",no
 288(E1),837,E1,0.282,0.011,0.722,293T-Mxra8,C6/36,288,,"A,B,C,D","A,B,C,D",no
 289(E1),838,E1,0.091,0.03,-0.172,293T-Mxra8,C6/36,289,,"A,B,C,D","A,B,C,D",no
 290(E1),839,E1,0.361,0.02,1.204,293T-Mxra8,C6/36,290,,"A,B,C,D","A,B,C,D",no
@@ -1836,7 +1836,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 298(E1),847,E1,0.048,0.01,0.189,293T-Mxra8,C6/36,298,E1-domain III,"A,B,C,D","A,B,C,D",no
 299(E1),848,E1,0.482,0.015,2.052,293T-Mxra8,C6/36,299,E1-domain III,"A,B,C,D","A,B,C,D",no
 300(E1),849,E1,-0.019,0.005,0.077,293T-Mxra8,C6/36,300,E1-domain III,"A,B,C,D","A,B,C,D",no
-301(E1),850,E1,0,0,-0.013,293T-Mxra8,C6/36,301,E1-domain III,"A,B,C,D","A,B,C,D",no
+301(E1),850,E1,-0.035,0.002,-0.11,293T-Mxra8,C6/36,301,E1-domain III,"A,B,C,D","A,B,C,D",no
 302(E1),851,E1,0.112,0.013,0.529,293T-Mxra8,C6/36,302,E1-domain III,"A,B,C,D","A,B,C,D",no
 303(E1),852,E1,0.116,0.008,0.278,293T-Mxra8,C6/36,303,E1-domain III,"A,B,C,D","A,B,C,D",no
 304(E1),853,E1,0.467,0.024,2.508,293T-Mxra8,C6/36,304,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -1858,7 +1858,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 320(E1),869,E1,0.045,0.011,0.246,293T-Mxra8,C6/36,320,E1-domain III,"A,B,C,D","A,B,C,D",no
 321(E1),870,E1,-0.012,0.012,0.287,293T-Mxra8,C6/36,321,E1-domain III,"A,B,C,D","A,B,C,D",no
 322(E1),871,E1,0.23,0.009,0.755,293T-Mxra8,C6/36,322,E1-domain III,"A,B,C,D","A,B,C,D",no
-323(E1),872,E1,0.02,0.016,0.711,293T-Mxra8,C6/36,323,E1-domain III,"A,B,C,D","A,B,C,D",no
+323(E1),872,E1,0.021,0.016,0.735,293T-Mxra8,C6/36,323,E1-domain III,"A,B,C,D","A,B,C,D",no
 324(E1),873,E1,0.554,0.026,2.242,293T-Mxra8,C6/36,324,E1-domain III,"A,B,C,D","A,B,C,D",no
 325(E1),874,E1,0.038,0.012,0.598,293T-Mxra8,C6/36,325,E1-domain III,"A,B,C,D","A,B,C,D",no
 326(E1),875,E1,0.46,0.043,1.744,293T-Mxra8,C6/36,326,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -1868,7 +1868,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 330(E1),879,E1,0.132,0.013,0.313,293T-Mxra8,C6/36,330,E1-domain III,"A,B,C,D","A,B,C,D",no
 331(E1),880,E1,0.209,0.019,1.172,293T-Mxra8,C6/36,331,E1-domain III,"A,B,C,D","A,B,C,D",no
 332(E1),881,E1,0.053,0.03,0.44,293T-Mxra8,C6/36,332,E1-domain III,"A,B,C,D","A,B,C,D",no
-333(E1),882,E1,0.059,0.006,0.326,293T-Mxra8,C6/36,333,E1-domain III,"A,B,C,D","A,B,C,D",no
+333(E1),882,E1,0.017,0.007,0.109,293T-Mxra8,C6/36,333,E1-domain III,"A,B,C,D","A,B,C,D",no
 334(E1),883,E1,-0.084,0.016,0.732,293T-Mxra8,C6/36,334,E1-domain III,"A,B,C,D","A,B,C,D",no
 335(E1),884,E1,0.136,0.014,1.196,293T-Mxra8,C6/36,335,E1-domain III,"A,B,C,D","A,B,C,D",no
 336(E1),885,E1,0.016,0.013,0.558,293T-Mxra8,C6/36,336,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -1895,7 +1895,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 357(E1),906,E1,0.32,0.017,0.885,293T-Mxra8,C6/36,357,E1-domain III,"A,B,C,D","A,B,C,D",no
 358(E1),907,E1,0.168,0.015,0.796,293T-Mxra8,C6/36,358,E1-domain III,"A,B,C,D","A,B,C,D",no
 359(E1),908,E1,0.209,0.016,2.42,293T-Mxra8,C6/36,359,E1-domain III,"A,B,C,D","A,B,C,D",no
-360(E1),909,E1,0.258,0.02,1.456,293T-Mxra8,C6/36,360,E1-domain III,"A,B,C,D","A,B,C,D",no
+360(E1),909,E1,0.287,0.022,1.676,293T-Mxra8,C6/36,360,E1-domain III,"A,B,C,D","A,B,C,D",no
 361(E1),910,E1,0.01,0.013,0.312,293T-Mxra8,C6/36,361,E1-domain III,"A,B,C,D","A,B,C,D",no
 362(E1),911,E1,0.158,0.014,1.508,293T-Mxra8,C6/36,362,E1-domain III,"A,B,C,D","A,B,C,D",no
 363(E1),912,E1,0.449,0.008,1.474,293T-Mxra8,C6/36,363,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -1908,7 +1908,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 370(E1),919,E1,-0.023,0.002,-0.061,293T-Mxra8,C6/36,370,E1-domain III,"A,B,C,D","A,B,C,D",no
 371(E1),920,E1,0.541,0.016,1.704,293T-Mxra8,C6/36,371,E1-domain III,"A,B,C,D","A,B,C,D",no
 372(E1),921,E1,0.007,0.004,0.408,293T-Mxra8,C6/36,372,E1-domain III,"A,B,C,D","A,B,C,D",no
-373(E1),922,E1,0.241,0.018,0.976,293T-Mxra8,C6/36,373,E1-domain III,"A,B,C,D","A,B,C,D",no
+373(E1),922,E1,0.358,0.025,1.663,293T-Mxra8,C6/36,373,E1-domain III,"A,B,C,D","A,B,C,D",no
 374(E1),923,E1,-0.177,0.018,-0.056,293T-Mxra8,C6/36,374,E1-domain III,"A,B,C,D","A,B,C,D",no
 375(E1),924,E1,0.125,0.009,0.464,293T-Mxra8,C6/36,375,E1-domain III,"A,B,C,D","A,B,C,D",no
 376(E1),925,E1,0.036,0.002,0.042,293T-Mxra8,C6/36,376,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -1944,7 +1944,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 406(E1),955,E1,-0.201,0.024,-2.044,293T-Mxra8,C6/36,406,E1-stem,"A,B,C,D","A,B,C,D",no
 407(E1),956,E1,-0.044,0.008,0.716,293T-Mxra8,C6/36,407,E1-stem,"A,B,C,D","A,B,C,D",no
 408(E1),957,E1,0.064,0.009,0.244,293T-Mxra8,C6/36,408,E1-stem,"A,B,C,D","A,B,C,D",no
-409(E1),958,E1,-0.13,0.034,-0.687,293T-Mxra8,C6/36,409,E1-stem,"A,B,C,D","A,B,C,D",no
+409(E1),958,E1,-0.119,0.034,-0.691,293T-Mxra8,C6/36,409,E1-stem,"A,B,C,D","A,B,C,D",no
 410(E1),959,E1,-0.12,0.02,0.142,293T-Mxra8,C6/36,410,E1-stem,"A,B,C,D","A,B,C,D",no
 411(E1),960,E1,-0.184,0.013,0.185,293T-Mxra8,C6/36,411,E1-stem,"A,B,C,D","A,B,C,D",no
 412(E1),961,E1,-0.236,0.014,-1.048,293T-Mxra8,C6/36,412,E1-stem,"A,B,C,D","A,B,C,D",no
@@ -1960,9 +1960,9 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 422(E1),971,E1,0.124,0.031,0.155,293T-Mxra8,C6/36,422,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 423(E1),972,E1,0.174,0.014,1.142,293T-Mxra8,C6/36,423,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 424(E1),973,E1,0.265,0.017,1.537,293T-Mxra8,C6/36,424,E1-transmembrane,"A,B,C,D","A,B,C,D",no
-425(E1),974,E1,0.023,0.019,0.842,293T-Mxra8,C6/36,425,E1-transmembrane,"A,B,C,D","A,B,C,D",no
+425(E1),974,E1,0.133,0.039,1.461,293T-Mxra8,C6/36,425,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 426(E1),975,E1,0.064,0.005,0.289,293T-Mxra8,C6/36,426,E1-transmembrane,"A,B,C,D","A,B,C,D",no
-427(E1),976,E1,0.057,0.02,0.554,293T-Mxra8,C6/36,427,E1-transmembrane,"A,B,C,D","A,B,C,D",no
+427(E1),976,E1,0.057,0.02,0.567,293T-Mxra8,C6/36,427,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 428(E1),977,E1,0.076,0.011,0.453,293T-Mxra8,C6/36,428,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 429(E1),978,E1,-0.024,0.037,0.27,293T-Mxra8,C6/36,429,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 430(E1),979,E1,0.093,0.02,0.01,293T-Mxra8,C6/36,430,E1-transmembrane,"A,B,C,D","A,B,C,D",no
@@ -2034,8 +2034,8 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 56(E3),57,E3,-0.02,0.011,-1.208,C6/36,293T-TIM1,56,E3,,"U,V,W,X",no
 57(E3),58,E3,-0.576,0.017,-2.931,C6/36,293T-TIM1,57,E3,,"U,V,W,X",no
 58(E3),59,E3,-0.077,0.012,-1.2,C6/36,293T-TIM1,58,E3,,"U,V,W,X",no
-59(E3),60,E3,-0.1,0.004,-0.465,C6/36,293T-TIM1,59,E3,,"U,V,W,X",no
-60(E3),61,E3,-0.068,0.017,-1.027,C6/36,293T-TIM1,60,E3,,"U,V,W,X",no
+59(E3),60,E3,-0.285,0.02,-1.329,C6/36,293T-TIM1,59,E3,,"U,V,W,X",no
+60(E3),61,E3,-0.046,0.017,-1.219,C6/36,293T-TIM1,60,E3,,"U,V,W,X",no
 61(E3),62,E3,0.528,0.03,0.436,C6/36,293T-TIM1,61,E3,,"U,V,W,X",no
 62(E3),63,E3,0.005,0.008,-0.87,C6/36,293T-TIM1,62,E3,,"U,V,W,X",no
 63(E3),64,E3,-0.076,0.01,-0.508,C6/36,293T-TIM1,63,E3,,"U,V,W,X",no
@@ -2045,7 +2045,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 3(E2),68,E2,-1.053,0.058,-3.943,C6/36,293T-TIM1,3,E2-n-linker,"E,F,G,H","E,F,G,H",no
 4(E2),69,E2,-1.498,0.077,-7.514,C6/36,293T-TIM1,4,E2-n-linker,"E,F,G,H","E,F,G,H",no
 5(E2),70,E2,-0.922,0.074,-5.706,C6/36,293T-TIM1,5,E2-n-linker,"E,F,G,H","E,F,G,H",intraspike
-6(E2),71,E2,-1.822,0.109,-6.227,C6/36,293T-TIM1,6,E2-n-linker,"E,F,G,H","E,F,G,H",intraspike
+6(E2),71,E2,-1.833,0.111,-6.853,C6/36,293T-TIM1,6,E2-n-linker,"E,F,G,H","E,F,G,H",intraspike
 7(E2),72,E2,-0.661,0.029,-2.484,C6/36,293T-TIM1,7,E2-n-linker,"E,F,G,H","E,F,G,H",no
 8(E2),73,E2,-0.982,0.035,-3.449,C6/36,293T-TIM1,8,E2-n-linker,"E,F,G,H","E,F,G,H",no
 9(E2),74,E2,-0.437,0.063,-1.564,C6/36,293T-TIM1,9,E2-n-linker,"E,F,G,H","E,F,G,H",no
@@ -2092,7 +2092,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 50(E2),115,E2,-0.332,0.035,-1.487,C6/36,293T-TIM1,50,E2-domain a,"E,F,G,H","E,F,G,H",no
 51(E2),116,E2,-0.192,0.037,-1.048,C6/36,293T-TIM1,51,E2-domain a,"E,F,G,H","E,F,G,H",no
 52(E2),117,E2,-0.434,0.026,-1.813,C6/36,293T-TIM1,52,E2-domain a,"E,F,G,H","E,F,G,H",no
-53(E2),118,E2,-0.093,0.006,-0.178,C6/36,293T-TIM1,53,E2-domain a,"E,F,G,H","E,F,G,H",no
+53(E2),118,E2,-0.124,0.007,-0.232,C6/36,293T-TIM1,53,E2-domain a,"E,F,G,H","E,F,G,H",no
 54(E2),119,E2,-0.382,0.028,-1.745,C6/36,293T-TIM1,54,E2-domain a,"E,F,G,H","E,F,G,H",no
 55(E2),120,E2,-0.42,0.036,-1.109,C6/36,293T-TIM1,55,E2-domain a,"E,F,G,H","E,F,G,H",no
 56(E2),121,E2,-0.481,0.109,-2.407,C6/36,293T-TIM1,56,E2-domain a,"E,F,G,H","E,F,G,H",no
@@ -2129,7 +2129,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 87(E2),152,E2,-0.091,0.009,-0.078,C6/36,293T-TIM1,87,E2-domain a,"E,F,G,H","E,F,G,H",no
 88(E2),153,E2,-0.334,0.019,-2.428,C6/36,293T-TIM1,88,E2-domain a,"E,F,G,H","E,F,G,H",no
 89(E2),154,E2,-0.425,0.042,-2.769,C6/36,293T-TIM1,89,E2-domain a,"E,F,G,H","E,F,G,H",no
-90(E2),155,E2,-0.673,0.025,-1.764,C6/36,293T-TIM1,90,E2-domain a,"E,F,G,H","E,F,G,H",no
+90(E2),155,E2,-0.697,0.026,-2.096,C6/36,293T-TIM1,90,E2-domain a,"E,F,G,H","E,F,G,H",no
 91(E2),156,E2,0,0,0.002,C6/36,293T-TIM1,91,E2-domain a,"E,F,G,H","E,F,G,H",no
 92(E2),157,E2,-1.137,0.08,-6.322,C6/36,293T-TIM1,92,E2-domain a,"E,F,G,H","E,F,G,H",no
 93(E2),158,E2,-0.504,0.025,-1.501,C6/36,293T-TIM1,93,E2-domain a,"E,F,G,H","E,F,G,H",no
@@ -2214,7 +2214,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 172(E2),237,E2,-0.581,0.079,-2.229,C6/36,293T-TIM1,172,E2-arch1,"E,F,G,H","E,F,G,H",no
 173(E2),238,E2,-0.203,0.024,-0.602,C6/36,293T-TIM1,173,E2-domain b,"E,F,G,H","E,F,G,H",no
 174(E2),239,E2,-0.414,0.041,-1.176,C6/36,293T-TIM1,174,E2-domain b,"E,F,G,H","E,F,G,H",no
-175(E2),240,E2,-0.729,0.041,-3.628,C6/36,293T-TIM1,175,E2-domain b,"E,F,G,H","E,F,G,H",no
+175(E2),240,E2,-0.726,0.038,-3.853,C6/36,293T-TIM1,175,E2-domain b,"E,F,G,H","E,F,G,H",no
 176(E2),241,E2,-0.08,0.005,-0.122,C6/36,293T-TIM1,176,E2-domain b,"E,F,G,H","E,F,G,H",no
 177(E2),242,E2,-0.153,0.017,-0.466,C6/36,293T-TIM1,177,E2-domain b,"E,F,G,H","E,F,G,H",no
 178(E2),243,E2,-0.848,0.095,-5.858,C6/36,293T-TIM1,178,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
@@ -2228,7 +2228,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 186(E2),251,E2,-1.462,0.056,-3.391,C6/36,293T-TIM1,186,E2-domain b,"E,F,G,H","E,F,G,H",no
 187(E2),252,E2,-0.456,0.019,-0.883,C6/36,293T-TIM1,187,E2-domain b,"E,F,G,H","E,F,G,H",no
 188(E2),253,E2,-0.076,0.002,-0.112,C6/36,293T-TIM1,188,E2-domain b,"E,F,G,H","E,F,G,H",no
-189(E2),254,E2,-0.319,0.023,-1.53,C6/36,293T-TIM1,189,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
+189(E2),254,E2,-0.351,0.023,-1.626,C6/36,293T-TIM1,189,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 190(E2),255,E2,-0.134,0.031,-0.657,C6/36,293T-TIM1,190,E2-domain b,"E,F,G,H","E,F,G,H",no
 191(E2),256,E2,-0.702,0.05,-4.162,C6/36,293T-TIM1,191,E2-domain b,"E,F,G,H","E,F,G,H",wrapped
 192(E2),257,E2,-0.193,0.019,-0.705,C6/36,293T-TIM1,192,E2-domain b,"E,F,G,H","E,F,G,H",no
@@ -2244,7 +2244,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 202(E2),267,E2,-0.12,0.016,-0.672,C6/36,293T-TIM1,202,E2-domain b,"E,F,G,H","E,F,G,H",no
 203(E2),268,E2,0,0,-0.003,C6/36,293T-TIM1,203,E2-domain b,"E,F,G,H","E,F,G,H",no
 204(E2),269,E2,-0.786,0.032,-3.973,C6/36,293T-TIM1,204,E2-domain b,"E,F,G,H","E,F,G,H",no
-205(E2),270,E2,-0.044,0.009,-0.74,C6/36,293T-TIM1,205,E2-domain b,"E,F,G,H","E,F,G,H",no
+205(E2),270,E2,-0.037,0.009,-0.731,C6/36,293T-TIM1,205,E2-domain b,"E,F,G,H","E,F,G,H",no
 206(E2),271,E2,0.11,0.006,-0.604,C6/36,293T-TIM1,206,E2-domain b,"E,F,G,H","E,F,G,H",no
 207(E2),272,E2,0.214,0.011,-1.597,C6/36,293T-TIM1,207,E2-domain b,"E,F,G,H","E,F,G,H",no
 208(E2),273,E2,-0.855,0.029,-3.51,C6/36,293T-TIM1,208,E2-domain b,"E,F,G,H","E,F,G,H",no
@@ -2299,7 +2299,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 257(E2),322,E2,-0.885,0.137,-3.768,C6/36,293T-TIM1,257,E2-arch2,"E,F,G,H","E,F,G,H",no
 258(E2),323,E2,-0.099,0.014,-0.391,C6/36,293T-TIM1,258,E2-arch2,"E,F,G,H","E,F,G,H",no
 259(E2),324,E2,-0.155,0.062,-0.954,C6/36,293T-TIM1,259,E2-arch2,"E,F,G,H","E,F,G,H",no
-260(E2),325,E2,-1.876,0.121,-7.642,C6/36,293T-TIM1,260,E2-arch2,"E,F,G,H","E,F,G,H",no
+260(E2),325,E2,-1.932,0.125,-8.25,C6/36,293T-TIM1,260,E2-arch2,"E,F,G,H","E,F,G,H",no
 261(E2),326,E2,-0.228,0.029,-0.926,C6/36,293T-TIM1,261,E2-arch2,"E,F,G,H","E,F,G,H",no
 262(E2),327,E2,-0.736,0.044,-3.191,C6/36,293T-TIM1,262,E2-arch2,"E,F,G,H","E,F,G,H",no
 263(E2),328,E2,-0.173,0.034,-2.44,C6/36,293T-TIM1,263,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
@@ -2307,7 +2307,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 265(E2),330,E2,-0.282,0.022,-1.735,C6/36,293T-TIM1,265,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
 266(E2),331,E2,0,0,0.009,C6/36,293T-TIM1,266,E2-arch2,"E,F,G,H","E,F,G,H",no
 267(E2),332,E2,-1.47,0.073,-6.08,C6/36,293T-TIM1,267,E2-arch2,"E,F,G,H","E,F,G,H",intraspike
-268(E2),333,E2,-0.279,0.033,-0.882,C6/36,293T-TIM1,268,E2-arch2,"E,F,G,H","E,F,G,H",no
+268(E2),333,E2,-0.278,0.032,-0.921,C6/36,293T-TIM1,268,E2-arch2,"E,F,G,H","E,F,G,H",no
 269(E2),334,E2,-0.295,0.085,-1.55,C6/36,293T-TIM1,269,E2-arch2,"E,F,G,H","E,F,G,H",no
 270(E2),335,E2,-0.046,0.019,-2.597,C6/36,293T-TIM1,270,E2-arch2,"E,F,G,H","E,F,G,H",no
 271(E2),336,E2,-0.338,0.039,-1.036,C6/36,293T-TIM1,271,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -2324,7 +2324,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 282(E2),347,E2,-0.62,0.031,-3.151,C6/36,293T-TIM1,282,E2-domain c,"E,F,G,H","E,F,G,H",no
 283(E2),348,E2,-0.15,0.018,-0.671,C6/36,293T-TIM1,283,E2-domain c,"E,F,G,H","E,F,G,H",no
 284(E2),349,E2,-0.788,0.031,-3.366,C6/36,293T-TIM1,284,E2-domain c,"E,F,G,H","E,F,G,H",no
-285(E2),350,E2,-0.295,0.041,-1.51,C6/36,293T-TIM1,285,E2-domain c,"E,F,G,H","E,F,G,H",no
+285(E2),350,E2,-0.258,0.041,-1.497,C6/36,293T-TIM1,285,E2-domain c,"E,F,G,H","E,F,G,H",no
 286(E2),351,E2,-0.824,0.058,-5.898,C6/36,293T-TIM1,286,E2-domain c,"E,F,G,H","E,F,G,H",no
 287(E2),352,E2,-0.215,0.036,-1.05,C6/36,293T-TIM1,287,E2-domain c,"E,F,G,H","E,F,G,H",no
 288(E2),353,E2,-2.24,0.207,-12.06,C6/36,293T-TIM1,288,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -2340,7 +2340,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 298(E2),363,E2,0,0,0.007,C6/36,293T-TIM1,298,E2-domain c,"E,F,G,H","E,F,G,H",no
 299(E2),364,E2,-0.11,0.016,-1.096,C6/36,293T-TIM1,299,E2-domain c,"E,F,G,H","E,F,G,H",no
 300(E2),365,E2,-0.106,0.015,-0.796,C6/36,293T-TIM1,300,E2-domain c,"E,F,G,H","E,F,G,H",no
-301(E2),366,E2,-0.289,0.051,-1.182,C6/36,293T-TIM1,301,E2-domain c,"E,F,G,H","E,F,G,H",no
+301(E2),366,E2,-0.293,0.051,-1.252,C6/36,293T-TIM1,301,E2-domain c,"E,F,G,H","E,F,G,H",no
 302(E2),367,E2,-0.226,0.022,-2.675,C6/36,293T-TIM1,302,E2-domain c,"E,F,G,H","E,F,G,H",no
 303(E2),368,E2,0.13,0.005,-0.602,C6/36,293T-TIM1,303,E2-domain c,"E,F,G,H","E,F,G,H",no
 304(E2),369,E2,-0.072,0.005,-0.216,C6/36,293T-TIM1,304,E2-domain c,"E,F,G,H","E,F,G,H",no
@@ -2391,7 +2391,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 349(E2),414,E2,-0.233,0.017,-1.637,C6/36,293T-TIM1,349,E2-stem,"E,F,G,H","E,F,G,H",no
 350(E2),415,E2,0.157,0.01,-1.294,C6/36,293T-TIM1,350,E2-stem,"E,F,G,H","E,F,G,H",no
 351(E2),416,E2,-0.183,0.013,-1.44,C6/36,293T-TIM1,351,E2-stem,"E,F,G,H","E,F,G,H",no
-352(E2),417,E2,-0.665,0.031,-3.478,C6/36,293T-TIM1,352,E2-stem,"E,F,G,H","E,F,G,H",no
+352(E2),417,E2,-0.613,0.029,-3.466,C6/36,293T-TIM1,352,E2-stem,"E,F,G,H","E,F,G,H",no
 353(E2),418,E2,-0.031,0.012,-1.967,C6/36,293T-TIM1,353,E2-stem,"E,F,G,H","E,F,G,H",no
 354(E2),419,E2,-0.589,0.028,-3.237,C6/36,293T-TIM1,354,E2-stem,"E,F,G,H","E,F,G,H",no
 355(E2),420,E2,-0.84,0.024,-2.713,C6/36,293T-TIM1,355,E2-stem,"E,F,G,H","E,F,G,H",no
@@ -2406,7 +2406,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 364(E2),429,E2,-0.075,0.007,-0.161,C6/36,293T-TIM1,364,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 365(E2),430,E2,-0.515,0.019,-1.871,C6/36,293T-TIM1,365,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 366(E2),431,E2,-0.504,0.022,-1.485,C6/36,293T-TIM1,366,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-367(E2),432,E2,-0.319,0.034,-1.381,C6/36,293T-TIM1,367,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+367(E2),432,E2,-0.492,0.042,-2.034,C6/36,293T-TIM1,367,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 368(E2),433,E2,-0.404,0.039,-3.735,C6/36,293T-TIM1,368,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 369(E2),434,E2,-0.491,0.016,-1.255,C6/36,293T-TIM1,369,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 370(E2),435,E2,-0.436,0.024,-1.6,C6/36,293T-TIM1,370,E2-transmembrane,"E,F,G,H","E,F,G,H",no
@@ -2416,14 +2416,14 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 374(E2),439,E2,-0.181,0.025,-1.188,C6/36,293T-TIM1,374,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 375(E2),440,E2,-0.357,0.006,-1.094,C6/36,293T-TIM1,375,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 376(E2),441,E2,-0.226,0.015,-1.194,C6/36,293T-TIM1,376,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-377(E2),442,E2,-0.285,0.017,-1.082,C6/36,293T-TIM1,377,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+377(E2),442,E2,-0.269,0.017,-1.085,C6/36,293T-TIM1,377,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 378(E2),443,E2,-0.401,0.029,-3.228,C6/36,293T-TIM1,378,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 379(E2),444,E2,-0.202,0.01,-0.234,C6/36,293T-TIM1,379,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 380(E2),445,E2,-0.542,0.021,-1.991,C6/36,293T-TIM1,380,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 381(E2),446,E2,-0.837,0.03,-2.388,C6/36,293T-TIM1,381,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 382(E2),447,E2,-0.584,0.02,-1.952,C6/36,293T-TIM1,382,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 383(E2),448,E2,-0.386,0.013,-1.206,C6/36,293T-TIM1,383,E2-transmembrane,"E,F,G,H","E,F,G,H",no
-384(E2),449,E2,-0.139,0.015,-1.214,C6/36,293T-TIM1,384,E2-transmembrane,"E,F,G,H","E,F,G,H",no
+384(E2),449,E2,-0.294,0.018,-1.562,C6/36,293T-TIM1,384,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 385(E2),450,E2,-0.794,0.022,-2.759,C6/36,293T-TIM1,385,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 386(E2),451,E2,-0.263,0.013,-1.753,C6/36,293T-TIM1,386,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 387(E2),452,E2,-0.101,0.012,-1.401,C6/36,293T-TIM1,387,E2-transmembrane,"E,F,G,H","E,F,G,H",no
@@ -2432,21 +2432,21 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 390(E2),455,E2,-0.342,0.017,-2.507,C6/36,293T-TIM1,390,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 391(E2),456,E2,-0.118,0.018,-1.683,C6/36,293T-TIM1,391,E2-transmembrane,"E,F,G,H","E,F,G,H",no
 392(E2),457,E2,-0.787,0.033,-3.493,C6/36,293T-TIM1,392,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-393(E2),458,E2,-1.325,0.092,-5.25,C6/36,293T-TIM1,393,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+393(E2),458,E2,-1.328,0.091,-5.719,C6/36,293T-TIM1,393,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 394(E2),459,E2,-0.642,0.03,-3.346,C6/36,293T-TIM1,394,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 395(E2),460,E2,-0.311,0.02,-2.877,C6/36,293T-TIM1,395,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 396(E2),461,E2,-0.673,0.04,-2.614,C6/36,293T-TIM1,396,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-397(E2),462,E2,-0.602,0.013,-1.864,C6/36,293T-TIM1,397,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+397(E2),462,E2,-0.71,0.015,-2.22,C6/36,293T-TIM1,397,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 398(E2),463,E2,-0.095,0.011,-1.358,C6/36,293T-TIM1,398,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-399(E2),464,E2,0.044,0.012,-1.039,C6/36,293T-TIM1,399,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+399(E2),464,E2,-0.101,0.021,-1.819,C6/36,293T-TIM1,399,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 400(E2),465,E2,-0.507,0.044,-1.397,C6/36,293T-TIM1,400,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 401(E2),466,E2,0.105,0.012,-1.373,C6/36,293T-TIM1,401,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 402(E2),467,E2,-0.078,0.013,-0.809,C6/36,293T-TIM1,402,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 403(E2),468,E2,-0.157,0.021,-2.217,C6/36,293T-TIM1,403,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 404(E2),469,E2,-0.347,0.009,-1.768,C6/36,293T-TIM1,404,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 405(E2),470,E2,-0.492,0.033,-3.694,C6/36,293T-TIM1,405,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-406(E2),471,E2,-0.396,0.02,-2.63,C6/36,293T-TIM1,406,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
-407(E2),472,E2,-0.207,0.01,-1.06,C6/36,293T-TIM1,407,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+406(E2),471,E2,-0.362,0.02,-2.54,C6/36,293T-TIM1,406,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
+407(E2),472,E2,-0.192,0.009,-1.015,C6/36,293T-TIM1,407,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 408(E2),473,E2,-0.845,0.025,-3.071,C6/36,293T-TIM1,408,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 409(E2),474,E2,-0.803,0.051,-2.767,C6/36,293T-TIM1,409,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
 410(E2),475,E2,-0.415,0.025,-2.133,C6/36,293T-TIM1,410,E2-cytoplasmic,"E,F,G,H","E,F,G,H",no
@@ -2507,7 +2507,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 42(6K),530,6K,-0.044,0.012,-0.715,C6/36,293T-TIM1,42,6K,,,no
 43(6K),531,6K,-0.024,0.004,-0.527,C6/36,293T-TIM1,43,6K,,,no
 44(6K),532,6K,-0.072,0.007,-0.524,C6/36,293T-TIM1,44,6K,,,no
-45(6K),533,6K,-0.018,0.003,-0.185,C6/36,293T-TIM1,45,6K,,,no
+45(6K),533,6K,0.013,0.003,-0.032,C6/36,293T-TIM1,45,6K,,,no
 46(6K),534,6K,-0.082,0.005,-0.638,C6/36,293T-TIM1,46,6K,,,no
 47(6K),535,6K,-0.085,0.004,-0.415,C6/36,293T-TIM1,47,6K,,,no
 48(6K),536,6K,-0.368,0.014,-1.556,C6/36,293T-TIM1,48,6K,,,no
@@ -2631,7 +2631,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 105(E1),654,E1,-0.336,0.026,-0.824,C6/36,293T-TIM1,105,E1-domain II,"A,B,C,D","A,B,C,D",no
 106(E1),655,E1,-0.076,0.007,-0.226,C6/36,293T-TIM1,106,E1-domain II,"A,B,C,D","A,B,C,D",no
 107(E1),656,E1,0.033,0.018,-0.71,C6/36,293T-TIM1,107,E1-domain II,"A,B,C,D","A,B,C,D",no
-108(E1),657,E1,-0.048,0.015,0.05,C6/36,293T-TIM1,108,E1-domain II,"A,B,C,D","A,B,C,D",no
+108(E1),657,E1,-0.074,0.015,-0.013,C6/36,293T-TIM1,108,E1-domain II,"A,B,C,D","A,B,C,D",no
 109(E1),658,E1,-0.314,0.014,-1.388,C6/36,293T-TIM1,109,E1-domain II,"A,B,C,D","A,B,C,D",no
 110(E1),659,E1,0.512,0.101,3.979,C6/36,293T-TIM1,110,E1-domain II,"A,B,C,D","A,B,C,D",no
 111(E1),660,E1,0.071,0.008,-0.406,C6/36,293T-TIM1,111,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -2672,7 +2672,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 146(E1),695,E1,-0.267,0.02,-1.404,C6/36,293T-TIM1,146,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
 147(E1),696,E1,-0.073,0.009,0.22,C6/36,293T-TIM1,147,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
 148(E1),697,E1,-0.411,0.022,-1.516,C6/36,293T-TIM1,148,E1-domain I,"A,B,C,D","A,B,C,D",no
-149(E1),698,E1,-0.217,0.036,-1.251,C6/36,293T-TIM1,149,E1-domain I,"A,B,C,D","A,B,C,D",no
+149(E1),698,E1,-0.337,0.057,-1.583,C6/36,293T-TIM1,149,E1-domain I,"A,B,C,D","A,B,C,D",no
 150(E1),699,E1,-0.547,0.049,-2.304,C6/36,293T-TIM1,150,E1-domain I,"A,B,C,D","A,B,C,D",no
 151(E1),700,E1,0.115,0.005,-0.539,C6/36,293T-TIM1,151,E1-domain I,"A,B,C,D","A,B,C,D",no
 152(E1),701,E1,-0.533,0.052,-1.497,C6/36,293T-TIM1,152,E1-domain I,"A,B,C,D","A,B,C,D",intraspike
@@ -2699,7 +2699,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 173(E1),722,E1,-0.004,0,-0.027,C6/36,293T-TIM1,173,E1-domain II,"A,B,C,D","A,B,C,D",no
 174(E1),723,E1,0.852,0.051,3.315,C6/36,293T-TIM1,174,E1-domain II,"A,B,C,D","A,B,C,D",no
 175(E1),724,E1,-0.121,0.014,-0.969,C6/36,293T-TIM1,175,E1-domain II,"A,B,C,D","A,B,C,D",no
-176(E1),725,E1,-0.866,0.037,-3.591,C6/36,293T-TIM1,176,E1-domain II,"A,B,C,D","A,B,C,D",no
+176(E1),725,E1,-0.706,0.056,-2.878,C6/36,293T-TIM1,176,E1-domain II,"A,B,C,D","A,B,C,D",no
 177(E1),726,E1,-0.072,0.025,-0.216,C6/36,293T-TIM1,177,E1-domain II,"A,B,C,D","A,B,C,D",no
 178(E1),727,E1,-0.092,0.003,-0.218,C6/36,293T-TIM1,178,E1-domain II,"A,B,C,D","A,B,C,D",no
 179(E1),728,E1,-0.159,0.016,-0.678,C6/36,293T-TIM1,179,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -2720,16 +2720,16 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 194(E1),743,E1,-0.665,0.04,-1.746,C6/36,293T-TIM1,194,E1-domain II,"A,B,C,D","A,B,C,D",no
 195(E1),744,E1,-0.099,0.026,-0.944,C6/36,293T-TIM1,195,E1-domain II,"A,B,C,D","A,B,C,D",no
 196(E1),745,E1,-1.03,0.032,-3.157,C6/36,293T-TIM1,196,E1-domain II,"A,B,C,D","A,B,C,D",no
-197(E1),746,E1,-1.385,0.116,-5.802,C6/36,293T-TIM1,197,E1-domain II,"A,B,C,D","A,B,C,D",no
+197(E1),746,E1,-1.36,0.112,-6.107,C6/36,293T-TIM1,197,E1-domain II,"A,B,C,D","A,B,C,D",no
 198(E1),747,E1,-0.232,0.032,-0.785,C6/36,293T-TIM1,198,E1-domain II,"A,B,C,D","A,B,C,D",no
 199(E1),748,E1,-0.895,0.062,-4.792,C6/36,293T-TIM1,199,E1-domain II,"A,B,C,D","A,B,C,D",no
-200(E1),749,E1,-0.02,0.001,-0.054,C6/36,293T-TIM1,200,E1-domain II,"A,B,C,D","A,B,C,D",no
+200(E1),749,E1,-0.018,0.001,-0.021,C6/36,293T-TIM1,200,E1-domain II,"A,B,C,D","A,B,C,D",no
 201(E1),750,E1,-0.002,0,0.021,C6/36,293T-TIM1,201,E1-domain II,"A,B,C,D","A,B,C,D",no
 202(E1),751,E1,0,0,0.017,C6/36,293T-TIM1,202,E1-domain II,"A,B,C,D","A,B,C,D",no
 203(E1),752,E1,0.224,0.023,0.979,C6/36,293T-TIM1,203,E1-domain II,"A,B,C,D","A,B,C,D",no
 204(E1),753,E1,-0.417,0.08,-1.465,C6/36,293T-TIM1,204,E1-domain II,"A,B,C,D","A,B,C,D",no
 205(E1),754,E1,0.807,0.073,2.233,C6/36,293T-TIM1,205,E1-domain II,"A,B,C,D","A,B,C,D",no
-206(E1),755,E1,0.385,0.05,2.157,C6/36,293T-TIM1,206,E1-domain II,"A,B,C,D","A,B,C,D",interspike
+206(E1),755,E1,0.394,0.05,2.401,C6/36,293T-TIM1,206,E1-domain II,"A,B,C,D","A,B,C,D",interspike
 207(E1),756,E1,0.138,0.021,-0.339,C6/36,293T-TIM1,207,E1-domain II,"A,B,C,D","A,B,C,D",interspike
 208(E1),757,E1,0.152,0.028,0.27,C6/36,293T-TIM1,208,E1-domain II,"A,B,C,D","A,B,C,D",no
 209(E1),758,E1,-0.167,0.008,-0.706,C6/36,293T-TIM1,209,E1-domain II,"A,B,C,D","A,B,C,D",interspike
@@ -2741,12 +2741,12 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 215(E1),764,E1,0.044,0.019,0.226,C6/36,293T-TIM1,215,E1-domain II,"A,B,C,D","A,B,C,D",no
 216(E1),765,E1,-0.538,0.032,-2.938,C6/36,293T-TIM1,216,E1-domain II,"A,B,C,D","A,B,C,D",no
 217(E1),766,E1,0.008,0,0.066,C6/36,293T-TIM1,217,E1-domain II,"A,B,C,D","A,B,C,D",no
-218(E1),767,E1,-2.145,0.202,-9.338,C6/36,293T-TIM1,218,E1-domain II,"A,B,C,D","A,B,C,D",no
+218(E1),767,E1,-2.158,0.203,-9.707,C6/36,293T-TIM1,218,E1-domain II,"A,B,C,D","A,B,C,D",no
 219(E1),768,E1,0.031,0.013,0.137,C6/36,293T-TIM1,219,E1-domain II,"A,B,C,D","A,B,C,D",no
-220(E1),769,E1,-0.663,0.052,-3.328,C6/36,293T-TIM1,220,E1-domain II,"A,B,C,D","A,B,C,D",no
-221(E1),770,E1,0.011,0.006,0.173,C6/36,293T-TIM1,221,E1-domain II,"A,B,C,D","A,B,C,D",no
+220(E1),769,E1,-0.76,0.055,-3.898,C6/36,293T-TIM1,220,E1-domain II,"A,B,C,D","A,B,C,D",no
+221(E1),770,E1,0.008,0.006,0.167,C6/36,293T-TIM1,221,E1-domain II,"A,B,C,D","A,B,C,D",no
 222(E1),771,E1,-0.389,0.055,-3.329,C6/36,293T-TIM1,222,E1-domain II,"A,B,C,D","A,B,C,D",no
-223(E1),772,E1,-0.978,0.085,-3.415,C6/36,293T-TIM1,223,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
+223(E1),772,E1,-1.009,0.085,-3.581,C6/36,293T-TIM1,223,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
 224(E1),773,E1,0,0,0.016,C6/36,293T-TIM1,224,E1-domain II,"A,B,C,D","A,B,C,D",no
 225(E1),774,E1,-1.254,0.079,-5.871,C6/36,293T-TIM1,225,E1-domain II,"A,B,C,D","A,B,C,D",no
 226(E1),775,E1,-1.034,0.054,-3.672,C6/36,293T-TIM1,226,E1-domain II,"A,B,C,D","A,B,C,D",wrapped
@@ -2755,9 +2755,9 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 229(E1),778,E1,-0.325,0.046,-1.239,C6/36,293T-TIM1,229,E1-domain II,"A,B,C,D","A,B,C,D",no
 230(E1),779,E1,-0.066,0.011,-0.388,C6/36,293T-TIM1,230,E1-domain II,"A,B,C,D","A,B,C,D",no
 231(E1),780,E1,-0.452,0.033,-1.433,C6/36,293T-TIM1,231,E1-domain II,"A,B,C,D","A,B,C,D",no
-232(E1),781,E1,-0.807,0.1,-2.586,C6/36,293T-TIM1,232,E1-domain II,"A,B,C,D","A,B,C,D",no
+232(E1),781,E1,-0.764,0.1,-2.625,C6/36,293T-TIM1,232,E1-domain II,"A,B,C,D","A,B,C,D",no
 233(E1),782,E1,0.594,0.034,1.315,C6/36,293T-TIM1,233,E1-domain II,"A,B,C,D","A,B,C,D",no
-234(E1),783,E1,-1.644,0.102,-7.017,C6/36,293T-TIM1,234,E1-domain II,"A,B,C,D","A,B,C,D",no
+234(E1),783,E1,-1.638,0.1,-7.502,C6/36,293T-TIM1,234,E1-domain II,"A,B,C,D","A,B,C,D",no
 235(E1),784,E1,-0.127,0.011,-0.505,C6/36,293T-TIM1,235,E1-domain II,"A,B,C,D","A,B,C,D",no
 236(E1),785,E1,-1.904,0.147,-7.937,C6/36,293T-TIM1,236,E1-domain II,"A,B,C,D","A,B,C,D",no
 237(E1),786,E1,-1.843,0.145,-9.442,C6/36,293T-TIM1,237,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -2770,9 +2770,9 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 244(E1),793,E1,-0.202,0.021,-0.983,C6/36,293T-TIM1,244,E1-domain II,"A,B,C,D","A,B,C,D",no
 245(E1),794,E1,0.158,0.005,-0.382,C6/36,293T-TIM1,245,E1-domain II,"A,B,C,D","A,B,C,D",no
 246(E1),795,E1,-1.311,0.107,-4.569,C6/36,293T-TIM1,246,E1-domain II,"A,B,C,D","A,B,C,D",no
-247(E1),796,E1,-0.481,0.064,-2.081,C6/36,293T-TIM1,247,E1-domain II,"A,B,C,D","A,B,C,D",no
+247(E1),796,E1,-0.446,0.064,-2.098,C6/36,293T-TIM1,247,E1-domain II,"A,B,C,D","A,B,C,D",no
 248(E1),797,E1,-0.298,0.013,-1.135,C6/36,293T-TIM1,248,E1-domain II,"A,B,C,D","A,B,C,D",no
-249(E1),798,E1,-0.193,0.029,-1.119,C6/36,293T-TIM1,249,E1-domain II,"A,B,C,D","A,B,C,D",no
+249(E1),798,E1,-0.253,0.031,-1.424,C6/36,293T-TIM1,249,E1-domain II,"A,B,C,D","A,B,C,D",no
 250(E1),799,E1,-0.07,0.054,-0.513,C6/36,293T-TIM1,250,E1-domain II,"A,B,C,D","A,B,C,D",no
 251(E1),800,E1,-0.121,0.018,-0.661,C6/36,293T-TIM1,251,E1-domain II,"A,B,C,D","A,B,C,D",no
 252(E1),801,E1,-0.126,0.014,-1.246,C6/36,293T-TIM1,252,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -2780,7 +2780,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 254(E1),803,E1,-0.44,0.023,-1.484,C6/36,293T-TIM1,254,E1-domain II,"A,B,C,D","A,B,C,D",no
 255(E1),804,E1,-0.109,0.008,-0.428,C6/36,293T-TIM1,255,E1-domain II,"A,B,C,D","A,B,C,D",no
 256(E1),805,E1,-0.17,0.019,-0.803,C6/36,293T-TIM1,256,E1-domain II,"A,B,C,D","A,B,C,D",no
-257(E1),806,E1,-0.138,0.013,-0.453,C6/36,293T-TIM1,257,E1-domain II,"A,B,C,D","A,B,C,D",no
+257(E1),806,E1,-0.217,0.017,-0.654,C6/36,293T-TIM1,257,E1-domain II,"A,B,C,D","A,B,C,D",no
 258(E1),807,E1,0.038,0.016,-0.096,C6/36,293T-TIM1,258,E1-domain II,"A,B,C,D","A,B,C,D",no
 259(E1),808,E1,0,0,0.027,C6/36,293T-TIM1,259,E1-domain II,"A,B,C,D","A,B,C,D",no
 260(E1),809,E1,-0.256,0.013,-1.544,C6/36,293T-TIM1,260,E1-domain II,"A,B,C,D","A,B,C,D",no
@@ -2810,7 +2810,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 284(E1),833,E1,0.089,0.032,-0.596,C6/36,293T-TIM1,284,,"A,B,C,D","A,B,C,D",no
 285(E1),834,E1,0.263,0.029,0.997,C6/36,293T-TIM1,285,,"A,B,C,D","A,B,C,D",no
 286(E1),835,E1,-0.143,0.011,-0.783,C6/36,293T-TIM1,286,,"A,B,C,D","A,B,C,D",no
-287(E1),836,E1,-0.114,0.012,-0.375,C6/36,293T-TIM1,287,,"A,B,C,D","A,B,C,D",no
+287(E1),836,E1,-0.202,0.048,-0.622,C6/36,293T-TIM1,287,,"A,B,C,D","A,B,C,D",no
 288(E1),837,E1,-0.544,0.017,-2.281,C6/36,293T-TIM1,288,,"A,B,C,D","A,B,C,D",no
 289(E1),838,E1,0.06,0.058,0.171,C6/36,293T-TIM1,289,,"A,B,C,D","A,B,C,D",no
 290(E1),839,E1,-0.538,0.02,-1.989,C6/36,293T-TIM1,290,,"A,B,C,D","A,B,C,D",no
@@ -2824,7 +2824,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 298(E1),847,E1,-0.204,0.008,-0.543,C6/36,293T-TIM1,298,E1-domain III,"A,B,C,D","A,B,C,D",no
 299(E1),848,E1,-0.578,0.015,-2.663,C6/36,293T-TIM1,299,E1-domain III,"A,B,C,D","A,B,C,D",no
 300(E1),849,E1,0.036,0.007,-0.037,C6/36,293T-TIM1,300,E1-domain III,"A,B,C,D","A,B,C,D",no
-301(E1),850,E1,0,0,0.016,C6/36,293T-TIM1,301,E1-domain III,"A,B,C,D","A,B,C,D",no
+301(E1),850,E1,0.053,0.004,0.146,C6/36,293T-TIM1,301,E1-domain III,"A,B,C,D","A,B,C,D",no
 302(E1),851,E1,-0.169,0.022,-0.768,C6/36,293T-TIM1,302,E1-domain III,"A,B,C,D","A,B,C,D",no
 303(E1),852,E1,-0.156,0.019,-0.491,C6/36,293T-TIM1,303,E1-domain III,"A,B,C,D","A,B,C,D",no
 304(E1),853,E1,-0.605,0.041,-2.689,C6/36,293T-TIM1,304,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -2846,7 +2846,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 320(E1),869,E1,-0.117,0.01,-0.773,C6/36,293T-TIM1,320,E1-domain III,"A,B,C,D","A,B,C,D",no
 321(E1),870,E1,-0.116,0.008,-0.98,C6/36,293T-TIM1,321,E1-domain III,"A,B,C,D","A,B,C,D",no
 322(E1),871,E1,-0.512,0.012,-1.487,C6/36,293T-TIM1,322,E1-domain III,"A,B,C,D","A,B,C,D",no
-323(E1),872,E1,-0.022,0.016,-1.143,C6/36,293T-TIM1,323,E1-domain III,"A,B,C,D","A,B,C,D",no
+323(E1),872,E1,-0.019,0.016,-1.164,C6/36,293T-TIM1,323,E1-domain III,"A,B,C,D","A,B,C,D",no
 324(E1),873,E1,-0.725,0.025,-3.351,C6/36,293T-TIM1,324,E1-domain III,"A,B,C,D","A,B,C,D",no
 325(E1),874,E1,-0.03,0.009,-0.728,C6/36,293T-TIM1,325,E1-domain III,"A,B,C,D","A,B,C,D",no
 326(E1),875,E1,-0.541,0.058,-2.027,C6/36,293T-TIM1,326,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -2856,7 +2856,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 330(E1),879,E1,-0.081,0.005,-0.146,C6/36,293T-TIM1,330,E1-domain III,"A,B,C,D","A,B,C,D",no
 331(E1),880,E1,-0.227,0.021,-1.38,C6/36,293T-TIM1,331,E1-domain III,"A,B,C,D","A,B,C,D",no
 332(E1),881,E1,-0.206,0.035,-0.687,C6/36,293T-TIM1,332,E1-domain III,"A,B,C,D","A,B,C,D",no
-333(E1),882,E1,-0.143,0.009,-0.568,C6/36,293T-TIM1,333,E1-domain III,"A,B,C,D","A,B,C,D",no
+333(E1),882,E1,-0.091,0.01,-0.317,C6/36,293T-TIM1,333,E1-domain III,"A,B,C,D","A,B,C,D",no
 334(E1),883,E1,0.083,0.014,-0.689,C6/36,293T-TIM1,334,E1-domain III,"A,B,C,D","A,B,C,D",no
 335(E1),884,E1,-0.264,0.012,-1.586,C6/36,293T-TIM1,335,E1-domain III,"A,B,C,D","A,B,C,D",no
 336(E1),885,E1,0.011,0.011,-0.723,C6/36,293T-TIM1,336,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -2883,7 +2883,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 357(E1),906,E1,-0.401,0.03,-1.461,C6/36,293T-TIM1,357,E1-domain III,"A,B,C,D","A,B,C,D",no
 358(E1),907,E1,-0.363,0.032,-1.724,C6/36,293T-TIM1,358,E1-domain III,"A,B,C,D","A,B,C,D",no
 359(E1),908,E1,-0.57,0.025,-3.905,C6/36,293T-TIM1,359,E1-domain III,"A,B,C,D","A,B,C,D",no
-360(E1),909,E1,-0.401,0.016,-1.749,C6/36,293T-TIM1,360,E1-domain III,"A,B,C,D","A,B,C,D",no
+360(E1),909,E1,-0.44,0.02,-1.97,C6/36,293T-TIM1,360,E1-domain III,"A,B,C,D","A,B,C,D",no
 361(E1),910,E1,-0.091,0.011,-0.806,C6/36,293T-TIM1,361,E1-domain III,"A,B,C,D","A,B,C,D",no
 362(E1),911,E1,-0.141,0.017,-1.021,C6/36,293T-TIM1,362,E1-domain III,"A,B,C,D","A,B,C,D",no
 363(E1),912,E1,-0.406,0.009,-1.649,C6/36,293T-TIM1,363,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -2896,7 +2896,7 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 370(E1),919,E1,-0.08,0.004,-0.124,C6/36,293T-TIM1,370,E1-domain III,"A,B,C,D","A,B,C,D",no
 371(E1),920,E1,-0.649,0.02,-1.955,C6/36,293T-TIM1,371,E1-domain III,"A,B,C,D","A,B,C,D",no
 372(E1),921,E1,0.087,0.008,-0.028,C6/36,293T-TIM1,372,E1-domain III,"A,B,C,D","A,B,C,D",no
-373(E1),922,E1,-0.252,0.02,-1.16,C6/36,293T-TIM1,373,E1-domain III,"A,B,C,D","A,B,C,D",no
+373(E1),922,E1,-0.363,0.026,-1.813,C6/36,293T-TIM1,373,E1-domain III,"A,B,C,D","A,B,C,D",no
 374(E1),923,E1,0.16,0.011,0.135,C6/36,293T-TIM1,374,E1-domain III,"A,B,C,D","A,B,C,D",no
 375(E1),924,E1,-0.076,0.006,-0.438,C6/36,293T-TIM1,375,E1-domain III,"A,B,C,D","A,B,C,D",no
 376(E1),925,E1,0,0,0.026,C6/36,293T-TIM1,376,E1-domain III,"A,B,C,D","A,B,C,D",no
@@ -2948,14 +2948,14 @@ site,sequential_site,region,mean difference,Jensen-Shannon divergence,difference
 422(E1),971,E1,-0.281,0.023,-0.931,C6/36,293T-TIM1,422,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 423(E1),972,E1,-0.522,0.029,-2.184,C6/36,293T-TIM1,423,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 424(E1),973,E1,-0.496,0.026,-2.147,C6/36,293T-TIM1,424,E1-transmembrane,"A,B,C,D","A,B,C,D",no
-425(E1),974,E1,-0.085,0.019,-0.905,C6/36,293T-TIM1,425,E1-transmembrane,"A,B,C,D","A,B,C,D",no
+425(E1),974,E1,-0.182,0.031,-1.529,C6/36,293T-TIM1,425,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 426(E1),975,E1,-0.303,0.013,-1.329,C6/36,293T-TIM1,426,E1-transmembrane,"A,B,C,D","A,B,C,D",no
-427(E1),976,E1,-0.448,0.027,-1.809,C6/36,293T-TIM1,427,E1-transmembrane,"A,B,C,D","A,B,C,D",no
+427(E1),976,E1,-0.428,0.026,-1.813,C6/36,293T-TIM1,427,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 428(E1),977,E1,-0.236,0.013,-0.874,C6/36,293T-TIM1,428,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 429(E1),978,E1,0.034,0.066,0.245,C6/36,293T-TIM1,429,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 430(E1),979,E1,-0.317,0.019,-0.971,C6/36,293T-TIM1,430,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 431(E1),980,E1,-0.343,0.018,-2.471,C6/36,293T-TIM1,431,E1-transmembrane,"A,B,C,D","A,B,C,D",no
-432(E1),981,E1,0.15,0.009,-0.082,C6/36,293T-TIM1,432,E1-transmembrane,"A,B,C,D","A,B,C,D",no
+432(E1),981,E1,0.202,0.011,0.213,C6/36,293T-TIM1,432,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 433(E1),982,E1,0.091,0.014,-0.233,C6/36,293T-TIM1,433,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 434(E1),983,E1,-0.105,0.007,-0.556,C6/36,293T-TIM1,434,E1-transmembrane,"A,B,C,D","A,B,C,D",no
 435(E1),984,E1,0.218,0.02,-0.259,C6/36,293T-TIM1,435,E1-transmembrane,"A,B,C,D","A,B,C,D",no
