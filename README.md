@@ -1,7 +1,7 @@
 # Deep mutational scanning of CHIKV 181/25 envelope protein
 Experiment by Xiaohui Ju and analysis helped by Will Hannon, Caelan Radford and Jesse Bloom.
 
-See [https://dms-vep.org/CHIKV_181-25_E_DMS/](https://dms-vep.org/CHIKV_181-25_E_DMS/) for the interactive HTML results of this pipeline.
+See [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/) for the interactive HTML results of this pipeline.
 
 ## Organization of this repo
 
@@ -53,7 +53,7 @@ Input data utilized by the pipeline are located in [./data/](data).
 The results of running the pipeline are placed in [./results/](results).
 Due to space, only some results are tracked. For those that are not, see the [.gitignore](.gitignore) document.
 
-The pipeline builds HTML documentation for the pipeline in [./docs/](docs). These docs are rendered for viewing at [https://dms-vep.org/CHIKV_181-25_E_DMS/](https://dms-vep.org/CHIKV_181-25_E_DMS/).
+The pipeline builds HTML documentation for the pipeline in [./docs/](docs). These docs are rendered for viewing at [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/).
 
 ## Running the pipeline
 To run the pipeline, build the conda environment `dms-vep-pipeline-3` in the `environment.yml` file of [dms-vep-pipeline-3](https://github.com/dms-vep/dms-vep-pipeline-3), activate it, and run [snakemake](https://snakemake.readthedocs.io/), such as:
