@@ -25,7 +25,6 @@ The `Snakemake` pipeline (and associated code) that creates the `Nextstrain` tre
 ```bash
 workflow/
 ├── notebooks # <---- Jupyter notebooks
-├── profiles # <----- Cluster resource configuration
 ├── scripts # <------ Python scripts
 └── Snakefile # <---- Snakemake workflow
 ```

@@ -40,7 +40,7 @@ rule make_reference:
         name=config['name'],
         reference=config['library']['accession'],
         gene_mapping=json.dumps(json.dumps(config['genes'])),
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "make-reference.log")
     shell:
         """
@@ -68,7 +68,7 @@ rule download_records:
         join(config['sequence_dir'], "records.pickle")
     params:
         include=config['accessions']['include'],
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "download-records.log")
     shell:
         """
@@ -94,7 +94,7 @@ rule parse_feature:
     params:
         feature=config['feature'],
         reference=config['library']['accession'],
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "parse-feature.log")
     shell:
         """
@@ -129,7 +129,7 @@ rule filter_records:
         remove_duplicates=config['filter']['remove_duplicates'],
         remove_partial=config['filter']['remove_partial'],
         min_alignment_score=config['filter']['min_alignment_score'],
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "filter-records.log")
     shell:
         """
@@ -169,7 +169,7 @@ rule extract_metadata:
     params:
         country_mapping=json.dumps(json.dumps(config['country_mapping'])),
         host_mapping=json.dumps(json.dumps(config['host_mapping'])),
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "extract-metadata.log")
     shell:
         """
@@ -195,7 +195,7 @@ rule custom_metadata_formatting:
         lineages=join("data", "ViennaRNA_CHIKV_metadata.tsv")
     output:
         metadata=join(config['metadata_dir'], "metadata_formatted.tsv")
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: notebook=join(config['notebook_dir'],"custom-metadata-formatting.ipynb")
     notebook: 'notebooks/custom-metadata-formatting.ipynb'
 
@@ -244,7 +244,7 @@ rule extract_orfs:
         min_feature_length=config["filter"]['min_feature_length']
     output:
         join(config['sequence_dir'], "orfs.fa")
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "extract-orfs.log")
     shell:
         """
@@ -270,7 +270,7 @@ rule extract_coding_regions:
     output:
         protein=join(config['sequence_dir'], "protein.fa"),
         codon=join(config['sequence_dir'], "codon.fa")
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "extract-coding-regions.log")
     shell:
         """
@@ -291,7 +291,7 @@ rule align_proteins:
         join(config['sequence_dir'], "protein.fa")
     output:
         join(config['align_dir'], "protein.fa")
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "align-proteins.log")
     shell:
         """
@@ -312,7 +312,7 @@ rule align_codons:
         alignment=join(config['align_dir'], "protein.fa")
     output:
         join(config['align_dir'], "codon.fa")
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "align-codons.log")
     shell:
         """
@@ -333,7 +333,7 @@ rule ungap_protein_alignment:
     output:
         join(config['align_dir'], "protein_ungapped.fa")
     params: reference=config['library']['strain']
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "ungap-protein-alignment.log")
     shell:
         """
@@ -354,7 +354,7 @@ rule ungap_codon_alignment:
     output:
         join(config['align_dir'], "codon_ungapped.fa")
     params: reference=config['library']['strain']
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "ungap-codon-alignment.log")
     shell:
         """
@@ -380,7 +380,7 @@ rule build_tree:
         join(config['tree_dir'], "tree_raw.nwk")
     params:
         outgroup=config['outgroup']['strain'],
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "build-tree.log")
     shell:
         """
@@ -406,7 +406,7 @@ rule root_and_remove_outgroup:
         codon=join(config['align_dir'], "codon_no_outgroup.fa")    
     params:
         outgroup=config['outgroup']['strain'],
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "root-and-remove-outgroup.log")
     shell:
         """
@@ -437,7 +437,7 @@ rule refine_tree_sequences:
     output:
         tree=join(config['tree_dir'], "tree.nwk"),
         nodes=join(config['tree_dir'], "tree_nodes.json"),
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "refine-tree-sequences.log")
     shell:
         """
@@ -467,7 +467,7 @@ rule traits_tree_sequences:
         tree_traits=join(config['tree_dir'], "tree_traits.json"),
     params:
         traits=config['inferred_traits'],
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "traits-tree-sequences.log")
     shell:
         """
@@ -492,7 +492,7 @@ rule ancestral_tree_sequences:
         codon=join(config['align_dir'], "codon_no_outgroup.fa"),
     output:
         ancestral=join(config['tree_dir'], "tree_muts.json"),
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "ancestral-tree-sequences.log")
     shell:
         """
@@ -520,7 +520,7 @@ rule translate_tree_sequences:
         gene_alignments=expand(join(config['align_dir'], "{genes}.fasta"), genes=[value for key, value in config['genes'].items()])
     params:
         genes=[value for key, value in config['genes'].items()]
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "translate-tree-sequences.log")
     shell:
         """
@@ -549,7 +549,7 @@ rule color_traits:
     params:
         traits=config['color']['traits'],
         ordering=json.dumps(json.dumps(config['color']['ordering'])),
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "color-traits.log")
     shell:
         """
@@ -576,7 +576,7 @@ rule color_by_dms:
     params:
         reference=config['library']['strain'],
         dms_config=json.dumps(json.dumps(config['dms_data'])),
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "color-by-dms.log")
     shell:
         """
@@ -613,7 +613,7 @@ rule export_tree:
         description=config["auspice"]["description"],
     output:
         join(config['auspice_dir'], "auspice.json"),
-    conda: "nextstrain"
+    conda: "../environment.yaml"
     log: join(config['log_dir'], "export-tree.log")
     shell:
         """

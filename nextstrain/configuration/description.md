@@ -2,7 +2,7 @@ A phylogenetic tree of CHIKV structural polyprotein (Capisd, E3, E2, 6K, E1) seq
 
 ### Library Strain
 
-Amino acid mutations are relative the 181/25 strain ([MW473668.1](https://www.ncbi.nlm.nih.gov/nuccore/MW473668.1)) used to make an associated [deep mutational scanning library of the CHIKV E glycoprotein](https://github.com/dms-vep/CHIKV_181-25_E_DMS). Enter `181-25_MW473668` into the search bar to select the corresponding node on the tree.
+Amino acid mutations are relative the 181/25 strain ([MW473668.1](https://www.ncbi.nlm.nih.gov/nuccore/MW473668.1)) used to make an associated [deep mutational scanning library of the CHIKV E glycoprotein](https://github.com/dms-vep/CHIKV-181-25-E-DMS). Enter `181-25_MW473668` into the search bar to select the corresponding node on the tree.
 
 ### Lineage Information
 
