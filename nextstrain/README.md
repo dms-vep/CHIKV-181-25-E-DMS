@@ -29,6 +29,8 @@ workflow/
 └── Snakefile # <---- Snakemake workflow
 ```
 
+Note that the last step of the [run_analysis.bash](run_analysis.bash) script is then to copy the final JSON from [auspice/auspice.json](auspice/auspice.json) to [../auspice/CHIKV-181-25-E-DMS.json](../auspice/CHIKV-181-25-E-DMS.json) where it can be viewed via  [Nextstrain community build](https://docs.nextstrain.org/en/latest/guides/share/community-builds.html) at [nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS](nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS).
+
 ## Workflow
 
 A [Nextstrain](https://nextstrain.org/) is built by (1) downloading sequence records for a virus from GenBank, (2) extracting a CDS feature of interest——in this case the Envelope Glycoprotein——(3) filtering to get only high-quality sequences, (4) building and annotating a tree of these sequences with `augur`, and (5) making a visualization with `auspice`.
@@ -90,6 +92,11 @@ The tree is built using the `augur` toolkit from [Nextstrain](https://nextstrain
 
 `auspice` is used to generate a Nextstrain-style visualization of the phylogenetic tree. To visualize the tree download [this file](auspice/auspice.json) and upload it to [this website](https://auspice.us/).
 
+## Copy to allow Nextstrain community build
+
+Note that the last step of the [run_analysis.bash](run_analysis.bash) script is then to copy the final JSON from [auspice/auspice.json](auspice/auspice.json) to [../auspice/CHIKV-181-25-E-DMS.json](../auspice/CHIKV-181-25-E-DMS.json) where it can be viewed via  [Nextstrain community build](https://docs.nextstrain.org/en/latest/guides/share/community-builds.html) at [nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS](nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS).
+
+This step is done by [run_analysis.bash](run_analysis.bash), not [Snakefile](Snakefile), so if you run `snakemake` not using that bash script you need to do this step manually.
 
 ## Notes
 

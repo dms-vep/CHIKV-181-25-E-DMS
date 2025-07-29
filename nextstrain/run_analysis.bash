@@ -14,3 +14,7 @@ echo "Running Snakemake version ${SNAKEMAKE_VERSION}..."
 snakemake \
     --software-deployment-method conda \
     --rerun-incomplete
+
+echo "Copying final auspice file to enable Nextstrain community build"
+mkdir -p ../auspice
+cp auspice/auspice.json ../auspice/CHIKV-181-25-E-DMS.json
