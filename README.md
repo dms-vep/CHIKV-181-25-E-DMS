@@ -1,7 +1,7 @@
-# Deep mutational scanning of CHIKV 181/25 envelope protein
-Experiment by Xiaohui Ju and analysis helped by Will Hannon, Caelan Radford and Jesse Bloom.
+# Pseudovirus deep mutational scanning of the CHIKV envelope proteins (181/25 strain)
+Study led by Xiaohui Ju in the [Bloom lab](https://jbloomlab.org/).
 
-See [https://dms-vep.org/CHIKV_181-25_E_DMS/](https://dms-vep.org/CHIKV_181-25_E_DMS/) for the interactive HTML results of this pipeline.
+See [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/) for the interactive HTML results of this pipeline.
 
 ## Organization of this repo
 
@@ -34,6 +34,9 @@ The configuration for those visualizations is specified in [./data/dms_viz_confi
 
 ### [Nextstrain](https://nextstrain.org/) phylogeny
 A `Snakemake` pipeline in [`./nextstrain`](./nextstrain/) builds an interactive phylogeny of the CHIKV structural polyprotein (Capisd, E3, E2, 6K, E1) using publicly available sequences from NCBI virus.
+The final Auspice JSON produced by that pipeline is copied to to [auspice/CHIKV-181-25-E-DMS.json](auspice/CHIKV-181-25-E-DMS.json) where it can be viewed via  [Nextstrain community build](https://docs.nextstrain.org/en/latest/guides/share/community-builds.html) at [nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS](nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS).
+
+Note that this pipeline in [`./nextstrain`](./nextstrain/) is not run by the top-level `snakemake` file but must be run separately as described within that subdirectory.
 
 #### Row-wrapped heatmaps
 These custom analyses include making row-wrapped heatmaps that are more sized for paper figures.
@@ -53,13 +56,13 @@ Input data utilized by the pipeline are located in [./data/](data).
 The results of running the pipeline are placed in [./results/](results).
 Due to space, only some results are tracked. For those that are not, see the [.gitignore](.gitignore) document.
 
-The pipeline builds HTML documentation for the pipeline in [./docs/](docs). These docs are rendered for viewing at [https://dms-vep.org/CHIKV_181-25_E_DMS/](https://dms-vep.org/CHIKV_181-25_E_DMS/).
+The pipeline builds HTML documentation for the pipeline in [./docs/](docs). These docs are rendered for viewing at [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/).
 
 ## Running the pipeline
 To run the pipeline, build the conda environment `dms-vep-pipeline-3` in the `environment.yml` file of [dms-vep-pipeline-3](https://github.com/dms-vep/dms-vep-pipeline-3), activate it, and run [snakemake](https://snakemake.readthedocs.io/), such as:
 
     conda activate dms-vep-pipeline-3
-    snakemake -j 32 --use-conda -s dms-vep-pipeline-3/Snakefile
+    snakemake -j 16 --software-deployment-methd conda -s dms-vep-pipeline-3/Snakefile
 
 To run on the Hutch cluster via [slurm](https://slurm.schedmd.com/), you can run the file [run_Hutch_cluster.bash](run_Hutch_cluster.bash):
 

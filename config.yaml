@@ -15,15 +15,15 @@ docs: docs  # typically will be `docs` for real pipelines
 # ----------------------------------------------------------------------------
 
 # Name of your main GitHub repo, eg https://github.com/<my_organization>/<my_repo>
-github_repo_url: https://github.com/dms-vep/CHIKV_181-25_E_DMS
+github_repo_url: https://github.com/dms-vep/CHIKV-181-25-E-DMS
 # GitHub blob path to where results files are stored. Typically "{repo}/blob/{branch}",
 # the "test_example" below is specific to this test example being within the pipeline
 # and should not be needed for other pipelines.
-github_blob_url: https://github.com/dms-vep/CHIKV_181-25_E_DMS/blob/main/
+github_blob_url: https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/
 # Some descriptions and metadata about the analysis.
-description: Deep mutational scanning using CHIKV Envelope strain 181/25. Analysis uses dms-vep-pipeline-3
-year: 2024
-authors: Xiaohui Ju and Will Hannon
+description: Pseudovirus deep mutational scanning of the CHIKV envelope proteins (181/25 strain)
+year: 2025
+authors: Xiaohui Ju et al ([Bloom lab](https://jbloomlab.org/))
 
 # ----------------------------------------------------------------------------
 # Site numbering, mutation classification, and neut standards
@@ -132,5 +132,5 @@ illumina_barcode_parser_params:
 # of analysis. Otherwise provide path to configuration for that analysis.
 
 func_effects_config: data/func_effects_config.yml  # Functional effects of mutations
-antibody_escape_config: data/antibody_escape_config.yml  # Antibody/serum escape
+antibody_escape_config: data/antibody_escape_config.yml  # Antibody/serum escape and receptor binding
 summaries_config: data/summaries_config.yml  # Summaries across assays
