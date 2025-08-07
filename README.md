@@ -34,7 +34,7 @@ The configuration for those visualizations is specified in [./data/dms_viz_confi
 
 ### [Nextstrain](https://nextstrain.org/) phylogeny
 A `Snakemake` pipeline in [`./nextstrain`](./nextstrain/) builds an interactive phylogeny of the CHIKV structural polyprotein (Capisd, E3, E2, 6K, E1) using publicly available sequences from NCBI virus.
-The final Auspice JSON produced by that pipeline is copied to to [auspice/CHIKV-181-25-E-DMS.json](auspice/CHIKV-181-25-E-DMS.json) where it can be viewed via  [Nextstrain community build](https://docs.nextstrain.org/en/latest/guides/share/community-builds.html) at [nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS](nexstrain.org/community/dms-vep/CHIKV-181-25-E-DMS).
+The final Auspice JSON produced by that pipeline is copied to to [auspice/CHIKV-181-25-E-DMS.json](auspice/CHIKV-181-25-E-DMS.json) where it can be viewed via  [Nextstrain community build](https://docs.nextstrain.org/en/latest/guides/share/community-builds.html) at [https://nextstrain.org/community/dms-vep/CHIKV-181-25-E-DMS@main](https://nextstrain.org/community/dms-vep/CHIKV-181-25-E-DMS@main).
 
 Note that this pipeline in [`./nextstrain`](./nextstrain/) is not run by the top-level `snakemake` file but must be run separately as described within that subdirectory.
 
