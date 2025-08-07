@@ -159,7 +159,19 @@ cell_entry_on_6nk7_asymmetric_unit: &cell_entry_on_6nk7_asymmetric_unit # overal
     tooltip-cols: {sequential_site: sequential site, region: region}
     heatmap-limits: "-6, 0, 2"
 
-cell_entry_diffs_on_6nk7_asymmetric_unit:
+cell_entry_on_6nk7_trimer:
+  <<: *cell_entry_on_6nk7_asymmetric_unit
+  opt_params:
+    condition: cells
+    included-chains: A B C E F G U V W
+    excluded-chains: I J K L D H X
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region}
+    heatmap-limits: "-6, 0, 2"
+
+cell_entry_diffs_on_6nk7_asymmetric_unit: &cell_entry_diffs_on_6nk7_asymmetric_unit
   pdb_id: 6nk7
   name: differences between cells in CHIKV E mutation effects on cell entry
   pdb_type: asymmetric_unit
@@ -180,7 +192,19 @@ cell_entry_diffs_on_6nk7_asymmetric_unit:
     tooltip-cols: {sequential_site: sequential site, region: region, 293T_TIM1: 293T-TIM1 entry, 293T_Mxra8: 293T-Mxra8 entry, C636: C6/36 entry}
     heatmap-limits: "-4, 0, 4"
 
-mxra8_binding_on_6nk7_asymmetric_unit:
+cell_entry_diffs_on_6nk7_trimer:
+  <<: *cell_entry_diffs_on_6nk7_asymmetric_unit
+  opt_params:
+    condition: comparison
+    included-chains: A B C E F G U V W
+    excluded-chains: I J K L H D X
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: mean
+    tooltip-cols: {sequential_site: sequential site, region: region, 293T_TIM1: 293T-TIM1 entry, 293T_Mxra8: 293T-Mxra8 entry, C636: C6/36 entry}
+    heatmap-limits: "-4, 0, 4"
+
+mxra8_binding_on_6nk7_asymmetric_unit: &mxra8_binding_on_6nk7_asymmetric_unit
   pdb_id: 6nk7
   name: effects of mutations to CHIKV E on binding to Mxra8
   pdb_type: asymmetric_unit
@@ -194,6 +218,20 @@ mxra8_binding_on_6nk7_asymmetric_unit:
     condition: Mxra8_type
     included-chains: A B C D E F G H U V W X
     excluded-chains: I J K L
+    alphabet: RKHDEQNSTYWFAILMVGPC
+    floor: False
+    summary-stat: sum
+    filter-cols: {entry in 293T_Mxra8 cells: 293T-Mxra8 entry}
+    filter-limits: {entry in 293T_Mxra8 cells: [-8, -4, 0]}
+    tooltip-cols: {sequential_site: sequential site, region: region, entry in 293T_Mxra8 cells: 293T-Mxra8 entry}
+    heatmap-limits: "-4, 0, 3"
+
+mxra8_binding_on_6nk7_trimer:
+  <<: *mxra8_binding_on_6nk7_asymmetric_unit
+  opt_params:
+    condition: Mxra8_type
+    included-chains: A B C E F G U V W
+    excluded-chains: I J K L H D X
     alphabet: RKHDEQNSTYWFAILMVGPC
     floor: False
     summary-stat: sum
