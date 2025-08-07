@@ -34,7 +34,7 @@ All the visualizations and data can be accessed by clicking on the gray boxes ab
 
   - [Cell entry](/cell_entry): effects of mutations on entry in 293T-Mxra8, 293T-TIM1, and C6/36 cells.
   - [Differences in cell entry](/cell_entry_diffs): differences in effects of mutations on entry between each pair of cells.
-  - [Mxra8 binding](/mxra_binding): effects of mutations on binding to Mxra8, as assessed by pseudovirus neutralization by soluble Mxra8).
+  - [Mxra8 binding](/mxra8_binding): effects of mutations on binding to Mxra8, as assessed by pseudovirus neutralization by soluble Mxra8).
   - [Structural visualizations](/structures): effects of mutations mapped onto three-dimensional structures of the envelope proteins, as rendered by [dms-viz](https://dms-viz.github.io/dms-viz-docs/).
   - [Phylogenetic tree](/tree): a [Nextstrain](https://nextstrain.org/) phylogenetic tree of the genes encoding the CHIKV envelope proteins with deep mutational scanning phenotypes mapped onto the tips.
 
