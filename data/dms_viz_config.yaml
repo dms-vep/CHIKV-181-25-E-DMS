@@ -76,7 +76,7 @@ cell_entry_on_6nk6_interspike:
   opt_params:
     condition: cells
     included-chains: H D 
-    excluded-chains: M N P A B C F G I J K L
+    excluded-chains: M N P A B C E F G I J K L
     alphabet: RKHDEQNSTYWFAILMVGPC
     floor: False
     summary-stat: mean
