@@ -4,6 +4,7 @@ _*
 
 !.gitignore
 !.gitmodules
+!.github
 
 
 results/*
@@ -93,3 +94,9 @@ results/compare_human_mouse_mxra8/*
 !results/mxra8_distances
 results/mxra8_distances/*
 !results/mxra8_distances/mxra8_dists.csv
+
+node_modules
+!homepage/.vitepress/
+homepage/.vitepress/cache/
+homepage/.vitepress/dist/
+
