@@ -50,7 +50,14 @@ Click [here](htmls/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_overlaid.html){
     <Altair :showShadow="true" :spec-url="'htmls/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_overlaid.html'"></Altair>
 </Figure>
 
-
 ## Effects of mutations projected on protein structure
+**Still need to add this section**
 
 ## Numerical data in CSV format
+For the numerical values of the mutation effects on cell entry plotted above, see the following files:
+
+  - [Merged CSV of effects of mutations on entry in all three cells](https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv): the measurements in this CSV are filtered to only high-confidence measurements. Unless you understand the the QC filtering in detail, we recommend you use this CSV.
+  - Effects of mutations on entry in each cell **without** the filtering for high-confidence measurements applied:
+    - [non-filtered effects for 293T-Mxra8 cells](https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/results/func_effects/averages/293T-Mxra8_entry_func_effects.csv)
+    - [non-filtered effects for 293T-TIM1 cells](https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/results/func_effects/averages/293T-TIM1_entry_func_effects.csv)
+    - [non-filtered effects for C6/36 cells](https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/results/func_effects/averages/C636_entry_func_effects.csv)
