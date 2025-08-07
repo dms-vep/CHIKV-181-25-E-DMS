@@ -7607,7 +7607,7 @@ input_sitemap_csv = "results/dms-viz/vlp_w_mMxra8_6nk6/vlp_w_mMxra8_6nk6_sitemap
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=f46725fd">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs celltag_injected-parameters" id="cell-id=fbbc3216">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7621,7 +7621,7 @@ input_sitemap_csv = "results/dms-viz/vlp_w_mMxra8_6nk6/vlp_w_mMxra8_6nk6_sitemap
 <span class="n">name</span> <span class="o">=</span> <span class="s2">"CHIKV E mutation effects on cell entry"</span>
 <span class="n">melt_condition_metric_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"entry in 293T_Mxra8 cells"</span><span class="p">,</span> <span class="s2">"entry in C636 cells"</span><span class="p">,</span> <span class="s2">"entry in 293T_TIM1 cells"</span><span class="p">]</span>
 <span class="n">metric</span> <span class="o">=</span> <span class="s2">"entry"</span>
-<span class="n">opt_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"condition"</span><span class="p">:</span> <span class="s2">"cells"</span><span class="p">,</span> <span class="s2">"included-chains"</span><span class="p">:</span> <span class="s2">"A B C E F G U V W"</span><span class="p">,</span> <span class="s2">"excluded-chains"</span><span class="p">:</span> <span class="s2">"I J K L D H X"</span><span class="p">,</span> <span class="s2">"alphabet"</span><span class="p">:</span> <span class="s2">"RKHDEQNSTYWFAILMVGPC"</span><span class="p">,</span> <span class="s2">"floor"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"summary-stat"</span><span class="p">:</span> <span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"tooltip-cols"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"sequential_site"</span><span class="p">:</span> <span class="s2">"sequential site"</span><span class="p">,</span> <span class="s2">"region"</span><span class="p">:</span> <span class="s2">"region"</span><span class="p">},</span> <span class="s2">"heatmap-limits"</span><span class="p">:</span> <span class="s2">"-6, 0, 2"</span><span class="p">}</span>
+<span class="n">opt_params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"condition"</span><span class="p">:</span> <span class="s2">"cells"</span><span class="p">,</span> <span class="s2">"included-chains"</span><span class="p">:</span> <span class="s2">"A B C E F G V W X"</span><span class="p">,</span> <span class="s2">"excluded-chains"</span><span class="p">:</span> <span class="s2">"I J K L D H U"</span><span class="p">,</span> <span class="s2">"alphabet"</span><span class="p">:</span> <span class="s2">"RKHDEQNSTYWFAILMVGPC"</span><span class="p">,</span> <span class="s2">"floor"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">"summary-stat"</span><span class="p">:</span> <span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"tooltip-cols"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"sequential_site"</span><span class="p">:</span> <span class="s2">"sequential site"</span><span class="p">,</span> <span class="s2">"region"</span><span class="p">:</span> <span class="s2">"region"</span><span class="p">},</span> <span class="s2">"heatmap-limits"</span><span class="p">:</span> <span class="s2">"-6, 0, 2"</span><span class="p">}</span>
 <span class="n">data_csv</span> <span class="o">=</span> <span class="s2">"results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv"</span>
 <span class="n">sitemap_csv</span> <span class="o">=</span> <span class="s2">"data/pdb_sitemaps/6nk7_sitemap.csv"</span>
 <span class="n">dms_viz_json</span> <span class="o">=</span> <span class="s2">"results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.json"</span>
@@ -7960,10 +7960,10 @@ Comparing `site` in data to `reference_site` in sitemap:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>PDB has all_chains=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'U', 'V', 'W', 'X', 'N']
-Included chains for mapping DMS data: included_chains=['A', 'B', 'C', 'E', 'F', 'G', 'U', 'V', 'W']
-The chains specified in the sitemap are sitemap_chains={'C', 'U', 'B', 'A', 'F', 'X', 'G', 'E', 'V', 'D', 'W', 'H'}
+Included chains for mapping DMS data: included_chains=['A', 'B', 'C', 'E', 'F', 'G', 'V', 'W', 'X']
+The chains specified in the sitemap are sitemap_chains={'V', 'W', 'H', 'B', 'D', 'C', 'U', 'A', 'X', 'F', 'E', 'G'}
 Removing the following sitemap chains which are not in included-chains:
-{'X', 'D', 'H'}
+{'H', 'U', 'D'}
 
 Comparing wildtype residues in DMS data and PDB for chainset=['A', 'B', 'C']
 Comparing wildtype amino acids for sites with DMS data versus sites in PDB:
@@ -7979,7 +7979,7 @@ Comparing wildtype amino acids for sites with DMS data versus sites in PDB:
   - sites missing in DMS data: 0
   - sites missing in PDB: 4
 
-Comparing wildtype residues in DMS data and PDB for chainset=['U', 'V', 'W']
+Comparing wildtype residues in DMS data and PDB for chainset=['V', 'W', 'X']
 Comparing wildtype amino acids for sites with DMS data versus sites in PDB:
   - sites with same amino acid: 57
   - sites with different amino acid: 3
@@ -8024,7 +8024,7 @@ Here are sites with different amino acids between DMS data and PDB:
 <td>33(E3)</td>
 <td>34</td>
 <td>33</td>
-<td>U V W</td>
+<td>V W X</td>
 <td>K</td>
 <td>E</td>
 </tr>
@@ -8033,7 +8033,7 @@ Here are sites with different amino acids between DMS data and PDB:
 <td>44(E3)</td>
 <td>45</td>
 <td>44</td>
-<td>U V W</td>
+<td>V W X</td>
 <td>S</td>
 <td>R</td>
 </tr>
@@ -8042,7 +8042,7 @@ Here are sites with different amino acids between DMS data and PDB:
 <td>60(E3)</td>
 <td>61</td>
 <td>60</td>
-<td>U V W</td>
+<td>V W X</td>
 <td>R</td>
 <td>H</td>
 </tr>
@@ -8259,7 +8259,7 @@ Writing data for data_cols=['site', 'wildtype', 'mutant', 'sequential_site', 're
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Running the following cmds:
-configure-dms-viz format --name CHIKV E mutation effects on cell entry --input results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_data.csv --metric entry --sitemap results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_sitemap.csv --structure results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.pdb --output results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.json --condition cells --included-chains A B C E F G U V W --excluded-chains I J K L D H X --alphabet RKHDEQNSTYWFAILMVGPC --floor False --summary-stat mean --tooltip-cols {'sequential_site': 'sequential site', 'region': 'region'} --heatmap-limits -6, 0, 2 --colors #db5f57,#57db5f,#5f57db
+configure-dms-viz format --name CHIKV E mutation effects on cell entry --input results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_data.csv --metric entry --sitemap results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_sitemap.csv --structure results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.pdb --output results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.json --condition cells --included-chains A B C E F G V W X --excluded-chains I J K L D H U --alphabet RKHDEQNSTYWFAILMVGPC --floor False --summary-stat mean --tooltip-cols {'sequential_site': 'sequential site', 'region': 'region'} --heatmap-limits -6, 0, 2 --colors #db5f57,#57db5f,#5f57db
 
 </pre>
 </div>
@@ -8273,7 +8273,7 @@ returncode:
 0
 
 args:
-['configure-dms-viz', 'format', '--name', 'CHIKV E mutation effects on cell entry', '--input', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_data.csv', '--metric', 'entry', '--sitemap', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_sitemap.csv', '--structure', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.pdb', '--output', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.json', '--condition', 'cells', '--included-chains', 'A B C E F G U V W', '--excluded-chains', 'I J K L D H X', '--alphabet', 'RKHDEQNSTYWFAILMVGPC', '--floor', 'False', '--summary-stat', 'mean', '--tooltip-cols', "{'sequential_site': 'sequential site', 'region': 'region'}", '--heatmap-limits', '-6, 0, 2', '--colors', '#db5f57,#57db5f,#5f57db']
+['configure-dms-viz', 'format', '--name', 'CHIKV E mutation effects on cell entry', '--input', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_data.csv', '--metric', 'entry', '--sitemap', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer_sitemap.csv', '--structure', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.pdb', '--output', 'results/dms-viz/cell_entry_on_6nk7_trimer/cell_entry_on_6nk7_trimer.json', '--condition', 'cells', '--included-chains', 'A B C E F G V W X', '--excluded-chains', 'I J K L D H U', '--alphabet', 'RKHDEQNSTYWFAILMVGPC', '--floor', 'False', '--summary-stat', 'mean', '--tooltip-cols', "{'sequential_site': 'sequential site', 'region': 'region'}", '--heatmap-limits', '-6, 0, 2', '--colors', '#db5f57,#57db5f,#5f57db']
 
 stdout:
 

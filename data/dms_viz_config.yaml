@@ -163,8 +163,8 @@ cell_entry_on_6nk7_trimer:
   <<: *cell_entry_on_6nk7_asymmetric_unit
   opt_params:
     condition: cells
-    included-chains: A B C E F G U V W
-    excluded-chains: I J K L D H X
+    included-chains: A B C E F G V W X
+    excluded-chains: I J K L D H U
     alphabet: RKHDEQNSTYWFAILMVGPC
     floor: False
     summary-stat: mean
@@ -196,8 +196,8 @@ cell_entry_diffs_on_6nk7_trimer:
   <<: *cell_entry_diffs_on_6nk7_asymmetric_unit
   opt_params:
     condition: comparison
-    included-chains: A B C E F G U V W
-    excluded-chains: I J K L H D X
+    included-chains: A B C E F G V W X
+    excluded-chains: I J K L H D U
     alphabet: RKHDEQNSTYWFAILMVGPC
     floor: False
     summary-stat: mean
@@ -230,8 +230,8 @@ mxra8_binding_on_6nk7_trimer:
   <<: *mxra8_binding_on_6nk7_asymmetric_unit
   opt_params:
     condition: Mxra8_type
-    included-chains: A B C E F G U V W
-    excluded-chains: I J K L H D X
+    included-chains: A B C E F G V W X
+    excluded-chains: I J K L H D U
     alphabet: RKHDEQNSTYWFAILMVGPC
     floor: False
     summary-stat: sum
