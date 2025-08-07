@@ -1,4 +1,4 @@
-# Pseudovirus deep mutational scanning of the CHIKV envelope proteins (181/25 strain)
+# Pseudovirus deep mutational scanning of how mutations to the CHIKV envelope proteins affect entry in various cells
 Study led by Xiaohui Ju in the [Bloom lab](https://jbloomlab.org/).
 
 See [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/) for the interactive HTML results of this pipeline.
