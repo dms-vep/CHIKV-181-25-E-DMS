@@ -25,8 +25,12 @@ features:
 
 ## Overview
 This website provides interactive visualizations and raw data about the effects of mutations the CHIKV envelope proteins as measured in the [pseudovirus deep mutational scanning](https://doi.org/10.1016/j.cell.2023.02.001) experiments described in [Xu et al (2025)]() **[ADD CITATION LINK WHEN AVAILABLE]**.
+That study measured how mutations to the CHIKV 181/25 envelope proteins affected entry in 293T-Mxra8 cells (human cells expressing the Mxra8 receptor), 293T-TIM1 cells (human cells expressing the TIM1 attachment factor), and C6/36 cells (mosquito cells).
+It also measured how mutations affect Mxra8 binding.
+
 Because the datastes are so rich, the interactive visualizations here are generally a better way to explore the data than the static figures in the paper.
-The visualizations and data can be accessed by clicking on the gray boxes above for each type of measurement, namely:
+If you just want to examine the effects of specific mutations in each of the three cell lines, [this plot](cell_entry_diffs.html#differences-in-effects-across-cells){target="_self"} will generally be the best one to look at.
+All the visualizations and data can be accessed by clicking on the gray boxes above for each type of measurement, namely:
 
   - [Cell entry](/cell_entry): effects of mutations on entry in 293T-Mxra8, 293T-TIM1, and C6/36 cells.
   - [Differences in cell entry](/cell_entry_diffs): differences in effects of mutations on entry between each pair of cells.
