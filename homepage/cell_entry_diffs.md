@@ -34,9 +34,6 @@ You can mouseover the points for details about each mutation, and click on the c
     <Altair :showShadow="true" :spec-url="'htmls/compare_cell_entry_scatter.html'"></Altair>
 </Figure>
 
-## Differences in mutation effects across cells projected on protein structure
-**Still need to add this section**
-
 ## Numerical data in CSV format
 For the numerical values of the differences in mutation effects on entry across cells, see the following files:
   - [Difference in effects of mutations at each site between each pair of cells](https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/results/compare_cell_entry/site_diffs.csv): CSV reporting site-level differences using three different metrics to quantify the differences.

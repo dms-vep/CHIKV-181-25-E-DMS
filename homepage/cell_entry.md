@@ -50,9 +50,6 @@ Click [here](htmls/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_overlaid.html){
     <Altair :showShadow="true" :spec-url="'htmls/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding_overlaid.html'"></Altair>
 </Figure>
 
-## Effects of mutations projected on protein structure
-**Still need to add this section**
-
 ## Numerical data in CSV format
 For the numerical values of the mutation effects on cell entry plotted above, see the following files:
 
