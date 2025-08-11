@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: "Deep mutational scanning of CHIKV envelope proteins"
-  tagline: "Interactive visualizations of how mutations to the envelope proteins of the 181/25 strain of Chikungunya virus (CHIKV) affect entry in 293T-Mxra8, 293T-TIM1, and C6/36 cells, as well as Mxra binding"
+  tagline: "Interactive visualizations of how mutations to the envelope proteins of the 181/25 strain of Chikungunya virus (CHIKV) affect entry in 293T-Mxra8, 293T-TIM1, and C6/36 cells, as well as Mxra8 binding"
   image: CHIKV-E.png
 features:
   - title: Cell entry
@@ -24,11 +24,11 @@ features:
 ---
 
 ## Overview
-This website provides interactive visualizations and raw data about the effects of mutations the CHIKV envelope proteins as measured in the [pseudovirus deep mutational scanning](https://doi.org/10.1016/j.cell.2023.02.001) experiments described in [Xu et al (2025)]() **[ADD CITATION LINK WHEN AVAILABLE]**.
+This website provides interactive visualizations and raw data about the effects of mutations the CHIKV envelope proteins as measured in the [pseudovirus deep mutational scanning](https://doi.org/10.1016/j.cell.2023.02.001) experiments described in [Ju et al (2025)]() **[ADD CITATION LINK WHEN AVAILABLE]**.
 That study measured how mutations to the CHIKV 181/25 envelope proteins affected entry in 293T-Mxra8 cells (human cells expressing the Mxra8 receptor), 293T-TIM1 cells (human cells expressing the TIM1 attachment factor), and C6/36 cells (mosquito cells).
 It also measured how mutations affect Mxra8 binding.
 
-Because the datastes are so rich, the interactive visualizations here are generally a better way to explore the data than the static figures in the paper.
+Because the datasets are so rich, the interactive visualizations here are generally a better way to explore the data than the static figures in the paper.
 If you just want to examine the effects of specific mutations in each of the three cell lines, [this plot](cell_entry_diffs.html#differences-in-effects-across-cells){target="_self"} will generally be the best one to look at.
 All the visualizations and data can be accessed by clicking on the gray boxes above for each type of measurement, namely:
 
@@ -38,7 +38,7 @@ All the visualizations and data can be accessed by clicking on the gray boxes ab
   - [Structural visualizations](/structures): effects of mutations mapped onto three-dimensional structures of the envelope proteins, as rendered by [dms-viz](https://dms-viz.github.io/dms-viz-docs/).
   - [Phylogenetic tree](/tree): a [Nextstrain](https://nextstrain.org/) phylogenetic tree of the genes encoding the CHIKV envelope proteins with deep mutational scanning phenotypes mapped onto the tips.
 
-See [Xu et al (2025)]() **[ADD CITATION LINK WHEN AVAILABLE]** for additional details about the study.
+See [Ju et al (2025)]() **[ADD CITATION LINK WHEN AVAILABLE]** for additional details about the study.
 
 ## Biosafety
 The measurements shown on this page were made using [pseudovirus deep mutational scanning](https://doi.org/10.1016/j.cell.2023.02.001) with [lentiviral particles pseudotyped](https://blog.addgene.org/viral-vectors-101-pseudotyping) with the envelope proteins from the 181/25 vaccine strain of CHIKV.
