@@ -1,7 +1,21 @@
 # Pseudovirus deep mutational scanning of how mutations to the CHIKV envelope proteins affect entry in various cells
 Study led by Xiaohui Ju in the [Bloom lab](https://jbloomlab.org/).
 
-See [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/) for the interactive HTML results of this pipeline.
+The recommended way to visualize the results of this study is to go to the homepage at [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/), which has clearly described interactive plots that facilitate interacting the data.
+Numerical data are at links described in that homepage; these links are:
+ * Mutation effects on cell entry:
+   - [Merged CSV of effects of mutations on entry in all three cells](results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv): the measurements in this CSV are filtered to only high-confidence measurements. Unless you understand the the QC filtering in detail, we recommend you use this CSV.
+   - Effects of mutations on entry in each cell **without** the filtering for high-confidence measurements applied:
+     + [non-filtered effects for 293T-Mxra8 cells](results/func_effects/averages/293T-Mxra8_entry_func_effects.csv)
+     + [non-filtered effects for 293T-TIM1 cells](results/func_effects/averages/293T-TIM1_entry_func_effects.csv)
+     + [non-filtered effects for C6/36 cells](results/func_effects/averages/C636_entry_func_effects.csv)
+ * Differences in mutation effects on entry across cells:
+   - [Difference in effects of mutations at each site between each pair of cells](results/compare_cell_entry/site_diffs.csv): CSV reporting site-level differences using three different metrics to quantify the differences.
+   - [Differences in effects of each mutation between each pair of cells](results/compare_cell_entry/mut_diffs.csv): CSV with effect of each mutation on entry in each cell as well as the differences in these effects across cells. Note that the differences are computed after flooring the per-cell effects, since differences in effects between very negative (highly deleterious) mutations may not be meaningful.
+ * Mutation effects on Mxra8 binding (as assessed by neutralization by soluble Mxra8):
+   - [Effects of mutations on binding to human and mouse Mxra8](results/summaries/binding_mouse_vs_human_Mxra8.csv): this CSV is filtered for just high-quality measurements, but note that you may also want to filter for mutations with reasonable cell entry as assessed by the *entry in 293T_Mxra8 cells* (the heatmaps above apply a filter of -4).
+   - [Total effects of mutations at each site on binding to mouse or human Mxra8](results/compare_human_mouse_mxra8/site_binding.csv)
+
 
 ## Organization of this repo
 
