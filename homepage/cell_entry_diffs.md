@@ -2,7 +2,7 @@
 aside: false
 ---
 
-# Compare how mutation effects affect entry in different cells
+# Compare how mutations affect entry in different cells
 This page has interactive plots that make it easy to compare how mutations to the CHIKV envelope proteins affect entry in different cells.
 The cells are 293T-Mxra8 cells (human cells expressing the Mxra8 receptor), 293T-TIM1 cells (human cells expressing the TIM1 attachment factor), and C6/36 cells (mosquito cells).
 Specifically:
@@ -12,7 +12,7 @@ Specifically:
 ## Differences in effects across cells
 The interactive plot below provides the best way to compare mutation effects on entry across the cells.
 The line plot shows the difference in effects of mutations at each site between a *comparator* and *reference* cell line (use the dropdowns below the plot to choose which cell line is the *comparator* and *reference*).
-If you click on sites on that line plot, then the heatmaps below the line plot will zoom to show that cite in the center, and you can mouseover the the heatmaps to see the effect of the mutation in each cell.
+If you click on sites on that line plot, then the heatmaps below the line plot will zoom to show that cite in the center, and you can mouseover the heatmaps to see the effect of the mutation in each cell.
 The scatter plot to the right of the heatmaps shows the effect of each mutation in each of the two cells being compared.
 In the heatmap, gray indicates a mutation that was not measured and `x` indicates the amino acid in the parental 181/25 strain.
 You can zoom in using the zoom bar below the line plot.

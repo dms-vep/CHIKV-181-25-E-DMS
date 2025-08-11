@@ -4,7 +4,7 @@ aside: false
 
 # Mutation effects on Mxra8 binding
 This page has interactive plots showing the effects of mutations to the CHIKV envelope proteins on Mxra8 binding, as assessed by neutralization of pseudovirus infection of 293T-Mxra8 cells by soluble mouse or human Mxra8.
-Note that these measurements may be a bit more noisy than the cell entry measurements, and that the measurements for human Mxra8 and especially noisy and may be less reliable than those for mouse Mxra8 (see the analysis notebooks for [mouse](notebooks/avg_escape_receptor_affinity_mouse_Mxra8.html){target="_self"} and [human](notebooks/avg_escape_receptor_affinity_human_Mxra8.html){target="_self"} Mxra8 binding, respectively, to see the greater noise for the human Mxra8 binding).
+Note that these measurements may be a bit more noisy than the cell entry measurements, and that the measurements for human Mxra8 are especially noisy and may be less reliable than those for mouse Mxra8 (see the analysis notebooks for [mouse](notebooks/avg_escape_receptor_affinity_mouse_Mxra8.html){target="_self"} and [human](notebooks/avg_escape_receptor_affinity_human_Mxra8.html){target="_self"} Mxra8 binding, respectively, to see the greater noise for the human Mxra8 binding).
 Due to this noise, it can be helpful to assess individual measurements by mousing over them in the interactive heatmaps for [mouse Mxra8](mxra8_binding.html#heatmap-of-binding-to-mouse-mxra8){target="_self"} or [human Mxra8](mxra8_binding.html#heatmap-of-binding-to-human-mxra8){target="_self"} and looking at the per-library measurements to see if they are similar.
 
 You can access the data as follows:
