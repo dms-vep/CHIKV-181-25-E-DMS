@@ -7,8 +7,8 @@ This provides access to the effects of mutations mapped onto three-dimensional s
 
 It uses two structures, both from [this paper](https://pubmed.ncbi.nlm.nih.gov/31080061/), that are cryo-EM structures of the CHIKV envelope proteins bound to mouse Mxra8.
 In both structures, there are four envelope heteromers (E2 / E1 or E3 / E2 / E1) in the asymmetric unit even though envelop actually forms a trimer. Note that [as described in the paper](https://pubmed.ncbi.nlm.nih.gov/31080061/), Mxra8 contacts E2 / E1 in three different modes: wrapped, intraspike, and interspike. The structures are:
-  - [PDB ID 6nk7](https://www.rcsb.org/structure/6NK7): E2 / E1 on CHIKV bound to one copy of mouse Mxra8
-  - [PDB ID 6nk6](https://www.rcsb.org/structure/6NK6): E3 / E2 / E1 on CHIKV virus-like particles bound to four copies of mouse Mxra8.
+  - [PDB ID 6nk7](https://www.rcsb.org/structure/6NK7): E3 / E2 / E1 on CHIKV bound to one copy of mouse Mxra8
+  - [PDB ID 6nk6](https://www.rcsb.org/structure/6NK6): E2 / E1 on CHIKV virus-like particles bound to four copies of mouse Mxra8.
 
 Note that all of the [dms-viz](https://dms-viz.github.io/dms-viz-docs/) visualizations are interactive, and allow you to click on sites in the line plot to show them on the envelope proteins structure, as well as various other interactive options.
 In all of the structures below, the envelope proteins are initially gray while Mxra8 is shown in yellow; clicking on a site in the line plot will color it on the envelope protein structure based on its measured effect:
