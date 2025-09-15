@@ -29,7 +29,7 @@ github_blob_url: https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/
 # Some descriptions and metadata about the analysis.
 description: Pseudovirus deep mutational scanning of the CHIKV envelope proteins (181/25 strain)
 year: 2025
-authors: Xiaohui Ju et al ([Bloom lab](https://jbloomlab.org/))
+authors: "[Ju et al](https://www.biorxiv.org/content/10.1101/2025.08.25.672233v1)"
 
 # ----------------------------------------------------------------------------
 # Site numbering, mutation classification, and neut standards
