@@ -1,5 +1,6 @@
 # Pseudovirus deep mutational scanning of how mutations to the CHIKV envelope proteins affect entry in various cells
 Study led by Xiaohui Ju in the [Bloom lab](https://jbloomlab.org/).
+See [Xu et al (2025)](https://www.biorxiv.org/content/10.1101/2025.08.25.672233v1) for the paper describing the study.
 
 The recommended way to visualize the results of this study is to go to the homepage at [https://dms-vep.org/CHIKV-181-25-E-DMS/](https://dms-vep.org/CHIKV-181-25-E-DMS/), which has clearly described interactive plots that facilitate interacting the data.
 Numerical data are at links described in that homepage; these links are:

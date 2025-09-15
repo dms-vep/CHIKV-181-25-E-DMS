@@ -16,7 +16,7 @@ export default defineConfig({
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/dms-vep/CHIKV-181-25-E-DMS" }],
     footer: {
-      message: "Copyright © 2025-present Xiaohui Ju and Jesse Bloom",
+      message: 'See <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672233v1">Xu et al (2025)</a> for study details',
     },
   },
 });
