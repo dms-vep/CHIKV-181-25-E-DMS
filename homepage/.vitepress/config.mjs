@@ -16,7 +16,7 @@ export default defineConfig({
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/dms-vep/CHIKV-181-25-E-DMS" }],
     footer: {
-      message: 'See <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672233v1">Xu et al (2025)</a> for study details',
+      message: 'See <a href="https://www.biorxiv.org/content/10.1101/2025.08.25.672233v1">Ju et al (2025)</a> for study details',
     },
   },
 });
