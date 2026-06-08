@@ -1,1 +1,27 @@
-results/**
+# Ignore results/ by default, re-including only selected outputs.
+# Done level-by-level: a parent dir must be re-included before any file
+# inside it can be (git: "cannot re-include a file if its parent dir is excluded").
+
+# ignore all top-level entries in results/ ...
+results/*
+# ... but descend into these subdirs
+!results/phydms/
+!results/entropy/
+!results/plots/
+
+# ignore everything inside those subdirs ...
+results/phydms/*
+results/entropy/*
+results/plots/*
+
+# ... then re-include the specific files we want to track:
+# phydms model comparison + per-site omega (dN/dS)
+!results/phydms/comprehensive_modelcomparison.md
+!results/phydms/comprehensive_*_omegabysite.txt
+# codon alignment used for phylogenetics + phylogenetic subsample
+!results/phydms/E_codon_alignment.fasta
+!results/phydms/E_codon_subsampled.fasta
+# entropy comparison: natural-alignment entropy + DMS-vs-natural figures/tables
+!results/entropy/alignment_entropy.csv
+!results/plots/comparison_*.html
+!results/plots/more_conserved_than_expected_*.csv

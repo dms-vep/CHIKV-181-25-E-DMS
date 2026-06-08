@@ -61,7 +61,7 @@ missing values).
 5. **phydms** — extracts the E-region codon alignment, keeping only sequences whose
    entire E region is **fully resolved** (no ambiguous `N` and no gaps; 1825 of 2833,
    since phydms rejects ambiguous and partial-gap codons). It builds a guide tree
-   (FastTree on those sequences, used only for subsampling distances), subsamples **250
+   (FastTree on those sequences, used only for subsampling distances), subsamples **200
    sequences broadly across the phylogeny** (greedy farthest-point / max–min patristic
    distance), builds a maximum-likelihood tree on the subsample (**iqtree2**, GTR+G),
    and runs **`phydms_comprehensive`** once on that tree (`--tree`) with `--omegabysite`
@@ -76,6 +76,25 @@ missing values).
    of alignment vs. preference entropy, and a table
    `more_conserved_than_expected_{phenotype}.csv` flagging sites where
    `preference_entropy − alignment_entropy ≥ conservation_delta_threshold`.
+
+## Results
+
+The key results are tracked in [./results/](results) (large or readily regenerable
+intermediates — the ~285 MB structure, the full guide/ML tree files, the per-rule logs —
+are git-ignored):
+
+- **`results/phydms/comprehensive_modelcomparison.md`** — the model comparison (per-site
+  ExpCM vs. YNGKP baselines vs. averaged-preferences controls), with deltaAIC, log
+  likelihood, and fitted parameters.
+- **`results/phydms/comprehensive_*_omegabysite.txt`** — per-site omega (dN/dS) for each
+  model.
+- **`results/phydms/E_codon_alignment.fasta`** and **`E_codon_subsampled.fasta`** — the
+  full E-region codon alignment and the phylogeny-spanning subsample used by phydms.
+- **`results/entropy/alignment_entropy.csv`** — per-site Shannon entropy of the natural
+  alignment.
+- **`results/plots/comparison_{phenotype}.html`** — the per-phenotype comparison figures,
+  and **`more_conserved_than_expected_{phenotype}.csv`** — the flagged sites that are more
+  conserved in nature than the DMS predicts.
 
 ## Environments
 
