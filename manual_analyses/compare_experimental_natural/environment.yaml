@@ -1,0 +1,21 @@
+name: compare-experimental-natural
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.13
+  - snakemake-minimal=9.22
+  # code linters/formatters are left unpinned (not part of the pipeline computation)
+  - snakefmt
+  - black
+  - ruff
+  - pandas=2.3
+  - numpy=2.4
+  - biopython=1.87
+  - altair=6.1
+  - vl-convert-python=1.9
+  - freesasa=2.2
+  - dendropy=5.0
+  - fasttree=2.2
+  - iqtree=2.4
+  - requests=2.34

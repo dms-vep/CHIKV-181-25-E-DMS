@@ -1,0 +1,71 @@
+# Configuration for the compare_experimental_natural analysis.
+# This is the single source of truth for paths, tunable parameters, AND the fixed
+# biological constants. Scripts receive what they need via each rule's `params:`
+# (or `config[...]`), so there is no shared Python module to defeat Snakemake's
+# code-change tracking.
+
+# --- the two permitted inputs from parent directories ---
+dms_csv: "../../results/summaries/entry_293T-Mxra8_C636_293T-TIM1_Mxra8-binding.csv"
+protein_alignment: "../../nextstrain/results/alignments/protein_ungapped.fa"
+codon_alignment: "../../nextstrain/results/alignments/codon_ungapped.fa"
+
+# --- fixed biological constants for the 181/25 CHIKV E proteins ---
+# Reference strain present in every alignment; its sequence equals the DMS wildtype.
+ref_strain: "181-25_MW473668"
+# Capsid length preceding the E region in the structural-polyprotein alignments.
+# The E region therefore occupies alignment columns capsid_len+1 .. capsid_len+987
+# (1-based) -> sequential sites 2..988. Sequential site 1 (the E3 leading Met) has
+# no alignment column and so no natural-alignment entropy / phydms omega.
+capsid_len: 261
+n_sites: 988
+amino_acids: "ACDEFGHIKLMNPQRSTVWY"
+# Region order and inclusive sequential-site bounds.
+region_bounds:
+  E3: [1, 65]
+  E2: [66, 488]
+  "6K": [489, 549]
+  E1: [550, 988]
+# The three entry phenotypes: DMS column name -> short slug used in filenames.
+# The `binding to mouse Mxra8` column is deliberately not used (many missing values).
+entry_phenotypes:
+  "entry in 293T_Mxra8 cells": "293T_Mxra8"
+  "entry in C636 cells": "C636"
+  "entry in 293T_TIM1 cells": "293T_TIM1"
+# Tien et al. (2013) "theoretical" maximum solvent accessibility (Angstrom^2),
+# used to normalize absolute SASA into relative solvent accessibility.
+max_asa:
+  A: 129.0
+  R: 274.0
+  N: 195.0
+  D: 193.0
+  C: 167.0
+  E: 223.0
+  Q: 225.0
+  G: 104.0
+  H: 224.0
+  I: 197.0
+  L: 201.0
+  K: 236.0
+  M: 224.0
+  F: 240.0
+  P: 159.0
+  S: 155.0
+  T: 172.0
+  W: 285.0
+  Y: 263.0
+  V: 174.0
+
+# --- structure for relative solvent accessibility ---
+assembly_url: "https://files.rcsb.org/download/6NK6-assembly1.cif"
+# minimum local-alignment identity and coverage to assign a structure chain to E1/E2
+min_chain_identity: 0.8
+min_chain_coverage: 0.5
+
+# --- phylogenetics / phydms ---
+n_subsample: 50
+# CPUs shared by every phydms-related step (iqtree2 tree build and phydms_comprehensive).
+phydms_ncpus: 32
+
+# --- "more conserved in nature than expected" flag ---
+# a site is flagged when (preference_entropy - alignment_entropy) >= this threshold
+conservation_delta_threshold: 1.0

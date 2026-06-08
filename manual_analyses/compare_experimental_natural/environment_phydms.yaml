@@ -1,0 +1,33 @@
+name: compare-experimental-natural-phydms
+# phydms is not on the conda mirrors and pins old biopython/pandas/numpy/weblogo that
+# conflict with the modern main environment, so it gets its own environment and is
+# installed from PyPI via pip (a prebuilt cp37 wheel). phydms 2.4.x needs Python 3.7.
+# All of phydms's dependencies that conda can satisfy are installed on the conda side
+# so pip only has to fetch the phydms wheel and build `weblogo` (<3.6, no wheel) from
+# source. That build imports numpy, so pip must run with build isolation disabled to
+# see the conda-installed numpy/cython; the Snakefile sets PIP_NO_BUILD_ISOLATION=1
+# before Snakemake builds this env (a conda pip: block cannot pass the flag itself),
+# and a compiler toolchain is provided.
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.7
+  - pip
+  - setuptools
+  - wheel
+  - gcc_linux-64
+  - gxx_linux-64
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib-base
+  - biopython
+  - statsmodels
+  - sympy
+  - natsort
+  - six
+  - cython
+  - pyvolve>=1.0.3
+  - pip:
+      - phydms==2.4.1
