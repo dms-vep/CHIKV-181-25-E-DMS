@@ -62,7 +62,7 @@ min_chain_identity: 0.8
 min_chain_coverage: 0.5
 
 # --- phylogenetics / phydms ---
-n_subsample: 50
+n_subsample: 200
 # CPUs shared by every phydms-related step (iqtree2 tree build and phydms_comprehensive).
 phydms_ncpus: 32
 
