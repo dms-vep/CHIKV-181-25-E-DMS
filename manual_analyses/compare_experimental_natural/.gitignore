@@ -24,4 +24,4 @@ results/plots/*
 # entropy comparison: natural-alignment entropy + DMS-vs-natural figures/tables
 !results/entropy/alignment_entropy.csv
 !results/plots/comparison_*.html
-!results/plots/more_conserved_than_expected_*.csv
+!results/plots/*.csv
