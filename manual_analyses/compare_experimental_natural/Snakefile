@@ -33,7 +33,7 @@ rule all:
         expand("results/preferences/prefs_{p}.csv", p=PHENOTYPES),
         "results/rsa/site_rsa.csv",
         expand("results/plots/comparison_{p}.html", p=PHENOTYPES),
-        expand("results/plots/more_conserved_than_expected_{p}.csv", p=PHENOTYPES),
+        expand("results/plots/per_site_summary_{p}.csv", p=PHENOTYPES),
         "results/phydms/comprehensive_modelcomparison.md",
 
 
@@ -237,6 +237,7 @@ rule phydms_comprehensive:
 
 rule comparison_plots:
     input:
+        dms=config["dms_csv"],
         aln_entropy="results/entropy/alignment_entropy.csv",
         prefs="results/preferences/prefs_{phenotype}.csv",
         rsa="results/rsa/site_rsa.csv",
@@ -244,14 +245,12 @@ rule comparison_plots:
         omega_m0="results/phydms/comprehensive_YNGKP_M0_omegabysite.txt",
     output:
         html="results/plots/comparison_{phenotype}.html",
-        flagged="results/plots/more_conserved_than_expected_{phenotype}.csv",
+        summary="results/plots/per_site_summary_{phenotype}.csv",
     log:
         "results/logs/comparison_plots_{phenotype}.txt",
     conda:
         ENV
     params:
         amino_acids=config["amino_acids"],
-        region_bounds=config["region_bounds"],
-        delta=config["conservation_delta_threshold"],
     script:
         "scripts/comparison_plots.py"

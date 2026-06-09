@@ -6,6 +6,8 @@ deep mutational scanning (DMS) of single-cycle pseudoviruses. The hypothesis is 
 constraints *not* captured by the cell-entry assays (e.g. binding to the mosquito
 receptor) limit the natural evolution of CHIKV.
 
+For the outputs, see the CSVs and plots in [results](results); note the plots are interactive HTML plots.
+
 ## Inputs
 
 Only two things are read from outside this directory (both produced elsewhere in the
@@ -68,14 +70,20 @@ missing values).
    and `--ncpus` = `phydms_ncpus`. A single invocation fits an experimentally informed
    **ExpCM** per phenotype, the **YNGKP_M0** and **YNGKP_M5** baselines, and an
    averaged-preferences ExpCM control per phenotype, all concurrently, and writes a
-   `comprehensive_modelcomparison.md` summary. The comparison plots consume the per-site
-   omega from the ExpCM and YNGKP_M0. (Entropy, by contrast, handles ambiguity per-site:
-   it ignores `X`/gap at each column rather than dropping whole sequences.)
-6. **comparison_plots** (per phenotype) — figure over the length of the protein
-   (alignment entropy vs. preference entropy, RSA track, phydms omega) plus a scatter
-   of alignment vs. preference entropy, and a table
-   `more_conserved_than_expected_{phenotype}.csv` flagging sites where
-   `preference_entropy − alignment_entropy ≥ conservation_delta_threshold`.
+   `comprehensive_modelcomparison.md` summary. The comparison step consumes the per-site
+   omega and P from the ExpCM (figure) and from both the ExpCM and YNGKP_M0 (summary
+   table). (Entropy, by contrast, handles ambiguity per-site: it ignores `X`/gap at each
+   column rather than dropping whole sequences.)
+6. **comparison_plots** (per phenotype) — an interactive figure of three site-aligned
+   tracks over the length of the protein, with DMS `site` labels (e.g. `-1(E3)`) on the
+   x-axis and a **linked hover** that highlights the same site across all panels:
+   (a) natural alignment entropy vs. preference entropy as points on **independent
+   y-axes**; (b) relative solvent accessibility (E2/E1 only); and (c) the phydms **ExpCM**
+   signed −log10(P) — the magnitude is |log10(P)| (capped at ±5), signed negative where
+   `omega < 1` (more conserved in nature than expected) and positive where `omega > 1`
+   (more variable). It also writes **`per_site_summary_{phenotype}.csv`**, one row per
+   site with `site`, `sequential_site`, `region` (protein), alignment and preference
+   entropy, RSA, and ExpCM/YNGKP_M0 omega and P (numbers formatted `%.3g`).
 
 ## Results
 
@@ -92,9 +100,11 @@ are git-ignored):
   full E-region codon alignment and the phylogeny-spanning subsample used by phydms.
 - **`results/entropy/alignment_entropy.csv`** — per-site Shannon entropy of the natural
   alignment.
-- **`results/plots/comparison_{phenotype}.html`** — the per-phenotype comparison figures,
-  and **`more_conserved_than_expected_{phenotype}.csv`** — the flagged sites that are more
-  conserved in nature than the DMS predicts.
+- **`results/plots/comparison_{phenotype}.html`** — the per-phenotype comparison figures
+  (entropy / RSA / ExpCM signed −log10 P tracks with linked hover), and
+  **`per_site_summary_{phenotype}.csv`** — the per-site table of entropy, RSA, and
+  ExpCM/YNGKP_M0 omega and P used to identify sites more conserved in nature than the DMS
+  predicts.
 
 ## Environments
 

@@ -65,7 +65,3 @@ min_chain_coverage: 0.5
 n_subsample: 200
 # CPUs shared by every phydms-related step (iqtree2 tree build and phydms_comprehensive).
 phydms_ncpus: 32
-
-# --- "more conserved in nature than expected" flag ---
-# a site is flagged when (preference_entropy - alignment_entropy) >= this threshold
-conservation_delta_threshold: 1.0
