@@ -1,0 +1,256 @@
+"""Compare natural conservation with measured functional constraint for CHIKV E.
+
+See README.md for an overview. The only inputs read from parent directories are the
+DMS summary CSV and the alignments; everything else is self-contained here. All
+constants and parameters live in config.yaml and are passed to rules via `params:`
+so that Snakemake tracks them; the Python rules use the `script:` directive so that
+Snakemake tracks the script code as well.
+"""
+
+import os
+
+# The phydms environment installs phydms from PyPI; its `weblogo` dependency only
+# ships an sdist whose build imports numpy, which pip's default build isolation hides.
+# Setting this here (before Snakemake builds any conda env) makes the env-build
+# subprocess use the conda-provided numpy instead of an isolated build.
+os.environ.setdefault("PIP_NO_BUILD_ISOLATION", "1")
+
+
+configfile: "config.yaml"
+
+
+PHENOTYPES = list(config["entry_phenotypes"].values())
+SLUG_TO_COLUMN = {slug: col for col, slug in config["entry_phenotypes"].items()}
+
+ENV = "environment.yaml"
+PHYDMS_ENV = "environment_phydms.yaml"
+
+
+rule all:
+    input:
+        "results/mapping/verification.csv",
+        "results/entropy/alignment_entropy.csv",
+        expand("results/preferences/prefs_{p}.csv", p=PHENOTYPES),
+        "results/rsa/site_rsa.csv",
+        expand("results/plots/comparison_{p}.html", p=PHENOTYPES),
+        expand("results/plots/per_site_summary_{p}.csv", p=PHENOTYPES),
+        "results/phydms/comprehensive_modelcomparison.md",
+
+
+rule download_6nk6:
+    output:
+        "results/structure/6NK6-assembly1.cif",
+    log:
+        "results/logs/download_6nk6.txt",
+    conda:
+        ENV
+    params:
+        url=config["assembly_url"],
+    script:
+        "scripts/download_structure.py"
+
+
+rule verify_and_map:
+    input:
+        dms=config["dms_csv"],
+        protein=config["protein_alignment"],
+        codon=config["codon_alignment"],
+    output:
+        mapping="results/mapping/alncol_to_seqsite.csv",
+        verification="results/mapping/verification.csv",
+    log:
+        "results/logs/verify_and_map.txt",
+    conda:
+        ENV
+    params:
+        ref_strain=config["ref_strain"],
+        capsid_len=config["capsid_len"],
+        n_sites=config["n_sites"],
+        region_bounds=config["region_bounds"],
+    script:
+        "scripts/verify_and_map.py"
+
+
+rule compute_preferences:
+    input:
+        dms=config["dms_csv"],
+    output:
+        "results/preferences/prefs_{phenotype}.csv",
+    log:
+        "results/logs/compute_preferences_{phenotype}.txt",
+    conda:
+        ENV
+    params:
+        column=lambda w: SLUG_TO_COLUMN[w.phenotype],
+        amino_acids=config["amino_acids"],
+        n_sites=config["n_sites"],
+        region_bounds=config["region_bounds"],
+    script:
+        "scripts/compute_preferences.py"
+
+
+rule alignment_entropy:
+    input:
+        protein=config["protein_alignment"],
+        mapping="results/mapping/alncol_to_seqsite.csv",
+    output:
+        "results/entropy/alignment_entropy.csv",
+    log:
+        "results/logs/alignment_entropy.txt",
+    conda:
+        ENV
+    params:
+        amino_acids=config["amino_acids"],
+    script:
+        "scripts/alignment_entropy.py"
+
+
+rule compute_rsa:
+    input:
+        assembly="results/structure/6NK6-assembly1.cif",
+        dms=config["dms_csv"],
+    output:
+        csv="results/rsa/site_rsa.csv",
+    log:
+        "results/logs/compute_rsa.txt",
+    conda:
+        ENV
+    params:
+        n_sites=config["n_sites"],
+        region_bounds=config["region_bounds"],
+        max_asa=config["max_asa"],
+        min_identity=config["min_chain_identity"],
+        min_coverage=config["min_chain_coverage"],
+    script:
+        "scripts/compute_rsa.py"
+
+
+rule extract_E_codon_alignment:
+    input:
+        codon=config["codon_alignment"],
+        dms=config["dms_csv"],
+    output:
+        fasta="results/phydms/E_codon_alignment.fasta",
+        mapping="results/phydms/codon_site_map.csv",
+    log:
+        "results/logs/extract_E_codon_alignment.txt",
+    conda:
+        ENV
+    params:
+        ref_strain=config["ref_strain"],
+        capsid_len=config["capsid_len"],
+        n_sites=config["n_sites"],
+        region_bounds=config["region_bounds"],
+    script:
+        "scripts/extract_E_codon_alignment.py"
+
+
+rule guide_tree:
+    input:
+        "results/phydms/E_codon_alignment.fasta",
+    output:
+        "results/phydms/guide_tree.nwk",
+    log:
+        "results/logs/guide_tree.txt",
+    conda:
+        ENV
+    shell:
+        "FastTree -nt -gtr {input} > {output} 2> {log}"
+
+
+rule subsample_phylo:
+    input:
+        tree="results/phydms/guide_tree.nwk",
+        fasta="results/phydms/E_codon_alignment.fasta",
+    output:
+        fasta="results/phydms/E_codon_subsampled.fasta",
+        ids="results/phydms/subsampled_ids.txt",
+    log:
+        "results/logs/subsample_phylo.txt",
+    conda:
+        ENV
+    params:
+        n=config["n_subsample"],
+        ref_strain=config["ref_strain"],
+    script:
+        "scripts/subsample_phylo.py"
+
+
+rule phydms_tree:
+    input:
+        "results/phydms/E_codon_subsampled.fasta",
+    output:
+        "results/phydms/phydms_tree.nwk",
+    log:
+        "results/logs/phydms_tree.txt",
+    conda:
+        ENV
+    threads: config["phydms_ncpus"]
+    params:
+        prefix="results/phydms/iqtree_phydms",
+    shell:
+        "iqtree2 -s {input} -m GTR+G -T {threads} --prefix {params.prefix} -redo "
+        "&> {log} && cp {params.prefix}.treefile {output}"
+
+
+rule prefs_to_phydms:
+    input:
+        prefs="results/preferences/prefs_{phenotype}.csv",
+        codon_map="results/phydms/codon_site_map.csv",
+    output:
+        "results/phydms/prefs_phydms_{phenotype}.csv",
+    log:
+        "results/logs/prefs_to_phydms_{phenotype}.txt",
+    conda:
+        ENV
+    params:
+        amino_acids=config["amino_acids"],
+    script:
+        "scripts/prefs_to_phydms.py"
+
+
+rule phydms_comprehensive:
+    input:
+        aln="results/phydms/E_codon_subsampled.fasta",
+        tree="results/phydms/phydms_tree.nwk",
+        prefs=expand("results/phydms/prefs_phydms_{p}.csv", p=PHENOTYPES),
+    output:
+        omega_m0="results/phydms/comprehensive_YNGKP_M0_omegabysite.txt",
+        omega_expcm=expand(
+            "results/phydms/comprehensive_ExpCM_prefs_phydms_{p}_omegabysite.txt",
+            p=PHENOTYPES,
+        ),
+        modelcomparison="results/phydms/comprehensive_modelcomparison.md",
+    log:
+        "results/logs/phydms_comprehensive.txt",
+    conda:
+        PHYDMS_ENV
+    threads: config["phydms_ncpus"]
+    params:
+        outprefix=lambda w, output: output.modelcomparison[
+            : -len("_modelcomparison.md")
+        ],
+    shell:
+        "phydms_comprehensive {params.outprefix} {input.aln} {input.prefs} "
+        "--tree {input.tree} --omegabysite --ncpus {threads} &> {log}"
+
+
+rule comparison_plots:
+    input:
+        dms=config["dms_csv"],
+        aln_entropy="results/entropy/alignment_entropy.csv",
+        prefs="results/preferences/prefs_{phenotype}.csv",
+        rsa="results/rsa/site_rsa.csv",
+        omega_expcm="results/phydms/comprehensive_ExpCM_prefs_phydms_{phenotype}_omegabysite.txt",
+        omega_m0="results/phydms/comprehensive_YNGKP_M0_omegabysite.txt",
+    output:
+        html="results/plots/comparison_{phenotype}.html",
+        summary="results/plots/per_site_summary_{phenotype}.csv",
+    log:
+        "results/logs/comparison_plots_{phenotype}.txt",
+    conda:
+        ENV
+    params:
+        amino_acids=config["amino_acids"],
+    script:
+        "scripts/comparison_plots.py"
