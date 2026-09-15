@@ -71,6 +71,12 @@ This plot shows the total effects of mutation at each site on binding to mouse v
     <Altair :showShadow="true" :spec-url="'htmls/mxra8_site_binding_corr.html'"></Altair>
 </Figure>
 
+This plot shows the reproducibility between library replicates, comparing the total effects of mutations at each site computed separately from library A versus library B for each ligand (using the same site-level filtering as the plot above):
+
+<Figure caption="Correlation between library replicates for effects of mutations at each site on binding to mouse and human Mxra8">
+    <Altair :showShadow="true" :spec-url="'htmls/mxra8_site_binding_lib_corr.html'"></Altair>
+</Figure>
+
 ## Numerical data in CSV format
 The numerical data are available as follows:
   - [Effects of mutations on binding to human and mouse Mxra8](https://github.com/dms-vep/CHIKV-181-25-E-DMS/blob/main/results/summaries/binding_mouse_vs_human_Mxra8.csv): this CSV is filtered for just high-quality measurements, but note that you may also want to filter for mutations with reasonable cell entry as assessed by the *entry in 293T_Mxra8 cells* (the heatmaps above apply a filter of -4).

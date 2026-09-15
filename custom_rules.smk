@@ -71,6 +71,7 @@ rule compare_human_mouse_mxra8_binding:
         site_csv="results/compare_human_mouse_mxra8/site_binding.csv",
         mut_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_mut_binding_corr.html",
         site_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_site_binding_corr.html",
+        lib_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_site_binding_lib_corr.html",
         dist_corr_chart_html="results/compare_human_mouse_mxra8/mxra8_site_binding_dist_corr.html",
         site_chart_html = "results/compare_human_mouse_mxra8/mxra8_site_chart.html",
     conda:
@@ -89,6 +90,7 @@ rule compare_human_mouse_mxra8_binding:
             -p site_csv {output.site_csv} \
             -p mut_corr_chart_html {output.mut_corr_chart_html} \
             -p site_corr_chart_html {output.site_corr_chart_html} \
+            -p lib_corr_chart_html {output.lib_corr_chart_html} \
             -p dist_corr_chart_html {output.dist_corr_chart_html} \
             -p site_chart_html {output.site_chart_html} \
             &> {log}
@@ -98,6 +100,7 @@ docs["Compare binding to human vs mouse Mxra8"] = {
     "Charts and notebook": {
         "site chart of binding effects": rules.compare_human_mouse_mxra8_binding.output.site_chart_html,
         "site correlation chart": rules.compare_human_mouse_mxra8_binding.output.site_corr_chart_html,
+        "library replicate correlation chart": rules.compare_human_mouse_mxra8_binding.output.lib_corr_chart_html,
         "mutation correlation chart": rules.compare_human_mouse_mxra8_binding.output.mut_corr_chart_html,
         "site effect vs distance to Mxra8": rules.compare_human_mouse_mxra8_binding.output.dist_corr_chart_html,
         "CSV with site-level effects on Mxra8 binding": rules.compare_human_mouse_mxra8_binding.output.site_csv,
