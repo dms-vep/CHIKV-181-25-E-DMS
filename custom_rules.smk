@@ -376,6 +376,11 @@ rule paper_figures:
         mxra8_validation_curves="manual_analyses/experimental_data/RVP.mutants.neutralization.by.soluble.mouse.Mxra8.csv",
         chikv_titers="manual_analyses/experimental_data/CHIKV_mutant_titers.csv",
         rvp_titers="manual_analyses/experimental_data/RVP_mutant_titers.csv",
+        addtl_site_annotations="data/addtl_site_annotations.csv",
+        natural_summary_293T_Mxra8="manual_analyses/compare_experimental_natural/results/plots/per_site_summary_293T_Mxra8.csv",
+        natural_summary_293T_TIM1="manual_analyses/compare_experimental_natural/results/plots/per_site_summary_293T_TIM1.csv",
+        natural_summary_C636="manual_analyses/compare_experimental_natural/results/plots/per_site_summary_C636.csv",
+        protein_alignment="nextstrain/results/alignments/protein_ungapped.fa",
         nb="notebooks/paper_figures.ipynb",
     output:
         nb="results/notebooks/paper_figures.ipynb",
@@ -391,6 +396,9 @@ rule paper_figures:
                 ),
                 "min_times_seen": 2,
                 "cell_entry_clip_lower": -6,
+                # must match manual_analyses/compare_experimental_natural/config.yaml
+                "capsid_len": 261,
+                "ref_strain": "181-25_MW473668",
             }
         ),
     conda:
